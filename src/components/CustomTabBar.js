@@ -1,34 +1,32 @@
-import React, { useContext } from 'react';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
 import styled from 'styled-components/native';
-import { UserContext } from '../contexts/UserContext';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+// import { UserContext } from '../contexts/UserContext';
 
 import HomeIcon from '../assets/home.svg';
-import SearchIcon from '../assets/search.svg';
-import TodayIcon from '../assets/today.svg';
-import FavoriteIcon from '../assets/favorite.svg';
-import AccountIcon from '../assets/account.svg';
+import MapIcon from '../assets/compass.svg';
+import CalendarIcon from '../assets/calendar.svg';
+import AccountIcon from '../assets/user.svg';
 
 const TabArea = styled.View`
-    height: 60px;
-    background-color: #ddd;
+    position: absolute;
     flex-direction: row;
+    width: 90%;
+    align-self: center;
+    justify-content: space-around;
+    margin-bottom: 1%;
 `;
 
 const TabItem = styled.TouchableOpacity`
-    flex: 1;
     justify-content: center;
-    align-items: center
-`;
-
-const TabItemCenter = styled.TouchableOpacity`
-    width: 60px;
-    height: 60px;
-    justify-content: center;
-    align-items: center;
     background-color: #fff;
-    border-radius: 35px;
-    border: 3px solid #21537D;
-    margin-top: -10px;
+    shadow-color: #aaa;
+    shadow-offset: 0;
+    shadow-opacity: 0.5;
+    shadow-radius: 6px;
+    elevation: 3;
+    padding: 2%;
+    border-radius: 10px;
 `;
 
 const AvatarIcon = styled.Image`
@@ -38,32 +36,48 @@ const AvatarIcon = styled.Image`
 `;
 
 export default function CustomTabBar({ state, navigation }) {
-    const { state: user } = useContext(UserContext);
+    const [marginSize, setMarginSize] = useState(10);
     const goTo = (screenName) => {
         navigation.navigate(screenName);
     }
 
+    useLayoutEffect(() => {
+        // console.log(state.routes[state.index].name)
+
+        if (state.routes[state.index].state && state.routes[state.index].state.index != 0) {
+            // if (state.routes[state.index].state.index > 0) {
+                // console.log(state.routes[state.index].state)
+                //    navigation.setOptions({ hideTabBar: true});
+                setMarginSize('-10%');
+            // }
+        }
+        else {setMarginSize(10);}
+    }, [state]);
+
     return (
-        <TabArea>
+        <TabArea style={{ bottom: marginSize }}>
             <TabItem onPress={() => goTo('Home')}>
-                <HomeIcon style={{ opacity: state.index === 0 ? 1 : 0.5 }} width='24' height='24' fill='#21537D' />
+                <HomeIcon width={`${hp('5.4%')}`} height={`${hp('5.4%')}`} />
             </TabItem>
-            <TabItem onPress={() => goTo('Search')}>
-                <SearchIcon style={{ opacity: state.index === 1 ? 1 : 0.5 }} width='24' height='24' fill='#21537D' />
+
+            <TabItem onPress={() => goTo('Maps')}>
+                <MapIcon width={`${hp('5.4%')}`} height={`${hp('5.4%')}`} />
             </TabItem>
-            <TabItemCenter onPress={() => goTo('Appointments')}>
-                <TodayIcon width='30' height='30' fill='#21537D'/>
-            </TabItemCenter>
-            <TabItem onPress={() => goTo('Favorites')}>
-                <FavoriteIcon style={{ opacity: state.index === 3 ? 1 : 0.5 }} width='24' height='24' fill='#21537D' />
+
+            <TabItem onPress={() => goTo('Calendar')}>
+                <CalendarIcon width={`${hp('5.4%')}`} height={`${hp('5.4%')}`} />
             </TabItem>
+
             <TabItem onPress={() => goTo('Profile')}>
+                <AccountIcon width={`${hp('5%')}`} height={`${hp('5%')}`} />
+            </TabItem>
+            {/* <TabItem onPress={() => goTo('Profile')}>
                 {user.avatar != '' ?
                     <AccountIcon source={{ url: user.avatar }} style={{ opacity: state.index === 4 ? 1 : 0.5 }} width='24' height='24' fill='#21537D'/>
                     :
                     <AccountIcon style={{ opacity: state.index === 4 ? 1 : 0.5 }} width='24' height='24' fill='#21537D' />
                 }
-            </TabItem>
+            </TabItem> */}
         </TabArea>
     );
 }

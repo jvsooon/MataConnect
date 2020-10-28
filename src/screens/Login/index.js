@@ -49,7 +49,7 @@ export default function Index() {
                     });
 
                     navigation.reset({
-                        routes: [{ name: 'MainTab' }]
+                        routes: [{ name: 'Drawer' }]
                     });
 
                 }).catch(function (error) {
