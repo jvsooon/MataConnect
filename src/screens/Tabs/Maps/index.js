@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { StyleSheet, Text, View, TextInput, Modal, Keyboard, Button, AppState, SafeAreaView, Image, StatusBar, Platform } from 'react-native';
 import MapView, { PROVIDER_GOOGLE, Callout, Marker, AnimatedRegion, ProviderPropType } from 'react-native-maps';
 import { useNavigation, useTheme } from '@react-navigation/native';
@@ -13,6 +13,8 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-nat
 import BottomSheet from 'reanimated-bottom-sheet';
 import Animated from 'react-native-reanimated';
 import MenuIcon from '../../../assets/menu.svg'
+import useVisibilityToggler from '../../../hooks/useVisibilityToggler'
+import { UserContext } from '../../../contexts/UserContext'
 
 
 const mapStandardStyle = [
@@ -27,15 +29,16 @@ const mapStandardStyle = [
 ];
 
 const ASPECT_RATIO = wp('100%') / hp('100%');
-const LATITUDE_DELTA = 0.01;
+const LATITUDE_DELTA = 0.02;
 const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
 const key = 'AIzaSyAcorPhu3_-YuPRpogeg0lgm63AXlOi8u0';
 
 export default function Index() {
+    const { state } = useContext(UserContext);
     const navigation = useNavigation();
-    const [latitude, setLatitude] = useState(34.240153);
-    const [longitude, setLongitude] = useState(-118.529314);
-    const [myLocation, setLocation] = useState('');
+    // const [latitude, setLatitude] = useState(34.240153);
+    // const [longitude, setLongitude] = useState(-118.529314);
+    // const [myLocation, setLocation] = useState('');
     const [errorMsg, setErrorMsg] = useState('');
     const [isLocationModalVisible, setModalVisibility] = useState(false);
     const [mapRef, setMapRef] = useState('');
@@ -43,20 +46,39 @@ export default function Index() {
     const [appState, setAppState] = useState(AppState.currentState);
     const [poi, setPoi] = useState(null);
     const [photo, setPhoto] = useState(null);
-    const [hideNav, setHideNav] = useState(true);
     const [myRegion, setMyRegion] = useState({
-        latitude: latitude,
-        longitude: longitude,
+        latitude: 34.240153,
         latitudeDelta: LATITUDE_DELTA,
+        longitude: -118.529314,
         longitudeDelta: LONGITUDE_DELTA
     });
     const bs = React.createRef();
     const fall = new Animated.Value(1);
     const theme = useTheme();
 
-    // const [latDelta, setLatDelta] = useState('');
-    // const [lonDelta, setLonDelta] = useState('');
-    // const [markerRef, setMarkerRef] = useState('');
+    const [OverlayComponent, toggleOverlayVisibility] = useVisibilityToggler(
+        <View style={{ position: 'absolute', left: '50%' }}>
+            <SearchBox >
+                <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
+                    <MenuIcon style={styles.menuIcon} width='28' height='28' />
+                </TouchableOpacity>
+                <TextInput
+                    placeholder="Search here"
+                    placeholderTextColor="#bbb"
+                    autoCapitalize="none"
+                    style={{ flex: 1, padding: 0, fontSize: 18, marginLeft: 10 }}
+                />
+
+                <Ionicons name="ios-search" size={28} />
+            </SearchBox>
+
+            <LocationIcon >
+                <TouchableOpacity onPress={() => getUserLocation()}>
+                    <MaterialIcons name="my-location" size={24} color='grey' />
+                </TouchableOpacity>
+            </LocationIcon>
+        </View>
+        , true);
 
     const DismissKeyboard = ({ children }) => {
         return (
@@ -65,10 +87,6 @@ export default function Index() {
             </TouchableWithoutFeedback>
         );
     }
-
-    // const toggleDrawer = () => {
-    //     navigation.goBack();
-    // }
 
     const handleAppStateChange = (nextAppState) => {
         if (appState.match(/inactive|background/) && nextAppState === 'active') {
@@ -96,10 +114,10 @@ export default function Index() {
 
             if (status !== 'granted') {
                 setErrorMsg('Permission to access location was denied. Must enable manually in settings.');
-                console.log(errorMsg);
+                // console.log(errorMsg);
                 return;
             }
-            console.log('Location permission granted.')
+            // console.log('Location permission granted.')
 
         } catch (error) {
             // console.log(error)
@@ -123,38 +141,35 @@ export default function Index() {
         mapRef.animateToRegion(region, 1000);
     }
 
-    const onRegionChange = () => {
-        setMyRegion({
-            latitude: mapRef.__lastRegion.latitude,
-            longitude: mapRef.__lastRegion.longitude,
-            latitudeDelta: mapRef.__lastRegion.latitudeDelta,
-            longitudeDelta: mapRef.__lastRegion.longitudeDelta
-        });
+    const onRegionChange = (newRegion) => {
+        // setMyRegion({
+        //     // latitude: mapRef.__lastRegion.latitude,
+        //     latitudeDelta: mapRef.__lastRegion.latitudeDelta,
+        //     // longitude: mapRef.__lastRegion.longitude,
+        //     longitudeDelta: mapRef.__lastRegion.longitudeDelta
+        // });
+        setMyRegion(newRegion);
     }
 
-    const handleHideNav = () => {
-        console.log('Click registered')
-        setHideNav(!hideNav);
-    }
+    useEffect(() => {
+        getLocationAsync();
+        // AppState.addEventListener('click', handleHideNav)
 
-    // useEffect(() => {
-    //     // getLocationAsync();
-    //     AppState.addEventListener('click', handleHideNav)
-
-    //     return () => {
-    //         AppState.removeEventListener('click', handleHideNav)
-    //     };
-    // }, []);
+        // return () => {
+        //     AppState.removeEventListener('click', handleHideNav)
+        // };
+    }, []);
 
     const onPoiClick = async (e) => {
         const poi = e.nativeEvent;
+        poi.name = poi.name.replace(/(\r\n|\n|\r)/gm, " ");
         setPoi(poi);
         bs.current.snapTo(0);
-        const line = await fetch(`https://maps.googleapis.com/maps/api/place/details/json?place_id=${poi.placeId}&fields=photo,formatted_phone_number&key=${key}`)
-            .then(response => response.json());
+        // const line = await fetch(`https://maps.googleapis.com/maps/api/place/details/json?place_id=${poi.placeId}&fields=photo,formatted_phone_number&key=${key}`)
+        //     .then(response => response.json());
         // const photoUrl = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${line.result.photos[0].photo_reference}&key=${key}`
         // const img = await fetch(photoUrl)
-        console.log(line);
+        // console.log(line);
     }
 
     const renderInner = () => (
@@ -192,18 +207,18 @@ export default function Index() {
         <SafeAreaView >
 
             {Platform.OS == 'ios' ?
-                <StatusBar backgroundColor='#fff' barStyle='dark-content' /> :
+                <StatusBar barStyle={'dark-content'}/> :
                 <StatusBar />
             }
 
             <MapView
-                onPress={() => handleHideNav()}
+                onPress={toggleOverlayVisibility}
                 provider={PROVIDER_GOOGLE} // remove if not using Google Maps
                 style={styles.map}
                 // customMapStyle={mapStandardStyle}
                 ref={(map) => { setMapRef(map) }}
-                region={myRegion}
-                onRegionChangeComplete={onRegionChange}
+                initialRegion={myRegion}
+                onRegionChangeComplete={region => onRegionChange(region)}
                 onPoiClick={onPoiClick}
             >
                 {poi && (
@@ -211,29 +226,7 @@ export default function Index() {
                 )}
             </MapView>
 
-            { hideNav && (
-                <View style={{ position: 'absolute', left: '50%' }}>
-                    <SearchBox >
-                        <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
-                            <MenuIcon style={styles.menuIcon} width='28' height='28' />
-                        </TouchableOpacity>
-                        <TextInput
-                            placeholder="Search here"
-                            placeholderTextColor="#bbb"
-                            autoCapitalize="none"
-                            style={{ flex: 1, padding: 0, fontSize: 18, marginLeft: 10 }}
-                        />
-
-                        <Ionicons name="ios-search" size={28} />
-                    </SearchBox>
-
-                    <LocationIcon >
-                        <TouchableOpacity onPress={() => getUserLocation()}>
-                            <MaterialIcons name="my-location" size={24} color='grey' />
-                        </TouchableOpacity>
-                    </LocationIcon>
-                </View>
-            )}
+            {OverlayComponent}
 
             <Modal visible={isLocationModalVisible} transparent={true} onModalHide={openSetting ? openSettings() : undefined} >
                 <View style={styles.modal}>

@@ -4,7 +4,11 @@ import { NavigationContainer } from '@react-navigation/native';
 import MainStack from './src/stacks/MainStack'
 import UserContextProvider from './src/contexts/UserContext';
 
+import useGlobalState from './src/store/useGlobalState'
+import Context from './src/store/context'
+
 export default function App() {
+  const store = useGlobalState();
   return (
     <UserContextProvider>
       <NavigationContainer>
@@ -12,4 +16,4 @@ export default function App() {
       </NavigationContainer>
     </UserContextProvider>
   );
-  }
+}

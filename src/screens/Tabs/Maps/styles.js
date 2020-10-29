@@ -23,7 +23,7 @@ export const LocationIcon = styled.View`
     padding: 14px;
     border-radius: 30px;
     top: ${hp('80%')}px;
-    left: ${Platform.OS == 'ios' ? '90%' : '84%'};
+    left: ${Platform.OS == 'ios' ? `${wp('40%')}px` : `${wp('34%')}px`};
     
 `;
 
@@ -38,7 +38,9 @@ export const Card = styled.View`
     shadow-radius: 3.84px;
     elevation: 5;
     padding: ${hp('1.6%')}px;
-    margin-bottom: ${hp('-1%')}px;
+    margin-bottom: ${hp('-3.2%')}px;
+    margin-top: ${Platform.OS == 'ios' ? `${hp('2%')}px` : 0};
+    
 `;
 
 export const CardTitle = styled.Text`
