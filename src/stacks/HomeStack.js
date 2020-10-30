@@ -35,7 +35,7 @@ export default function HomeStack({ state }) {
                     // fontWeight: 'bold'
                 },
                 headerLeft: () => (
-                    <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
+                    <TouchableOpacity onPress={() => navigation.toggleDrawer()} >
                         <MenuIcon style={{ marginLeft: wp('6%') }} width='30' height='30' />
                     </TouchableOpacity>
                 ),

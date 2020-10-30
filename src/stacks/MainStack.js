@@ -11,14 +11,14 @@ const Stack = createStackNavigator();
 export default function MainStack() {
     return (
         <Stack.Navigator
-            // initialRouteName={Preload}
+            initialRouteName={Preload}
             screenOptions={{
                 headerShown: false
             }}
         >
-            {/* <Stack.Screen name='Preload' component={Preload} />
+            <Stack.Screen name='Preload' component={Preload} />
             <Stack.Screen name='Login' component={Login} />
-            <Stack.Screen name='SignUp' component={SignUp} /> */}
+            <Stack.Screen name='SignUp' component={SignUp} />
             <Stack.Screen name='Drawer' component={Drawer} />
         </Stack.Navigator>
     )

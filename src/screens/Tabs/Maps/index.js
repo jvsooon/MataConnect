@@ -130,15 +130,15 @@ export default function Index() {
 
     const getUserLocation = async () => {
         // console.log(await Location.hasServicesEnabledAsync() == true? 'enabled': 'disabled')
-        let location = await Location.getCurrentPositionAsync({ accuracy: Location.Accuracy.High });
+        let location = await Location.getCurrentPositionAsync({ accuracy: Location.Accuracy.Low });
         // setLocation(location);
         //console.log(location.coords);
-        let region = { latitude: location.coords.latitude, longitude: location.coords.longitude, latitudeDelta: 0.015, longitudeDelta: 0.0121 };
+        let region = { latitude: location.coords.latitude + .008, longitude: location.coords.longitude - .004, latitudeDelta: 0.015, longitudeDelta: 0.0121 };
         // let coordinate = new AnimatedRegion({ latitude: location.coords.latitude, longitude: location.coords.longitude });
         // setLatitude(location.coords.latitude);
         // setLongitude(location.coords.longitude);
         // markerRef.animateMarkerToCoordinate(coordinate, 1000);
-        mapRef.animateToRegion(region, 1000);
+        mapRef.animateToRegion(region, 1500);
     }
 
     const onRegionChange = (newRegion) => {
@@ -185,7 +185,7 @@ export default function Index() {
                 }}
             />
             <CardTitle>{poi == null ? '' : poi.name}</CardTitle>
-            <TouchableOpacity onPress={() => console.log('hi')}
+            <TouchableOpacity 
                 style={{ borderColor: '#ccc', borderWidth: 1.6, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', width: 76, paddingVertical: 2, borderRadius: 20 }}>
                 <MaterialIcons name="bookmark-border" size={24} color="#3C8E9A" />
                 <Text style={{ fontWeight: 'bold', fontSize: 15 }}>Save</Text>

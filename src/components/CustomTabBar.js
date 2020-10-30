@@ -38,14 +38,14 @@ const AvatarIcon = styled.Image`
 `;
 
 export default function CustomTabBar({ state, navigation }) {
-    const { state: toggle } = useContext(UserContext);
-    const [marginSize, setMarginSize] = useState(10);
+    // const { state: toggle } = useContext(UserContext);
+    const [marginSize, setMarginSize] = useState('-1%');
     const goTo = (screenName) => {
         navigation.navigate(screenName);
     }
 
     const [BottomTabComponent, toggleBottomTab] = useVisibilityToggler(
-        <TabArea style={{ bottom: marginSize }}>
+        <TabArea >
             <TabItem onPress={() => goTo('Home')}>
                 <HomeIcon width={`${hp('5.4%')}`} height={`${hp('5.4%')}`} />
             </TabItem>
@@ -72,19 +72,14 @@ export default function CustomTabBar({ state, navigation }) {
         , true);
 
     useLayoutEffect(() => {
-        // console.log(state.routes[state.index].name)
-
         if (state.routes[state.index].state && state.routes[state.index].state.index != 0) {
-            // if (state.routes[state.index].state.index > 0) {
-            // console.log(state.routes[state.index].state)
-            //    navigation.setOptions({ hideTabBar: true});
-            setMarginSize('-10%');
-            // }
-        }
-        else { setMarginSize(10); }
-    }, [state]);
+            if (state.routes[state.index].state.index > 0) {
+                setMarginSize('-1%');
+            }
+        } else { setMarginSize('10%') }
+    }, [state.routes[state.index].state]);
 
     return (
-        <View>{BottomTabComponent}</View>
+        <View style={{ bottom: marginSize }}>{BottomTabComponent}</View>
     );
 }

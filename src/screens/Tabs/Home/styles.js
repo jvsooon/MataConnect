@@ -23,7 +23,6 @@ export const ImageShadow = styled.View`
     width: ${hp('12%')}px;
     height: ${hp('12%')}px; 
     marginRight: ${wp('3%')}px;
-    background-color: red;
     shadow-color: #000;
     shadow-offset: 0;
     shadow-opacity: 0.5;

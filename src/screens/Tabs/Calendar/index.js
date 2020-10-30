@@ -157,13 +157,13 @@ export default function Index() {
                 // Callback that gets called when items for a certain month should be loaded (month became visible)
                 loadItemsForMonth={(month) => { loadItems(month) }}
                 // // Minimum date that can be selected, dates before minDate will be grayed out. Default = undefined
-                minDate={'2020-08-01'}
+                minDate={'2020-08-24'}
                 // // Maximum date that can be selected, dates after maxDate will be grayed out. Default = undefined
-                maxDate={'2020-12-30'}
+                maxDate={'2020-12-31'}
                 // // Max amount of months allowed to scroll to the past. Default = 50
                 pastScrollRange={2}
                 // // Max amount of months allowed to scroll to the future. Default = 50
-                futureScrollRange={2}
+                futureScrollRange={3}
                 // // Specify how each item should be rendered in agenda
                 // renderItem={(item, firstItemInDay) => { return (<View />); }}
                 renderItem={renderItem}
