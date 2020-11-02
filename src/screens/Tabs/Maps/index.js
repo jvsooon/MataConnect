@@ -15,6 +15,7 @@ import Animated from 'react-native-reanimated';
 import MenuIcon from '../../../assets/menu.svg'
 import useVisibilityToggler from '../../../hooks/useVisibilityToggler'
 import { UserContext } from '../../../contexts/UserContext'
+import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete'
 
 
 const mapStandardStyle = [
@@ -36,15 +37,13 @@ const key = 'AIzaSyAcorPhu3_-YuPRpogeg0lgm63AXlOi8u0';
 export default function Index() {
     const { state } = useContext(UserContext);
     const navigation = useNavigation();
-    // const [latitude, setLatitude] = useState(34.240153);
-    // const [longitude, setLongitude] = useState(-118.529314);
-    // const [myLocation, setLocation] = useState('');
     const [errorMsg, setErrorMsg] = useState('');
     const [isLocationModalVisible, setModalVisibility] = useState(false);
     const [mapRef, setMapRef] = useState('');
     const [openSetting, setOpenSetting] = useState(false);
     const [appState, setAppState] = useState(AppState.currentState);
     const [poi, setPoi] = useState(null);
+    const [searchPoi, setSearchPoi] = useState(null);
     const [photo, setPhoto] = useState(null);
     const [myRegion, setMyRegion] = useState({
         latitude: 34.240153,
@@ -57,8 +56,9 @@ export default function Index() {
     const theme = useTheme();
 
     const [OverlayComponent, toggleOverlayVisibility] = useVisibilityToggler(
-        <View style={{ position: 'absolute', left: '50%' }}>
-            <SearchBox >
+        <View style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }}>
+            {/* position: absolute, left: 80% or 70% */}
+            {/* <SearchBox >
                 <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
                     <MenuIcon style={styles.menuIcon} width='28' height='28' />
                 </TouchableOpacity>
@@ -70,7 +70,50 @@ export default function Index() {
                 />
 
                 <Ionicons name="ios-search" size={28} />
-            </SearchBox>
+            </SearchBox> */}
+
+            <View style={{ flex: 1, marginTop: '6%' }}>
+                <GooglePlacesAutocomplete
+                    placeholder='Search'
+                    returnKeyType={'search'}
+                    // listViewDisplayed={false}
+                    fetchDetails={true}
+                    onPress={(data, details = null) => {
+                        // 'details' is provided when fetchDetails = true
+                        console.log(details.geometry.location);
+                        const { lat, lng } = details.geometry.location;
+                        // console.log(lat, lng)
+                        setSearchPoi({latitude: lat, longitude: lng})
+                        console.log(searchPoi)
+                    }}
+                    query={{
+                        key: key,
+                        language: 'en',
+                        components: 'country:us'
+                    }}
+                    styles={{
+                        container: {
+                            marginHorizontal: 20,
+                            elevation: 8,   // not working on android, find fix
+                            shadowOffset: {
+                                width: 0,
+                                height: 2,
+                            },
+                            shadowColor: '#000',
+                            shadowOpacity: 0.23,
+                            shadowRadius: 2.62,
+
+                            backgroundColor: '#0000'
+                        }
+                    }}
+                    nearbyPlacesAPI='GooglePlacesSearch'
+                    debounce={200}>
+
+                    {searchPoi && (
+                        <Marker coordinate={searchPoi} image={require('../../../assets/map_marker.png')} />
+                    )}
+                </GooglePlacesAutocomplete>
+            </View>
 
             <LocationIcon >
                 <TouchableOpacity onPress={() => getUserLocation()}>
@@ -142,12 +185,6 @@ export default function Index() {
     }
 
     const onRegionChange = (newRegion) => {
-        // setMyRegion({
-        //     // latitude: mapRef.__lastRegion.latitude,
-        //     latitudeDelta: mapRef.__lastRegion.latitudeDelta,
-        //     // longitude: mapRef.__lastRegion.longitude,
-        //     longitudeDelta: mapRef.__lastRegion.longitudeDelta
-        // });
         setMyRegion(newRegion);
     }
 
@@ -162,6 +199,7 @@ export default function Index() {
 
     const onPoiClick = async (e) => {
         const poi = e.nativeEvent;
+        console.log('poi', poi.coordinate)
         poi.name = poi.name.replace(/(\r\n|\n|\r)/gm, " ");
         setPoi(poi);
         bs.current.snapTo(0);
@@ -185,7 +223,7 @@ export default function Index() {
                 }}
             />
             <CardTitle>{poi == null ? '' : poi.name}</CardTitle>
-            <TouchableOpacity 
+            <TouchableOpacity
                 style={{ borderColor: '#ccc', borderWidth: 1.6, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', width: 76, paddingVertical: 2, borderRadius: 20 }}>
                 <MaterialIcons name="bookmark-border" size={24} color="#3C8E9A" />
                 <Text style={{ fontWeight: 'bold', fontSize: 15 }}>Save</Text>
@@ -205,9 +243,8 @@ export default function Index() {
 
     return (
         <SafeAreaView >
-
             {Platform.OS == 'ios' ?
-                <StatusBar barStyle={'dark-content'}/> :
+                <StatusBar barStyle={'dark-content'} /> :
                 <StatusBar />
             }
 
@@ -219,8 +256,7 @@ export default function Index() {
                 ref={(map) => { setMapRef(map) }}
                 initialRegion={myRegion}
                 onRegionChangeComplete={region => onRegionChange(region)}
-                onPoiClick={onPoiClick}
-            >
+                onPoiClick={onPoiClick}>
                 {poi && (
                     <Marker coordinate={poi.coordinate} image={require('../../../assets/map_marker.png')} />
                 )}
@@ -243,7 +279,7 @@ export default function Index() {
                 initialSnap={1}
                 callbackNode={fall}
                 enabledGestureInteraction={true}
-                onCloseEnd={() => setPoi(null)}
+                onCloseEnd={() => {setPoi(null); setSearchPoi(null)}}
             />
         </SafeAreaView>
     );

@@ -1,8 +1,10 @@
 import React from 'react'
-import { FlatList, StatusBar, StyleSheet, Image, Text } from 'react-native';
-import { Container, ListHeader, Box, ImageShadow } from './styles';
+import { FlatList, StatusBar, StyleSheet, ImageBackground, Image, Text } from 'react-native';
+import { Container, ListHeader, Box, ImageShadow, CustomBackground } from './styles';
 import ListItem from '../../../components/ListItem';
+import customBG from '../../../assets/background.png'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+
 
 const EventsToday = [
     {
@@ -122,39 +124,42 @@ export default function Index() {
                 <StatusBar backgroundColor='#fff' barStyle='dark-content' /> :
                 <StatusBar />
             }
-            <Box>
-                <ListHeader>Events happening today</ListHeader>
-                <FlatList
-                    style={styles.list}
-                    data={EventsToday}
-                    renderItem={({item}) => renderItem(item)}
-                    keyExtractor={(item) => item.id}
-                    horizontal={true}
-                    showsHorizontalScrollIndicator={false}
-                />
-            </Box>
-            <Box>
-                <ListHeader>Upcoming Events</ListHeader>
-                <FlatList
-                    style={styles.list}
-                    data={UpcomingEvents}
-                    renderItem={({ item }) => renderItem(item)}
-                    keyExtractor={(item) => item.id}
-                    horizontal={true}
-                    showsHorizontalScrollIndicator={false}
-                />
-            </Box>
-            <Box>
-                <ListHeader>Apply for Jobs</ListHeader>
-                <FlatList
-                    style={styles.list}
-                    data={Jobs}
-                    renderItem={({item}) => renderItem(item)}
-                    keyExtractor={(item) => item.id}
-                    horizontal={true}
-                    showsHorizontalScrollIndicator={false}
-                />
-            </Box>
+
+            <CustomBackground source={customBG} style={{ }}>
+                <Box>
+                    <ListHeader>Events happening today</ListHeader>
+                    <FlatList
+                        style={styles.list}
+                        data={EventsToday}
+                        renderItem={({ item }) => renderItem(item)}
+                        keyExtractor={(item) => item.id}
+                        horizontal={true}
+                        showsHorizontalScrollIndicator={false}
+                    />
+                </Box>
+                <Box>
+                    <ListHeader>Upcoming Events</ListHeader>
+                    <FlatList
+                        style={styles.list}
+                        data={UpcomingEvents}
+                        renderItem={({ item }) => renderItem(item)}
+                        keyExtractor={(item) => item.id}
+                        horizontal={true}
+                        showsHorizontalScrollIndicator={false}
+                    />
+                </Box>
+                <Box>
+                    <ListHeader>Apply for Jobs</ListHeader>
+                    <FlatList
+                        style={styles.list}
+                        data={Jobs}
+                        renderItem={({ item }) => renderItem(item)}
+                        keyExtractor={(item) => item.id}
+                        horizontal={true}
+                        showsHorizontalScrollIndicator={false}
+                    />
+                </Box>
+            </CustomBackground>
         </Container>
     );
 }

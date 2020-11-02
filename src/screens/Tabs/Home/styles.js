@@ -29,3 +29,8 @@ export const ImageShadow = styled.View`
     shadow-radius: 4px;
     elevation: 6;
 `;
+
+export const CustomBackground = styled.ImageBackground`
+    flex: 1;
+
+`;
