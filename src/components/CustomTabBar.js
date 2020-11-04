@@ -83,3 +83,14 @@ export default function CustomTabBar({ state, navigation }) {
         <View style={{ bottom: marginSize }}>{BottomTabComponent}</View>
     );
 }
+
+// const handleSignOutClick = () => {
+//     firebase.auth()
+//         .signOut()
+//         .then(() => {
+//             console.log('User signed out!')
+//             navigation.reset({
+//                 routes: [{ name: 'Preload' }]
+//             });
+//         });
+// }

@@ -150,7 +150,7 @@ export default function Index() {
             {/* <StatusBar /> */}
             {Platform.OS == 'ios' ?
                 <StatusBar backgroundColor='#fff' barStyle='dark-content' /> :
-                <StatusBar />
+                <StatusBar barStyle={'dark-content'} />
             }
             <Agenda
                 items={items}

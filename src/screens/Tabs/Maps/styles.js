@@ -23,7 +23,7 @@ export const LocationIcon = styled.View`
     padding: 14px;
     border-radius: 30px;
     top: ${hp('80%')}px;
-    left: ${Platform.OS == 'ios' ? `${wp('40%')}px` : `${wp('34%')}px`};
+    left: ${Platform.OS == 'ios' ? `${wp('90%')}px` : `${wp('84%')}px`};
     
 `;
 

@@ -56,7 +56,7 @@ export default function Index() {
     const theme = useTheme();
 
     const [OverlayComponent, toggleOverlayVisibility] = useVisibilityToggler(
-        <View style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }}>
+        <View style={{ position: 'absolute', top: 0, left: 0, right: 0 }} >
             {/* position: absolute, left: 80% or 70% */}
             {/* <SearchBox >
                 <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
@@ -72,18 +72,19 @@ export default function Index() {
                 <Ionicons name="ios-search" size={28} />
             </SearchBox> */}
 
-            <View style={{ flex: 1, marginTop: '6%' }}>
+            {/* <View style={{ marginTop: '6%'}} > */}
                 <GooglePlacesAutocomplete
                     placeholder='Search'
                     returnKeyType={'search'}
-                    // listViewDisplayed={false}
+                    // autoFocus={false}
+                    // listViewDisplayed={'auto'}
                     fetchDetails={true}
                     onPress={(data, details = null) => {
                         // 'details' is provided when fetchDetails = true
                         console.log(details.geometry.location);
                         const { lat, lng } = details.geometry.location;
                         // console.log(lat, lng)
-                        setSearchPoi({latitude: lat, longitude: lng})
+                        setSearchPoi({ latitude: lat, longitude: lng })
                         console.log(searchPoi)
                     }}
                     query={{
@@ -93,6 +94,7 @@ export default function Index() {
                     }}
                     styles={{
                         container: {
+                            marginTop: '6%',
                             marginHorizontal: 20,
                             elevation: 8,   // not working on android, find fix
                             shadowOffset: {
@@ -103,7 +105,7 @@ export default function Index() {
                             shadowOpacity: 0.23,
                             shadowRadius: 2.62,
 
-                            backgroundColor: '#0000'
+                            // backgroundColor: '#0000',
                         }
                     }}
                     nearbyPlacesAPI='GooglePlacesSearch'
@@ -113,7 +115,7 @@ export default function Index() {
                         <Marker coordinate={searchPoi} image={require('../../../assets/map_marker.png')} />
                     )}
                 </GooglePlacesAutocomplete>
-            </View>
+            {/* </View> */}
 
             <LocationIcon >
                 <TouchableOpacity onPress={() => getUserLocation()}>
@@ -244,7 +246,7 @@ export default function Index() {
     return (
         <SafeAreaView >
             {Platform.OS == 'ios' ?
-                <StatusBar barStyle={'dark-content'} /> :
+                <StatusBar barStyle={'dark-content'}/> :
                 <StatusBar />
             }
 
@@ -262,7 +264,7 @@ export default function Index() {
                 )}
             </MapView>
 
-            {OverlayComponent}
+                {OverlayComponent}
 
             <Modal visible={isLocationModalVisible} transparent={true} onModalHide={openSetting ? openSettings() : undefined} >
                 <View style={styles.modal}>
@@ -279,7 +281,7 @@ export default function Index() {
                 initialSnap={1}
                 callbackNode={fall}
                 enabledGestureInteraction={true}
-                onCloseEnd={() => {setPoi(null); setSearchPoi(null)}}
+                onCloseEnd={() => { setPoi(null); setSearchPoi(null) }}
             />
         </SafeAreaView>
     );

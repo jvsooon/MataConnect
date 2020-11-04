@@ -2,6 +2,7 @@ import React, { useLayoutEffect, useEffect } from 'react'
 import { createStackNavigator } from '@react-navigation/stack';
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import Index from '../screens/Tabs/Home/index';
+import IndexSub from '../screens/Tabs/Home/indexSub';
 import Blank from '../screens/Tabs/Home/Blank';
 import Notifications from '../screens/Tabs/Home/Notifications';
 import MenuIcon from '../assets/menu.svg'

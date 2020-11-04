@@ -1,39 +1,16 @@
 import React, { useLayoutEffect, useEffect } from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Text, View, Button } from 'react-native';
-import Home from '../screens/Tabs/Home'
-import Maps from '../screens/Tabs/Maps'
-import CalendarStack from './CalendarStack'
 import HomeStack from './HomeStack'
-import firebase from '../../firebase'
-import { NavigationContainer, useNavigation } from '@react-navigation/native';
+import CalendarStack from './CalendarStack'
+import Maps from '../screens/Tabs/Maps'
+import Profile from '../screens/Tabs/Profile'
+import { useNavigation } from '@react-navigation/native';
 import CustomTabBar from '../components/CustomTabBar';
-import HomeIcon from '../assets/home.svg';
 
 const Tabs = createBottomTabNavigator();
 
 export default function TabStack() {
     const navigation = useNavigation();
-
-    const handleSignOutClick = () => {
-        firebase.auth()
-            .signOut()
-            .then(() => {
-                console.log('User signed out!')
-                navigation.reset({
-                    routes: [{ name: 'Preload' }]
-                });
-            });
-    }
-
-    const Profile = () => {
-        return (
-            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                <Text>Profile Screen</Text>
-                <Button title='Log Out' onPress={handleSignOutClick} />
-            </View>
-        );
-    }
 
     const getTabBarVisibility = (route, navigation) => {
         const routeName = route.state ? route.state.routes[route.state.index].name : '';
