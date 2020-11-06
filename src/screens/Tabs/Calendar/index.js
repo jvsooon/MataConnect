@@ -1,19 +1,16 @@
 import React, { useState } from 'react'
 import { StyleSheet, Text, View, TouchableOpacity, Modal, Keyboard, StatusBar, SafeAreaView } from 'react-native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
-import { useNavigation } from '@react-navigation/native';
 import { Agenda } from 'react-native-calendars';
 import { Card, Avatar } from 'react-native-paper';
 import { MaterialIcons, FontAwesome5 } from '@expo/vector-icons'
 import EventDetails from './EventDetails'
 import ShareIcon from '../../../assets/share.svg'
 // import { events } from '../../2020'
-export default function Index() {
+export default function Index({navigation}) {
     // const { dispatch: userDispatch } = useContext(UserContext);
     const [items, setItems] = useState({});
     const [modalOpen, setModalOpen] = useState(false);
-
-    const navigation = useNavigation();
 
     const getEvents = () => {
         var request = new XMLHttpRequest();
@@ -149,8 +146,8 @@ export default function Index() {
             {/* <StatusBar backgroundColor='transparent' barStyle='dark-content' translucent={true} /> */}
             {/* <StatusBar /> */}
             {Platform.OS == 'ios' ?
-                <StatusBar backgroundColor='#fff' barStyle='dark-content' /> :
-                <StatusBar barStyle={'dark-content'} />
+                <StatusBar barStyle='dark-content' /> :
+                <StatusBar />
             }
             <Agenda
                 items={items}

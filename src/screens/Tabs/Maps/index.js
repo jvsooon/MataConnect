@@ -1,8 +1,11 @@
 import React, { useState, useEffect, useContext } from 'react'
-import { StyleSheet, Text, View, TextInput, Modal, Keyboard, Button, AppState, SafeAreaView, Image, StatusBar, Platform } from 'react-native';
+import {
+    StyleSheet, Text, View, TextInput, Modal, Keyboard, Dimensions,
+    Button, AppState, SafeAreaView, Image, StatusBar, Platform, ScrollView, Animated
+} from 'react-native';
 import MapView, { PROVIDER_GOOGLE, Callout, Marker, AnimatedRegion, ProviderPropType } from 'react-native-maps';
 import { useNavigation, useTheme } from '@react-navigation/native';
-import { Ionicons, MaterialIcons } from '@expo/vector-icons'
+import { Ionicons, MaterialIcons, Feather } from '@expo/vector-icons'
 import { TouchableOpacity, TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import * as Location from 'expo-location'
 import * as Linking from 'expo-linking';
@@ -11,11 +14,13 @@ import { SearchBox, LocationIcon, Card, CardTitle, Header, PanelHeader, PanelHan
 
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import BottomSheet from 'reanimated-bottom-sheet';
-import Animated from 'react-native-reanimated';
-import MenuIcon from '../../../assets/menu.svg'
+// import Animated from 'react-native-reanimated';
 import useVisibilityToggler from '../../../hooks/useVisibilityToggler'
 import { UserContext } from '../../../contexts/UserContext'
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete'
+import { eventData, eventsData } from '../../../utils'
+const { width, height } = Dimensions.get("window");
+let mapAnimation = new Animated.Value(0);
 
 
 const mapStandardStyle = [
@@ -52,8 +57,16 @@ export default function Index() {
         longitudeDelta: LONGITUDE_DELTA
     });
     const bs = React.createRef();
-    const fall = new Animated.Value(1);
+    // const fall = new Animated.Value(1);
     const theme = useTheme();
+
+    const ClearButton = () => {
+        return (
+            <TouchableOpacity style={{}}>
+                <Feather name="x-circle" size={28} color="black" />
+            </TouchableOpacity>
+        )
+    }
 
     const [OverlayComponent, toggleOverlayVisibility] = useVisibilityToggler(
         <View style={{ position: 'absolute', top: 0, left: 0, right: 0 }} >
@@ -73,48 +86,50 @@ export default function Index() {
             </SearchBox> */}
 
             {/* <View style={{ marginTop: '6%'}} > */}
-                <GooglePlacesAutocomplete
-                    placeholder='Search'
-                    returnKeyType={'search'}
-                    // autoFocus={false}
-                    // listViewDisplayed={'auto'}
-                    fetchDetails={true}
-                    onPress={(data, details = null) => {
-                        // 'details' is provided when fetchDetails = true
-                        console.log(details.geometry.location);
-                        const { lat, lng } = details.geometry.location;
-                        // console.log(lat, lng)
-                        setSearchPoi({ latitude: lat, longitude: lng })
-                        console.log(searchPoi)
-                    }}
-                    query={{
-                        key: key,
-                        language: 'en',
-                        components: 'country:us'
-                    }}
-                    styles={{
-                        container: {
-                            marginTop: '6%',
-                            marginHorizontal: 20,
-                            elevation: 8,   // not working on android, find fix
-                            shadowOffset: {
-                                width: 0,
-                                height: 2,
-                            },
-                            shadowColor: '#000',
-                            shadowOpacity: 0.23,
-                            shadowRadius: 2.62,
+            <GooglePlacesAutocomplete
+                placeholder='Search'
+                // returnKeyType={'search'}
+                // autoFocus={false}
+                // listViewDisplayed={'auto'}
+                fetchDetails={true}
+                // renderRightButton={props => <ClearButton {...props}/>}
+                onPress={(data, details = null) => {
+                    // 'details' is provided when fetchDetails = true
+                    const { lat, lng } = details.geometry.location;
+                    setSearchPoi({ coordinate: { latitude: lat, longitude: lng } })
+                    console.log(searchPoi)
+                    // getAddressText('')
+                }}
+                query={{
+                    key: key,
+                    language: 'en',
+                    components: 'country:us'
+                }}
+                styles={{
+                    container: {
+                        // width: '100%',
+                        marginTop: '6%',
+                        marginHorizontal: 20,
+                        elevation: 8,   // not working on android, find fix
+                        shadowOffset: {
+                            width: 0,
+                            height: 2,
+                        },
+                        shadowColor: '#000',
+                        shadowOpacity: 0.23,
+                        shadowRadius: 2.62,
 
-                            // backgroundColor: '#0000',
-                        }
-                    }}
-                    nearbyPlacesAPI='GooglePlacesSearch'
-                    debounce={200}>
-
-                    {searchPoi && (
-                        <Marker coordinate={searchPoi} image={require('../../../assets/map_marker.png')} />
-                    )}
-                </GooglePlacesAutocomplete>
+                        // backgroundColor: '#0000',
+                    },
+                    listView: {
+                        width: '90%',
+                    }
+                }}
+                nearbyPlacesAPI='GooglePlacesSearch'
+                enablePoweredByContainer={false}
+                clearButtonMode='while-editing'
+                debounce={200}>
+            </GooglePlacesAutocomplete>
             {/* </View> */}
 
             <LocationIcon >
@@ -125,13 +140,7 @@ export default function Index() {
         </View>
         , true);
 
-    const DismissKeyboard = ({ children }) => {
-        return (
-            <TouchableWithoutFeedback onPress={() => { Keyboard.dismiss() }}>
-                {children}
-            </TouchableWithoutFeedback>
-        );
-    }
+
 
     const handleAppStateChange = (nextAppState) => {
         if (appState.match(/inactive|background/) && nextAppState === 'active') {
@@ -201,10 +210,9 @@ export default function Index() {
 
     const onPoiClick = async (e) => {
         const poi = e.nativeEvent;
-        console.log('poi', poi.coordinate)
         poi.name = poi.name.replace(/(\r\n|\n|\r)/gm, " ");
         setPoi(poi);
-        bs.current.snapTo(0);
+        // bs.current.snapTo(0);    // Brings up bottom sheet
         // const line = await fetch(`https://maps.googleapis.com/maps/api/place/details/json?place_id=${poi.placeId}&fields=photo,formatted_phone_number&key=${key}`)
         //     .then(response => response.json());
         // const photoUrl = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${line.result.photos[0].photo_reference}&key=${key}`
@@ -245,10 +253,7 @@ export default function Index() {
 
     return (
         <SafeAreaView >
-            {Platform.OS == 'ios' ?
-                <StatusBar barStyle={'dark-content'}/> :
-                <StatusBar />
-            }
+            {Platform.OS == 'ios' ? <StatusBar barStyle={'dark-content'} /> : <StatusBar />}
 
             <MapView
                 onPress={toggleOverlayVisibility}
@@ -262,9 +267,38 @@ export default function Index() {
                 {poi && (
                     <Marker coordinate={poi.coordinate} image={require('../../../assets/map_marker.png')} />
                 )}
+
+                {searchPoi && (
+                    <Marker coordinate={searchPoi.coordinate} image={require('../../../assets/map_marker.png')} />
+                )}
             </MapView>
 
-                {OverlayComponent}
+            {OverlayComponent}
+
+            <Animated.ScrollView
+                horizontal
+                pagingEnabled
+                scrollEventThrottle={1}
+                showsHorizontalScrollIndicator={false}
+                snapToInterval={width * .8 + 20}
+                snapToAlignment="center"
+                // height={50}
+                style={styles.scrollView}
+            >
+                {eventsData.map(({ title, date, imgUrl, index }) => (
+                    <View style={styles.card} key={index}>
+                        <Image
+                            source={{ uri: imgUrl }}
+                            style={styles.cardImage}
+                            resizeMode='cover'
+                        />
+                        <View style={styles.textContent}>
+                            <Text numberOfLines={1} style={styles.cardtitle}>{title}</Text>
+                            <Text numberOfLines={1} style={styles.cardDescription}>{date}</Text>
+                        </View>
+                    </View>
+                ))}
+            </Animated.ScrollView>
 
             <Modal visible={isLocationModalVisible} transparent={true} onModalHide={openSetting ? openSettings() : undefined} >
                 <View style={styles.modal}>
@@ -273,7 +307,7 @@ export default function Index() {
                 </View>
             </Modal>
 
-            <BottomSheet
+            {/* <BottomSheet
                 ref={bs}
                 snapPoints={['30%', 0]}
                 renderContent={renderInner}
@@ -282,7 +316,7 @@ export default function Index() {
                 callbackNode={fall}
                 enabledGestureInteraction={true}
                 onCloseEnd={() => { setPoi(null); setSearchPoi(null) }}
-            />
+            /> */}
         </SafeAreaView>
     );
 }
@@ -290,6 +324,48 @@ export default function Index() {
 const styles = StyleSheet.create({
     map: {
         height: '100%'
+    },
+    scrollView: {
+        position: "absolute",
+        bottom: 100,
+        left: 0,
+        right: 0,
+        paddingVertical: 10,
+        // height: '50%'
+    },
+    card: {
+        // padding: 10,
+        elevation: 2,
+        backgroundColor: "#FFF",
+        borderRadius: 10,
+        marginHorizontal: 10,
+        shadowColor: "#000",
+        shadowRadius: 5,
+        shadowOpacity: 0.3,
+        shadowOffset: { x: 2, y: -2 },
+        height: 220,
+        width: width * .8,
+        overflow: "hidden",
+    },
+    cardImage: {
+        flex: 3,
+        width: "100%",
+        height: "100%",
+        alignSelf: "center",
+        borderRadius: 10
+    },
+    textContent: {
+        flex: 1,
+        padding: 10,
+    },
+    cardtitle: {
+        fontSize: hp('2%'),
+        // marginTop: 5,
+        fontWeight: "bold",
+    },
+    cardDescription: {
+        fontSize: hp('2%'),
+        color: "#444",
     },
     menuIcon: {
         justifyContent: 'center',
