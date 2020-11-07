@@ -5,20 +5,21 @@ import {
 } from 'react-native';
 import MapView, { PROVIDER_GOOGLE, Callout, Marker, AnimatedRegion, ProviderPropType } from 'react-native-maps';
 import { useNavigation, useTheme } from '@react-navigation/native';
-import { Ionicons, MaterialIcons, Feather } from '@expo/vector-icons'
+import { Ionicons, MaterialIcons, Feather, FontAwesome } from '@expo/vector-icons'
 import { TouchableOpacity, TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import * as Location from 'expo-location'
 import * as Linking from 'expo-linking';
 import * as IntentLauncher from 'expo-intent-launcher';
-import { SearchBox, LocationIcon, Card, CardTitle, Header, PanelHeader, PanelHandle } from './styles'
+import { SearchBox, LocationIcon, Card, CardTitle, Header, PanelHeader, PanelHandle, CloseButtonBox } from './styles'
 
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import BottomSheet from 'reanimated-bottom-sheet';
-// import Animated from 'react-native-reanimated';
+import Animate from 'react-native-reanimated';
 import useVisibilityToggler from '../../../hooks/useVisibilityToggler'
 import { UserContext } from '../../../contexts/UserContext'
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete'
-import { eventData, eventsData } from '../../../utils'
+import { eventsData } from '../../../utils'
+import MapButton from '../../../components/MapButton'
 const { width, height } = Dimensions.get("window");
 let mapAnimation = new Animated.Value(0);
 
@@ -39,6 +40,14 @@ const LATITUDE_DELTA = 0.02;
 const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
 const key = 'AIzaSyAcorPhu3_-YuPRpogeg0lgm63AXlOi8u0';
 
+const data = Object.keys(eventsData).map((i) => ({
+    key: i,
+    title: eventsData[i].title,
+    date: eventsData[i].date,
+    image: eventsData[i].imgUrl,
+    eventLink: eventsData[i].eventLink
+}));
+
 export default function Index() {
     const { state } = useContext(UserContext);
     const navigation = useNavigation();
@@ -57,7 +66,7 @@ export default function Index() {
         longitudeDelta: LONGITUDE_DELTA
     });
     const bs = React.createRef();
-    // const fall = new Animated.Value(1);
+    const fall = new Animate.Value(1);
     const theme = useTheme();
 
     const ClearButton = () => {
@@ -212,7 +221,7 @@ export default function Index() {
         const poi = e.nativeEvent;
         poi.name = poi.name.replace(/(\r\n|\n|\r)/gm, " ");
         setPoi(poi);
-        // bs.current.snapTo(0);    // Brings up bottom sheet
+        bs.current.snapTo(0);    // Brings up bottom sheet
         // const line = await fetch(`https://maps.googleapis.com/maps/api/place/details/json?place_id=${poi.placeId}&fields=photo,formatted_phone_number&key=${key}`)
         //     .then(response => response.json());
         // const photoUrl = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${line.result.photos[0].photo_reference}&key=${key}`
@@ -221,38 +230,86 @@ export default function Index() {
     }
 
     const renderInner = () => (
-        <Card>
-            <MaterialIcons style={{ textAlign: 'center', marginTop: -12 }} name="drag-handle" size={hp('4%')} color="#ccc" />
-            <Image
-                style={styles.image}
-                resizeMode='cover'
-                source={{
-                    // uri: 'https://lh4.googleusercontent.com/-1wzlVdxiW14/USSFZnhNqxI/AAAAAAAABGw/YpdANqaoGh4/s1600-w400/Google%2BSydney'
-                    // uri: 'https://maps.google.com/maps/contrib/104074378150540257660'
-                    uri: 'https://i0.wp.com/cohenwoodworking.com/wp-content/uploads/2016/09/image-placeholder-500x500.jpg?resize=300%2C300&ssl=1'
-                }}
-            />
-            <CardTitle>{poi == null ? '' : poi.name}</CardTitle>
-            <TouchableOpacity
-                style={{ borderColor: '#ccc', borderWidth: 1.6, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', width: 76, paddingVertical: 2, borderRadius: 20 }}>
-                <MaterialIcons name="bookmark-border" size={24} color="#3C8E9A" />
-                <Text style={{ fontWeight: 'bold', fontSize: 15 }}>Save</Text>
-            </TouchableOpacity>
+        // <Card>
+        //     <MaterialIcons style={{ textAlign: 'center', marginTop: -12 }} name="drag-handle" size={hp('4%')} color="#ccc" />
+        //     <Image
+        //         style={styles.image}
+        //         resizeMode='cover'
+        //         source={{
+        //             // uri: 'https://lh4.googleusercontent.com/-1wzlVdxiW14/USSFZnhNqxI/AAAAAAAABGw/YpdANqaoGh4/s1600-w400/Google%2BSydney'
+        //             // uri: 'https://maps.google.com/maps/contrib/104074378150540257660'
+        //             uri: 'https://i0.wp.com/cohenwoodworking.com/wp-content/uploads/2016/09/image-placeholder-500x500.jpg?resize=300%2C300&ssl=1'
+        //         }}
+        //     />
+        //     <CardTitle>{poi == null ? '' : poi.name}</CardTitle>
+        //     <TouchableOpacity
+        //         style={{ borderColor: '#ccc', borderWidth: 1.6, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', width: 76, paddingVertical: 2, borderRadius: 20 }}>
+        //         <MaterialIcons name="bookmark-border" size={24} color="#3C8E9A" />
+        //         <Text style={{ fontWeight: 'bold', fontSize: 15 }}>Save</Text>
+        //     </TouchableOpacity>
 
-        </Card>
+        // </Card>
+        // <Card>
+            <ScrollView
+                horizontal
+                pagingEnabled
+                // scrollEventThrottle={1 }
+                showsHorizontalScrollIndicator={false}
+                snapToInterval={300 + 20}
+                snapToAlignment="center"
+                decelerationRate='fast'
+                style={styles.scrollView}
+                // for ios
+                contentInset={{
+                    top: 0,
+                    left: width * 0.1 - 10,
+                    bottom: 0,
+                    right: width * 0.1 - 10
+                }}
+                // for android
+                contentContainerStyle={{
+                    paddingHorizontal: Platform.OS == 'android' ? width * 0.06 - 20 : 0
+                }}>
+                {/* <CloseButtonBox>
+                    <FontAwesome name='close' size={34} color='#000' />
+                </CloseButtonBox> */}
+                {poi && data.map(({ title, date, image, key }) => (
+                    <View style={styles.card} key={key}>
+                        <View style={{ flexDirection: 'row', flex: 3, alignItems: 'center' }}>
+                            <Image
+                                source={{ uri: image }}
+                                style={styles.cardImage}
+                                resizeMode='contain'
+                            />
+                            <View style={{}}>
+                                <MapButton title='Save' name='star-o' />
+                                <MapButton title='Website' name='globe' />
+                            </View>
+                        </View>
+
+
+                        <View style={styles.textContent}>
+                            <Text numberOfLines={1} style={styles.cardtitle}>{title}</Text>
+                            <Text numberOfLines={1} style={styles.cardDescription}>{date}</Text>
+                        </View>
+                    </View>
+                ))}
+            </ScrollView>
+        // {/* </Card> */}
+
     );
 
     const renderHeader = () => (
         <Header>
-            <PanelHeader >
+            {/* <PanelHeader > */}
                 <PanelHandle />
-            </PanelHeader>
+            {/* </PanelHeader> */}
         </Header>
     );
 
 
     return (
-        <SafeAreaView >
+        <View >
             {Platform.OS == 'ios' ? <StatusBar barStyle={'dark-content'} /> : <StatusBar />}
 
             <MapView
@@ -275,31 +332,6 @@ export default function Index() {
 
             {OverlayComponent}
 
-            <Animated.ScrollView
-                horizontal
-                pagingEnabled
-                scrollEventThrottle={1}
-                showsHorizontalScrollIndicator={false}
-                snapToInterval={width * .8 + 20}
-                snapToAlignment="center"
-                // height={50}
-                style={styles.scrollView}
-            >
-                {eventsData.map(({ title, date, imgUrl, index }) => (
-                    <View style={styles.card} key={index}>
-                        <Image
-                            source={{ uri: imgUrl }}
-                            style={styles.cardImage}
-                            resizeMode='cover'
-                        />
-                        <View style={styles.textContent}>
-                            <Text numberOfLines={1} style={styles.cardtitle}>{title}</Text>
-                            <Text numberOfLines={1} style={styles.cardDescription}>{date}</Text>
-                        </View>
-                    </View>
-                ))}
-            </Animated.ScrollView>
-
             <Modal visible={isLocationModalVisible} transparent={true} onModalHide={openSetting ? openSettings() : undefined} >
                 <View style={styles.modal}>
                     <Button onPress={() => { setModalVisibility(false), setOpenSetting(true) }} title='Enable Location Services' />
@@ -307,17 +339,18 @@ export default function Index() {
                 </View>
             </Modal>
 
-            {/* <BottomSheet
+            <BottomSheet
                 ref={bs}
-                snapPoints={['30%', 0]}
+                snapPoints={[250, 0]}
                 renderContent={renderInner}
-                // renderHeader={renderHeader}
+                renderHeader={renderHeader}
                 initialSnap={1}
                 callbackNode={fall}
                 enabledGestureInteraction={true}
+                enabledContentGestureInteraction={false}
                 onCloseEnd={() => { setPoi(null); setSearchPoi(null) }}
-            /> */}
-        </SafeAreaView>
+            />
+        </View>
     );
 }
 
@@ -326,45 +359,45 @@ const styles = StyleSheet.create({
         height: '100%'
     },
     scrollView: {
-        position: "absolute",
-        bottom: 100,
-        left: 0,
-        right: 0,
-        paddingVertical: 10,
-        // height: '50%'
+        // position: "absolute",
+        // bottom: 10,
+        // left: 0,
+        // right: 0,
+        // paddingBottom: 10,
+        // marginBottom: 10
     },
     card: {
-        // padding: 10,
-        elevation: 2,
+        padding: Platform.OS == 'ios' ? 20 : 10,
+        elevation: 3,
         backgroundColor: "#FFF",
         borderRadius: 10,
         marginHorizontal: 10,
         shadowColor: "#000",
         shadowRadius: 5,
         shadowOpacity: 0.3,
-        shadowOffset: { x: 2, y: -2 },
-        height: 220,
-        width: width * .8,
-        overflow: "hidden",
+        shadowOffset: { width: 0, height: 2 },
+        height: 200,
+        width: 300,
+        // overflow: "hidden",
     },
     cardImage: {
-        flex: 3,
+        flex: 1,
         width: "100%",
         height: "100%",
-        alignSelf: "center",
+        // alignSelf: "center",
         borderRadius: 10
     },
     textContent: {
         flex: 1,
-        padding: 10,
+        paddingTop: 10,
     },
     cardtitle: {
-        fontSize: hp('2%'),
+        fontSize: 16,
         // marginTop: 5,
         fontWeight: "bold",
     },
     cardDescription: {
-        fontSize: hp('2%'),
+        fontSize: 15,
         color: "#444",
     },
     menuIcon: {

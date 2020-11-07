@@ -27,43 +27,53 @@ export const LocationIcon = styled.View`
     
 `;
 
+export const CloseButtonBox = styled.TouchableOpacity`    
+    background-color: #d9d8d6;
+    border-radius: 30px;
+    height: 40px;
+    width: 40px;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6;
+    margin-top: 2.6%;
+`;
+
 export const Card = styled.View`
-    background-color: #fff;
+    background-color: yellow; 
     height: 100%;
-    margin-horizontal: ${wp('4%')}px;
-    border-radius: 10px;
-    shadow-color: #000;
-    shadow-offset: 2px;
-    shadow-opacity: 0.25;
-    shadow-radius: 3.84px;
-    elevation: 5;
-    padding: ${hp('1.6%')}px;
-    margin-bottom: ${hp('-3.2%')}px;
-    margin-top: ${Platform.OS == 'ios' ? `${hp('2%')}px` : 0};
+    padding: 10px;
     
+`;
+// border-radius: 10px;
+//     shadow-color: #000;
+//     shadow-offset: 2px;
+//     shadow-opacity: 0.25;
+//     shadow-radius: 3.84px;
+//     elevation: 5;
+
+
+
+export const Header = styled.View`
+   
+    padding-vertical: 10px;
+`;
+// shadow-color: #333;
+//     shadow-offset: -1px;
+//     shadow-radius: 2px;
+//     shadow-opacity: 4;
+
+export const PanelHeader = styled.View`
+    
+`;
+
+export const PanelHandle = styled.View`
+    background-color: #C1BFC2;
+    height: 8px;
+    border-radius: 10px;
+    margin-horizontal: 44%;
 `;
 
 export const CardTitle = styled.Text`
     font-weight: bold;
     font-size: ${hp('2.4%')}px;
-`;
-
-export const Header = styled.View`
-    background-color: #fff;
-    shadow-color: #333;
-    shadow-offset: -1px;
-    shadow-radius: 2px;
-    shadow-opacity: 4;
-    padding-top: 20px;
-    margin-horizontal: 10px;
-`;
-
-export const PanelHeader = styled.View`
-    align-items: center;
-`;
-
-export const PanelHandle = styled.View`
-    background-color: #fff;
-    margin-horizontal: 10px;
-    border-radius: 10px;
 `;
