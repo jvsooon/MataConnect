@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useEffect, useContext, createRef } from 'react'
 import {
     StyleSheet, Text, View, TextInput, Modal, Keyboard, Dimensions,
     Button, AppState, SafeAreaView, Image, StatusBar, Platform, ScrollView, Animated
@@ -10,7 +10,7 @@ import { TouchableOpacity, TouchableWithoutFeedback } from 'react-native-gesture
 import * as Location from 'expo-location'
 import * as Linking from 'expo-linking';
 import * as IntentLauncher from 'expo-intent-launcher';
-import { SearchBox, LocationIcon, Card, CardTitle, Header, PanelHeader, PanelHandle, CloseButtonBox } from './styles'
+import { SearchBox, LocationIcon, Card, CardTitle, Header, PanelHeader, PanelHandle } from './styles'
 
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import BottomSheet from 'reanimated-bottom-sheet';
@@ -65,17 +65,9 @@ export default function Index() {
         longitude: -118.529314,
         longitudeDelta: LONGITUDE_DELTA
     });
-    const bs = React.createRef();
     const fall = new Animate.Value(1);
     const theme = useTheme();
-
-    const ClearButton = () => {
-        return (
-            <TouchableOpacity style={{}}>
-                <Feather name="x-circle" size={28} color="black" />
-            </TouchableOpacity>
-        )
-    }
+    // const [sheetRef, setSheetRef] = useState();
 
     const [OverlayComponent, toggleOverlayVisibility] = useVisibilityToggler(
         <View style={{ position: 'absolute', top: 0, left: 0, right: 0 }} >
@@ -101,12 +93,13 @@ export default function Index() {
                 // autoFocus={false}
                 // listViewDisplayed={'auto'}
                 fetchDetails={true}
-                // renderRightButton={props => <ClearButton {...props}/>}
-                onPress={(data, details = null) => {
+                onPress={(data, details) => {
                     // 'details' is provided when fetchDetails = true
                     const { lat, lng } = details.geometry.location;
                     setSearchPoi({ coordinate: { latitude: lat, longitude: lng } })
-                    console.log(searchPoi)
+                    if (poi == null)
+                        toggleOverlayVisibility();
+                    // bs.current.snapTo(0);
                     // getAddressText('')
                 }}
                 query={{
@@ -127,11 +120,7 @@ export default function Index() {
                         shadowColor: '#000',
                         shadowOpacity: 0.23,
                         shadowRadius: 2.62,
-
                         // backgroundColor: '#0000',
-                    },
-                    listView: {
-                        width: '90%',
                     }
                 }}
                 nearbyPlacesAPI='GooglePlacesSearch'
@@ -141,15 +130,13 @@ export default function Index() {
             </GooglePlacesAutocomplete>
             {/* </View> */}
 
-            <LocationIcon >
+            {/* <LocationIcon >
                 <TouchableOpacity onPress={() => getUserLocation()}>
                     <MaterialIcons name="my-location" size={24} color='grey' />
                 </TouchableOpacity>
-            </LocationIcon>
+            </LocationIcon> */}
         </View>
         , true);
-
-
 
     const handleAppStateChange = (nextAppState) => {
         if (appState.match(/inactive|background/) && nextAppState === 'active') {
@@ -208,20 +195,33 @@ export default function Index() {
         setMyRegion(newRegion);
     }
 
-    useEffect(() => {
-        getLocationAsync();
-        // AppState.addEventListener('click', handleHideNav)
+    // useEffect(() => {
+    //     getLocationAsync();
+    //     // AppState.addEventListener('click', handleHideNav)
 
-        // return () => {
-        //     AppState.removeEventListener('click', handleHideNav)
-        // };
-    }, []);
+    //     // return () => {
+    //     //     AppState.removeEventListener('click', handleHideNav)
+    //     // };
+    // }, []);
 
     const onPoiClick = async (e) => {
-        const poi = e.nativeEvent;
-        poi.name = poi.name.replace(/(\r\n|\n|\r)/gm, " ");
-        setPoi(poi);
-        bs.current.snapTo(0);    // Brings up bottom sheet
+        const newpoi = e.nativeEvent;
+        if (searchPoi != null) setSearchPoi(null)
+        if (poi == null) {
+            // mapRef.animateToRegion({
+            //     latitude: newpoi.latitude, latitudeDelta: myRegion.latitudeDelta,
+            //     longitude: newpoi.coordinate.longitude, longitudeDelta: myRegion.longitudeDelta
+            // }, 1000);
+            // setMyRegion({
+            //     latitude: newpoi.latitude, latitudeDelta: myRegion.latitudeDelta,
+            //     longitude: newpoi.coordinate.longitude, longitudeDelta: myRegion.longitudeDelta
+            // })
+            setPoi(newpoi);
+            newpoi.name = newpoi.name.replace(/(\r\n|\n|\r)/gm, " ");
+            bs.current.snapTo(0);    // Brings up bottom sheet
+            toggleOverlayVisibility();
+        }
+        setPoi(newpoi);
         // const line = await fetch(`https://maps.googleapis.com/maps/api/place/details/json?place_id=${poi.placeId}&fields=photo,formatted_phone_number&key=${key}`)
         //     .then(response => response.json());
         // const photoUrl = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${line.result.photos[0].photo_reference}&key=${key}`
@@ -231,83 +231,62 @@ export default function Index() {
 
     const renderInner = () => (
         // <Card>
-        //     <MaterialIcons style={{ textAlign: 'center', marginTop: -12 }} name="drag-handle" size={hp('4%')} color="#ccc" />
-        //     <Image
-        //         style={styles.image}
-        //         resizeMode='cover'
-        //         source={{
-        //             // uri: 'https://lh4.googleusercontent.com/-1wzlVdxiW14/USSFZnhNqxI/AAAAAAAABGw/YpdANqaoGh4/s1600-w400/Google%2BSydney'
-        //             // uri: 'https://maps.google.com/maps/contrib/104074378150540257660'
-        //             uri: 'https://i0.wp.com/cohenwoodworking.com/wp-content/uploads/2016/09/image-placeholder-500x500.jpg?resize=300%2C300&ssl=1'
-        //         }}
-        //     />
-        //     <CardTitle>{poi == null ? '' : poi.name}</CardTitle>
-        //     <TouchableOpacity
-        //         style={{ borderColor: '#ccc', borderWidth: 1.6, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', width: 76, paddingVertical: 2, borderRadius: 20 }}>
-        //         <MaterialIcons name="bookmark-border" size={24} color="#3C8E9A" />
-        //         <Text style={{ fontWeight: 'bold', fontSize: 15 }}>Save</Text>
-        //     </TouchableOpacity>
-
-        // </Card>
-        // <Card>
-            <ScrollView
-                horizontal
-                pagingEnabled
-                // scrollEventThrottle={1 }
-                showsHorizontalScrollIndicator={false}
-                snapToInterval={300 + 20}
-                snapToAlignment="center"
-                decelerationRate='fast'
-                style={styles.scrollView}
-                // for ios
-                contentInset={{
-                    top: 0,
-                    left: width * 0.1 - 10,
-                    bottom: 0,
-                    right: width * 0.1 - 10
-                }}
-                // for android
-                contentContainerStyle={{
-                    paddingHorizontal: Platform.OS == 'android' ? width * 0.06 - 20 : 0
-                }}>
-                {/* <CloseButtonBox>
+        <ScrollView
+            horizontal
+            pagingEnabled
+            // scrollEventThrottle={1 }
+            showsHorizontalScrollIndicator={false}
+            snapToInterval={300 + 20}
+            snapToAlignment="center"
+            decelerationRate='fast'
+            style={styles.scrollView}
+            // for ios
+            contentInset={{
+                top: 0,
+                left: width * 0.1 - 10,
+                bottom: 0,
+                right: width * 0.1 - 10
+            }}
+            // for android
+            contentContainerStyle={{
+                paddingHorizontal: Platform.OS == 'android' ? width * 0.06 - 20 : 0
+            }}>
+            {/* <CloseButtonBox>
                     <FontAwesome name='close' size={34} color='#000' />
                 </CloseButtonBox> */}
-                {poi && data.map(({ title, date, image, key }) => (
-                    <View style={styles.card} key={key}>
-                        <View style={{ flexDirection: 'row', flex: 3, alignItems: 'center' }}>
-                            <Image
-                                source={{ uri: image }}
-                                style={styles.cardImage}
-                                resizeMode='contain'
-                            />
-                            <View style={{}}>
-                                <MapButton title='Save' name='star-o' />
-                                <MapButton title='Website' name='globe' />
-                            </View>
-                        </View>
-
-
-                        <View style={styles.textContent}>
-                            <Text numberOfLines={1} style={styles.cardtitle}>{title}</Text>
-                            <Text numberOfLines={1} style={styles.cardDescription}>{date}</Text>
+            {poi && data.map(({ title, date, image, key, eventLink }) => (
+                <View style={styles.card} key={key}>
+                    <View style={{ flexDirection: 'row', flex: 3, alignItems: 'center' }}>
+                        <Image
+                            source={{ uri: image }}
+                            style={styles.cardImage}
+                            resizeMode='contain'
+                        />
+                        <View style={{}}>
+                            <MapButton title='Save' name='star-o' />
+                            <MapButton title='Website' name='globe' link={eventLink} />
                         </View>
                     </View>
-                ))}
-            </ScrollView>
+
+
+                    <View style={styles.textContent}>
+                        <Text numberOfLines={1} style={styles.cardtitle}>{title}</Text>
+                        <Text numberOfLines={1} style={styles.cardDescription}>{date}</Text>
+                    </View>
+                </View>
+            ))}
+        </ScrollView>
         // {/* </Card> */}
 
     );
 
     const renderHeader = () => (
         <Header>
-            {/* <PanelHeader > */}
-                <PanelHandle />
-            {/* </PanelHeader> */}
+            <PanelHandle />
         </Header>
     );
-
-
+    // const [sheetRef, setSheetRef] = useState(React.createRef());
+    const bs = createRef();
     return (
         <View >
             {Platform.OS == 'ios' ? <StatusBar barStyle={'dark-content'} /> : <StatusBar />}
@@ -348,8 +327,7 @@ export default function Index() {
                 callbackNode={fall}
                 enabledGestureInteraction={true}
                 enabledContentGestureInteraction={false}
-                onCloseEnd={() => { setPoi(null); setSearchPoi(null) }}
-            />
+                onCloseEnd={() => { toggleOverlayVisibility(); setPoi(null); setSearchPoi(null); }} />
         </View>
     );
 }

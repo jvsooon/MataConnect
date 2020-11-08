@@ -22,7 +22,7 @@ export const LocationIcon = styled.View`
     background-color: #fff;
     padding: 14px;
     border-radius: 30px;
-    top: ${hp('80%')}px;
+    top: ${Platform.OS == 'ios' ? `${hp('72%')}px` : `${hp('60%')}`};
     left: ${Platform.OS == 'ios' ? `${wp('90%')}px` : `${wp('84%')}px`};
     
 `;
@@ -61,10 +61,6 @@ export const Header = styled.View`
 //     shadow-offset: -1px;
 //     shadow-radius: 2px;
 //     shadow-opacity: 4;
-
-export const PanelHeader = styled.View`
-    
-`;
 
 export const PanelHandle = styled.View`
     background-color: #C1BFC2;
