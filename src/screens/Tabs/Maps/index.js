@@ -94,13 +94,12 @@ export default function Index() {
                 // listViewDisplayed={'auto'}
                 fetchDetails={true}
                 onPress={(data, details) => {
-                    // 'details' is provided when fetchDetails = true
                     const { lat, lng } = details.geometry.location;
                     setSearchPoi({ coordinate: { latitude: lat, longitude: lng } })
+                    animateTo(details.geometry.location);
                     if (poi == null)
                         toggleOverlayVisibility();
-                    // bs.current.snapTo(0);
-                    // getAddressText('')
+                    sheetRef.current.snapTo(0);
                 }}
                 query={{
                     key: key,
@@ -108,19 +107,21 @@ export default function Index() {
                     components: 'country:us'
                 }}
                 styles={{
+                    textInputContainer: {
+                        elevation: 3,
+                        height: 44
+                      },
                     container: {
-                        // width: '100%',
                         marginTop: '6%',
                         marginHorizontal: 20,
-                        elevation: 8,   // not working on android, find fix
                         shadowOffset: {
                             width: 0,
-                            height: 2,
+                            height: 0,
                         },
                         shadowColor: '#000',
                         shadowOpacity: 0.23,
                         shadowRadius: 2.62,
-                        // backgroundColor: '#0000',
+                        backgroundColor: '#0000',
                     }
                 }}
                 nearbyPlacesAPI='GooglePlacesSearch'
@@ -203,25 +204,35 @@ export default function Index() {
     //     //     AppState.removeEventListener('click', handleHideNav)
     //     // };
     // }, []);
+    
+    const animateTo = (coords) => {
+        let lat, lng;
+        if(coords.coordinate) {
+            lat = coords.coordinate.latitude;
+            lng = coords.coordinate.longitude;
+        } else {
+            lat = coords.lat;
+            lng = coords.lng;
+        }
+        mapRef.animateToRegion({
+            latitude: lat,
+            latitudeDelta: LATITUDE_DELTA,
+            longitude: lng,
+            longitudeDelta: LONGITUDE_DELTA
+        }, 500)
+    }
 
     const onPoiClick = async (e) => {
         const newpoi = e.nativeEvent;
         if (searchPoi != null) setSearchPoi(null)
         if (poi == null) {
-            // mapRef.animateToRegion({
-            //     latitude: newpoi.latitude, latitudeDelta: myRegion.latitudeDelta,
-            //     longitude: newpoi.coordinate.longitude, longitudeDelta: myRegion.longitudeDelta
-            // }, 1000);
-            // setMyRegion({
-            //     latitude: newpoi.latitude, latitudeDelta: myRegion.latitudeDelta,
-            //     longitude: newpoi.coordinate.longitude, longitudeDelta: myRegion.longitudeDelta
-            // })
-            setPoi(newpoi);
+            // setPoi(newpoi);
             newpoi.name = newpoi.name.replace(/(\r\n|\n|\r)/gm, " ");
-            bs.current.snapTo(0);    // Brings up bottom sheet
+            sheetRef.current.snapTo(0);    // Brings up bottom sheet
             toggleOverlayVisibility();
         }
         setPoi(newpoi);
+        animateTo(newpoi);
         // const line = await fetch(`https://maps.googleapis.com/maps/api/place/details/json?place_id=${poi.placeId}&fields=photo,formatted_phone_number&key=${key}`)
         //     .then(response => response.json());
         // const photoUrl = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${line.result.photos[0].photo_reference}&key=${key}`
@@ -254,7 +265,7 @@ export default function Index() {
             {/* <CloseButtonBox>
                     <FontAwesome name='close' size={34} color='#000' />
                 </CloseButtonBox> */}
-            {poi && data.map(({ title, date, image, key, eventLink }) => (
+            {(poi || searchPoi) && data.map(({ title, date, image, key, eventLink }) => (
                 <View style={styles.card} key={key}>
                     <View style={{ flexDirection: 'row', flex: 3, alignItems: 'center' }}>
                         <Image
@@ -285,8 +296,8 @@ export default function Index() {
             <PanelHandle />
         </Header>
     );
-    // const [sheetRef, setSheetRef] = useState(React.createRef());
-    const bs = createRef();
+    const [sheetRef, setSheetRef] = useState(createRef());
+    // const bs = createRef();
     return (
         <View >
             {Platform.OS == 'ios' ? <StatusBar barStyle={'dark-content'} /> : <StatusBar />}
@@ -319,7 +330,7 @@ export default function Index() {
             </Modal>
 
             <BottomSheet
-                ref={bs}
+                ref={sheetRef}
                 snapPoints={[250, 0]}
                 renderContent={renderInner}
                 renderHeader={renderHeader}
