@@ -1,11 +1,11 @@
 export const initialState = {
-    name: '',
+    isHidden: 'false',
 };
 
 export const UserReducer = (state, action) => {
     switch (action.type) {
-        case 'setName':
-            return { ...state, name: action.payload.name };
+        case 'setVisibility':
+            return { ...state, isHidden: action.payload.isHidden };
             break;
         default:
             return state;
