@@ -17,8 +17,6 @@ before_script:
   #script:
     #- npx jest --ci
 
-# @TODO: Adjust break out deployments (and test?) for specific branches (i.e. ->develop, ->demo, and ->master) by separate `npx expo publish` runs (expo has different --release-channels we can utilize for develop/demo/master, etc. See https://docs.expo.io/workflow/expo-cli/). See specific TODO markers below.
-
 # Expo Deployments for non-prod (develop)
 expo-deployments_develop:
   stage: deploy
@@ -27,7 +25,7 @@ expo-deployments_develop:
   script:
     - apk add --no-cache bash
     - npx expo login -u $EXPO_USERNAME -p $EXPO_PASSWORD
-    - npx expo publish --non-interactive #@TODO specific release channel for `deploy`
+    - npx expo publish --release-channel develop --non-interactive
 
 # Expo Deployments for non-prod (demo)
 expo-deployments_demo:
@@ -37,7 +35,7 @@ expo-deployments_demo:
   script:
     - apk add --no-cache bash
     - npx expo login -u $EXPO_USERNAME -p $EXPO_PASSWORD
-    - npx expo publish --non-interactive #@TODO specific release channel for `demo`
+    - npx expo publish --release-channel demo --non-interactive
 
 # Expo Deployments for prod (master)
 expo-deployments_master:
@@ -47,4 +45,4 @@ expo-deployments_master:
   script:
     - apk add --no-cache bash
     - npx expo login -u $EXPO_USERNAME -p $EXPO_PASSWORD
-    - npx expo publish --non-interactive #@TODO specific release channel for `master`
+    - npx expo publish --release-channel master --non-interactive
