@@ -9,6 +9,8 @@ stages:
   - test
   - deploy
 before_script:
+  - npm config set unsafe-perm true
+  - npm config set python python3.8
   - npm ci #load npm into pipeline image
 # Commenting jest-tests out for now until we get that sorted
 # @TODO Right now this setup assumes one set of tests for all branches. Since tests are stored in __tests__ on the branch itself, this setup should be sufficient, but additional research into pros and cons of this arch should be pursued.
