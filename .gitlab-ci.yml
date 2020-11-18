@@ -30,7 +30,6 @@ expo-deployments_develop:
   only:
     - develop
   script:
-    - apk add --no-cache bash
     - npx expo login -u $EXPO_USERNAME -p $EXPO_PASSWORD
     - npx expo publish --release-channel develop --non-interactive
 
@@ -40,7 +39,6 @@ expo-deployments_demo:
   only:
     - demo
   script:
-    - apk add --no-cache bash
     - npx expo login -u $EXPO_USERNAME -p $EXPO_PASSWORD
     - npx expo publish --release-channel demo --non-interactive
 
@@ -50,6 +48,5 @@ expo-deployments_master:
   only:
     - master
   script:
-    - apk add --no-cache bash
     - npx expo login -u $EXPO_USERNAME -p $EXPO_PASSWORD
     - npx expo publish --release-channel master --non-interactive
