@@ -9,6 +9,8 @@ stages:
   - test
   - deploy
 before_script:
+  - apk update
+  - apk add python python-3.8
   - npm config set python python3.8
   - export PYTHON=python3.8
   - python --version
