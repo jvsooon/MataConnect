@@ -1,5 +1,5 @@
 ---
-image: node:alpine
+image: bycedric/expo-cli
 cache:
   key: ${CI_COMMIT_REF_SLUG}
   paths:
