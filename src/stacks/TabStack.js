@@ -34,7 +34,7 @@ export default function TabStack() {
             tabBar={props => <CustomTabBar {...props} />}
             tabBarOptions={{
                 // hideTabBar: true,
-                // headerShown: true
+                // headerShown: false,
                 // tabBarVisible: false,
                 style: {
                     // opacity: 0

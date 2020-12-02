@@ -42,7 +42,8 @@
     "react-native-web": "~0.13.12",
     "reanimated-bottom-sheet": "^1.0.0-alpha.22",
     "styled-components": "^5.2.0",
-    "yup": "^0.29.3"
+    "yup": "^0.29.3",
+    "expo-calendar": "~8.5.0"
   },
   "devDependencies": {
     "@babel/core": "~7.9.0"

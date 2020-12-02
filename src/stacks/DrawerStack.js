@@ -1,7 +1,6 @@
 import React from 'react'
 import { createDrawerNavigator } from '@react-navigation/drawer'
 import BottomTab from './TabStack'
-
 import CustomDrawer from '../components/CustomDrawer'
 import CampusResources from '../screens/Drawer/CampusResources'
 import Events from '../screens/Drawer/Events'
@@ -11,30 +10,17 @@ import AboutMe from '../screens/Drawer/AboutMe'
 import ContactSupport from '../screens/Drawer/ContactSupport'
 import Feedback from '../screens/Drawer/Feedback'
 import { AntDesign } from '@expo/vector-icons';
-
 const Drawer = createDrawerNavigator();
-
-// const shouldHeaderBeShown = ({ route }) => {
-//     if (route.state) {
-//         return route.state.routes[route.state.index].name == 'Home' ? false : true
-//     }
-// }
 
 export default function DrawerStack() {
     return (
         <Drawer.Navigator
             drawerContent={props => <CustomDrawer {...props} />}
             drawerContentOptions={{
-                // activeTintColor: '#6FC8F5',
-                // itemStyle: { fontWeight: 'bold' },
                 labelStyle: { fontWeight: 'bold' }
             }}
 
-        // initialRouteName={BottomTab}
-        // screenOptions={{
-        //     headerShown: true
-        // }}
-        >
+            initialRouteName={BottomTab}>
             {/* try to implement this later: options={({ route }) => ({ headerShown: shouldHeaderBeShown(route) })}  */}
             <Drawer.Screen name='Home' component={BottomTab}
                 options={{
