@@ -1,8 +1,8 @@
 import React from 'react'
-import { StyleSheet, SafeAreaView, StatusBar, View, Text, Button, SafeAreaView, ImageBackground } from 'react-native'
+import { StyleSheet, SafeAreaView, View, Text, SafeAreaView, ImageBackground } from 'react-native'
 import firebase from '../../../../firebase'
-import RegisterButton from './components/RegisterButton';
-import LogInButton from './components/LogInButton';
+import RegisterButton from '../../../components/RegisterButton';
+import LogInButton from '../../../components/LogInButton';
 import { Foundation } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons'; 
 import { MaterialCommunityIcons } from '@expo/vector-icons';
