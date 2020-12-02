@@ -61,6 +61,97 @@ export const eventsData = [
     }
 ];
 
+export const decemberEvents = [
+    {
+        title: 'Pride Center: Virtual “Let’s Talk” with University Counseling Services',
+        date: 'Tuesday, December 1, 2020 - 2:00pm to 3:00pm',
+        dateString: '2020-12-01',
+        imgUrl: 'https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/let%27stalk_sp20-01_0.png?itok=MCCAgOB1',
+        eventLink: 'https://www.csun.edu/pride/events/pride-center-virtual-%E2%80%9Clet%E2%80%99s-talk%E2%80%9D-university-counseling-services-33',
+        description: 'Let’s Talk about what’s on your mind. The Pride Center of the University Student Union, in collaboration with University Counseling Services, is offering free consultation services online to support you during the challenging times you’re facing. Whether you feel sad, stressed, anxious or simply need to vent, talking can help and we’re here to listen. These services are conveniently available from 2 to 3 p.m. on Tuesday each week through Zoom and are provided on a first-come, first-served basis. To drop-in for your first session, visit the University Counseling Services website.'
+    },
+    {
+        title: 'Virtual Pride Center',
+        date: 'Tuesday, December 1, 2020 - 3:00pm to 5:00pm',
+        dateString: '2020-12-01',
+        imgUrl: '',
+        eventLink: 'https://www.csun.edu/pride/events/virtual-pride-center-13',
+        description: 'Come join in the conversation with your Pride Center this semester! Every Tuesday from 3 to 5 p.m., you’re invited to visit with us during Virtual Pride Center via Zoom to get your questions answered and spend some time connecting with us while still practicing social distancing. Whether you want to see a familiar face, discuss LGBTQIA+ topics, watch videos, or even ask a question about available resources—you can log on to the Virtual Pride Center and join the conversation.'
+    },
+    {
+        title: 'DREAM Center: CARECEN — Legal Services',
+        date: 'Wednesday, December 2, 2020 - 10:00am to 5:00pm',
+        dateString: '2020-12-02',
+        imgUrl: '',
+        eventLink: 'https://www.csun.edu/dreamcenter/events/dream-center-carecen-%E2%80%94-legal-services-1',
+        description: 'CARECEN—the country’s largest Central American immigrant rights organization—is providing free immigration-related consultations and legal services to all CSUN students, staff, faculty, and their immediate family members via Zoom or by phone, Wednesdays from 10 a.m. to 5 p.m. until Dec. 16. Schedule an appointment online and contact the DREAM Center at 818-677-7069 or dreamcenter@csun.edu with any questions. Be sure to take advantage of these helpful free resources for you and your family.'
+    },
+    {
+        title: 'VRC: The Blend (IG Live)',
+        date: 'Wednesday, December 2, 2020 - 10:00am',
+        dateString: '2020-12-02',
+        imgUrl: 'https://www.csun.edu/sites/default/files/styles/deck_image/public/field_deck_image/event/IG-LIVE-01.jpg?itok=dmBND0x5',
+        eventLink: 'https://www.csun.edu/vrc/events/vrc-blend-ig-live-12',
+        description: "You’re invited to join us at “The Blend” every Wednesday on Instagram Live — hosted by the Veterans Resource Center at the University Student Union. Take a break from your daily routine and enjoy good conversation with fellow Veterans and other CSUN students with military connections — all blended together. Whether you can only drop by for a few minutes or want to hang around for a while, take some time out with “The Blend” with the VRC. Is there a resource you'd like to be included? Contact the VRC Manager, Mayra Plascencia."
+    },
+    {
+        title: 'Pride Center: Check it Out',
+        date: 'Wednesday, December 2, 2020 - 3:00pm to 4:00pm',
+        dateString: '2020-12-02',
+        imgUrl: 'https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/check-it-out-01.jpg?itok=p2y80nb3',
+        eventLink: 'https://www.csun.edu/pride/events/pride-center-check-it-out-13',
+        description: "Check it Out! The Pride Center of the University Student Union is hosting weekly Instagram Live hang outs and you’re invited! Every Wednesday this fall semester, you can treat yourself to a little study break while hanging out virtually with some of your favorite people from the Pride Center. Come chat with us, check out the endless amount of resources and services tailored for incredible folx just like you, and celebrate the beauty within the LGBTQIA+ community at Check it Out hosted by the Pride Center of the USU."
+    },
+    {
+        title: 'Pride Center: Deaf Queer Fest — Celebrating Art, Activism and Individuality',
+        date: 'Wednesday, December 2, 2020 - 5:00pm to 7:00pm',
+        dateString: '2020-12-02',
+        imgUrl: '',
+        eventLink: 'https://www.csun.edu/pride/events/deaf-queer-fest-2020',
+        description: "Join the Pride Center of the University Student Union to celebrate art, activism and individuality during Deaf Queer Fest! Come meet new friends in CSUN’s Deaf and LGBTQIA+ community, celebrate your different artistic pursuits and discover passion and encouragement with our lively speakers and entertaining performers. Sign on to Zoom with the provided meeting information on Wednesday, Dec. 2 and come embrace being you and your creativity during Deaf Queer Fest hosted by the Pride Center of the USU…Where Matadors Belong!"
+    },
+    {
+        title: 'Pride Center: Virtual T-Time',
+        date: 'Wednesday, December 2, 2020 - 7:00pm to 8:30pm',
+        dateString: '2020-12-02',
+        imgUrl: 'https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/Calendar_Pc_T-Time_SP20_0.png?itok=xzJKYyhi',
+        eventLink: 'https://www.csun.edu/pride/events/pride-center-virtual-t-time-13',
+        description: 'Experience support, guidance and a network of peers to help you navigate living as trans* or outside the gender binary at Virtual T-Time, hosted weekly on Zoom by the Pride Center of the University Student Union. Take advantage of this welcoming space and feel free to discuss living with intersecting identities. Whether you’re transgender, gender questioning, genderqueer or believe you fit outside of the gender binary, you are invited to explore and embrace who you truly are. Come join us for Virtual T-Time with the Pride Center… where you can be proud to be you!'
+    },
+    {
+        title: 'DREAM Center: “Let’s Talk” — Virtual with University Counseling Services',
+        date: 'Thursday, December 3, 2020 - 11:00am to 12:00pm',
+        dateString: '2020-12-03',
+        imgUrl: 'https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/DC_let_stalk_Fall2020_3-01.png?itok=LQLvbnA9',
+        eventLink: 'https://www.csun.edu/dreamcenter/events/dream-center-%E2%80%9Clet%E2%80%99s-talk%E2%80%9D-%E2%80%94-virtual-university-counseling-services-6',
+        description: "You are invited to come find helpful resources, support and encouragement to aid you in your journey through this season of life at Let’s Talk — Virtual, hosted by the DREAM Center of the University Student Union in collaboration with University Counseling Services. Every Thursday, the DREAM Center is offering free 15-minute sessions for you to drop by and consult with a professional counselor about anything from concern for a friend, how the semester is going, or the resources available through University Counseling Services. Whether you just want to chat for a few minutes or are seeking some problem-solving tools for more intimate concerns, this is a safe and welcoming space for whatever you need. No registration is required, and you simply have to sign on to Zoom to attend. If you are interested in attending, you can find more information about the event on the University Counseling Services website. Come take care of your head and your heart during Let’s Talk, hosted by the DREAM Center of the University Student Union…Where Matadors Belong!"
+    },
+    {
+        title: 'USU: We are CSUN — Social Justice and Art Campaign',
+        date: 'Thursday, December 3, 2020 - 4:00pm to 5:30pm',
+        dateString: '2020-12-03',
+        imgUrl: 'https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/WeAreCSUN-Art-SocialJustice-FA2020-01.png?itok=Xy3cAKd5',
+        eventLink: 'https://www.csun.edu/usu/events/usu-we-are-csun-social-justice-and-art-campaign',
+        description: 'oin the University Student Union for We are CSUN: Social Justice and Art Campaign — an important panel discussion that’s all about creativity and art in the realm of social justice! We’ll focus on the ways in which we can fight for advocacy and social justice through different creative platforms and mediums. This is the perfect place to discuss important topics, feel empowered by other artists and explore healing in your CSUN community. The first 50 students to register will receive a small box of art supplies before the panel on Thursday, Dec. 3 which can be used to create your own piece of art that showcases themes of social justice. Everyone is encouraged to share a picture of their piece with the panel to demonstrate activism through art. '
+    },
+    {
+        title: 'Pride Center: GAYme Night',
+        date: 'Thursday, December 3, 2020 - 6:00pm to 7:30pm',
+        dateString: '2020-12-03',
+        imgUrl: 'https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/gaymenight-01_0.png?itok=XC5myZH2',
+        eventLink: 'https://www.csun.edu/pride/events/pride-center-gayme-night-21',
+        description: 'Looking to have some fun with your fellow CSUN GAYmers? Come join the Pride Center of the University Student Union for our weekly virtual GAYme Night this semester to connect with other CSUN LGBTQIA+ community members! Show up weekly via Zoom, every Thursday at 6 p.m. and show the Pride Center your competitive side! We can’t wait to have a gay ol’ time with you CSUN!'
+    },
+    {
+        title: 'VRC: Virtual Game Night',
+        date: 'Thursday, December 3, 2020 - 6:30pm to 8:00pm',
+        dateString: '2020-12-03',
+        imgUrl: 'https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/IG-VRCGamesNight-FA2020.png?itok=6C9SskE_',
+        eventLink: 'https://www.csun.edu/vrc/events/vrc-virtual-game-night-5',
+        description: "The Veterans Resource Center of the University Student Union invites all Student Veterans and military-connected Matadors to have some fun at our virtual Game Night on Zoom! On select Thursdays, you can come hang out online with your friends from the VRC to enjoy  a little competition and conversation playing virtual games together. Plus, each week a $10 Amazon gift card will be given away to the winner of the night! Come kick-back and have a chance to score some prizes while you let the good times roll at virtual Game Night — Virtual hosted by the VRC! Participate every week for a change to win our raffle at the end of the semester. One entry per participation, the more you show up the more chances you have to win an Amazon gift card!"
+    }
+];
+
 export const CalendarEvents = [
     {
         "title": "Pride Center: Trans* Empowerment Week",
@@ -630,4 +721,4 @@ export const CalendarEvents = [
         "dtend": "2020-12-15 20:00:00",
         "imgSrc": "https://live.staticflickr.com/3948/buddyicons/149217749@N02_r.jpg?1491936417#149217749@N02"
     }
-];
+]
