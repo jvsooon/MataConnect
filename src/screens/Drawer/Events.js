@@ -1,236 +1,257 @@
-import React, {Component} from 'react';
-import {FlatList, View, StyleSheet, Text, ImageBackground, UIManager, Platform, LayoutAnimation} from 'react-native';
-import Constants from 'expo-constants';
+import React, { useState } from 'react';
+import { SafeAreaView, StatusBar, FlatList, View, StyleSheet, Imagebackground, Image, Text, UIManager, Platform, LayoutAnimation, TouchableOpacity, Linking, ImageBackground } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { MaterialCommunityIcons } from '@expo/vector-icons'; 
-import { Ionicons } from '@expo/vector-icons';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-import Card from '../components/Card';
-import AppText from '../components/AppText';
-import AppButton from '../components/AppButton';
-import Icon from '../components/Icon';
+import { CalendarEvents } from '../../utils'
+import * as Calendar from 'expo-calendar';
+import MenuIcon from '../../assets/menu.svg'
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import { useNavigation } from '@react-navigation/core';
+import { FontAwesome } from '@expo/vector-icons'
 
-const listings =[
-            {
-              id: 1,
-              expanded: false,
-              title: 'Career Day',
-              date: 'October 20, 2020',
-              image: require("./app/assets/career.png"),
-              Drop: [{
-                        "subText" : "Description:                                                                                SUN Career Center career fairs connect your organization with students and alumni who are pursuing a full-time, part-time, internship, volunteer, and graduate." 
-                    }]
-            },
-            {
-                id: 2,
-                expanded: false,
-                title: 'Game Night',
-                date: 'October 21, 2020',
-                image: require("./app/assets/game.png") ,
-                Drop: [{
-                          "subText" : "Description:                                                                                This fall, it’s all free fun and games on one special Wednesday night every month! The Games Room of the University Student Union invites all CSUN students to Games Night,  an evening full of free gaming, free food and cool prizes!" 
-                      }]
-            },
-            {
-                id: 3,
-                expanded: false,
-                title: 'Workshop LRC',
-                date: 'October 22, 2020',
-                image: require("./app/assets/workshop.png"),
-                Drop: [{
-                        "subText" : "Description:                                                                             The Writing Center is excited to offer all our workshops in a live online format using Zoom. Our workshops offer opportunities for CSUN students to refine their reading, writing, and studying skills in interactive workshops facilitated by CSUN Faculty Consultants. We offer workshops focused on all stages of the crafting process, from close reading texts to proofreading final drafts. " 
-                      }] 
-            },
-            {
-                id: 4,
-                expanded: false,
-                title: 'Comedy Night',
-                date: 'October 22, 2020',
-                image: require("./app/assets/laugh.png"),
-                Drop: [{
-                        "subText" : "DESCRIPTION:                                                                          USU invites all Student Veterans and military-connected Matadors to have some fun at our virtual Game Night on Zoom! " 
-                      }]
-            },
-];
+const options = { month: "long", day: "numeric", year: "numeric", hour: 'numeric', minute: 'numeric' };
+const inactive = { color: '#000', name: 'star-o' }, active = { color: '#63C2D1', name: 'star' };
 
+const CustomButton = ({ title, onPress }) => {
+  return (
+    <LinearGradient
+      colors={['#A5FAEA', '#6EC8F5']}
+      style={styles.buttonBG}>
+      <TouchableOpacity style={styles.button} onPress={onPress}>
+        <Text>{title}</Text>
+      </TouchableOpacity>
+    </LinearGradient>
+  )
+}
 
+const handleSaveClick = (iconState, setIconState) => {
+  iconState.color == inactive.color ? setIconState(active) : setIconState(inactive);
+}
 
-export default class Events extends React.Component{
+const StarButton = () => {
+  const [iconState, setIconState] = useState(inactive);
 
-            constructor(){
-                super()
-                if(Platform.OS === 'android')
-                UIManager.setLayoutAnimationEnabledExperimental(true)
-                this.state = {
-                      data: listings
-                }
-            }
+  return (
+    <TouchableOpacity style={{ justifyContent: 'center', marginRight: 10}} onPress={() => handleSaveClick(iconState, setIconState)}>
+      <FontAwesome name={iconState.name} size={24} color={iconState.color} />
+    </TouchableOpacity>
+  );
+}
 
-            updateExpand = (index) => {
-              LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
-                const array = [...this.state.data]
-                array[index]['expanded'] = !array[index]['expanded']
-                this.setState({data:array}) 
-            }
+const Card = ({ title, subTitle, image, description, event, eventLink }) => {
+  const [collapsed, setCollapsed] = useState(false)
+  return (
+    <TouchableOpacity
+      style={styles.card}
+      onPress={() => {
+        LayoutAnimation.configureNext(LayoutAnimation.create(
+          250,
+          LayoutAnimation.Types.easeInEaseOut,
+          LayoutAnimation.Properties.scaleXY
+        ));
+        setCollapsed(!collapsed)
+      }}>
+      <View style={{ flexDirection: 'row' }}>
+        <Image source={{ uri: image }} style={{ width: 80, height: 80, borderRadius: 10, margin: 10 }} />
+        <View style={{ justifyContent: 'center', flex: 1 }}>
+          <Text style={{ fontSize: 16 }}>{title.split(':')[0]}</Text>
+          <Text style={{ fontSize: 16 }}>{subTitle}</Text>
+        </View>
+        <StarButton/>
+      </View>
+      {collapsed && <View >
+        <Text style={{ margin: 10 }}>{description.split('.')[0]}</Text>
+        <View style={styles.cardFooter}>
+          <CustomButton title="Save" onPress={() => event(title, description)} />
+          <CustomButton title="RSVP" />
+          <CustomButton title="Website" onPress={() => Linking.openURL(eventLink)} />
+        </View>
+      </View>
+      }
+    </TouchableOpacity>
+  )
+}
 
-            renderItem = ({item, index}) => {
-                let items = [];
-                const row = item.Drop;
-              
-                items = row.map(rowItem => {
-                    return  (
-                            <View style={styles.description}>
-                              <AppText>{rowItem.subText}</AppText>  
-                            </View>
-                            )
-                })
+const Header = () => {
+  const navigation = useNavigation()
+  return (
+    <View style={{ height: 50, flexDirection: 'row', alignItems: 'center', width: '100%' }}>
+      <TouchableOpacity style={{ flex: 1 }} onPress={() => navigation.toggleDrawer()} >
+        <MenuIcon style={{ marginLeft: wp('6%') }} width='30' height='30' />
+      </TouchableOpacity>
+      <Text style={{ flex: 1, marginLeft: -40, fontWeight: 'bold', fontSize: hp('2%') }}>Events</Text>
+    </View>
+  )
+}
 
-                    return (
-                            <View style = {styles.flatlistContainer}>
-                              <TouchableOpacity activeOpacity={0.7} onPress= {() => {this.updateExpand(index)}} style={{flexDirection: 'column', justifyContent: 'center', alignItems: 'center', margin: 20}}>
+async function getDefaultCalendarSourceID() {
+  const defaultCalendar = await Calendar.getDefaultCalendarAsync(); //ios only
+  return defaultCalendar.id;
+}
 
-                                <Card title={item.title} subTitle={item.date} image={item.image} />
-                                {item.expanded ? items : null}
-
-                              </TouchableOpacity>
-                            </View>
-                          )
-          }
-
-
-          render(){
-
-              return(
-                <View style={styles.container}>
-                  <ImageBackground
-                    source= {require("./app/assets/Background-Img.png")}
-                    style={styles.background}
-                    >
-
-                      {/* menu */}
-                      <View style={styles.menu}>
-                        <MaterialCommunityIcons name="menu" size={30} color="black" />
-                      </View>
-
-                      {/* notification */}
-                      <View style={styles.notification}>
-                        <Ionicons name="md-notifications-outline" size={30} color="black" />
-                      </View>
-
-                      {/* logoholder */}
-                      <View style={styles.logoholder}>
-                        <Ionicons name="logo-tux" size={24} color="black" />
-                      </View>
-
-                      {/* Header: Events List */}
-                      <LinearGradient
-                      colors={['#A5FAEA', '#6EC8F5']} style={styles.header}>
-                        <AppText>Events</AppText> 
-                      </LinearGradient>
-
-                      {/* Buttons */}
-                      <View style={styles.buttonposition}>
-                        {/* <TouchableOpacity style={styles.wrapper}>    */}
-                        <AppButton title="     Today" onPress={() => console.log("Tapped")}/>
-                        {/* </TouchableOpacity>  */}
-                        <AppButton title="Tomorrow" onPress={() => console.log("Tapped")}/>
-                        <AppButton title="This week" onPress={() => console.log("Tapped")}/>
-                        <AppButton title="This month" onPress={() => console.log("Tapped")}/>
-                      </View>
-
-                      {/* Cards */}
-                      <View style={styles.cardposition}>
-                          <FlatList
-                            data = {this.state.data} 
-                            renderItem = {this.renderItem}
-                          />
-                      </View>
-
-                      {/* Bottom Icons */}
-                      <View style={styles.bottomicons}>            
-                      <Icon name="home" size={28} backgroundColor="white" iconColor="firebrick" 
-                      onPress={() => console.log("Tapped")}/>
-                      <Icon name="map-marker" size={28} backgroundColor="white" iconColor="blue"
-                      onPress={() => console.log("Tapped")} />
-                      <Icon name="calendar-month" size={28} backgroundColor="white" iconColor="green"
-                      onPress={() => console.log("Tapped")} />
-                      <Icon name="account" size={28} backgroundColor="white" iconColor="black"
-                      onPress={() => console.log("Tapped")} />
-                    </View>  
-                  </ImageBackground>
-                </View>
-              );
-
-            }
+export default class events extends React.Component {
+  constructor() {
+    super()
+    if (Platform.OS === 'android')
+      UIManager.setLayoutAnimationEnabledExperimental(true)
+    this.state = {
+      calEvents: null,
+      calID: null,
+      calendarToken: false
+    }
   }
 
+  createCalendar = async () => {
+    if (Platform.OS == 'ios') {
+      const defaultCalendarID = await getDefaultCalendarSourceID();
+      this.setState({ calID: defaultCalendarID })
+    } else {
+      const defaultCalendarSource = { isLocalAccount: true, name: 'Expo Calendar' };
+      const newCalendarID = await Calendar.createCalendarAsync({
+        title: 'Expo Calendar',
+        color: 'blue',
+        entityType: Calendar.EntityTypes.EVENT,
+        sourceId: defaultCalendarSource.id,
+        source: defaultCalendarSource,
+        name: 'internalCalendarName',
+        ownerAccount: 'personal',
+        accessLevel: Calendar.CalendarAccessLevel.OWNER,
+      });
+      this.setState({ calID: newCalendarID })
+    }
+  }
+
+  createEvent = async (title, description) => {
+    const details = {
+      title: title,
+      startDate: new Date(),
+      endDate: new Date(),
+      notes: description,
+    };
+
+    const eventStatus = await Calendar.createEventAsync(this.state.calID, details);
+    alert('Event added to calendar')
+  }
+
+  formatDate = (dtstart) => {
+    const fullDate = dtstart.split(' ')
+    const dateParts = fullDate[0].split('-')
+    const hourParts = fullDate[1].split(':')
+    const date = new Date(dateParts[0], dateParts[1] - 1, dateParts[2], hourParts[0], hourParts[1]);
+    const formatedDate = new Intl.DateTimeFormat("en-US", options).format(date);
+    return formatedDate;
+  }
+
+  getEventByDate = (dateString) => {
+    let tempEvents = [];
+    CalendarEvents.forEach(event => { if (event.dtstart.split(' ')[0] == dateString) tempEvents.push(event) });
+    const data = Object.keys(tempEvents).map((i) => ({
+      key: i,
+      title: tempEvents[i].title,
+      date: this.formatDate(tempEvents[i].dtstart),
+      imgSrc: tempEvents[i].imgSrc,
+      description: tempEvents[i].description,
+      eventLink: tempEvents[i].eventLink
+    }));
+    this.setState({ calEvents: data });
+  }
+
+  async componentDidMount() {
+    var today = new Date();
+    var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + (today.getDate().toString().length == 1 ? '0' + today.getDate() : today.getDate());
+    this.getEventByDate(date)
+
+    if (Platform.OS == 'ios') {
+      const reminderStatus = Calendar.requestRemindersPermissionsAsync();
+      const getReminder = Calendar.getRemindersPermissionsAsync()
+    }
+
+    const { status } = await Calendar.requestCalendarPermissionsAsync();
+
+    if (this.state.calendarToken == false) {
+      this.createCalendar();
+      this.setState({ calendarToken: true })
+    }
+  }
+
+  renderItem = ({ item }) => {
+    return (
+      <Card title={item.title} subTitle={item.date} image={item.imgSrc} description={item.description} event={this.createEvent} eventLink={item.eventLink} />
+    )
+  }
+
+  render() {
+    return (
+      <SafeAreaView style={styles.container}>
+        {Platform.OS == 'ios' ? <StatusBar barStyle='dark-content' /> : <StatusBar />}
+        <ImageBackground source={require('../../assets/background.png')} style={{ flex: 1 }}>
+          <Header />
+          <View style={styles.topTabs}>
+            <CustomButton title="Today" />
+            <CustomButton title="Tomorrow" />
+            <CustomButton title="This week" />
+            <CustomButton title="This month" />
+          </View>
+
+          <FlatList
+            data={this.state.calEvents}
+            renderItem={this.renderItem}
+            keyExtractor={(item) => item.key} />
+        </ImageBackground>
+      </SafeAreaView>
+    )
+  }
+}
+
 const styles = StyleSheet.create({
-              container:{    
-                            flex: 1,
-                            paddingTop: Constants.statusBarHeight,  
-                          }, 
-              background:{
-                            flex: 1,
-                            resizeMode: "cover",
-                            justifyContent: "center",
-                            overflow: "hidden",
-                        },
-              menu:{
-                          position: "absolute",
-                          top:15,
-                          left: 20
-                        },
-              notification:{
-                          position: "absolute",
-                          top: 12,
-                          right: 20
-                        },
-              logoholder:{
-                          position: "absolute",
-                          top: 15,
-                          left: 195
-                        },
-              header:{
-                          justifyContent: "center",
-                          alignItems:"center",
-                          position:  "absolute",
-                          top:45,
-                          backgroundColor: "paleturquoise",
-                          width:'100%',
-                          height: 40,
-                        },
-              buttonposition:{
-                          position:  "absolute",
-                          top: 95,
-                          marginRight: 8,
-                          flexDirection: "row",
-                        },
-              description:{
-                            width: 350, 
-                            backgroundColor: '#F5F8F7',
-                            // borderBottomRightRadius: 10, 
-                            // borderBottomLeftRadius: 10, 
-                            shadowColor: 'grey',
-                            shadowOffset: {width: 6, height: 6 },
-                            shadowOpacity: 0.3,
-                            shadowRadius: 8,
-                            elevation: 20,
-                            paddingBottom: 10,
-                            paddingLeft: 10,
-                            paddingRight: 10,              
-                          },
-            cardposition:{
-                            position:"absolute",
-                            top:125,
-                            padding: 5,
-                          },
-            bottomicons:{
-                            flexDirection: "row",
-                            justifyContent: "flex-start",
-                            position: "absolute",
-                            marginLeft: 25,
-                            marginRight : 25,
-                            bottom: 20,
-                            width: '100%',
-                          }
+  container: {
+    flex: 1,
+  },
+  buttonBG: {
+    height: 30,
+    width: 90,
+    borderRadius: 10,
+    elevation: 4,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.3,
+    shadowRadius: 2.62,
+  },
+  button: {
+    alignItems: 'center',
+    borderRadius: 10,
+    padding: 5,
+    width: 90
+  },
+  topTabs: {
+    marginRight: 8,
+    flexDirection: "row",
+    justifyContent: 'space-around',
+    width: '100%',
+    marginVertical: 20
+  },
+  cardFooter: {
+    flexDirection: 'row',
+    alignSelf: 'center',
+    justifyContent: 'space-around',
+    width: '100%',
+    marginBottom: 10
+  },
+  card: {
+    marginVertical: 10,
+    marginHorizontal: 25,
+    backgroundColor: '#fff',
+    flexDirection: 'column',
+    borderRadius: 10,
+    elevation: 4,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.23,
+    shadowRadius: 2.62
+  }
 })
