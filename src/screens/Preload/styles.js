@@ -8,12 +8,16 @@ export const Container = styled.SafeAreaView`
     align-items: center
 `;
 
+export const Logo = styled.Image`
+    height: ${hp('100%')/2}px;
+    width: ${hp('100%')/2}px;
+`;
+
 export const ButtonContainer = styled.View`
     flex-direction: row;
     width: 100%;
     justify-content: center;
     align-items: center;
-    
 `;
 
 export const CustomButton = styled.TouchableOpacity`
@@ -24,12 +28,12 @@ export const CustomButton = styled.TouchableOpacity`
     justify-content: center;
     align-items: center;
     margin: 10px;
-    margin-top: 40%;
+    margin-top: ${hp('20%')}px;
     shadow-color: #000;
     shadow-offset: 2px;
     shadow-opacity: 0.4;
     shadow-radius: 2px;
-    elevation: 5;
+    elevation: 4;
 `;
 
 export const CustomButtonText = styled.Text`
@@ -38,7 +42,7 @@ export const CustomButtonText = styled.Text`
 `;
 
 export const WelcomeText = styled.Text`
-    font-size: ${wp('5%')}px;
+    font-size: ${hp('3.2%')}px;
     font-weight: bold;
     color: #fff;
 `;

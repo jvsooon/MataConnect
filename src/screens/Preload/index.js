@@ -1,66 +1,18 @@
-import React, { useEffect, useContext } from 'react'
-import { Container, LoadingIcon, CustomButton, CustomButtonText, WelcomeText, ButtonContainer } from './styles';
+import React from 'react'
+import { Container, Logo, CustomButton, CustomButtonText, WelcomeText, ButtonContainer } from './styles';
 import { StatusBar } from 'react-native';
-import AsyncStorage from '@react-native-community/async-storage';
 import { useNavigation } from '@react-navigation/native';
-import { UserContext } from '../../contexts/UserContext';
 import { LinearGradient } from 'expo-linear-gradient';
-import firebase from '../../../firebase'
 import 'firebase/firestore';
-
-import BarberLogo from '../../assets/barber.svg';
-import AudioWave from '../../assets/audio-waves.svg';
-import Api from '../../Api';
-
+import MCLogo from '../../assets/Logo.png'
 
 export default function Index() {
-    const { dispatch: userDispatch } = useContext(UserContext);
     const navigation = useNavigation();
-
-
-
-    // useEffect(() => {
-    //     const checkToken = async () => {
-    //         const token = await AsyncStorage.getItem('token');
-    //         if (token !== null) {
-    //             let res = await Api.checkToken(token);
-
-    //             if (res.token) {
-    //                 await AsyncStorage.setItem('token', res.token);
-
-    //                 userDispatch({
-    //                     type: 'setAvatar',
-    //                     payload: {
-    //                         avatar: res.data.avatar
-    //                     }
-    //                 });
-
-    //                 navigation.reset({
-    //                     routes: [{ name: 'MainTab' }]
-    //                 });
-    //             } else {
-    //                 navigation.navigate('SignIn');
-    //             }
-
-    //         } else {
-    //             navigation.navigate('SignIn');
-    //         }
-    //     }
-    //     checkToken();
-    // }, []);
 
     const handleLoginClick = async () => {
         navigation.reset({
             routes: [{ name: 'Login' }]
         });
-
-        // not realtime
-        // const userDocument = await firebase.firestore().collection('users').
-        // doc('DcNA3GckZp3OYNffdiUt').get()
-
-        // const subscriber = await firebase.firestore().collection('users').
-        // doc('DcNA3GckZp3OYNffdiUt').onSnapshot(doc => console.log(doc.data().name))
-        // console.log(userDocument)
     }
 
     const handleSignUpClick = () => {
@@ -71,8 +23,7 @@ export default function Index() {
 
     return (
         <Container>
-            <StatusBar barStyle={'default'} />
-            {/* <LoadingIcon size='large' color='#FFFFFF' /> */}
+            {Platform.OS == 'ios' ? <StatusBar barStyle='dark-content' /> : <StatusBar />}
             <LinearGradient
                 colors={['#21537D', '#56C8B7']}
                 // colors={['#14366f', '#63e5c5']}
@@ -85,7 +36,7 @@ export default function Index() {
                     height: '104%',
                 }} />
 
-            <AudioWave style={{ marginTop: '25%' }} width='100%' height='26%' />
+            <Logo source={MCLogo} />
 
             <ButtonContainer>
                 <CustomButton onPress={handleLoginClick}>

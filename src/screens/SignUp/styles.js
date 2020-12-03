@@ -8,6 +8,11 @@ export const Container = styled.SafeAreaView`
     align-items: center;
 `;
 
+export const Logo = styled.Image`
+    height: ${hp('30%')}px;
+    width: ${hp('30%')}px;
+`;
+
 export const FormContainer = styled.SafeAreaView`
     background-color: #fff;
     margin-horizontal: 20px;
