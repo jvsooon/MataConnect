@@ -1,13 +1,11 @@
-import React, { useState, useContext } from 'react'
+import React, { useContext } from 'react'
 import { useNavigation } from '@react-navigation/native'
-import { Text, StyleSheet, StatusBar } from 'react-native';
-import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen';
+import { StyleSheet, StatusBar } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import {
-    Container, FormContainer, InputArea, CustomButton, CustomButtonText,
-    FooterContainer, FooterMessageButton, FooterMessageButtonText, SocialContainer, SocialHeader,
-    Header, FooterText, SocialText
+    Container, FormContainer, InputArea, Logo, FooterContainer, FooterMessageButton,
+    FooterMessageButtonText, SocialContainer, SocialHeader, Header, FooterText
 } from './styles';
 import FormInput from '../../components/FormInput';
 import FormButton from '../../components/FormButton';
@@ -17,10 +15,10 @@ import * as yup from 'yup';
 import { UserContext } from '../../contexts/UserContext';
 import firebase from '../../../firebase'
 
-import AudioWave from '../../assets/audio-waves.svg';
 import EmailIcon from '../../assets/email.svg'
 import PersonIcon from '../../assets/person.svg'
 import InvisibleIcon from '../../assets/invisible.svg';
+import MCLogo from '../../assets/Logo.png'
 
 const registerSchema = yup.object({
     fullName: yup.string().required(),
@@ -34,7 +32,6 @@ export default function Index() {
     const { dispatch: userDispatch } = useContext(UserContext);
 
     const handleRegisterClick = async (fullName, email, password) => {
-        // if (nameField != '' && emailField != '' && passwordField != '') {
         firebase.auth()
             .createUserWithEmailAndPassword(email, password)
             .then((user) => {
@@ -82,16 +79,15 @@ export default function Index() {
 
     return (
         <Container>
-            {/* <StatusBar barStyle={'default'} /> */}
-            <AudioWave style={styles.logo} width='100%' height='18%' />
+            {Platform.OS == 'ios' ? <StatusBar barStyle='dark-content' /> : <StatusBar />}
 
+            <Logo source={MCLogo} />
             <FormContainer>
                 <Header>Create Account</Header>
                 <Formik
                     initialValues={{ fullName: '', email: '', password: '' }}
                     validationSchema={registerSchema}
                     onSubmit={(values, actions) => {
-                        // Keyboard.dismiss();
                         handleRegisterClick({ fullName: values.fullName, email: values.email, password: values.password });
                         // actions.resetForm();
                     }}>

@@ -1,11 +1,10 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { Text, StyleSheet, StatusBar, LogBox } from 'react-native';
+import { StyleSheet, StatusBar, LogBox, ImageBackground } from 'react-native';
 
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen'
 import {
-    Container, FormContainer, InputArea, CustomButton, CustomButtonText,
-    FooterContainer, FooterMessageButton, FooterMessageButtonText, SocialContainer, SocialHeader,
+    Container, Logo, FormContainer, InputArea, FooterContainer, FooterMessageButton, FooterMessageButtonText, SocialContainer, SocialHeader,
     ForgotMsgBtn, ForgotMsgBtnText, HeaderContainer, HeaderText, HeaderSubText, FooterText
 } from './styles';
 import { UserContext } from '../../contexts/UserContext';
@@ -19,7 +18,7 @@ import firebase from '../../../firebase'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import EmailIcon from '../../assets/email.svg';
 import InvisibleIcon from '../../assets/invisible.svg';
-import AudioWave from '../../assets/audio-waves.svg';
+import MCLogo from '../../assets/Logo.png'
 
 LogBox.ignoreLogs(['Setting a timer']);
 
@@ -34,7 +33,6 @@ export default function Index() {
     var db = firebase.firestore();
 
     const handleLoginClick = async ({ email, password }) => {
-        // if (emailField != '' && passwordField != '') {
         firebase.auth()
             // .signInWithEmailAndPassword('test@yahoo.com', 'passpass')
             .signInWithEmailAndPassword(email, password)
@@ -91,13 +89,9 @@ export default function Index() {
 
     return (
         <Container>
-            {/* <View style={{width: '100%', height: '100%', flex: 1, position: 'absolute', top: 0, left: 0}}>
-            <Image style={{ flex: 1}} source={require('../../assets/background.png')} />
-            </View> */}
+            {Platform.OS == 'ios' ? <StatusBar barStyle='dark-content' /> : <StatusBar />}
 
-            {/* <StatusBar barStyle={'default'} /> */}
-            <AudioWave style={styles.logo} width='100%' height='18%' />
-
+            <Logo source={MCLogo} />
             <FormContainer>
                 <HeaderContainer>
                     <HeaderText >Hello</HeaderText>
@@ -108,7 +102,6 @@ export default function Index() {
                     initialValues={{ email: '', password: '' }}
                     validationSchema={loginSchema}
                     onSubmit={(values, actions) => {
-                        // Keyboard.dismiss();
                         handleLoginClick({ email: values.email, password: values.password });
                         // actions.resetForm();
                     }}>

@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components/native';
+import styled from 'styled-components/native';
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen';
 
 export const Container = styled.SafeAreaView`
@@ -6,6 +6,11 @@ export const Container = styled.SafeAreaView`
     flex: 1;
     justify-content: center;
     align-items: center;
+`;
+
+export const Logo = styled.Image`
+    height: ${hp('30%')}px;
+    width: ${hp('30%')}px;
 `;
 
 export const FormContainer = styled.SafeAreaView`

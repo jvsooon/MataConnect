@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useEffect } from 'react'
+import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack';
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import Index from '../screens/Tabs/Home/index';
@@ -8,33 +8,23 @@ import Notifications from '../screens/Tabs/Home/Notifications';
 import MenuIcon from '../assets/menu.svg'
 import NotificationIcon from '../assets/bell.svg'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
-
+import { Image } from 'react-native'
+import MCLogo from '../assets/Logo.png'
 
 const Stack = createStackNavigator();
-export default function HomeStack({ state }) {
-
-    useLayoutEffect(() => {
-        // console.log(state)
-    }, [state])
-
+export default function HomeStack() {
     return (
-
-        <Stack.Navigator initialRouteName={Index} 
+        <Stack.Navigator initialRouteName={Index}
             screenOptions={{
-                headerTitle: null,
-                headerStyle: {
-                    // backgroundColor: '#fff',
-                    // elevation: 0,
-                    // fontWeight: 'bold'
-                }
-            }}
-        >
+                headerTitle: null
+            }}>
             <Stack.Screen options={({ navigation }) => ({
                 headerStyle: {
-                    // backgroundColor: 'transparent',
                     elevation: 0,
-                    // fontWeight: 'bold'
                 },
+                headerTitleAlign: 'center',
+                headerTitle: () => (<Image source={MCLogo} style={{ height: hp('7%'), width: hp('7%') }} />)
+                ,
                 headerLeft: () => (
                     <TouchableOpacity onPress={() => navigation.toggleDrawer()} >
                         <MenuIcon style={{ marginLeft: wp('6%') }} width='30' height='30' />
@@ -47,15 +37,11 @@ export default function HomeStack({ state }) {
                 )
             })} name='Home' component={Index} />
             <Stack.Screen
-                options={{
-                   
-                }} name='Blank' component={Blank} />
+                name='Blank' component={Blank} />
             <Stack.Screen
                 options={{
-                    
                     headerTitle: 'Notifications',
                     headerStyle: {
-                        // backgroundColor: 'transparent',
                         elevation: 0
                     }
                 }} name='Notifications' component={Notifications} />
