@@ -3,7 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import Index from '../screens/Tabs/Home/index';
 import IndexSub from '../screens/Tabs/Home/indexSub';
-import Blank from '../screens/Tabs/Home/Blank';
+import Details from '../screens/Tabs/Home/details';
 import Notifications from '../screens/Tabs/Home/Notifications';
 import MenuIcon from '../assets/menu.svg'
 import NotificationIcon from '../assets/bell.svg'
@@ -16,12 +16,12 @@ export default function HomeStack() {
     return (
         <Stack.Navigator initialRouteName={Index}
             screenOptions={{
-                headerTitle: null
+                headerTitle: null,
+                headerStyle: {
+                    elevation: 0
+                }
             }}>
             <Stack.Screen options={({ navigation }) => ({
-                headerStyle: {
-                    elevation: 0,
-                },
                 headerTitleAlign: 'center',
                 headerTitle: () => (<Image source={MCLogo} style={{ height: hp('7%'), width: hp('7%') }} />)
                 ,
@@ -37,13 +37,14 @@ export default function HomeStack() {
                 )
             })} name='Home' component={Index} />
             <Stack.Screen
-                name='Blank' component={Blank} />
+                options={{
+                    headerTitle: 'Event Details',
+                    headerTitleAlign: 'center'
+                }}
+                name='Details' component={Details} />
             <Stack.Screen
                 options={{
-                    headerTitle: 'Notifications',
-                    headerStyle: {
-                        elevation: 0
-                    }
+                    headerTitle: 'Notification'
                 }} name='Notifications' component={Notifications} />
         </Stack.Navigator>
     )
