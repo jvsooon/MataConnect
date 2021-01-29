@@ -31,7 +31,7 @@ export default function Index() {
     var db = firebase.firestore();
     const { dispatch: userDispatch } = useContext(UserContext);
 
-    const handleRegisterClick = async (fullName, email, password) => {
+    const handleRegisterClick = async ({fullName, email, password}) => {
         firebase.auth()
             .createUserWithEmailAndPassword(email, password)
             .then((user) => {
@@ -133,7 +133,7 @@ export default function Index() {
                                 secureTextEntry={true}
                             />
 
-                            <FormButton btnTitle='Register' color='#21537D' onPress={props.handleSubmit} />
+                            <FormButton btnTitle='Register' color='#21537D' onPressHandler={props.handleSubmit} />
                         </InputArea>
                     )}
                 </Formik>

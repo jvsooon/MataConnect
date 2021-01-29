@@ -116,7 +116,7 @@ export default function Index({navigation}) {
                 // Collection of dates that have to be marked. Default = {} 
                 markedDates={markedCollection}
                 // Initially visible month. Default = Date()
-                current={'2020-11-22'}
+                // current={'2020-11-22'}
                 // Minimum date that can be selected, dates before minDate will be grayed out. Default = undefined
                 minDate={'2020-08-24'}
                 // Maximum date that can be selected, dates after maxDate will be grayed out. Default = undefined

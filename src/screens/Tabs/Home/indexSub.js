@@ -1,7 +1,7 @@
 import React from 'react'
 import { FlatList, StatusBar, StyleSheet, ImageBackground, Image, Text } from 'react-native';
 import { Container, ListHeader, Box, ImageShadow, CustomBackground } from './styles';
-import ListItem from '../../../components/ListItem';
+// import ListItem from '../../../components/ListItem';
 import customBG from '../../../assets/background.png'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
