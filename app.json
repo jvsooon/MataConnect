@@ -4,7 +4,7 @@
     "slug": "mataconnect",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./src/assets/Logo.png",
+    "icon": "./assets/Logo.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
