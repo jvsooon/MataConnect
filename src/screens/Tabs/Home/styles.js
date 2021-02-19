@@ -13,6 +13,10 @@ export const ListHeader = styled.Text`
     margin-left: ${wp('4%')}px;
 `;
 
+export const EmptyHeader = styled.Text`
+    font-size: ${hp('2.4%')}px;
+`;
+
 export const Box = styled.View``;
 
 export const JobImg = styled.Image`

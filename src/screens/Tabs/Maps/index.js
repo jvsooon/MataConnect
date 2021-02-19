@@ -1,6 +1,6 @@
 import React, { useState, useEffect, createRef } from 'react'
 import {
-    View, Dimensions, StatusBar, Platform, ScrollView, Linking
+    View, Dimensions, StatusBar, Platform, ScrollView, Linking, Text
 } from 'react-native';
 import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
@@ -47,7 +47,7 @@ export default function Index({ navigation }) {
 
     const getEventByDate = () => {
         let today = new Date();
-        let currentDate = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + (today.getDate().toString().length == 1? '0' + today.getDate() : today.getDate());
+        let currentDate = today.getFullYear() + '-0' + (today.getMonth() + 1) + '-' + (today.getDate().toString().length == 1 ? '0' + today.getDate() : today.getDate());
         let tempEvents = CalendarEvents.filter(event => event.dtstart.split(' ')[0] == currentDate);
         const data = Object.keys(tempEvents).map((i) => ({
             eventKey: i,
@@ -186,6 +186,14 @@ export default function Index({ navigation }) {
         )
     }
 
+    const EmptyCardComponent = ({ title }) => {
+        return (
+            <Card style={{ justifyContent: 'center', alignItems: 'center' }}>
+                <CardTitle>{title}</CardTitle>
+            </Card>
+        )
+    }
+
     const renderInner = () => (
         <ScrollView
             horizontal
@@ -206,9 +214,9 @@ export default function Index({ navigation }) {
                 paddingHorizontal: Platform.OS == 'android' ? width * 0.06 - 20 : 0
             }}>
 
-            {(poi || searchPoi) && calEvents.map(({ title, date, imgSrc, eventLink, eventKey }) => (
+            {((poi || searchPoi) && calEvents.length > 0) ? calEvents.map(({ title, date, imgSrc, eventLink, eventKey }) => (
                 <CardComponent title={title} date={date} imgSrc={imgSrc} eventLink={eventLink} key={eventKey} />
-            ))}
+            )) : <EmptyCardComponent title='No Events Today' />}
         </ScrollView>
     );
 

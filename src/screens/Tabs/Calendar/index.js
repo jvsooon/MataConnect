@@ -15,7 +15,6 @@ const inactive = { color: '#000', name: 'star-o' }, active = { color: '#63C2D1',
 const usuImage = 'https://live.staticflickr.com/3948/buddyicons/149217749@N02_r.jpg?1491936417#149217749@N02';
 const options = { month: "long", day: "numeric", year: "numeric", hour: 'numeric', minute: 'numeric' };
 
-
 export default function Index({navigation}) {
     const [events, setEvents] = useState(null);
     const [refreshing, setRefreshing] = useState(false);
@@ -27,15 +26,20 @@ export default function Index({navigation}) {
         setRefreshing(false);
     }
 
-    const formatDate = (dtstart) => {
+    const formatDate = (dtstart) => { 
         const fullDate = dtstart.split(' ')
         const dateParts = fullDate[0].split('-')
-        const hourParts = fullDate[1].split(':')
-        const date = new Date(dateParts[0], dateParts[1] - 1, dateParts[2], hourParts[0], hourParts[1]);
-        const formatedDate = new Intl.DateTimeFormat("en-US", options).format(date);
-        return formatedDate;
+        if(fullDate.length > 1) {
+            const hourParts = fullDate[1].split(':')
+            const date = new Date(dateParts[0], dateParts[1] - 1, dateParts[2], hourParts[0], hourParts[1]);
+            const formatedDate = new Intl.DateTimeFormat("en-US", options).format(date);
+            return formatedDate
+        } else {
+            const date = new Date(dateParts[0], dateParts[1] - 1, dateParts[2]);
+            const formatedDate = new Intl.DateTimeFormat("en-US", options).format(date);
+            return formatedDate
+        }
     }
-
 
     const getEventByDate = (dateString) => {
         let tempEvents = [];
@@ -104,9 +108,7 @@ export default function Index({navigation}) {
     useEffect(() => {
         CalendarEvents.sort(function (a, b) { return a.dtstart.localeCompare(b.dtstart) });
         setMarkedDates();
-
     }, [])
-
 
     return (
         <SafeAreaView style={{ flex: 1 }}>
@@ -116,11 +118,11 @@ export default function Index({navigation}) {
                 // Collection of dates that have to be marked. Default = {} 
                 markedDates={markedCollection}
                 // Initially visible month. Default = Date()
-                // current={'2020-11-22'}
+                // current={'2021-02-12'}
                 // Minimum date that can be selected, dates before minDate will be grayed out. Default = undefined
-                minDate={'2020-08-24'}
+                minDate={'2021-01-25'}
                 // Maximum date that can be selected, dates after maxDate will be grayed out. Default = undefined
-                maxDate={'2020-12-15'}
+                maxDate={'2021-05-20'}
                 // Month format in calendar title. Formatting values: http://arshaw.com/xdate/#Formatting
                 monthFormat={'MMM yyyy'}
                 // If firstDay=1 week starts from Monday. Note that dayNames and dayNamesShort should still start from Sunday.
