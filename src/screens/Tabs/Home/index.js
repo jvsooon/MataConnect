@@ -1,47 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { FlatList, StatusBar, StyleSheet, ImageBackground } from 'react-native';
-import { Container, ListHeader, Box, JobImg, Cover, EventImg } from './styles';
+import { FlatList, StatusBar, StyleSheet, ImageBackground, Text} from 'react-native';
+import { Container, ListHeader, EmptyHeader, Box, JobImg, Cover, EventImg } from './styles';
 import { widthPercentageToDP as wp } from 'react-native-responsive-screen';
-import { CalendarEvents } from '../../../utils'
-
-const Jobs = [
-    {
-        imgSrc: 'https://s3.amazonaws.com/handshake.production/app/public/assets/institutions/419962/small/hs-emp-logo-data.?1555011736',
-        key: "0",
-    },
-    {
-        imgSrc: 'https://s3.amazonaws.com/handshake.production/app/public/assets/institutions/18175/small/hs-emp-logo-data.?1556146582',
-        key: "1",
-    },
-    {
-        imgSrc: 'https://s3.amazonaws.com/handshake.production/app/public/assets/institutions/18950/small/hs-emp-logo-data.?1556129989',
-        key: "2",
-    },
-    {
-        imgSrc: 'https://s3.amazonaws.com/handshake.production/app/public/assets/institutions/360136/small/hs-emp-logo-data.?1540573780',
-        key: "3",
-    },
-    {
-        imgSrc: 'https://s3.amazonaws.com/handshake.production/app/public/assets/institutions/8440/small/hs-emp-logo-data.?1598559581',
-        key: "4",
-    },
-    {
-        imgSrc: 'https://s3.amazonaws.com/handshake.production/app/public/assets/institutions/14072/small/hs-emp-logo-data.?1576702967',
-        key: "5",
-    },
-    {
-        imgSrc: 'https://s3.amazonaws.com/handshake.production/app/public/assets/institutions/21013/small/hs-emp-logo-data.?1600898655',
-        key: "6",
-    },
-    {
-        imgSrc: 'https://s3.amazonaws.com/handshake.production/app/public/assets/institutions/19921/small/hs-emp-logo-data.?1535648998',
-        key: "7",
-    },
-    {
-        imgSrc: 'https://s3.amazonaws.com/handshake.production/app/public/assets/institutions/256165/small/hs-emp-logo-data.?1535570857',
-        key: "8",
-    }
-];
+import { CalendarEvents, Jobs } from '../../../utils'
 
 export default function Index({ navigation }) {
     const [calEvents, setCalEvents] = useState()
@@ -81,7 +42,7 @@ export default function Index({ navigation }) {
 
     useEffect(() => {
         var today = new Date();
-        var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + (today.getDate().toString().length == 1 ? '0' + today.getDate() : today.getDate());
+        var date = today.getFullYear() + '-0' + (today.getMonth() + 1) + '-' + (today.getDate().toString().length == 1 ? '0' + today.getDate() : today.getDate());
         getEventByDate(date)
     }, [])
 
@@ -91,14 +52,13 @@ export default function Index({ navigation }) {
             <ImageBackground source={require('../../../assets/background.png')} style={{ flex: 1 }}>
                 <Box>
                     <ListHeader>Events happening today</ListHeader>
-                    <FlatList
+                     <FlatList
                         style={styles.list}
                         data={calEvents}
                         renderItem={renderItem}
                         keyExtractor={(item) => item.key}
                         horizontal={true}
-                        showsHorizontalScrollIndicator={false}
-                    />
+                        showsHorizontalScrollIndicator={false}/> 
                 </Box>
                 <Box>
                     <ListHeader>Upcoming Events</ListHeader>

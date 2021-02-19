@@ -4,7 +4,6 @@ import Preload from '../screens/Preload';
 import Login from '../screens/Login';
 import SignUp from '../screens/SignUp';
 import Drawer from './DrawerStack'
-// https://library.csun.edu/rest-api/events
 
 const Stack = createStackNavigator();
 export default function MainStack() {
