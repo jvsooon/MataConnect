@@ -4,6 +4,7 @@ import HomeStack from './HomeStack'
 import CalendarStack from './CalendarStack'
 import Maps from '../screens/Tabs/Maps'
 import Profile from '../screens/Tabs/Profile'
+import ProfileStack from './ProfileStack'
 import { useNavigation } from '@react-navigation/native';
 import CustomTabBar from '../components/CustomTabBar';
 
@@ -65,7 +66,7 @@ export default function TabStack() {
             //     tabBarVisible: getTabBarVisibility(route)
             // })}
             />
-            <Tabs.Screen name="Profile" component={Profile} />
+            <Tabs.Screen name="Profile" component={ProfileStack} />
         </Tabs.Navigator>
     );
 }

@@ -1,8 +1,7 @@
 import React from 'react'
-import { createStackNavigator } from '@react-navigation/stack';
+import { createStackNavigator, CardStyleInterpolators } from '@react-navigation/stack';
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import Index from '../screens/Tabs/Home/index';
-import IndexSub from '../screens/Tabs/Home/indexSub';
 import Details from '../screens/Tabs/Home/details';
 import Notifications from '../screens/Tabs/Home/Notifications';
 import MenuIcon from '../assets/menu.svg'
@@ -19,7 +18,8 @@ export default function HomeStack() {
                 headerTitle: null,
                 headerStyle: {
                     elevation: 0
-                }
+                },
+                cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS
             }}>
             <Stack.Screen options={({ navigation }) => ({
                 headerTitleAlign: 'center',
