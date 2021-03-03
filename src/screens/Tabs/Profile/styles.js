@@ -39,7 +39,7 @@ export const IconsBox = styled.View`
     align-content: center;
 `;
 
-export const IconContainer = styled.View`
+export const IconContainer = styled.TouchableOpacity`
     width:${wp('100%')/3}px; 
     align-items: center;
     margin-vertical: ${hp('2%')}px;

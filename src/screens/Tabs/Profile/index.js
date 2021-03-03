@@ -9,17 +9,6 @@ import {
 } from './styles'
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
-const IconButton = ({ IconType, iconName, color, iconLabel }) => {
-    return (
-        <IconContainer>
-            <IconBG>
-                <IconType name={iconName} size={hp('6%')} color={color} />
-                <IconText>{iconLabel}</IconText>
-            </IconBG>
-        </IconContainer>
-    )
-}
-
 const InfoComponent = ({ title, leftLabel, leftNum, rightLabel, rightNum }) => {
     return (
         <InfoBox>
@@ -47,6 +36,17 @@ const FooterButton = ({ ButtonType, title, onPress }) => {
 }
 
 export default function Profile({ navigation }) {
+    const IconButton = ({ IconType, iconName, color, iconLabel, screenName }) => {
+        return (
+            <IconContainer onPress={() => navigation.navigate(screenName)}>
+                <IconBG>
+                    <IconType name={iconName} size={hp('6%')} color={color} />
+                    <IconText>{iconLabel}</IconText>
+                </IconBG>
+            </IconContainer>
+        )
+    }
+
     const handleSignOutClick = () => {
         firebase.auth()
             .signOut()
@@ -72,12 +72,12 @@ export default function Profile({ navigation }) {
                 </Header>
 
                 <IconsBox>
-                    <IconButton IconType={MaterialCommunityIcons} iconName={'bookmark'} color={'#6D8AEB'} iconLabel={'Bookmarks'} />
-                    <IconButton IconType={AntDesign} iconName={'heart'} color={'#ED6F63'} iconLabel={'Saved Events'} />
-                    <IconButton IconType={Entypo} iconName={'suitcase'} color={'#636363'} iconLabel={'Saved Jobs'} />
-                    <IconButton IconType={Foundation} iconName={'clipboard-notes'} color={'#6D8AEB'} iconLabel={'Notes'} />
-                    <IconButton IconType={MaterialIcons} iconName={'settings'} color={'#5A7A84'} iconLabel={'Settings'} />
-                    <IconButton IconType={FontAwesome5} iconName={'award'} color={'#EDB357'} iconLabel={'Interests'} />
+                    <IconButton IconType={MaterialCommunityIcons} iconName={'bookmark'} color={'#6D8AEB'} iconLabel={'Bookmarks'} screenName={"Bookmarks"} />
+                    <IconButton IconType={AntDesign} iconName={'heart'} color={'#ED6F63'} iconLabel={'Saved Events'} screenName={"Saved Events"} />
+                    <IconButton IconType={Entypo} iconName={'suitcase'} color={'#636363'} iconLabel={'Saved Jobs'} screenName={"Saved Jobs"} />
+                    <IconButton IconType={Foundation} iconName={'clipboard-notes'} color={'#6D8AEB'} iconLabel={'Notes'} screenName={"Notes"} />
+                    <IconButton IconType={MaterialIcons} iconName={'settings'} color={'#5A7A84'} iconLabel={'Settings'} screenName={"Settings"} />
+                    <IconButton IconType={FontAwesome5} iconName={'award'} color={'#EDB357'} iconLabel={'Interests'} screenName={"Interests"} />
                 </IconsBox>
 
                 <InfoContainer>

@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { StyleSheet, StatusBar, LogBox, ImageBackground } from 'react-native';
-
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen'
 import {
     Container, Logo, FormContainer, InputArea, FooterContainer, FooterMessageButton, FooterMessageButtonText, SocialContainer, SocialHeader,
@@ -29,7 +28,7 @@ const loginSchema = yup.object({
 
 export default function Index() {
     const navigation = useNavigation();
-    const { dispatch: userDispatch } = useContext(UserContext);
+    const { state, dispatch: userDispatch } = useContext(UserContext);
     var db = firebase.firestore();
 
     const handleLoginClick = async ({ email, password }) => {
@@ -37,6 +36,12 @@ export default function Index() {
             // .signInWithEmailAndPassword('test@yahoo.com', 'passpass')
             .signInWithEmailAndPassword(email, password)
             .then((user) => {
+                userDispatch({
+                    type: 'setUID',
+                    payload: {
+                        uid: user.user.uid
+                    }
+                });
                 db.collection("users").doc(`${user.user.uid}`).get().then((user) => {
                     console.log('User signed in!')
                     userDispatch({
@@ -45,7 +50,6 @@ export default function Index() {
                             name: `${user.data().name}`
                         }
                     });
-
                     navigation.reset({
                         routes: [{ name: 'Drawer' }]
                     });
