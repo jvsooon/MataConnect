@@ -8,9 +8,10 @@ export const Container = styled.View`
 
 export const ListHeader = styled.Text`
     font-weight: bold;
-    font-size: ${hp('3.4%')}px;
-    margin-vertical: ${hp('1%')}px;
-    margin-left: ${wp('4%')}px;
+    font-size: ${hp('2.7%')}px;
+    margin-vertical: ${hp('2%')}px;
+    margin-left: ${wp('6.5%')}px;
+    color: #2E3862;
 `;
 
 export const EmptyHeader = styled.Text`
@@ -29,7 +30,7 @@ export const JobImg = styled.Image`
 export const Cover = styled.TouchableOpacity`
     margin-vertical: ${hp('3%')}px;
     width: ${hp('14%')}px;
-    height: ${hp('14%')}px;
+    height: ${hp('14.5%')}px;
     border-radius: 20px;
     align-self: center;
     elevation: 6;
@@ -41,14 +42,16 @@ export const Cover = styled.TouchableOpacity`
 `;
 
 export const EventImg = styled.Image`
-    width: ${hp('14%')}px;
-    height: ${hp('14%')}px;
+    width: ${hp('12.5%')}px;
+    height: ${hp('12.5%')}px;
     border-radius: 20px;
+    margin-left: ${wp('2%')}px;
+    
 `;
 
 
 export const Title = styled.Text`
-    margin-top: 10px;
+    margin-top: 12px;
     font-weight: bold;
     color: #e12d57;
     font-size: ${Platform.OS == 'ios' ? hp('3%') : hp('2.6%')}px;
@@ -81,7 +84,7 @@ export const DateText = styled.Text`
 `;
 
 export const DescContainer = styled.ScrollView`
-    margin-bottom: ${hp('2%')}px;
+    margin-bottom: ${hp('5%')}px;
 `;
 
 export const DescText = styled.Text`
