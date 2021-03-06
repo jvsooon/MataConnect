@@ -1,8 +1,9 @@
-import React from 'react'
-import { StatusBar } from 'react-native'
+import * as React from 'react'
+import { View, Text, StatusBar } from 'react-native'
 import { Container, Title, DetailsCover, DetailEventImg, DateText, DescContainer, DescText } from './styles';
 import 'intl';
 import 'intl/locale-data/jsonp/en';
+import ReadMore from 'react-native-read-more-text';
 
 const options = { month: "long", day: "numeric", year: "numeric", hour: 'numeric', minute: 'numeric' };
 
@@ -25,8 +26,8 @@ export default function details({ route }) {
                 <DetailEventImg source={{ uri: imgSrc }} />
             </DetailsCover>
             <DateText>{formatDate(date)}</DateText>
-            <DescContainer >
-                <DescText>{description}</DescText>
+            <DescContainer>
+                  <Text>{description}</Text>
             </DescContainer>
         </Container>
     )
