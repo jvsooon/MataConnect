@@ -39,46 +39,6 @@ export const Jobs = [
 
 export const CalendarEvents = [
     {
-        "title": "USU Games Room: Swing Into Spring — Video Game Bracket Challenge",
-        "description": "Vote for your favorite games during our virtual Video Game Bracket Challenge, from the Games Room of the University Student Union. Sign up by Thursday, Dec. 31 on IMLeagues.com [1] to join us on Discord [2] between Friday, Jan. 1 and Thursday, Jan. 7 and see if your favorite game picks come out on top! Point values increase each round, and every time you match a crowd favorite, you’re one step closer to winning a $25 gift card for the gaming platform of your choice! Plus, you’ll be entered to win a FREE Amazon movie rental just for participating! Once you’ve registered to play, keep an eye out for an email containing your personal bracket, and be sure to submit your picks by 5 p.m. on Thursday, Dec. 31. The Video Game Bracket Challenge is another fun part of the USU’s special Swing Into Spring event! Ready, Set, 2021! From Friday, Jan. 1 to Friday, Feb. 5, you are invited to welcome a brand new year and the new semester at CSUN all during Swing Into Spring from the University Student Union! We’ll be bringing all Matadors an unprecedented month of fun events and activities to get your year off to a great start. Each week we’ll also hold a raffle with awesome prizes including cool Swing Into Spring t-shirts and masks as well as gift cards from Amazon, Chipotle, Netflix, GrubHub and more. Plus, you’ll be entered to win just for participating. Don’t miss out on this exciting new way to Swing Into Spring with the University Student Union … Where Matadors Belong! [1] https://imleagues.com/csun [2] https://discord.com/invite/t4Mw8m3?fbclid=IwAR24q-DXDduqMr6lg8iWx_WL4kvefjI7_7jhqfv5W8O5lfcu9-ejhIShMGE",
-        "eventLink": "https://www.csun.edu/usu/events/usu-games-room-swing-spring-%E2%80%94-video-game-bracket-challenge",
-        "dtstart": "2021-01-01",
-        "dtend": "2021-01-08",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/GR_bracketchallenge_FA20calendar-01_0.png?itok=vB-OZ007"
-    },
-    {
-        "title": "USU Games Room: Swing Into Spring — Among Us Party",
-        "description": "Prove your innocence at the Among Us Party hosted by the Games Room of the University Student Union. It’s another fun event during Swing Into Spring! Download the game on your smartphone or PC, then join the Games Room Discord server, and come ready to vote your way to victory!! Just for playing, you can win a free gaming accessory of up to a $25 value! So, grab your Mata-crew and get ready for the Among Us Party hosted by the Games Room… Where Matadors Belong! Ready, Set, 2021! From Friday, Jan. 1 to Friday, Feb. 5, you are invited to welcome a brand new year and the new semester at CSUN all during Swing Into Spring from the University Student Union! We’ll be bringing all Matadors an unprecedented month of fun events and activities to get your year off to a great start. Each week we’ll also hold a raffle with awesome prizes including cool Swing Into Spring t-shirts and masks as well as gift cards from Amazon, Chipotle, Netflix, GrubHub and more. Plus, you’ll be entered to win just for participating. Don’t miss out on this exciting new way to Swing Into Spring with the University Student Union … Where Matadors Belong! ",
-        "eventLink": "https://www.csun.edu/usu/events/usu-games-room-swing-spring-%E2%80%94-among-us-party",
-        "dtstart": "2021-01-08 20:00:00",
-        "dtend": "2021-01-08 22:00:00",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/GR-%20Spr%2721%20GR_SwingIntoSpring_AmongUsParty_InitialDesign_SP2021.png?itok=XSgCRnBp"
-    },
-    {
-        "title": "USU Games Room: Swing Into Spring — Super Smash Bros Ultimate Tournament",
-        "description": "Show us what you’ve got! Invite your friends and challenge other CSUN gamers in Super Smash Bros. Ultimate for the Nintendo Switch to see who will become the reigning champ. Bust out your best attacks to defeat the competition and walk away with a $25 Amazon gift card, plus all the bragging rights! Plus, just for participating, you’ll be entered to win a $10 Nintendo eShop gift card. Join the Games Room Discord Server [1] and sign up on Smash.gg [2] for the Super Smash Bros. Ultimate Tournament — another fun part of the USU’s special Swing Into Spring event! Ready, Set, 2021! From Friday, Jan. 1 to Friday, Feb. 5, you are invited to welcome a brand new year and the new semester at CSUN all during Swing Into Spring from the University Student Union! We’ll be bringing all Matadors an unprecedented month of fun events and activities to get your year off to a great start. Each week we’ll also hold a raffle with awesome prizes including cool Swing Into Spring t-shirts and masks as well as gift cards from Amazon, Chipotle, Netflix, GrubHub and more. Plus, you’ll be entered to win just for participating. Don’t miss out on this exciting new way to Swing Into Spring with the University Student Union … Where Matadors Belong! [1] https://discord.com/invite/MEG8Abs [2] https://smash.gg/",
-        "eventLink": "https://www.csun.edu/usu/events/usu-games-room-swing-spring-%E2%80%94-super-smash-bros-ultimate-tournament",
-        "dtstart": "2021-01-15 18:00:00",
-        "dtend": "2021-01-15 22:00:00",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/GR_smashtournament_calendar-01.png?itok=XiXejTuP"
-    },
-    {
-        "title": "VRC: Swing Into Spring — Veteran Welcome",
-        "description": "Start your CSUN experience off strong with our virtual Veteran Welcome event that’s just for you, hosted by the Veterans Resource Center of the University Student Union! It’s another great opportunity for you during the USU’s Swing Into Spring event. Connect with us on Zoom to enjoy a special afternoon dedicated to Student Veterans like yourself who are new arrivals to CSUN. We’ll help you settle into the campus community and tell you all about the impressive variety of valuable resources we have available to you. It’s a great way to get familiar with the VRC and make connections with CSUN’s welcoming Veteran community! Register for the virtual Veteran Welcome starting Monday, Dec. 28! Ready, Set, 2021! From Friday, Jan. 1 to Friday, Feb. 5, you are invited to welcome a brand new year and the new semester at CSUN all during Swing Into Spring from the University Student Union! We’ll be bringing all Matadors an unprecedented month of fun events and activities to get your year off to a great start. Each week we’ll also hold a raffle with awesome prizes including cool Swing Into Spring t-shirts and masks as well as gift cards from Amazon, Chipotle, Netflix, GrubHub and more. Plus, you’ll be entered to win just for participating. Don’t miss out on this exciting new way to Swing Into Spring with the University Student Union … Where Matadors Belong!",
-        "eventLink": "https://www.csun.edu/vrc/events/vrc-swing-spring-%E2%80%94-veteran-welcome",
-        "dtstart": "2021-01-14 11:00:00",
-        "dtend": "2021-01-14 13:00:00",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/VRC_VeteranWelcome_Sp21%20%281%29.png?itok=9lBXK_Dm"
-    },
-    {
-        "title": "VRC: Swing Into Spring — Veteran Welcome Registration",
-        "description": "Start your CSUN experience off strong with our virtual Veteran Welcome event that’s just for you, hosted by the Veterans Resource Center of the University Student Union! It’s another great opportunity for you during the USU’s Swing Into Spring event. Connect with us on Zoom to enjoy a special afternoon dedicated to Student Veterans like yourself who are new arrivals to CSUN. We’ll help you settle into the campus community and tell you all about the impressive variety of valuable resources we have available to you. It’s a great way to get familiar with the VRC and make connections with CSUN’s welcoming Veteran community! Register for the virtual Veteran Welcome starting Monday, Dec. 28! Ready, Set, 2021! From Friday, Jan. 1 to Friday, Feb. 5, you are invited to welcome a brand new year and the new semester at CSUN all during Swing Into Spring from the University Student Union! We’ll be bringing all Matadors an unprecedented month of fun events and activities to get your year off to a great start. Each week we’ll also hold a raffle with awesome prizes including cool Swing Into Spring t-shirts and masks as well as gift cards from Amazon, Chipotle, Netflix, GrubHub and more. Plus, you’ll be entered to win just for participating. Don’t miss out on this exciting new way to Swing Into Spring with the University Student Union … Where Matadors Belong!",
-        "eventLink": "https://www.csun.edu/vrc/events/vrc-swing-spring-%E2%80%94-veteran-welcome-registration",
-        "dtstart": "2020-12-28 08:00:00",
-        "dtend": "2021-01-14 10:59:00",
-        "imgSrc": "https://live.staticflickr.com/3948/buddyicons/149217749@N02_r.jpg?1491936417#149217749@N02"
-    },
-    {
         "title": "VRC: Virtual “Game Night”",
         "description": "The Veterans Resource Center of the University Student Union invites all Student Veterans and military-connected Matadors to experience the fun of competition at our virtual Game Night on Zoom! On select Wednesdays, you can come hang out online with your friends from the VRC to enjoy good conversation and the potential thrill of victory playing virtual games together. Plus, every other week a $20 Amazon gift card will be given away to the winner of the night! Come kick-back and have a chance to score some prizes while you let the good times roll at virtual Game Night hosted by the VRC! Ready, Set, 2021! From Friday, Jan. 1 to Friday, Feb. 5, you are invited to welcome a brand new year and the new semester at CSUN all during Swing Into Spring from the University Student Union! We’ll be bringing all Matadors an unprecedented month of fun events and activities to get your year off to a great start. Each week we’ll also hold a raffle with awesome prizes including cool Swing Into Spring t-shirts and masks as well as gift cards from Amazon, Chipotle, Netflix, GrubHub and more. Plus, you’ll be entered to win just for participating. Don’t miss out on this exciting new way to Swing Into Spring with the University Student Union … Where Matadors Belong!",
         "eventLink": "https://www.csun.edu/vrc/events/vrc-virtual-%E2%80%9Cgame-night%E2%80%9D-6",
@@ -117,118 +77,6 @@ export const CalendarEvents = [
         "dtstart": "2021-03-24 18:00:00",
         "dtend": "2021-03-24 19:00:00",
         "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/IG-VRCGameNight-SP21-regular.png?itok=WyIHU7cV"
-    },
-    {
-        "title": "VRC: Virtual “Game Night”",
-        "description": "The Veterans Resource Center of the University Student Union invites all Student Veterans and military-connected Matadors to experience the fun of competition at our virtual Game Night on Zoom! On select Wednesdays, you can come hang out online with your friends from the VRC to enjoy good conversation and the potential thrill of victory playing virtual games together. Plus, every other week a $20 Amazon gift card will be given away to the winner of the night! Come kick-back and have a chance to score some prizes while you let the good times roll at virtual Game Night hosted by the VRC! Ready, Set, 2021! From Friday, Jan. 1 to Friday, Feb. 5, you are invited to welcome a brand new year and the new semester at CSUN all during Swing Into Spring from the University Student Union! We’ll be bringing all Matadors an unprecedented month of fun events and activities to get your year off to a great start. Each week we’ll also hold a raffle with awesome prizes including cool Swing Into Spring t-shirts and masks as well as gift cards from Amazon, Chipotle, Netflix, GrubHub and more. Plus, you’ll be entered to win just for participating. Don’t miss out on this exciting new way to Swing Into Spring with the University Student Union … Where Matadors Belong!",
-        "eventLink": "https://www.csun.edu/vrc/events/vrc-virtual-%E2%80%9Cgame-night%E2%80%9D-1",
-        "dtstart": "2021-03-03 18:00:00",
-        "dtend": "2021-03-03 19:00:00",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/IG-VRCGameNight-SP21-regular.png?itok=WyIHU7cV"
-    },
-    {
-        "title": "VRC: Virtual “Game Night”",
-        "description": "The Veterans Resource Center of the University Student Union invites all Student Veterans and military-connected Matadors to experience the fun of competition at our virtual Game Night on Zoom! On select Wednesdays, you can come hang out online with your friends from the VRC to enjoy good conversation and the potential thrill of victory playing virtual games together. Plus, every other week a $20 Amazon gift card will be given away to the winner of the night! Come kick-back and have a chance to score some prizes while you let the good times roll at virtual Game Night hosted by the VRC! Ready, Set, 2021! From Friday, Jan. 1 to Friday, Feb. 5, you are invited to welcome a brand new year and the new semester at CSUN all during Swing Into Spring from the University Student Union! We’ll be bringing all Matadors an unprecedented month of fun events and activities to get your year off to a great start. Each week we’ll also hold a raffle with awesome prizes including cool Swing Into Spring t-shirts and masks as well as gift cards from Amazon, Chipotle, Netflix, GrubHub and more. Plus, you’ll be entered to win just for participating. Don’t miss out on this exciting new way to Swing Into Spring with the University Student Union … Where Matadors Belong!",
-        "eventLink": "https://www.csun.edu/vrc/events/vrc-virtual-%E2%80%9Cgame-night%E2%80%9D-0",
-        "dtstart": "2021-02-17 18:00:00",
-        "dtend": "2021-02-17 19:00:00",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/IG-VRCGameNight-SP21-regular.png?itok=WyIHU7cV"
-    },
-    {
-        "title": "VRC: Virtual “Game Night”",
-        "description": "The Veterans Resource Center of the University Student Union invites all Student Veterans and military-connected Matadors to experience the fun of competition at our virtual Game Night on Zoom! On select Wednesdays, you can come hang out online with your friends from the VRC to enjoy good conversation and the potential thrill of victory playing virtual games together. Plus, every other week a $20 Amazon gift card will be given away to the winner of the night! Come kick-back and have a chance to score some prizes while you let the good times roll at virtual Game Night hosted by the VRC! Ready, Set, 2021! From Friday, Jan. 1 to Friday, Feb. 5, you are invited to welcome a brand new year and the new semester at CSUN all during Swing Into Spring from the University Student Union! We’ll be bringing all Matadors an unprecedented month of fun events and activities to get your year off to a great start. Each week we’ll also hold a raffle with awesome prizes including cool Swing Into Spring t-shirts and masks as well as gift cards from Amazon, Chipotle, Netflix, GrubHub and more. Plus, you’ll be entered to win just for participating. Don’t miss out on this exciting new way to Swing Into Spring with the University Student Union … Where Matadors Belong!",
-        "eventLink": "https://www.csun.edu/vrc/events/vrc-virtual-%E2%80%9Cgame-night%E2%80%9D",
-        "dtstart": "2021-02-03 18:00:00",
-        "dtend": "2021-02-03 19:00:00",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/IG-VRCGameNight-SP21-pagecurl.png?itok=wfWKNjY2"
-    },
-    {
-        "title": "SRC: Swing Into Spring — Sports Movie Bracket Challenge!",
-        "description": "Get ready for this fun competition to see if your favorite films will come out on top during the Sports Movie Bracket Challenge, from the Student Recreation Center of the University Student Union. Just sign up by Thursday, Dec. 31 on IMLeagues.com [1], then join us on Discord [2] from Friday, Jan. 1 to Thursday, Jan. 21 to vote for your favorite sports movies. Show your support for the movies you love! Point values will increase each round, and every time you match a crowd favorite, you’re one step closer to winning three FREE Amazon Movie Rentals! Plus, you’ll receive a FREE “SRC Intramural Sports” Towel just for participating! Once you’ve signed up, keep an eye out for an email containing your personal bracket, and be sure to submit your picks by 5 p.m. on Tuesday, Jan. 5. Get your head in the game during our Sports Movie Bracket Challenge from the SRC… Where Matadors Play! Ready, Set, 2021! From Friday, Jan. 1 to Friday, Feb. 5, you are invited to welcome a brand new year and the new semester at CSUN all during Swing Into Spring from the University Student Union! We’ll be bringing all Matadors an unprecedented month of fun events and activities to get your year off to a great start. Each week we’ll also hold a raffle with awesome prizes including cool Swing Into Spring t-shirts and masks as well as gift cards from Amazon, Chipotle, Netflix, GrubHub and more. Plus, you’ll be entered to win just for participating. Don’t miss out on this exciting new way to Swing Into Spring with the University Student Union … Where Matadors Belong! [1] https://imleagues.com/csun [2] https://discord.com/invite/t4Mw8m3?fbclid=IwAR24q-DXDduqMr6lg8iWx_WL4kvefjI7_7jhqfv5W8O5lfcu9-ejhIShMGE",
-        "eventLink": "https://www.csun.edu/src/events/src-swing-spring-%E2%80%94-sports-movie-bracket-challenge",
-        "dtstart": "2021-01-01",
-        "dtend": "2021-01-22",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/SRC_SportsMovieBracket_SP2021-01.png?itok=Q_GeP1ED"
-    },
-    {
-        "title": "SRC: Swing into Spring — NFL Sports Trivia Night",
-        "description": "More information is coming soon about this exciting virtual opportunity for CSUN Students this semester at the University Student Union... Where Matadors Belong!",
-        "eventLink": "https://www.csun.edu/src/events/src-swing-spring-%E2%80%94-nfl-sports-trivia-night",
-        "dtstart": "2021-01-26 17:00:00",
-        "dtend": "2021-01-26 18:00:00",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/SRC_NFLTriviaNight_SP21.png?itok=n2wuFXRm"
-    },
-    {
-        "title": "SRC: Swing into Spring — Gaming and Sports Movie Trivia Night",
-        "description": "Come wow the crowd with your video game and sports movie knowledge at Gaming and Sports Movie Trivia Night with the Student Recreation Center of the University Student Union. It’s another fun event during Swing Into Spring! Join us on Discord [1] and Kahoot to show what you know and answer away with all of the movie knowledge you’ve accumulated over the years. The top two teams or individuals who answer the most trivia questions correctly at the end of the night will walk away with Amazon gift cards and reign supreme as our trivia champions! 1st Place: $20 Amazon Movie Gift Card 2nd Place: $15 Amazon Movie Gift Card Plus, everyone who participates will be entered in a raffle for two $10 Amazon Movie gift cards. Register on IMLeagues [2] with a team of up to four people or as an individual and then create an account on Discord [3] to join the Intramural Sports server [4]. Come put your pop culture knowledge to the test at Gaming and Sports Movie Trivia Night with the SRC. Ready, Set, 2021! From Friday, Jan. 1 to Friday, Feb. 5, you are invited to welcome a brand new year and the new semester at CSUN all during Swing Into Spring from the University Student Union! We’ll be bringing all Matadors an unprecedented month of fun events and activities to get your year off to a great start. Each week we’ll also hold a raffle with awesome prizes including cool Swing Into Spring t-shirts and masks as well as gift cards from Amazon, Chipotle, Netflix, GrubHub and more. Plus, you’ll be entered to win just for participating. Don’t miss out on this exciting new way to Swing Into Spring with the University Student Union … Where Matadors Belong! [1] https://discord.com/invite/XsBbd5G [2] https://imleagues.com/csun [3] https://discord.com/ [4] https://discord.com/invite/XsBbd5G",
-        "eventLink": "https://www.csun.edu/src/events/src-swing-spring-%E2%80%94-gaming-and-sports-movie-trivia-night",
-        "dtstart": "2021-01-22 17:00:00",
-        "dtend": "2021-01-22 18:00:00",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/SRC_Calander_Gaming%26SportsMovieTriviaNight_SP2021ai-01.png?itok=F3dNJyiG"
-    },
-    {
-        "title": "SRC: Swing Into Spring — New Year Step Challenge",
-        "description": "It’s the perfect time to step your way into 2021 during the New Year Step Challenge with the Student Recreation Center of the University Student Union. It’s another great program for Matadors during our special Swing Into Spring event! With your team of up to ten members, you and your friends can get active and step your way to victory by accumulating points along the way. Every member of the team with the highest total step count at the end of the challenge will each walk away with a $25 Amazon gift card. The individual with the most steps overall will win an Intramural Sports Hoodie. Plus, everyone who participates will also go home with an IM Sports Towel just for playing and be entered in a raffle for awesome running accessories! To join the fun, register on IMLeagues [1] with your team or as a free agent and create an account on Discord [2] to join the Intramural Sports server [3]. Then, download the Pacer app on your mobile device to track your steps when the challenge begins. Be sure to take advantage of this special New Year’s Day opportunity: All steps accumulated on Friday, Jan. 1 will be doubled and added to your team and individual totals. So, get out there the first day of the year to rack up those extra points for the New Year Step Challenge by the SRC! Ready, Set, 2021! From Friday, Jan. 1 to Friday, Feb. 5, you are invited to welcome a brand new year and the new semester at CSUN all during Swing Into Spring from the University Student Union! We’ll be bringing all Matadors an unprecedented month of fun events and activities to get your year off to a great start. Each week we’ll also hold a raffle with awesome prizes including cool Swing Into Spring t-shirts and masks as well as gift cards from Amazon, Chipotle, Netflix, GrubHub and more. Plus, you’ll be entered to win just for participating. Don’t miss out on this exciting new way to Swing Into Spring with the University Student Union … Where Matadors Belong! [1] https://imleagues.com/csun [2] https://discord.com/ [3] https://discord.com/invite/XsBbd5G",
-        "eventLink": "https://www.csun.edu/src/events/src-swing-spring-%E2%80%94-new-year-step-challenge",
-        "dtstart": "2021-01-01",
-        "dtend": "2021-01-08",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/SRC_NYStepsChallenge_SP21.png?itok=kdmeknBq"
-    },
-    {
-        "title": "SRC: Swing Into Spring — Start of Spring Semester Step Challenge",
-        "description": "More information is coming soon about this exciting virtual opportunity for CSUN Students this semester at the University Student Union... Where Matadors Belong!",
-        "eventLink": "https://www.csun.edu/src/events/src-swing-spring-%E2%80%94-start-spring-semester-step-challenge",
-        "dtstart": "2021-01-25",
-        "dtend": "2021-02-01",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/SRC_StartofSpringsemesterStepChallenge_ai-01.png?itok=R81jgcCj"
-    },
-    {
-        "title": "SRC: Swing Into Spring — Move More Challenge",
-        "description": "Get ready to start the new year right with the Move More Challenge from the Student Recreation Center of the University Student Union. It’s all about your personal fitness commitment to get your body moving more in 2021. Each week you’ll earn amazing rewards like speed jump ropes, resistance bands or dumbbells when you reach the weekly activity goal! Plus, you will have the chance to win a $100 gift card of your choice if you rank in the final Top 21! The daily challenges will start out easy and get progressively more challenging each week until you hit the finish line. So get ready, because this challenge is sure to inspire and motivate you to “Move More” in 2021! To join in on the fun, go to the ChallengeRunner webpage [1] and create an account starting Monday, Dec. 28, if you are new. Then make sure to download the ChallengeRunner app (iOS [2] or Android [3]) to make tracking your activity a breeze. Experience the fun and prizes of the Move More Challenge this January with the SRC. Ready, Set, 2021! From Friday, Jan. 1 to Friday, Feb. 5, you are invited to welcome a brand new year and the new semester at CSUN all during Swing Into Spring from the University Student Union! We’ll be bringing all Matadors an unprecedented month of fun events and activities to get your year off to a great start. Each week we’ll also hold a raffle with awesome prizes including cool Swing Into Spring t-shirts and masks as well as gift cards from Amazon, Chipotle, Netflix, GrubHub and more. Plus, you’ll be entered to win just for participating. Don’t miss out on this exciting new way to Swing Into Spring with the University Student Union … Where Matadors Belong! [1] https://csun-src.challengerunner.com/ [2] https://apps.apple.com/us/app/challengerunner/id694925116 [3] https://play.google.com/store/apps/details?id=com.ChallengeRunner.www&amp;hl=en_US",
-        "eventLink": "https://www.csun.edu/src/events/src-swing-spring-%E2%80%94-move-more-challenge",
-        "dtstart": "2021-01-04",
-        "dtend": "2021-01-25",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/SRC_move-more-challenge_FA20calendar-01.png?itok=UvGsItZG"
-    },
-    {
-        "title": "VRC: The Blend (IG Live)",
-        "description": "You’re invited to join us at “The Blend” every Wednesday on Instagram Live [1] — hosted by the Veterans Resource Center at the University Student Union. Take a break from your daily routine and enjoy good conversation with fellow Veterans and other CSUN students with military connections — all blended together. Whether you can only drop by for a few minutes or want to hang around for a while, take some time out with “The Blend” with the VRC. Is there a resource you'd like to be included? Contact the VRC Manager, Mayra Plascencia [2]. Ready, Set, 2021! From Friday, Jan. 1 to Friday, Feb. 5, you are invited to welcome a brand new year and the new semester at CSUN all during Swing Into Spring from the University Student Union! We’ll be bringing all Matadors an unprecedented month of fun events and activities to get your year off to a great start. Each week we’ll also hold a raffle with awesome prizes including cool Swing Into Spring t-shirts and masks as well as gift cards from Amazon, Chipotle, Netflix, GrubHub and more. Plus, you’ll be entered to win just for participating. Don’t miss out on this exciting new way to Swing Into Spring with the University Student Union … Where Matadors Belong! [1] https://instagram.com/csun_vrc/ [2] mailto:mayra.plascencia@csun.edu",
-        "eventLink": "https://www.csun.edu/vrc/events/vrc-blend-ig-live-15",
-        "dtstart": "2021-02-03 10:00:00",
-        "dtend": "2021-02-03 10:00:00",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/VRC_S%2721_the_blend_IG-01.png?itok=nMRNi-Zs"
-    },
-    {
-        "title": "VRC: The Blend (IG Live)",
-        "description": "You’re invited to join us at “The Blend” every Wednesday on Instagram Live [1] — hosted by the Veterans Resource Center at the University Student Union. Take a break from your daily routine and enjoy good conversation with fellow Veterans and other CSUN students with military connections — all blended together. Whether you can only drop by for a few minutes or want to hang around for a while, take some time out with “The Blend” with the VRC. Is there a resource you'd like to be included? Contact the VRC Manager, Mayra Plascencia [2]. [1] https://instagram.com/csun_vrc/ [2] mailto:mayra.plascencia@csun.edu",
-        "eventLink": "https://www.csun.edu/vrc/events/vrc-blend-ig-live-16",
-        "dtstart": "2021-02-10 10:00:00",
-        "dtend": "2021-02-10 10:00:00",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_deck_image/event/IG-LIVE-01.jpg?itok=dmBND0x5"
-    },
-    {
-        "title": "VRC: The Blend (IG Live)",
-        "description": "You’re invited to join us at “The Blend” every Wednesday on Instagram Live [1] — hosted by the Veterans Resource Center at the University Student Union. Take a break from your daily routine and enjoy good conversation with fellow Veterans and other CSUN students with military connections — all blended together. Whether you can only drop by for a few minutes or want to hang around for a while, take some time out with “The Blend” with the VRC. Is there a resource you'd like to be included? Contact the VRC Manager, Mayra Plascencia [2]. [1] https://instagram.com/csun_vrc/ [2] mailto:mayra.plascencia@csun.edu",
-        "eventLink": "https://www.csun.edu/vrc/events/vrc-blend-ig-live-17",
-        "dtstart": "2021-02-17 10:00:00",
-        "dtend": "2021-02-17 10:00:00",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_deck_image/event/IG-LIVE-01.jpg?itok=dmBND0x5"
-    },
-    {
-        "title": "VRC: The Blend (IG Live)",
-        "description": "You’re invited to join us at “The Blend” every Wednesday on Instagram Live [1] — hosted by the Veterans Resource Center at the University Student Union. Take a break from your daily routine and enjoy good conversation with fellow Veterans and other CSUN students with military connections — all blended together. Whether you can only drop by for a few minutes or want to hang around for a while, take some time out with “The Blend” with the VRC. Is there a resource you'd like to be included? Contact the VRC Manager, Mayra Plascencia [2]. [1] https://instagram.com/csun_vrc/ [2] mailto:mayra.plascencia@csun.edu",
-        "eventLink": "https://www.csun.edu/vrc/events/vrc-blend-ig-live-18",
-        "dtstart": "2021-02-24 10:00:00",
-        "dtend": "2021-02-24 10:00:00",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_deck_image/event/IG-LIVE-01.jpg?itok=dmBND0x5"
-    },
-    {
-        "title": "VRC: The Blend (IG Live)",
-        "description": "You’re invited to join us at “The Blend” every Wednesday on Instagram Live [1] — hosted by the Veterans Resource Center at the University Student Union. Take a break from your daily routine and enjoy good conversation with fellow Veterans and other CSUN students with military connections — all blended together. Whether you can only drop by for a few minutes or want to hang around for a while, take some time out with “The Blend” with the VRC. Is there a resource you'd like to be included? Contact the VRC Manager, Mayra Plascencia [2]. [1] https://instagram.com/csun_vrc/ [2] mailto:mayra.plascencia@csun.edu",
-        "eventLink": "https://www.csun.edu/vrc/events/vrc-blend-ig-live-19",
-        "dtstart": "2021-03-03 10:00:00",
-        "dtend": "2021-03-03 10:00:00",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_deck_image/event/IG-LIVE-01.jpg?itok=dmBND0x5"
     },
     {
         "title": "VRC: The Blend (IG Live)",
@@ -313,90 +161,10 @@ export const CalendarEvents = [
     {
         "title": "VRC: The Blend (IG Live)",
         "description": "You’re invited to join us at “The Blend” every Wednesday on Instagram Live [1] — hosted by the Veterans Resource Center at the University Student Union. Take a break from your daily routine and enjoy good conversation with fellow Veterans and other CSUN students with military connections — all blended together. Whether you can only drop by for a few minutes or want to hang around for a while, take some time out with “The Blend” with the VRC. Is there a resource you'd like to be included? Contact the VRC Manager, Mayra Plascencia [2]. [1] https://instagram.com/csun_vrc/ [2] mailto:mayra.plascencia@csun.edu",
-        "eventLink": "https://www.csun.edu/vrc/events/vrc-blend-ig-live-31",
+        "eventLink": "https://www.csun.edu/vrc/events/vrc-blend-ig-live-28",
         "dtstart": "2021-05-19 10:00:00",
         "dtend": "2021-05-19 10:00:00",
-        "imgSrc": "https://live.staticflickr.com/3948/buddyicons/149217749@N02_r.jpg?1491936417#149217749@N02"
-    },
-    {
-        "title": "SRC: Swing Into Spring — Run It to Win It Challenge",
-        "description": "Build up your cadence, and push your pace! Get ready for an all-new virtual fitness program with the Run It to Win It Challenge hosted by the Student Recreation Center of the University Student Union. It’s another fun Swing Into Spring event! All you need to do is sign up with us and get ready to let your endorphins flow! Once you’re registered and connected to the Student Recreation Center and Nike Run Club app, get ready to run for glory and cool prizes! Once the challenge begins, the first three competitors to complete 50 miles will win a sweet gift card! Third place wins a $20 Amazon gift card, second place wins a $30 Nike gift card, and first places wins a $50 Lululemon gift card!! In addition, all participants who successfully complete all 50 miles will be entered into a raffle to win a 5 Personal Training Session Package! Register to start 2021 off right with the Run It to Win It Challenge and win big with the SRC … Where Matadors Play!",
-        "eventLink": "https://www.csun.edu/src/events/src-swing-spring-%E2%80%94-run-it-win-it-challenge",
-        "dtstart": "2021-01-25",
-        "dtend": "2021-02-06",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/SRC_RunIttoWinIt_SP21_0.png?itok=v-tap5PT"
-    },
-    {
-        "title": "USU Games Room: Welcome Back Week — Gaming Party",
-        "description": "More information is coming soon about this exciting virtual opportunity for CSUN Students this spring semester at the University Student Union... Where Matadors Belong!",
-        "eventLink": "https://www.csun.edu/src/events/usu-games-room-welcome-back-week-%E2%80%94-gaming-party",
-        "dtstart": "2021-01-25 13:00:00",
-        "dtend": "2021-01-25 20:00:00",
-        "imgSrc": "https://live.staticflickr.com/3948/buddyicons/149217749@N02_r.jpg?1491936417#149217749@N02"
-    },
-    {
-        "title": "USU Games Room: Welcome Back Week — Among Us Party",
-        "description": "More information is coming soon about this exciting virtual opportunity for CSUN Students this spring semester at the University Student Union... Where Matadors Belong!",
-        "eventLink": "https://www.csun.edu/src/events/usu-games-room-welcome-back-week-%E2%80%94-among-us-party",
-        "dtstart": "2021-01-29 20:00:00",
-        "dtend": "2021-01-29 22:00:00",
-        "imgSrc": "https://live.staticflickr.com/3948/buddyicons/149217749@N02_r.jpg?1491936417#149217749@N02"
-    },
-    {
-        "title": "USU Games Room: Welcome Back Week — Open House",
-        "description": "More information is coming soon about this exciting virtual opportunity for CSUN Students this spring semester at the University Student Union... Where Matadors Belong!",
-        "eventLink": "https://www.csun.edu/src/events/usu-games-room-welcome-back-week-%E2%80%94-open-house",
-        "dtstart": "2021-01-27 17:00:00",
-        "dtend": "2021-01-27 19:00:00",
-        "imgSrc": "https://live.staticflickr.com/3948/buddyicons/149217749@N02_r.jpg?1491936417#149217749@N02"
-    },
-    {
-        "title": "USU Reservation & Event Services: Hoan Do Training",
-        "description": "More information is coming soon about this exciting virtual opportunity for CSUN Students this spring semester at the University Student Union... Where Matadors Belong!",
-        "eventLink": "https://www.csun.edu/usu/events/usu-reservation-event-services-hoan-do-training",
-        "dtstart": "2021-01-28 11:00:00",
-        "dtend": "2021-01-28 11:00:00",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/RES_HoanDoTraining_Sp2021-01.png?itok=yBs03IFt"
-    },
-    {
-        "title": "SRC: Swing Into Spring — FIFA 21 Tournament",
-        "description": "Go for the gold during the FIFA 21 Tournament hosted by Intramural Sports at the Student Recreation Center of the University Student Union. It’s another fun part of the USU’s special Swing Into Spring event! FIFA fanatics of all levels, here’s your chance to compete against other Matador gamers and battle it out to claim FIFA 21 victory. The player with the most wins on each console will be crowned FIFA 21 Tournament champion and score an $50 Amazon gift card! Plus, you’ll receive a FREE SRC Workout Towel and T-shirt just for participating and be entered to win in an awesome raffle for gift cards to Starbucks and the CSUN Campus Store. Sign up for the FIFA 21 Tournament on IMLeagues [1] and don’t forget to join the conversation over on our Discord channel [2]! You can’t score the goal if you don’t take the shot, Matadors! Ready, Set, 2021! From Friday, Jan. 1 to Friday, Feb. 5, you are invited to welcome a brand new year and the new semester at CSUN all during Swing Into Spring from the University Student Union! We’ll be bringing all Matadors an unprecedented month of fun events and activities to get your year off to a great start. Each week we’ll also hold a raffle with awesome prizes including cool Swing Into Spring t-shirts and masks as well as gift cards from Amazon, Chipotle, Netflix, GrubHub and more. Plus, you’ll be entered to win just for participating. Don’t miss out on this exciting new way to Swing Into Spring with the University Student Union … Where Matadors Belong! [1] https://imleagues.com/csun [2] https://discord.com/invite/t4Mw8m3?fbclid=IwAR0YPc9oCCN288FtaX1lT73aNNot58J8rSiosOtf_046hhKVDsGewoAUon8",
-        "eventLink": "https://www.csun.edu/src/events/src-swing-spring-%E2%80%94-fifa-21-tournament",
-        "dtstart": "2021-01-28 17:00:00",
-        "dtend": "2021-01-28 19:30:00",
-        "imgSrc": "https://live.staticflickr.com/3948/buddyicons/149217749@N02_r.jpg?1491936417#149217749@N02"
-    },
-    {
-        "title": "SRC: Swing Into Spring — FIFA 21 Tournament",
-        "description": "Go for the gold during the FIFA 21 Tournament hosted by Intramural Sports at the Student Recreation Center of the University Student Union. It’s another fun part of the USU’s special Swing Into Spring event! FIFA fanatics of all levels, here’s your chance to compete against other Matador gamers and battle it out to claim FIFA 21 victory. The player with the most wins on each console will be crowned FIFA 21 Tournament champion and score an $50 Amazon gift card! Plus, you’ll receive a FREE SRC Workout Towel and T-shirt just for participating and be entered to win in an awesome raffle for gift cards to Starbucks and the CSUN Campus Store. Sign up for the FIFA 21 Tournament on IMLeagues [1] and don’t forget to join the conversation over on our Discord channel [2]! You can’t score the goal if you don’t take the shot, Matadors! Ready, Set, 2021! From Friday, Jan. 1 to Friday, Feb. 5, you are invited to welcome a brand new year and the new semester at CSUN all during Swing Into Spring from the University Student Union! We’ll be bringing all Matadors an unprecedented month of fun events and activities to get your year off to a great start. Each week we’ll also hold a raffle with awesome prizes including cool Swing Into Spring t-shirts and masks as well as gift cards from Amazon, Chipotle, Netflix, GrubHub and more. Plus, you’ll be entered to win just for participating. Don’t miss out on this exciting new way to Swing Into Spring with the University Student Union … Where Matadors Belong! [1] https://imleagues.com/csun [2] https://discord.com/invite/t4Mw8m3?fbclid=IwAR0YPc9oCCN288FtaX1lT73aNNot58J8rSiosOtf_046hhKVDsGewoAUon8",
-        "eventLink": "https://www.csun.edu/src/events/src-swing-spring-%E2%80%94-fifa-21-tournament-0",
-        "dtstart": "2021-01-19 17:00:00",
-        "dtend": "2021-01-19 19:30:00",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/Fifa_21_T1-01.png?itok=2tnMlWH3"
-    },
-    {
-        "title": "SRC: Swing Into Spring — Learn The Basics — Cultivating Crow Pose and  Learn How To “Fly”",
-        "description": "Come progress in your fitness journey with one, some, or all of the Learn the Basics workshops hosted by the SRC of the University Student Union! Join us at the beginning of the semester to expand your knowledge of fitness and take care of your body and mind with four interactive virtual sessions on Zoom. These workshops will not only include fun movement with some of our SRC trainers and instructors, but you’ll get to learn more about how you can make your fitness journey unique to you! To attend any or all of the workshops, sign up on MINDBODY. Registration will open one week before each workshop so don’t wait to snag your spot and learn about how you can best move and shake your body on your fitness journey with Learn the Basics, hosted by the SRC … Where Matadors Belong! Cultivating Crow Pose and Learn How To “Fly” Come kick off Learn the Basics with Cultivating Crow Pose and Learn How To “Fly”! We’ll begin by building the basic foundations of the crow pose, Bakasana, and exploring how we can apply those foundations to other arm balances. After this 60-minute workshop, you’ll walk away with some newfound knowledge of yoga to incorporate into your daily fitness endeavors! Ready, Set, 2021! From Friday, Jan. 1 to Friday, Feb. 5, you are invited to welcome a brand new year and the new semester at CSUN all during Swing Into Spring from the University Student Union! We’ll be bringing all Matadors an unprecedented month of fun events and activities to get your year off to a great start. Each week we’ll also hold a raffle with awesome prizes including cool Swing Into Spring t-shirts and masks as well as gift cards from Amazon, Chipotle, Netflix, GrubHub and more. Plus, you’ll be entered to win just for participating. Don’t miss out on this exciting new way to Swing Into Spring with the University Student Union … Where Matadors Belong!",
-        "eventLink": "https://www.csun.edu/src/events/src-swing-spring-%E2%80%94-learn-basics-%E2%80%94-cultivating-crow-pose-and-learn-how-%E2%80%9Cfly%E2%80%9D",
-        "dtstart": "2021-01-07 18:00:00",
-        "dtend": "2021-01-07 19:00:00",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/SRC_LearnTheBasics_Sp21.png?itok=m8F5lu2A"
-    },
-    {
-        "title": "SRC: Swing Into Spring — Learn The Basics — Hypertrophy Training: How To  Increase Your Muscle Mass",
-        "description": "Come progress in your fitness journey with one, some, or all of the Learn the Basics workshops hosted by the SRC of the University Student Union! Join us at the beginning of the semester to expand your knowledge of fitness and take care of your body and mind with four interactive virtual sessions on Zoom. These workshops will not only include fun movement with some of our SRC trainers and instructors, but you’ll get to learn more about how you can make your fitness journey unique to you! To attend any or all of the workshops, sign up on MINDBODY. Registration will open one week before each workshop so don’t wait to snag your spot and learn about how you can best move and shake your body on your fitness journey with Learn the Basics, hosted by the SRC …Where Matadors Belong! Hypertrophy Training: How To Increase Your Muscle Mass Join us for Hypertrophy Training: How To Increase Your Muscle Mass by learning all about how to up those reps safely, strengthen your body and get those muscles growing. This 60-minute workshop will teach you how to increase your muscle mass safely while also targeting the areas you want to work on to maximize your workout! Ready, Set, 2021! From Friday, Jan. 1 to Friday, Feb. 5, you are invited to welcome a brand new year and the new semester at CSUN all during Swing Into Spring from the University Student Union! We’ll be bringing all Matadors an unprecedented month of fun events and activities to get your year off to a great start. Each week we’ll also hold a raffle with awesome prizes including cool Swing Into Spring t-shirts and masks as well as gift cards from Amazon, Chipotle, Netflix, GrubHub and more. Plus, you’ll be entered to win just for participating. Don’t miss out on this exciting new way to Swing Into Spring with the University Student Union … Where Matadors Belong!",
-        "eventLink": "https://www.csun.edu/src/events/src-swing-spring-%E2%80%94-learn-basics-%E2%80%94-hypertrophy-training-how-increase-your-muscle-mass",
-        "dtstart": "2021-01-14 16:00:00",
-        "dtend": "2021-01-14 17:00:00",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/SRC_LearnTheBasics_Sp21.png?itok=m8F5lu2A"
-    },
-    {
-        "title": "SRC: Swing Into Spring — Learn The Basics — How To Build Stronger Glutes",
-        "description": "Come progress in your fitness journey with one, some, or all of the Learn the Basics workshops hosted by the SRC of the University Student Union! Join us at the beginning of the semester to expand your knowledge of fitness and take care of your body and mind with four interactive virtual sessions on Zoom. These workshops will not only include fun movement with some of our SRC trainers and instructors, but you’ll get to learn more about how you can make your fitness journey unique to you! To attend any or all of the workshops, sign up on MINDBODY. Registration will open one week before each workshop so don’t wait to snag your spot and learn about how you can best move and shake your body on your fitness journey with Learn the Basics, hosted by the SRC … Where Matadors Belong! How To Build Stronger Glutes We love all of the muscle groups equally of course, but this workshop is all about How To Build Stronger Glutes! This 60-minute workshop focuses on how to strengthen your gluteus maximus and get the most out of every workout. The knowledge you take from here can also help you to build a training program that includes strengthening your glutes so join us for this last workshop in the Learn the Basics series! Ready, Set, 2021! From Friday, Jan. 1 to Friday, Feb. 5, you are invited to welcome a brand new year and the new semester at CSUN all during Swing Into Spring from the University Student Union! We’ll be bringing all Matadors an unprecedented month of fun events and activities to get your year off to a great start. Each week we’ll also hold a raffle with awesome prizes including cool Swing Into Spring t-shirts and masks as well as gift cards from Amazon, Chipotle, Netflix, GrubHub and more. Plus, you’ll be entered to win just for participating. Don’t miss out on this exciting new way to Swing Into Spring with the University Student Union … Where Matadors Belong!",
-        "eventLink": "https://www.csun.edu/src/events/src-swing-spring-%E2%80%94-learn-basics-%E2%80%94-how-build-stronger-glutes",
-        "dtstart": "2021-02-04 13:00:00",
-        "dtend": "2021-02-04 14:00:00",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/SRC_LearnTheBasics_Sp21.png?itok=m8F5lu2A"
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_deck_image/event/IG-LIVE-01.jpg?itok=dmBND0x5"
     },
     {
         "title": "Pride Center: GAYme Night",
@@ -471,94 +239,6 @@ export const CalendarEvents = [
         "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/gaymenight-WithoutPageCurl-01.png?itok=QNZQu5BS"
     },
     {
-        "title": "Pride Center: GAYme Night",
-        "description": "Looking to have some fun with your fellow CSUN GAYmers? Come join the Pride Center of the University Student Union for our weekly virtual GAYme Night this semester to connect with other CSUN LGBTQIA+ community members! Show up weekly via Zoom, every Thursday at 6 p.m. and show the Pride Center your competitive side! We can’t wait to have a gay ol’ time with you CSUN! ",
-        "eventLink": "https://www.csun.edu/pride/events/pride-center-gayme-night-33",
-        "dtstart": "2021-03-04 18:00:00",
-        "dtend": "2021-03-04 19:30:00",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/gaymenight-WithoutPageCurl-01.png?itok=QNZQu5BS"
-    },
-    {
-        "title": "Pride Center: GAYme Night",
-        "description": "Looking to have some fun with your fellow CSUN GAYmers? Come join the Pride Center of the University Student Union for our weekly virtual GAYme Night this semester to connect with other CSUN LGBTQIA+ community members! Show up weekly via Zoom, every Thursday at 6 p.m. and show the Pride Center your competitive side! We can’t wait to have a gay ol’ time with you CSUN! ",
-        "eventLink": "https://www.csun.edu/pride/events/pride-center-gayme-night-34",
-        "dtstart": "2021-02-25 18:00:00",
-        "dtend": "2021-02-25 19:30:00",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/gaymenight-WithoutPageCurl-01.png?itok=QNZQu5BS"
-    },
-    {
-        "title": "Pride Center: GAYme Night",
-        "description": "Looking to have some fun with your fellow CSUN GAYmers? Come join the Pride Center of the University Student Union for our weekly virtual GAYme Night this semester to connect with other CSUN LGBTQIA+ community members! Show up weekly via Zoom, every Thursday at 6 p.m. and show the Pride Center your competitive side! We can’t wait to have a gay ol’ time with you CSUN! ",
-        "eventLink": "https://www.csun.edu/pride/events/pride-center-gayme-night-35",
-        "dtstart": "2021-02-18 18:00:00",
-        "dtend": "2021-02-18 19:30:00",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/gaymenight-WithoutPageCurl-01.png?itok=QNZQu5BS"
-    },
-    {
-        "title": "Pride Center: GAYme Night",
-        "description": "Looking to have some fun with your fellow CSUN GAYmers? Come join the Pride Center of the University Student Union for our weekly virtual GAYme Night this semester to connect with other CSUN LGBTQIA+ community members! Show up weekly via Zoom, every Thursday at 6 p.m. and show the Pride Center your competitive side! We can’t wait to have a gay ol’ time with you CSUN! ",
-        "eventLink": "https://www.csun.edu/pride/events/pride-center-gayme-night-36",
-        "dtstart": "2021-02-11 18:00:00",
-        "dtend": "2021-02-11 19:30:00",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/gaymenight-WithoutPageCurl-01.png?itok=QNZQu5BS"
-    },
-    {
-        "title": "Pride Center: GAYme Night",
-        "description": "Looking to have some fun with your fellow CSUN GAYmers? Come join the Pride Center of the University Student Union for our weekly virtual GAYme Night this semester to connect with other CSUN LGBTQIA+ community members! Show up weekly via Zoom, every Thursday at 6 p.m. and show the Pride Center your competitive side! We can’t wait to have a gay ol’ time with you CSUN! ",
-        "eventLink": "https://www.csun.edu/pride/events/pride-center-gayme-night-37",
-        "dtstart": "2021-02-04 18:00:00",
-        "dtend": "2021-02-04 19:30:00",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/gaymenight-01_2.png?itok=5j0cM9YC"
-    },
-    {
-        "title": "Pride Center: GAYme Night",
-        "description": "Looking to have some fun with your fellow CSUN GAYmers? Come join the Pride Center of the University Student Union for our weekly virtual GAYme Night this semester to connect with other CSUN LGBTQIA+ community members! Show up weekly via Zoom, every Thursday at 6 p.m. and show the Pride Center your competitive side! We can’t wait to have a gay ol’ time with you CSUN! ",
-        "eventLink": "https://www.csun.edu/pride/events/pride-center-gayme-night-38",
-        "dtstart": "2021-01-28 18:00:00",
-        "dtend": "2021-01-28 19:30:00",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/gaymenight-01_2.png?itok=5j0cM9YC"
-    },
-    {
-        "title": "SRC: Swing Into Spring — Rocket League Tournament 2",
-        "description": "Start those engines and get ready to ram your way to victory during the Rocket League Tournament hosted by Intramural Sports at the Student Recreation Center of the University Student Union. In two special tourneys, kick those engines into gear for a test of speed, strategy and fun! The ultimate winner will walk away with both bragging rights and a $50 Amazon gift card. Plus, all participants will score an SRC Workout Towel and T-shirt and will be entered in a raffle for Campus Store and Starbucks gift cards! Register on IMLeagues [1] before each tournament and then sign on to our Intramural Sports Discord server [2] for access to matchups and standings. Come put the pedal to the metal and show us what you’ve got at the Rocket League Tournament from the SRC. It’s another fun event for Swing Into Spring! Ready, Set, 2021! From Friday, Jan. 1 to Friday, Feb. 5, you are invited to welcome a brand new year and the new semester at CSUN all during Swing Into Spring from the University Student Union! We’ll be bringing you an unprecedented month of fun events and activities to get your year off to a great start. Each week we’ll also hold a raffle with awesome prizes—T-shirts, masks and gift cards from Amazon, Chipotle, Netflix, GrubHub and more—and you’ll be entered to win just for participating. Don’t miss out on this exciting new way to Swing Into Spring with the University Student Union … Where Matadors Belong! [1] https://imleagues.com/csun [2] https://discord.com/invite/XsBbd5G",
-        "eventLink": "https://www.csun.edu/src/events/src-swing-spring-%E2%80%94-rocket-league-tournament-2",
-        "dtstart": "2021-01-29 17:00:00",
-        "dtend": "2021-01-29 19:00:00",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/SRC_RocketLeague_2nd_Tournament_Spring-01.png?itok=v4jckh8F"
-    },
-    {
-        "title": "SRC: Swing Into Spring — Rocket League Tournament 1",
-        "description": "Start those engines and get ready to ram your way to victory during the Rocket League Tournament hosted by Intramural Sports at the Student Recreation Center of the University Student Union. In two special tourneys, kick those engines into gear for a test of speed, strategy and fun! The ultimate winner will walk away with both bragging rights and a $50 Amazon gift card. Plus, all participants will score an SRC Workout Towel and T-shirt and will be entered in a raffle for Campus Store and Starbucks gift cards! Register on IMLeagues [1] before each tournament and then sign on to our Intramural Sports Discord server [2] for access to matchups and standings. Come put the pedal to the metal and show us what you’ve got at the Rocket League Tournament from the SRC. It’s another fun event for Swing Into Spring! Ready, Set, 2021! From Friday, Jan. 1 to Friday, Feb. 5, you are invited to welcome a brand new year and the new semester at CSUN all during Swing Into Spring from the University Student Union! We’ll be bringing you an unprecedented month of fun events and activities to get your year off to a great start. Each week we’ll also hold a raffle with awesome prizes—T-shirts, masks and gift cards from Amazon, Chipotle, Netflix, GrubHub and more—and you’ll be entered to win just for participating. Don’t miss out on this exciting new way to Swing Into Spring with the University Student Union … Where Matadors Belong! [1] https://imleagues.com/csun [2] https://discord.com/invite/XsBbd5G",
-        "eventLink": "https://www.csun.edu/src/events/src-swing-spring-%E2%80%94-rocket-league-tournament-1",
-        "dtstart": "2021-01-12 17:00:00",
-        "dtend": "2021-01-12 19:00:00",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/SRC_RocketLeague_1st_Tournament_Spring-01.png?itok=MhtEWHaN"
-    },
-    {
-        "title": "Pride Center: Queerations —Jewelry Making/DIY Clothing",
-        "description": "Grab your favorite mug and join us on Zoom for some good conversation, hot drinks and fun crafts at Queerations by the Pride Center of the University Student Union! During these bi-monthly gatherings on select Wednesdays, LGBTQIA+ community members and allies can come together and enjoy tea, coffee and all things crafts. Whether you’re super artsy or just love a good latte, this is the place for you! If you’re interested in participating, fill out the RSVP form to receive your craft supplies as well as coffee, hot chocolate and or tea once a month via the regular mail. Then, sign on to Zoom with the provided meeting information when the event begins. We can’t wait to see all of your unique creations at Queerations by the Pride Center of the USU…Where Matadors Belong!",
-        "eventLink": "https://www.csun.edu/pride/events/pride-center-queerations-%E2%80%94jewelry-makingdiy-clothing",
-        "dtstart": "2021-02-03 17:00:00",
-        "dtend": "2021-02-03 18:30:00",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/PC_Queerations_SP21.png?itok=EStQR5X6"
-    },
-    {
-        "title": "Pride Center: Queerations — Poetry Writing Workshop",
-        "description": "Grab your favorite mug and join us on Zoom for some good conversation, hot drinks and fun crafts at Queerations by the Pride Center of the University Student Union! During these bi-monthly gatherings on select Wednesdays, LGBTQIA+ community members and allies can come together and enjoy tea, coffee and all things crafts. Whether you’re super artsy or just love a good latte, this is the place for you! If you’re interested in participating, fill out the RSVP form to receive your craft supplies as well as coffee, hot chocolate and or tea once a month via the regular mail. Then, sign on to Zoom with the provided meeting information when the event begins. We can’t wait to see all of your unique creations at Queerations by the Pride Center of the USU…Where Matadors Belong!",
-        "eventLink": "https://www.csun.edu/pride/events/pride-center-queerations-%E2%80%94-poetry-writing-workshop",
-        "dtstart": "2021-02-17 17:00:00",
-        "dtend": "2021-02-17 18:30:00",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_deck_image/event/PC_Queerations_SP21.png?itok=6ijHT0G3"
-    },
-    {
-        "title": "Pride Center: Queerations",
-        "description": "Grab your favorite mug and join us on Zoom for some good conversation, hot drinks and fun crafts at Queerations by the Pride Center of the University Student Union! During these bi-monthly gatherings on select Wednesdays, LGBTQIA+ community members and allies can come together and enjoy tea, coffee and all things crafts. Whether you’re super artsy or just love a good latte, this is the place for you! If you’re interested in participating, fill out the RSVP form to receive your craft supplies as well as coffee, hot chocolate and or tea once a month via the regular mail. Then, sign on to Zoom with the provided meeting information when the event begins. We can’t wait to see all of your unique creations at Queerations by the Pride Center of the USU…Where Matadors Belong!",
-        "eventLink": "https://www.csun.edu/pride/events/pride-center-queerations",
-        "dtstart": "2021-03-03 17:00:00",
-        "dtend": "2021-03-03 18:30:00",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/PC_Queerations_SP21.png?itok=EStQR5X6"
-    },
-    {
         "title": "Pride Center: Queerations",
         "description": "Grab your favorite mug and join us on Zoom for some good conversation, hot drinks and fun crafts at Queerations by the Pride Center of the University Student Union! During these bi-monthly gatherings on select Wednesdays, LGBTQIA+ community members and allies can come together and enjoy tea, coffee and all things crafts. Whether you’re super artsy or just love a good latte, this is the place for you! If you’re interested in participating, fill out the RSVP form to receive your craft supplies as well as coffee, hot chocolate and or tea once a month via the regular mail. Then, sign on to Zoom with the provided meeting information when the event begins. We can’t wait to see all of your unique creations at Queerations by the Pride Center of the USU…Where Matadors Belong!",
         "eventLink": "https://www.csun.edu/pride/events/pride-center-queerations-0",
@@ -567,108 +247,68 @@ export const CalendarEvents = [
         "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/PC_Queerations_SP21.png?itok=EStQR5X6"
     },
     {
-        "title": "Pride Center: Queerations",
+        "title": "Pride Center: Queerations — DIY Room Décor",
         "description": "Grab your favorite mug and join us on Zoom for some good conversation, hot drinks and fun crafts at Queerations by the Pride Center of the University Student Union! During these bi-monthly gatherings on select Wednesdays, LGBTQIA+ community members and allies can come together and enjoy tea, coffee and all things crafts. Whether you’re super artsy or just love a good latte, this is the place for you! If you’re interested in participating, fill out the RSVP form to receive your craft supplies as well as coffee, hot chocolate and or tea once a month via the regular mail. Then, sign on to Zoom with the provided meeting information when the event begins. We can’t wait to see all of your unique creations at Queerations by the Pride Center of the USU…Where Matadors Belong!",
-        "eventLink": "https://www.csun.edu/pride/events/pride-center-queerations-1",
+        "eventLink": "https://www.csun.edu/pride/events/pride-center-queerations-%E2%80%94-diy-room-d%C3%A9cor",
         "dtstart": "2021-04-14 17:00:00",
         "dtend": "2021-04-14 18:30:00",
-        "imgSrc": "https://live.staticflickr.com/3948/buddyicons/149217749@N02_r.jpg?1491936417#149217749@N02"
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/PC_Queerations_SP21.png?itok=EStQR5X6"
     },
     {
-        "title": "Pride Center: Queerations",
+        "title": "Pride Center: Queerations — Bottle Decorating",
         "description": "Grab your favorite mug and join us on Zoom for some good conversation, hot drinks and fun crafts at Queerations by the Pride Center of the University Student Union! During these bi-monthly gatherings on select Wednesdays, LGBTQIA+ community members and allies can come together and enjoy tea, coffee and all things crafts. Whether you’re super artsy or just love a good latte, this is the place for you! If you’re interested in participating, fill out the RSVP form to receive your craft supplies as well as coffee, hot chocolate and or tea once a month via the regular mail. Then, sign on to Zoom with the provided meeting information when the event begins. We can’t wait to see all of your unique creations at Queerations by the Pride Center of the USU…Where Matadors Belong!",
-        "eventLink": "https://www.csun.edu/pride/events/pride-center-queerations-2",
+        "eventLink": "https://www.csun.edu/pride/events/pride-center-queerations-%E2%80%94-bottle-decorating",
         "dtstart": "2021-04-28 17:00:00",
         "dtend": "2021-04-28 18:30:00",
-        "imgSrc": "https://live.staticflickr.com/3948/buddyicons/149217749@N02_r.jpg?1491936417#149217749@N02"
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/PC_Queerations_SP21.png?itok=EStQR5X6"
     },
     {
-        "title": "Pride Center: Queerations",
+        "title": "Pride Center: Queerations — TikTok Showcase",
         "description": "Grab your favorite mug and join us on Zoom for some good conversation, hot drinks and fun crafts at Queerations by the Pride Center of the University Student Union! During these bi-monthly gatherings on select Wednesdays, LGBTQIA+ community members and allies can come together and enjoy tea, coffee and all things crafts. Whether you’re super artsy or just love a good latte, this is the place for you! If you’re interested in participating, fill out the RSVP form to receive your craft supplies as well as coffee, hot chocolate and or tea once a month via the regular mail. Then, sign on to Zoom with the provided meeting information when the event begins. We can’t wait to see all of your unique creations at Queerations by the Pride Center of the USU…Where Matadors Belong!",
-        "eventLink": "https://www.csun.edu/pride/events/pride-center-queerations-3",
+        "eventLink": "https://www.csun.edu/pride/events/pride-center-queerations-%E2%80%94-tiktok-showcase",
         "dtstart": "2021-05-12 17:00:00",
         "dtend": "2021-05-12 18:30:00",
-        "imgSrc": "https://live.staticflickr.com/3948/buddyicons/149217749@N02_r.jpg?1491936417#149217749@N02"
-    },
-    {
-        "title": "USU: Swing Into Spring — Virtual “Cultural Welcomes”",
-        "description": "Looking to find your personal communities on campus? Look no further, because the University Student Union is here to introduce you to them with our virtual Cultural Welcomes event! It’s another special opportunity for you during Swing Into Spring. From Monday, Jan. 25 through Thursday, Jan. 28, you can check out the variety of diverse communities here at CSUN and connect with your people on campus. Cultural Welcomes will also help you get familiar with the many helpful student resources available to you at CSUN and meet some amazing faculty and staff members. Are you interested in ASL Interpreter Services? Contact Jessica Aceves [1] by Thursday, Jan. 22 to inquire about interpreter availability. Ready, Set, 2021! From Friday, Jan. 1 to Friday, Feb. 5, you are invited to welcome a brand new year and the new semester at CSUN all during Swing Into Spring from the University Student Union! We’ll be bringing all Matadors an unprecedented month of fun events and activities to get your year off to a great start. Each week we’ll also hold a raffle with awesome prizes including cool Swing Into Spring t-shirts and masks as well as gift cards from Amazon, Chipotle, Netflix, GrubHub and more. Plus, you’ll be entered to win just for participating. Don’t miss out on this exciting new way to Swing Into Spring with the University Student Union … Where Matadors Belong! [1] mailto:jessica.aceves@csun.edu",
-        "eventLink": "https://www.csun.edu/usu/events/usu-swing-spring-virtual-cultural-welcomes",
-        "dtstart": "2021-01-25 08:00:00",
-        "dtend": "2021-01-28 20:00:00",
-        "imgSrc": "https://live.staticflickr.com/3948/buddyicons/149217749@N02_r.jpg?1491936417#149217749@N02"
-    },
-    {
-        "title": "Pride Center: The Lavender Takeover — Black Queer and Trans Fashion (Open)",
-        "description": "Come find weekly support and encouragement in your community during The Lavender Takeover with the Pride Center of the University Student Union. This weekly gathering is where LGBTQIA+ people of color in the CSUN community can share experiences, engage in discussions and connect with one another. It’s the perfect time and place to be encouraged by others while strengthening your community roots at CSUN. The Lavender Takeover is intended to be a safe and welcoming space for all so some meetings will be “CLOSED” to just LGBTQIA+ students of color and other meetings will be “OPEN” to everyone. Whether you are on a journey to keep growing as an ally or wish to connect with others in your community, come embrace being YOU at The Lavender Takeover by the Pride Center of the USU … Where Matadors Belong! Ready, Set, 2021! From Friday, Jan. 1 to Friday, Feb. 5, you are invited to welcome a brand new year and the new semester at CSUN all during Swing Into Spring from the University Student Union! We’ll be bringing all Matadors an unprecedented month of fun events and activities to get your year off to a great start. Each week we’ll also hold a raffle with awesome prizes including cool Swing Into Spring t-shirts and masks as well as gift cards from Amazon, Chipotle, Netflix, GrubHub and more. Plus, you’ll be entered to win just for participating. Don’t miss out on this exciting new way to Swing Into Spring with the University Student Union … Where Matadors Belong! [1] [1] https://www.csun.edu//F38C7BDE-25EE-470C-9917-1691475CAF4E#_msocom_1",
-        "eventLink": "https://www.csun.edu/pride/events/pride-center-lavender-takeover-%E2%80%94-black-queer-and-trans-fashion-open",
-        "dtstart": "2021-02-02 17:00:00",
-        "dtend": "2021-02-02 19:00:00",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/DC_LavendarTakedown_InitialDesign_SP2021.png?itok=AKrSdkwl"
-    },
-    {
-        "title": "Pride Center: The Lavender Takeover — Black Hair (Closed)",
-        "description": " Come find weekly support and encouragement in your community during The Lavender Takeover with the Pride Center of the University Student Union. This weekly gathering is where LGBTQIA+ people of color in the CSUN community can share experiences, engage in discussions and connect with one another. It’s the perfect time and place to be encouraged by others while strengthening your community roots at CSUN. The Lavender Takeover is intended to be a safe and welcoming space for all so some meetings will be “CLOSED” to just LGBTQIA+ students of color and other meetings will be “OPEN” to everyone. Whether you are on a journey to keep growing as an ally or wish to connect with others in your community, come embrace being YOU at The Lavender Takeover by the Pride Center of the USU … Where Matadors Belong! ",
-        "eventLink": "https://www.csun.edu/pride/events/pride-center-lavender-takeover-%E2%80%94-black-hair-closed",
-        "dtstart": "2021-02-09 17:00:00",
-        "dtend": "2021-02-09 19:00:00",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/DC_LavendarTakedown_InitialDesign_SP2021.png?itok=AKrSdkwl"
-    },
-    {
-        "title": "Pride Center: The Lavender Takeover — Black Love (Open)",
-        "description": " Come find weekly support and encouragement in your community during The Lavender Takeover with the Pride Center of the University Student Union. This weekly gathering is where LGBTQIA+ people of color in the CSUN community can share experiences, engage in discussions and connect with one another. It’s the perfect time and place to be encouraged by others while strengthening your community roots at CSUN. The Lavender Takeover is intended to be a safe and welcoming space for all so some meetings will be “CLOSED” to just LGBTQIA+ students of color and other meetings will be “OPEN” to everyone. Whether you are on a journey to keep growing as an ally or wish to connect with others in your community, come embrace being YOU at The Lavender Takeover by the Pride Center of the USU … Where Matadors Belong! ",
-        "eventLink": "https://www.csun.edu/pride/events/pride-center-lavender-takeover-%E2%80%94-black-love-open",
-        "dtstart": "2021-02-16 17:00:00",
-        "dtend": "2021-02-16 19:00:00",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/DC_LavendarTakedown_InitialDesign_SP2021.png?itok=AKrSdkwl"
-    },
-    {
-        "title": "Pride Center: The Lavender Takeover — Black LGBTQIA+ Activists and History  (Open)",
-        "description": " Come find weekly support and encouragement in your community during The Lavender Takeover with the Pride Center of the University Student Union. This weekly gathering is where LGBTQIA+ people of color in the CSUN community can share experiences, engage in discussions and connect with one another. It’s the perfect time and place to be encouraged by others while strengthening your community roots at CSUN. The Lavender Takeover is intended to be a safe and welcoming space for all so some meetings will be “CLOSED” to just LGBTQIA+ students of color and other meetings will be “OPEN” to everyone. Whether you are on a journey to keep growing as an ally or wish to connect with others in your community, come embrace being YOU at The Lavender Takeover by the Pride Center of the USU … Where Matadors Belong! ",
-        "eventLink": "https://www.csun.edu/pride/events/pride-center-lavender-takeover-%E2%80%94-black-lgbtqia-activists-and-history-open",
-        "dtstart": "2021-02-23 17:00:00",
-        "dtend": "2021-02-23 19:00:00",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/DC_LavendarTakedown_InitialDesign_SP2021.png?itok=AKrSdkwl"
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/PC_Queerations_SP21.png?itok=EStQR5X6"
     },
     {
         "title": "Pride Center: The Lavender Takeover — Reproductive Justice (Closed)",
-        "description": " Come find weekly support and encouragement in your community during The Lavender Takeover with the Pride Center of the University Student Union. This weekly gathering is where LGBTQIA+ people of color in the CSUN community can share experiences, engage in discussions and connect with one another. It’s the perfect time and place to be encouraged by others while strengthening your community roots at CSUN. The Lavender Takeover is intended to be a safe and welcoming space for all so some meetings will be “CLOSED” to just LGBTQIA+ students of color and other meetings will be “OPEN” to everyone. Whether you are on a journey to keep growing as an ally or wish to connect with others in your community, come embrace being YOU at The Lavender Takeover by the Pride Center of the USU … Where Matadors Belong! ",
+        "description": "Come find weekly support and encouragement in your community during The Lavender Takeover with the Pride Center of the University Student Union. This weekly gathering is where LGBTQIA+ people of color in the CSUN community can share experiences, engage in discussions and connect with one another. It’s the perfect time and place to be encouraged by others while strengthening your community roots at CSUN. The Lavender Takeover is intended to be a safe and welcoming space for all so some meetings will be “CLOSED” to just LGBTQIA+ students of color and other meetings will be “OPEN” to everyone. Whether you are on a journey to keep growing as an ally or wish to connect with others in your community, come embrace being YOU at The Lavender Takeover by the Pride Center of the USU … Where Matadors Belong! ",
         "eventLink": "https://www.csun.edu/pride/events/pride-center-lavender-takeover-%E2%80%94-reproductive-justice-closed",
         "dtstart": "2021-03-09 17:00:00",
         "dtend": "2021-03-09 19:00:00",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/DC_LavendarTakedown_InitialDesign_SP2021.png?itok=AKrSdkwl"
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/DC_LavendarTakedown_InitialDesign_2_SP2021.png?itok=XN6cGUA1"
     },
     {
         "title": "Pride Center: The Lavender Takeover — Queer and Trans Women of Color in  Film (Closed — theater and acting QTWOC)",
-        "description": " Come find weekly support and encouragement in your community during The Lavender Takeover with the Pride Center of the University Student Union. This weekly gathering is where LGBTQIA+ people of color in the CSUN community can share experiences, engage in discussions and connect with one another. It’s the perfect time and place to be encouraged by others while strengthening your community roots at CSUN. The Lavender Takeover is intended to be a safe and welcoming space for all so some meetings will be “CLOSED” to just LGBTQIA+ students of color and other meetings will be “OPEN” to everyone. Whether you are on a journey to keep growing as an ally or wish to connect with others in your community, come embrace being YOU at The Lavender Takeover by the Pride Center of the USU … Where Matadors Belong! ",
+        "description": "Come find weekly support and encouragement in your community during The Lavender Takeover with the Pride Center of the University Student Union. This weekly gathering is where LGBTQIA+ people of color in the CSUN community can share experiences, engage in discussions and connect with one another. It’s the perfect time and place to be encouraged by others while strengthening your community roots at CSUN. The Lavender Takeover is intended to be a safe and welcoming space for all so some meetings will be “CLOSED” to just LGBTQIA+ students of color and other meetings will be “OPEN” to everyone. Whether you are on a journey to keep growing as an ally or wish to connect with others in your community, come embrace being YOU at The Lavender Takeover by the Pride Center of the USU … Where Matadors Belong! ",
         "eventLink": "https://www.csun.edu/pride/events/pride-center-lavender-takeover-%E2%80%94-queer-and-trans-women-color-film-closed-%E2%80%94-theater-and",
         "dtstart": "2021-03-23 17:00:00",
         "dtend": "2021-03-23 19:00:00",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/DC_LavendarTakedown_InitialDesign_SP2021.png?itok=AKrSdkwl"
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/DC_LavendarTakedown_InitialDesign_2_SP2021.png?itok=XN6cGUA1"
     },
     {
         "title": "Pride Center: The Lavender Takeover — Queer and Trans Women in Animation  and Comics Industry (Open)",
-        "description": " Come find weekly support and encouragement in your community during The Lavender Takeover with the Pride Center of the University Student Union. This weekly gathering is where LGBTQIA+ people of color in the CSUN community can share experiences, engage in discussions and connect with one another. It’s the perfect time and place to be encouraged by others while strengthening your community roots at CSUN. The Lavender Takeover is intended to be a safe and welcoming space for all so some meetings will be “CLOSED” to just LGBTQIA+ students of color and other meetings will be “OPEN” to everyone. Whether you are on a journey to keep growing as an ally or wish to connect with others in your community, come embrace being YOU at The Lavender Takeover by the Pride Center of the USU … Where Matadors Belong! ",
+        "description": "Come find weekly support and encouragement in your community during The Lavender Takeover with the Pride Center of the University Student Union. This weekly gathering is where LGBTQIA+ people of color in the CSUN community can share experiences, engage in discussions and connect with one another. It’s the perfect time and place to be encouraged by others while strengthening your community roots at CSUN. The Lavender Takeover is intended to be a safe and welcoming space for all so some meetings will be “CLOSED” to just LGBTQIA+ students of color and other meetings will be “OPEN” to everyone. Whether you are on a journey to keep growing as an ally or wish to connect with others in your community, come embrace being YOU at The Lavender Takeover by the Pride Center of the USU … Where Matadors Belong! ",
         "eventLink": "https://www.csun.edu/pride/events/pride-center-lavender-takeover-%E2%80%94-queer-and-trans-women-animation-and-comics-industry",
         "dtstart": "2021-03-30 17:00:00",
         "dtend": "2021-03-30 19:00:00",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/DC_LavendarTakedown_InitialDesign_SP2021.png?itok=AKrSdkwl"
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/DC_LavendarTakedown_InitialDesign_2_SP2021.png?itok=XN6cGUA1"
     },
     {
         "title": "Pride Center: The Lavender Takeover — Trans Women of Color Activists (Open)",
-        "description": " Come find weekly support and encouragement in your community during The Lavender Takeover with the Pride Center of the University Student Union. This weekly gathering is where LGBTQIA+ people of color in the CSUN community can share experiences, engage in discussions and connect with one another. It’s the perfect time and place to be encouraged by others while strengthening your community roots at CSUN. The Lavender Takeover is intended to be a safe and welcoming space for all so some meetings will be “CLOSED” to just LGBTQIA+ students of color and other meetings will be “OPEN” to everyone. Whether you are on a journey to keep growing as an ally or wish to connect with others in your community, come embrace being YOU at The Lavender Takeover by the Pride Center of the USU … Where Matadors Belong! ",
+        "description": "Come find weekly support and encouragement in your community during The Lavender Takeover with the Pride Center of the University Student Union. This weekly gathering is where LGBTQIA+ people of color in the CSUN community can share experiences, engage in discussions and connect with one another. It’s the perfect time and place to be encouraged by others while strengthening your community roots at CSUN. The Lavender Takeover is intended to be a safe and welcoming space for all so some meetings will be “CLOSED” to just LGBTQIA+ students of color and other meetings will be “OPEN” to everyone. Whether you are on a journey to keep growing as an ally or wish to connect with others in your community, come embrace being YOU at The Lavender Takeover by the Pride Center of the USU … Where Matadors Belong! ",
         "eventLink": "https://www.csun.edu/pride/events/pride-center-lavender-takeover-%E2%80%94-trans-women-color-activists-open",
         "dtstart": "2021-04-06 17:00:00",
         "dtend": "2021-04-06 19:00:00",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/DC_LavendarTakedown_InitialDesign_SP2021.png?itok=AKrSdkwl"
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/DC_LavendarTakedown_InitialDesign_2_SP2021.png?itok=XN6cGUA1"
     },
     {
         "title": "Pride Center: The Lavender Takeover — Parenting LGBTQIA+ Students(Closed)",
-        "description": " Come find weekly support and encouragement in your community during The Lavender Takeover with the Pride Center of the University Student Union. This weekly gathering is where LGBTQIA+ people of color in the CSUN community can share experiences, engage in discussions and connect with one another. It’s the perfect time and place to be encouraged by others while strengthening your community roots at CSUN. The Lavender Takeover is intended to be a safe and welcoming space for all so some meetings will be “CLOSED” to just LGBTQIA+ students of color and other meetings will be “OPEN” to everyone. Whether you are on a journey to keep growing as an ally or wish to connect with others in your community, come embrace being YOU at The Lavender Takeover by the Pride Center of the USU … Where Matadors Belong! ",
+        "description": "Come find weekly support and encouragement in your community during The Lavender Takeover with the Pride Center of the University Student Union. This weekly gathering is where LGBTQIA+ people of color in the CSUN community can share experiences, engage in discussions and connect with one another. It’s the perfect time and place to be encouraged by others while strengthening your community roots at CSUN. The Lavender Takeover is intended to be a safe and welcoming space for all so some meetings will be “CLOSED” to just LGBTQIA+ students of color and other meetings will be “OPEN” to everyone. Whether you are on a journey to keep growing as an ally or wish to connect with others in your community, come embrace being YOU at The Lavender Takeover by the Pride Center of the USU … Where Matadors Belong! ",
         "eventLink": "https://www.csun.edu/pride/events/pride-center-lavender-takeover-%E2%80%94-parenting-lgbtqia-studentsclosed",
         "dtstart": "2021-04-13 17:00:00",
         "dtend": "2021-04-13 19:00:00",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/DC_LavendarTakedown_InitialDesign_SP2021.png?itok=AKrSdkwl"
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/DC_LavendarTakedown_InitialDesign_2_SP2021.png?itok=XN6cGUA1"
     },
     {
         "title": "Pride Center: The Lavender Takeover — Asian American LGBTQIA+ (Open)",
@@ -680,11 +320,11 @@ export const CalendarEvents = [
     },
     {
         "title": "Pride Center: The Lavender Takeover — Native/Indigenous LGBTQIA+ (Closed)",
-        "description": " Come find weekly support and encouragement in your community during The Lavender Takeover with the Pride Center of the University Student Union. This weekly gathering is where LGBTQIA+ people of color in the CSUN community can share experiences, engage in discussions and connect with one another. It’s the perfect time and place to be encouraged by others while strengthening your community roots at CSUN. The Lavender Takeover is intended to be a safe and welcoming space for all so some meetings will be “CLOSED” to just LGBTQIA+ students of color and other meetings will be “OPEN” to everyone. Whether you are on a journey to keep growing as an ally or wish to connect with others in your community, come embrace being YOU at The Lavender Takeover by the Pride Center of the USU … Where Matadors Belong! ",
+        "description": "Come find weekly support and encouragement in your community during The Lavender Takeover with the Pride Center of the University Student Union. This weekly gathering is where LGBTQIA+ people of color in the CSUN community can share experiences, engage in discussions and connect with one another. It’s the perfect time and place to be encouraged by others while strengthening your community roots at CSUN. The Lavender Takeover is intended to be a safe and welcoming space for all so some meetings will be “CLOSED” to just LGBTQIA+ students of color and other meetings will be “OPEN” to everyone. Whether you are on a journey to keep growing as an ally or wish to connect with others in your community, come embrace being YOU at The Lavender Takeover by the Pride Center of the USU … Where Matadors Belong! ",
         "eventLink": "https://www.csun.edu/pride/events/pride-center-lavender-takeover-%E2%80%94-nativeindigenous-lgbtqia-closed",
         "dtstart": "2021-04-27 17:00:00",
         "dtend": "2021-04-27 19:00:00",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/DC_LavendarTakedown_InitialDesign_SP2021.png?itok=AKrSdkwl"
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/DC_LavendarTakedown_InitialDesign_2_SP2021.png?itok=XN6cGUA1"
     },
     {
         "title": "Pride Center: The Lavender Takeover — QTPOC Nerds (Closed)",
@@ -696,83 +336,827 @@ export const CalendarEvents = [
     },
     {
         "title": "Pride Center: The Lavender Takeover — Deepa Iyer & Roles (Open)",
-        "description": " Come find weekly support and encouragement in your community during The Lavender Takeover with the Pride Center of the University Student Union. This weekly gathering is where LGBTQIA+ people of color in the CSUN community can share experiences, engage in discussions and connect with one another. It’s the perfect time and place to be encouraged by others while strengthening your community roots at CSUN. The Lavender Takeover is intended to be a safe and welcoming space for all so some meetings will be “CLOSED” to just LGBTQIA+ students of color and other meetings will be “OPEN” to everyone. Whether you are on a journey to keep growing as an ally or wish to connect with others in your community, come embrace being YOU at The Lavender Takeover by the Pride Center of the USU … Where Matadors Belong! ",
+        "description": "Come find weekly support and encouragement in your community during The Lavender Takeover with the Pride Center of the University Student Union. This weekly gathering is where LGBTQIA+ people of color in the CSUN community can share experiences, engage in discussions and connect with one another. It’s the perfect time and place to be encouraged by others while strengthening your community roots at CSUN. The Lavender Takeover is intended to be a safe and welcoming space for all so some meetings will be “CLOSED” to just LGBTQIA+ students of color and other meetings will be “OPEN” to everyone. Whether you are on a journey to keep growing as an ally or wish to connect with others in your community, come embrace being YOU at The Lavender Takeover by the Pride Center of the USU … Where Matadors Belong! ",
         "eventLink": "https://www.csun.edu/pride/events/pride-center-lavender-takeover-%E2%80%94-deepa-iyer-roles-open",
         "dtstart": "2021-05-11 17:00:00",
         "dtend": "2021-05-11 19:00:00",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/DC_LavendarTakedown_InitialDesign_SP2021.png?itok=AKrSdkwl"
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/DC_LavendarTakedown_InitialDesign_2_SP2021.png?itok=XN6cGUA1"
     },
     {
-        "title": "Pride Center: The Lavender Takeover — Queer and Trans Women of Color in  Music (Closed)",
-        "description": " Come find weekly support and encouragement in your community during The Lavender Takeover with the Pride Center of the University Student Union. This weekly gathering is where LGBTQIA+ people of color in the CSUN community can share experiences, engage in discussions and connect with one another. It’s the perfect time and place to be encouraged by others while strengthening your community roots at CSUN. The Lavender Takeover is intended to be a safe and welcoming space for all so some meetings will be “CLOSED” to just LGBTQIA+ students of color and other meetings will be “OPEN” to everyone. Whether you are on a journey to keep growing as an ally or wish to connect with others in your community, come embrace being YOU at The Lavender Takeover by the Pride Center of the USU … Where Matadors Belong! ",
-        "eventLink": "https://www.csun.edu/pride/events/pride-center-lavender-takeover-%E2%80%94-queer-and-trans-women-color-music-closed",
-        "dtstart": "2021-03-02 17:00:00",
-        "dtend": "2021-03-02 19:00:00",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/DC_LavendarTakedown_InitialDesign_SP2021.png?itok=AKrSdkwl"
+        "title": "Pride Center: OUT On Stage",
+        "description": "You’re invited to experience the amazing talents of exciting queer and trans performers with the Pride Center of the University Student Union during our virtual variety show, OUT On Stage. Don’t miss the excitement this semester. Just tune in via Instagram Live every month to enjoy live performances from an impressive range of artists while connecting virtually with fellow LGBTQIA+ folx. Join us for the fun and entertainment of OUT On Stage to spread the support and celebrate our pride together.",
+        "eventLink": "https://www.csun.edu/pride/events/pride-center-out-stage-2",
+        "dtstart": "2021-05-14 19:00:00",
+        "dtend": "2021-05-14 20:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/SU%2720_Out_on_stage__0.png?itok=Ynyp5VKA"
     },
     {
-        "title": "USU: Swing Into Spring — Welcome Back Week",
-        "description": "Welcome to a new semester, Matadors! The University Student Union, in collaboration with Associated Students, invites all CSUN students to join us for Welcome Back Week — another fun part of the special Swing Into Spring event! From Monday, Feb. 1 to Friday, Feb. 5, we’ll be hosting a special virtual resource fair where you can learn about all the valuable resources and fun events coming up this semester. You’ll hear from USU resource centers — the Student Recreation Center, Oasis Wellness Center, Veterans Resource Center, Pride Center, DREAM Center and more — as they take over our Instagram [1] throughout this fun and informative week. Be sure to check in every day for exciting opportunities to learn, connect and even win awesome prizes! Ready, Set, 2021! From Friday, Jan. 1 to Friday, Feb. 5, you are invited to welcome a brand new year and the new semester at CSUN all during Swing Into Spring from the University Student Union! We’ll be bringing all Matadors an unprecedented month of fun events and activities to get your year off to a great start. Each week we’ll also hold a raffle with awesome prizes including cool Swing Into Spring t-shirts and masks as well as gift cards from Amazon, Chipotle, Netflix, GrubHub and more. Plus, you’ll be entered to win just for participating. Don’t miss out on this exciting new way to Swing Into Spring with the University Student Union … Where Matadors Belong! [1] https://www.instagram.com/csun_usu/",
-        "eventLink": "https://www.csun.edu/usu/events/usu-swing-spring-%E2%80%94-welcome-back-week",
-        "dtstart": "2021-02-01 09:00:00",
-        "dtend": "2021-02-05 18:00:00",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/Programs-WBW-SP21-Insta.png?itok=-qMdi-07"
+        "title": "Pride Center: OUT On Stage",
+        "description": "You’re invited to experience the amazing talents of exciting queer and trans performers with the Pride Center of the University Student Union during our virtual variety show, OUT On Stage. Don’t miss the excitement this semester. Just tune in via Instagram Live every month to enjoy live performances from an impressive range of artists while connecting virtually with fellow LGBTQIA+ folx. Join us for the fun and entertainment of OUT On Stage to spread the support and celebrate our pride together.",
+        "eventLink": "https://www.csun.edu/pride/events/pride-center-out-stage-3",
+        "dtstart": "2021-04-30 19:00:00",
+        "dtend": "2021-04-30 20:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/SU%2720_Out_on_stage__0.png?itok=Ynyp5VKA"
     },
     {
-        "title": "DREAM Center: Swing Into Spring — Know Your Rights for the Undocumented  Community",
-        "description": "Come join the DREAM Center of the University Student Union, in collaboration with CARECEN’s CSU Legal Project team, to learn how to protect yourself and other members of CSUN’s undocumented community. With legal information provided by a practicing immigration attorney, this 1-hour presentation will give you the tools and resources to best protect yourself in any involvement with law enforcement or immigration. Plus, you’ll learn about the many legal resources that CARECEN offers to CSUN students and community members. Register for this event [1] or learn more about CARECEN’s CSU Legal Project [2]. Come find comfort and power in knowledge as you learn about the resources available to you and other undocumented members of the CSUN community at Know Your Rights for the Undocumented Community with the DREAM Center of the USU…Where Matadors Belong! Ready, Set, 2021! From Friday, Jan. 1 to Friday, Feb. 5, you are invited to welcome a brand new year and the new semester at CSUN all during Swing Into Spring from the University Student Union! We’ll be bringing all Matadors an unprecedented month of fun events and activities to get your year off to a great start. Each week we’ll also hold a raffle with awesome prizes including cool Swing Into Spring t-shirts and masks as well as gift cards from Amazon, Chipotle, Netflix, GrubHub and more. Plus, you’ll be entered to win just for participating. Don’t miss out on this exciting new way to Swing Into Spring with the University Student Union … Where Matadors Belong! [1] https://csuci.zoom.us/meeting/register/tZ0qdempqDwsHddsxbd827mthcwfxS2Kpbz0 [2] https://www2.calstate.edu/attend/student-services/resources-for-undocumented-students/Pages/southern-california.aspx",
-        "eventLink": "https://www.csun.edu/dreamcenter/events/dream-center-swing-spring-%E2%80%94-know-your-rights-undocumented-community",
-        "dtstart": "2021-02-04 12:00:00",
-        "dtend": "2021-02-04 13:00:00",
+        "title": "Pride Center: OUT On Stage",
+        "description": "You’re invited to experience the amazing talents of exciting queer and trans performers with the Pride Center of the University Student Union during our virtual variety show, OUT On Stage. Don’t miss the excitement this semester. Just tune in via Instagram Live every month to enjoy live performances from an impressive range of artists while connecting virtually with fellow LGBTQIA+ folx. Join us for the fun and entertainment of OUT On Stage to spread the support and celebrate our pride together.",
+        "eventLink": "https://www.csun.edu/pride/events/pride-center-out-stage-4",
+        "dtstart": "2021-03-26 19:00:00",
+        "dtend": "2021-03-26 20:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/SU%2720_Out_on_stage__0.png?itok=Ynyp5VKA"
+    },
+    {
+        "title": "DREAM Center: Coffee Talks — Undocu-Strength: Leader in Me",
+        "description": "Join us at Coffee Talks presented by the DREAM Center of the University Student Union. This brave and safe space is designed to give you the opportunity to come together with fellow immigrant communities to have conversations about things that are important to all of us. With special topics like intersectionality, leadership and affirmations, we will check-in with each other and figure out how our communities can be supported! We’ll see you there, Matadors! ",
+        "eventLink": "https://www.csun.edu/dreamcenter/events/dream-center-coffee-talks-%E2%80%94-undocu-strength-leader-me",
+        "dtstart": "2021-03-12 15:00:00",
+        "dtend": "2021-03-12 16:30:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/DREAM_CoffeeTalks_SP21_Leader.png?itok=TGeb-qt4"
+    },
+    {
+        "title": "DREAM Center: Coffee Talks — Mending our Relationship with our Undocu-Self",
+        "description": "Join us at Coffee Talks presented by the DREAM Center of the University Student Union. This brave and safe space is designed to give you the opportunity to come together with fellow immigrant communities to have conversations about things that are important to all of us. With special topics like intersectionality, leadership and affirmations, we will check-in with each other and figure out how our communities can be supported! We’ll see you there, Matadors! ",
+        "eventLink": "https://www.csun.edu/dreamcenter/events/dream-center-coffee-talks-%E2%80%94-mending-our-relationship-our-undocu-self",
+        "dtstart": "2021-04-02 15:00:00",
+        "dtend": "2021-04-02 16:30:00",
         "imgSrc": "https://live.staticflickr.com/3948/buddyicons/149217749@N02_r.jpg?1491936417#149217749@N02"
     },
     {
-        "title": "Pride Center: How You Doin’",
-        "description": "Come and let the Pride Center know How You Doin’ on Instagram during Black LGBTQIA+ Pride Month! We’ll be celebrating with some fun acting tips and tricks and a live podcast centering on Black LGBTQIA+ experiences.Whether you want to learn something new or just join us for important conversations with Matadors like yourself, you’re invited to stop by to let us know How You Doin’. ",
-        "eventLink": "https://www.csun.edu/pride/events/pride-center-how-you-doin%E2%80%99",
-        "dtstart": "2021-02-22 18:00:00",
-        "dtend": "2021-02-22 19:30:00",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/PC_Howyoudoing_Sp21-02.png?itok=zz5AwVp_"
+        "title": "DREAM Center: Coffee Talks — Undocu-Affirmations: Manifest your Dreams",
+        "description": "Join us at Coffee Talks presented by the DREAM Center of the University Student Union. This brave and safe space is designed to give you the opportunity to come together with fellow immigrant communities to have conversations about things that are important to all of us. With special topics like intersectionality, leadership and affirmations, we will check-in with each other and figure out how our communities can be supported! We’ll see you there, Matadors! ",
+        "eventLink": "https://www.csun.edu/dreamcenter/events/dream-center-coffee-talks-%E2%80%94-undocu-affirmations-manifest-your-dreams",
+        "dtstart": "2021-04-16 15:00:00",
+        "dtend": "2021-04-16 16:30:00",
+        "imgSrc": "https://live.staticflickr.com/3948/buddyicons/149217749@N02_r.jpg?1491936417#149217749@N02"
     },
     {
-        "title": "Pride Center: How You Doin’",
-        "description": "Come and let the Pride Center know How You Doin’ on Instagram during Black LGBTQIA+ Pride Month! We’ll be celebrating with some fun acting tips and tricks and a live podcast centering on Black LGBTQIA+ experiences.Whether you want to learn something new or just join us for important conversations with Matadors like yourself, you’re invited to stop by to let us know How You Doin’. ",
-        "eventLink": "https://www.csun.edu/pride/events/pride-center-how-you-doin%E2%80%99-0",
-        "dtstart": "2021-02-08 18:00:00",
-        "dtend": "2021-02-08 19:30:00",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/PC_Howyoudoing_Sp21-01.png?itok=kdg5gSME"
+        "title": "DREAM Center: Coffee Talks — Undocu-Care",
+        "description": "Join us at Coffee Talks presented by the DREAM Center of the University Student Union. This brave and safe space is designed to give you the opportunity to come together with fellow immigrant communities to have conversations about things that are important to all of us. With special topics like intersectionality, leadership and affirmations, we will check-in with each other and figure out how our communities can be supported! We’ll see you there, Matadors! ",
+        "eventLink": "https://www.csun.edu/dreamcenter/events/dream-center-coffee-talks-%E2%80%94-undocu-care",
+        "dtstart": "2021-04-30 15:00:00",
+        "dtend": "2021-04-30 16:30:00",
+        "imgSrc": "https://live.staticflickr.com/3948/buddyicons/149217749@N02_r.jpg?1491936417#149217749@N02"
     },
     {
-        "title": "DREAM Center: Swing Into Spring — Virtual Open House",
-        "description": "Whether you’re new to CSUN or a seasoned Matador, come check out what the DREAM Center of the University Student Union has to offer this year at our Virtual Open House! It’s another great program for you during the USU’s Swing Into Spring! You’ll get to connect with some awesome people and learn all about what the DREAM Center is doing to make your time at CSUN successful, safe and enjoyable. Plus, there will be fun activities with opportunities to win some awesome prizes! Register for this event [1] from now through Jan. 29 and then sign on Zoom when the event begins. We can’t wait to get you up to speed on all of the resources that are available to you and all of the special things that the DREAM Center is doing in 2021 at our Virtual Open House! Ready, Set, 2021! From Friday, Jan. 1 to Friday, Feb. 5, you are invited to welcome a brand new year and the new semester at CSUN all during Swing Into Spring from the University Student Union! We’ll be bringing all Matadors an unprecedented month of fun events and activities to get your year off to a great start. Each week we’ll also hold a raffle with awesome prizes including cool Swing Into Spring t-shirts and masks as well as gift cards from Amazon, Chipotle, Netflix, GrubHub and more. Plus, you’ll be entered to win just for participating. Don’t miss out on this exciting new way to Swing Into Spring with the University Student Union … Where Matadors Belong! [1] https://csun.zoom.us/meeting/register/tZUpcO-uqDgvH90kRSOCdJCprTssbT0DSnk9",
-        "eventLink": "https://www.csun.edu/dreamcenter/events/dream-center-swing-spring-%E2%80%94-virtual-open-house",
-        "dtstart": "2021-01-29 15:00:00",
-        "dtend": "2021-01-29 16:30:00",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/dreamcenter_openhousecalendar_sp21-01.png?itok=ZVl4qx0w"
+        "title": "DREAM Center: Undocu-Graduation Celebration",
+        "description": "Celebrate your amazing personal accomplishment at the Undocu-Graduation Celebration from the DREAM Center of the University Student Union! Getting your college degree is one of life’s greatest achievements. We want to congratulate and recognize all of the undocumented and mixed-status students in the graduating class of 2021 for their hard work and resilience, with a special virtual event created just for you! You’ll hear from inspiring keynote speakers and fellow graduating Matadors just like you during this exciting celebration on Friday, May 7, at 5:30 p.m. via Zoom. If you’re graduating and would like to participate, register through Friday, Feb. 10 [1], and get ready to be part of an unforgettable evening of fun and recognition at the Undocu-Graduation Celebration from the DREAM Center of the University Student Union … Where Matadors Belong. [1] https://forms.office.com/Pages/ResponsePage.aspx?id=IlXxf5Zg3EeJvzibvhPNaBxO2idF8D5PtXTmGNVlVjVUQjBDRUI1WklCVUJVU0xQSFVBRFk0WldVRC4u",
+        "eventLink": "https://www.csun.edu/dreamcenter/events/dream-center-undocu-graduation-celebration",
+        "dtstart": "2021-05-07 17:30:00",
+        "dtend": "2021-05-07 19:30:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/DREAM_Undocu-Grad_Celebration_SP21.png?itok=fAU7F3M3"
     },
     {
-        "title": "Oasis: Swing Into Spring — New Year Workshop — Inipi Ceremony (Sweat  Lodge)",
-        "description": "Join the Oasis of the University Student Union on this guided meditation [1] that offers a new approach to wellness with purification ceremonies that are known to be extremely transforming. Dakota Earth Cloud Walker will take you through a virtual Inipi (Sweat Lodge) ceremony using traditional Lakota Inipi songs and sound effects to enhance your experience. Along with a powerful intention of assisting you in this time of purification, this journey will become a powerful tool for you at the beginning of your new year. Ready, Set, 2021! From Friday, Jan. 1 to Friday, Feb. 5, you are invited to welcome a brand new year and the new semester at CSUN all during Swing Into Spring from the University Student Union! We’ll be bringing all Matadors an unprecedented month of fun events and activities to get your year off to a great start. Each week we’ll also hold a raffle with awesome prizes including cool Swing Into Spring t-shirts and masks as well as gift cards from Amazon, Chipotle, Netflix, GrubHub and more. Plus, you’ll be entered to win just for participating. Don’t miss out on this exciting new way to Swing Into Spring with the University Student Union … Where Matadors Belong! [1] http://dakotaearthcloud.com/csun-oasis",
-        "eventLink": "https://www.csun.edu/oasis/events/oasis-swing-spring-%E2%80%94-new-year-workshop-%E2%80%94-inipi-ceremony-sweat-lodge",
-        "dtstart": "2021-01-01",
-        "dtend": "2021-01-02",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/Oasis_Insta_New_Year_Workshops_SP21.png?itok=3I2Q3Ay_"
+        "title": "USU Advocacy Campaign",
+        "description": "Just head over to the USU on Instagram (@csun_usu) where we’ll post a message aimed at encouraging you to celebrate different cultures and open up an empowering discussion. Let’s get together to uplift and support our Matador community with inspiration from you and the USU Advocacy Campaign! Be sure to hop on Instagram and turn on post notifications for @csun_usu to experience the shared spark!",
+        "eventLink": "https://www.csun.edu/usu/events/usu-advocacy-campaign-5",
+        "dtstart": "2021-03-18 11:00:00",
+        "dtend": "2021-03-18 11:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/SocialMediaAdvocacy-Fa2020-02_0.png?itok=IJRy7JKh"
     },
     {
-        "title": "Oasis: Swing Into Spring — New Year Workshop — Rise of the Phoenix",
-        "description": "Join the Oasis of the University Student Union at the Rise of the Phoenix [1], a guided meditation that allows you transformation and rebirth. In this guided meditation, you will step into the heat and transform yourself through the alchemy of fire, burning off all that no longer serves you and emerging as the mythical and powerful Phoenix. Ready, Set, 2021! From Friday, Jan. 1 to Friday, Feb. 5, you are invited to welcome a brand new year and the new semester at CSUN all during Swing Into Spring from the University Student Union! We’ll be bringing all Matadors an unprecedented month of fun events and activities to get your year off to a great start. Each week we’ll also hold a raffle with awesome prizes including cool Swing Into Spring t-shirts and masks as well as gift cards from Amazon, Chipotle, Netflix, GrubHub and more. Plus, you’ll be entered to win just for participating. Don’t miss out on this exciting new way to Swing Into Spring with the University Student Union … Where Matadors Belong! [1] http://dakotaearthcloud.com/csun-oasis",
-        "eventLink": "https://www.csun.edu/oasis/events/oasis-swing-spring-%E2%80%94-new-year-workshop-%E2%80%94-rise-phoenix",
-        "dtstart": "2021-01-01",
-        "dtend": "2021-01-02",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/Oasis_Insta_New_Year_Workshops_SP21.png?itok=3I2Q3Ay_"
+        "title": "USU Advocacy Campaign",
+        "description": "Just head over to the USU on Instagram (@csun_usu) where we’ll post a message aimed at encouraging you to celebrate different cultures and open up an empowering discussion. Let’s get together to uplift and support our Matador community with inspiration from you and the USU Advocacy Campaign! Be sure to hop on Instagram and turn on post notifications for @csun_usu to experience the shared spark!",
+        "eventLink": "https://www.csun.edu/usu/events/usu-advocacy-campaign-6",
+        "dtstart": "2021-04-01 11:00:00",
+        "dtend": "2021-04-01 11:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/SocialMediaAdvocacy-Fa2020-02_0.png?itok=IJRy7JKh"
     },
     {
-        "title": "Oasis: Swing Into Spring — New Year Workshops",
-        "description": " 8 – 8:20 a.m. Pranayama w Deepa Pranayama focuses on breathing techniques, which are done laying down and or seated. This workshop is designed to help reduce anxiety while improving mental clarity. You will feel rejuvenated, replenishing your life force while boosting your immune system and improving physical health. No prior experience needed. 8 – 8:30 a.m. Core Strength w Cheryl Core Strength aids in posture, stabilization, alignment, and control of the body when in motion. Activities include the use of your very own bodyweight to challenge your core muscles through various planes of motion. Come ready to work more than just the 'abs' to get the entire core burning and shaking! A mat or large towel is all you need. All fitness levels are welcome. 8:30 – 9 a.m. Cardio Kick and HITT w Amanda Ready for a challenge? Cardio Kick and HIIT combines, you guessed it, High Intensity Interval Training (HIIT for short) followed by lower intensity cardio kickboxing routines performed in a steady-state fashion. This dynamic and explosive class will undoubtedly improve your endurance and cardiovascular fitness as well as your strength, agility and coordination. So, come ready to sweat and leave feeling like you can take on the world! A large towel or mat is all the equipment you need. All fitness levels welcome. 8:40 – 9:10 a.m. Qigong w April This ancient Chinese practice cultivates and replenishes our life force energy bridging between ourselves, the earth, nature and the universe. This class consists of breathing exercises, stretches, flowing movements and meditation to create strength with flexibility, harmony, balance and a feeling of being grounded and centered. Qigong amplifies the internal energy of practitioners, enabling them to become full of vitality, emotionally balanced and spiritually connected. 9:10 – 10 a.m. Crystals 101 w Tania In this introduction to crystals, you will learn the background, usage, variation, and benefits of working with crystals. How to choose your crystals, how to care for crystals, charge crystals, cleanse crystals & increase their effectiveness. You will have time to ask questions and we will end with a closing meditation. 9:20 – 10 a.m. Soul Limber Yoga w Jaclyn Soul Limber Yoga is a feel-good-flow that will prepare you for the deep soul-work needed to align your goals with how you truly desire to feel. This class thoughtfully weaves guided reflection exercises with an upbeat vinyasa flow sequence to limber not only your body but also your soul. A mat or large towel is all you need. All fitness levels are welcome. 10 – 11 a.m. Living Your Sacred Purpose w Dakota Earth Cloud Walker For many, the idea of sacred purpose is about what you do for a living - the job or career you choose. While that is an important aspect of your sacred purpose, the true meaning of why you are here runs far deeper. It's about the relationships you build in your life, the space you occupy, the spiritual truths you hold, and the contribution you make to the world through your work. When these four areas of Sacred Purpose are congruent, you are truly living into your soul's calling. If any one of these areas is out of balance, or neglected, then your life path will feel incomplete. In this workshop, Dakota will share the four main tenets of your Sacred Purpose using the ancient Medicine Wheel as a container for understanding their relationship to one another. You will explore the health of your 'medicine wheel' and steps you can actively take to begin embodying and living into your Sacred Purpose fully. 12 – 12:20 p.m. Pranayama w Deepa Pranayama focuses on breathing techniques, which are done laying down and or seated. This workshop is designed to help reduce anxiety while improving mental and clarity. You will feel rejuvenated, replenishing your life force while boosting your immune system and improving physical health. No prior experience needed. 12 – 12:30 p.m. Setting Intentions w Michele Welcome to setting your Intentions! In this easy workshop you will learn to create a mantra Intention. Verbally share your intention. Create a ritual. Meditate with gratitude and release gift(s) you ask for; and most important release blocks that are stopping those gifts that are waiting for you. Have your paper, pen and questions ready. 12:30 – 1 p.m. Zumba w Julie Zumba® Fitness is a fusion of Latin, international and popular music dance themes creating a dynamic, exciting, effective fitness system. The routines feature aerobic fitness interval training with a combination of fast and slow rhythms that tone and sculpt the body with easy-to-follow dance steps. All fitness levels welcome. 12:40 – 1:10 p.m. Interval Training w Alfredo Interval Training is a total body conditioning class that combines intense cardio training with resistance training exercises geared to improve your body and get you into shape. All you need is a large towel or mat and set of dumbbells or gallon water jugs. All fitness levels are welcome. 1:10 – 2 p.m. Uplifting Yoga w Lisa This uplifting vinyasa class designed to help you develop greater optimism and positivity from the inside out. This class integrates a “happiness intervention” concept that will enhance your yoga experience and can be carried as an exercise into living their best life. Join us for the Yoga of Happiness! A mat or large towel is all you need. All fitness levels are welcome. 1:20 – 2 p.m. Gentle Yoga w Olivia Yoga brings about healing and balance to the body’s systems as you tune into the subtle energies within yourself. With an emphasis on relaxation, this Hatha based yoga class incorporates posture, breath, and meditation. Indulge in the simplicity of doing less and feeling more. Suitable for all levels. 2 – 3 p.m. Manifesting Through Ritual w Dakota Earth Cloud Walker The ancient teachings of the Medicine Wheel provide a powerful structure for navigating our lives and finding our soul's purpose. It gives us a lens to reflect upon what we currently have, what we need to let go, and what we can do to bring more balance to our lives. In this workshop, Dakota will lead you on a soul inquiry to determine what your current 'medicine wheel' is comprised of and what your soul wishes to manifest. When combined with ritual, this manifestation technique becomes a magnetic draw for imprinting your quantum field with your soul's desires. These soul assessments help guide us to living a more authentic, and rich life that is more aligned with our soul's purpose. 7 – 7:20 p.m. Pranayama w Deepa Pranayama focuses on breathing techniques, which are done laying down and or seated. This workshop is designed to help reduce anxiety while improving mental and clarity. You will feel rejuvenated, replenishing your life force while boosting your immune system and improving physical health. No prior experience needed. 7 – 7:30 p.m. Vinyasa Flow w Olivia Vinyasa Flow is a popular style of yoga that synchronizes your movement with breath a vigorous flow from one yoga posture to the next when performing sun salutations to build internal hear that helps to detoxify the body. So be prepared to sweat and have fun! Vinyasa Flow is friendly and suitable to members of all fitness and experience levels. A mat or large towel is all you need. 7:30 – 8 p.m. Bodyweight Mania w Cheryl Just because we don’t have our weights doesn’t mean we can’t build strength! Using just our bodyweight we can target each of our major muscle groups including our core. Grab your water bottle, a yoga mat or a towel to provide a cushion and have a stable chair handy for certain exercises. Create a safe space where you can move and get ready to challenge yourself. Let’s come out on the other side of this stronger than ever before! All fitness levels are welcome. 7:40 – 8:10 p.m. Cardio Fusion w Claire Cardio Fusion is 30 minutes of pure cardio fun! This class will introduce a medley of cardio-based exercises such as kickboxing, plyometrics, and much more. So come join in and get your cardio on! All fitness levels welcome. 8:10 – 9 p.m. Sleep Yoga w Deepa Sleep Yoga or Yoga Nidra is a guided meditative practice that puts the yogi in a hypnogogic state - the state between asleep and awake. Restful Yoga is conducive to deep emotional and physical healing, rewiring your brain, and self-exploration. It is an adaptogenic practice, giving your body, mind, and spirit exactly what it needs in the present moment. 8:20 – 9 p.m. Sound Healing w Satya Sound Healing will offer a mix of breath work, slow gentle movement, music and sounds of all different kinds of crystal bowls, bells and gong. All designed to calm the nervous system, relax the mind and body and let go of the anxiety and stress you are holding. These soothing sounds will help you go deep into relaxation and prepares you for meditation. Ready, Set, 2021! From Friday, Jan. 1 to Friday, Feb. 5, you are invited to welcome a brand new year and the new semester at CSUN all during Swing Into Spring from the University Student Union! We’ll be bringing all Matadors an unprecedented month of fun events and activities to get your year off to a great start. Each week we’ll also hold a raffle with awesome prizes including cool Swing Into Spring t-shirts and masks as well as gift cards from Amazon, Chipotle, Netflix, GrubHub and more. Plus, you’ll be entered to win just for participating. Don’t miss out on this exciting new way to Swing Into Spring with the University Student Union … Where Matadors Belong!",
-        "eventLink": "https://www.csun.edu/oasis/events/oasis-swing-spring-%E2%80%94-new-year-workshops",
-        "dtstart": "2021-01-04 08:00:00",
-        "dtend": "2021-01-04 21:00:00",
-        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/Oasis_Insta_New_Year_Workshops_SP21.png?itok=3I2Q3Ay_"
+        "title": "USU Advocacy Campaign",
+        "description": "Just head over to the USU on Instagram (@csun_usu) where we’ll post a message aimed at encouraging you to celebrate different cultures and open up an empowering discussion. Let’s get together to uplift and support our Matador community with inspiration from you and the USU Advocacy Campaign! Be sure to hop on Instagram and turn on post notifications for @csun_usu to experience the shared spark!",
+        "eventLink": "https://www.csun.edu/usu/events/usu-advocacy-campaign-7",
+        "dtstart": "2021-04-15 11:00:00",
+        "dtend": "2021-04-15 11:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/SocialMediaAdvocacy-Fa2020-02_0.png?itok=IJRy7JKh"
+    },
+    {
+        "title": "USU Advocacy Campaign",
+        "description": "Just head over to the USU on Instagram (@csun_usu) where we’ll post a message aimed at encouraging you to celebrate different cultures and open up an empowering discussion. Let’s get together to uplift and support our Matador community with inspiration from you and the USU Advocacy Campaign! Be sure to hop on Instagram and turn on post notifications for @csun_usu to experience the shared spark!",
+        "eventLink": "https://www.csun.edu/usu/events/usu-advocacy-campaign-8",
+        "dtstart": "2021-04-29 11:00:00",
+        "dtend": "2021-04-29 11:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/SocialMediaAdvocacy-Fa2020-02_0.png?itok=IJRy7JKh"
+    },
+    {
+        "title": "USU Advocacy Campaign",
+        "description": "Just head over to the USU on Instagram (@csun_usu) where we’ll post a message aimed at encouraging you to celebrate different cultures and open up an empowering discussion. Let’s get together to uplift and support our Matador community with inspiration from you and the USU Advocacy Campaign! Be sure to hop on Instagram and turn on post notifications for @csun_usu to experience the shared spark!",
+        "eventLink": "https://www.csun.edu/usu/events/usu-advocacy-campaign-9",
+        "dtstart": "2021-05-06 11:00:00",
+        "dtend": "2021-05-06 11:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/SocialMediaAdvocacy-Fa2020-02_0.png?itok=IJRy7JKh"
+    },
+    {
+        "title": "Pride Center: Check it Out",
+        "description": " Check it Out! The Pride Center of the University Student Union is hosting weekly Instagram Live hang outs [1] and you’re invited! On select Wednesdays this spring semester, you can treat yourself to a little study break while hanging out virtually with some of your friends and favorite people from the Pride Center. Come chat with us, check out the endless amount of resources and services tailored for incredible folx just like you, and celebrate the beauty within the LGBTQIA+ community at Check it Out hosted by the Pride Center of the USU. [1] https://www.instagram.com/csunpridecenter/",
+        "eventLink": "https://www.csun.edu/pride/events/pride-center-check-it-out-16",
+        "dtstart": "2021-03-24 15:00:00",
+        "dtend": "2021-03-24 16:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_deck_image/event/IMG-5106_0.PNG?itok=JYGS9NZ3"
+    },
+    {
+        "title": "Pride Center: Queer in Your Career",
+        "description": "Stand proud to stand queer in your professional aspirations with help from the Pride Center at Queer in Your Career! These three dynamic networking mixers will help assist you to work with pride in your current and future career. On Monday, Feb. 15 you’ll learn all about opportunities in Social and Behavioral Sciences, Education, and Health and Human Development. Then on Monday, March 29, dive into career information related to STEM (Science, Technology, Engineering, Math), Business and Economics. At the final mixer of the semester on Monday, April 12, we’ll discuss job skills related to Humanities, Arts, Media and Communication! You can choose to attend one, two or even all three if you’re eager to gain insight on how you will fit in to each industry. It’s a great opportunity for you to find out where you can be you. Register today for Queer in Your Career to jumpstart your career with the Pride Center… Where Matadors Belong. ",
+        "eventLink": "https://www.csun.edu/pride/events/pride-center-queer-your-career-0",
+        "dtstart": "2021-04-12 17:00:00",
+        "dtend": "2021-04-12 18:30:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/PC_QueerInYourCarrer_SP21-3.png?itok=CfAR7u04"
+    },
+    {
+        "title": "Pride Center: Queer in Your Career",
+        "description": "Stand proud to stand queer in your professional aspirations with help from the Pride Center at Queer in Your Career! These three dynamic networking mixers will help assist you to work with pride in your current and future career. On Monday, Feb. 15 you’ll learn all about opportunities in Social and Behavioral Sciences, Education, and Health and Human Development. Then on Monday, March 29, dive into career information related to STEM (Science, Technology, Engineering, Math), Business and Economics. At the final mixer of the semester on Monday, April 12, we’ll discuss job skills related to Humanities, Arts, Media and Communication! You can choose to attend one, two or even all three if you’re eager to gain insight on how you will fit in to each industry. It’s a great opportunity for you to find out where you can be you. Register today for Queer in Your Career to jumpstart your career with the Pride Center… Where Matadors Belong. ",
+        "eventLink": "https://www.csun.edu/pride/events/pride-center-queer-your-career-1",
+        "dtstart": "2021-03-29 17:00:00",
+        "dtend": "2021-03-29 18:30:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/PC_QueerInYourCarrer_SP21-2.png?itok=u81P0p_N"
+    },
+    {
+        "title": "DREAM Center: “Let’s Talk” with University Counseling Services",
+        "description": "You are invited to come find helpful resources, support and encouragement to aid you in your journey through this season of life at Let’s Talk, hosted virtually by the DREAM Center of the University Student Union in collaboration with University Counseling Services. Every Thursday, the DREAM Center is offering free 15-minute sessions for you to drop by and consult online with a professional counselor about anything from concerns for a friend, how the semester is going or the resources available through University Counseling Services. Whether you just want to chat for a few minutes or are seeking some problem-solving tools for more intimate concerns, this is a safe and welcoming space for whatever you need. No registration is required, and you simply have to sign on to Zoom to attend. If you are interested in receiving support, you can find more information about the event online [1]. Come take care of your head and your heart during Let’s Talk, hosted by the DREAM Center of the University Student Union … Where Matadors Belong! [1] https://www.csun.edu/counseling/lets-talk",
+        "eventLink": "https://www.csun.edu/dreamcenter/events/dream-center-%E2%80%9Clet%E2%80%99s-talk%E2%80%9D-university-counseling-services",
+        "dtstart": "2021-05-20 11:00:00",
+        "dtend": "2021-05-20 12:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/ig.png?itok=U4-dJrL4"
+    },
+    {
+        "title": "DREAM Center: “Let’s Talk” with University Counseling Services",
+        "description": "You are invited to come find helpful resources, support and encouragement to aid you in your journey through this season of life at Let’s Talk, hosted virtually by the DREAM Center of the University Student Union in collaboration with University Counseling Services. Every Thursday, the DREAM Center is offering free 15-minute sessions for you to drop by and consult online with a professional counselor about anything from concerns for a friend, how the semester is going or the resources available through University Counseling Services. Whether you just want to chat for a few minutes or are seeking some problem-solving tools for more intimate concerns, this is a safe and welcoming space for whatever you need. No registration is required, and you simply have to sign on to Zoom to attend. If you are interested in receiving support, you can find more information about the event online [1]. Come take care of your head and your heart during Let’s Talk, hosted by the DREAM Center of the University Student Union … Where Matadors Belong! [1] https://www.csun.edu/counseling/lets-talk",
+        "eventLink": "https://www.csun.edu/dreamcenter/events/dream-center-%E2%80%9Clet%E2%80%99s-talk%E2%80%9D-university-counseling-services-0",
+        "dtstart": "2021-05-13 11:00:00",
+        "dtend": "2021-05-13 12:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/ig.png?itok=U4-dJrL4"
+    },
+    {
+        "title": "DREAM Center: “Let’s Talk” with University Counseling Services",
+        "description": "You are invited to come find helpful resources, support and encouragement to aid you in your journey through this season of life at Let’s Talk, hosted virtually by the DREAM Center of the University Student Union in collaboration with University Counseling Services. Every Thursday, the DREAM Center is offering free 15-minute sessions for you to drop by and consult online with a professional counselor about anything from concerns for a friend, how the semester is going or the resources available through University Counseling Services. Whether you just want to chat for a few minutes or are seeking some problem-solving tools for more intimate concerns, this is a safe and welcoming space for whatever you need. No registration is required, and you simply have to sign on to Zoom to attend. If you are interested in receiving support, you can find more information about the event online [1]. Come take care of your head and your heart during Let’s Talk, hosted by the DREAM Center of the University Student Union … Where Matadors Belong! [1] https://www.csun.edu/counseling/lets-talk",
+        "eventLink": "https://www.csun.edu/dreamcenter/events/dream-center-%E2%80%9Clet%E2%80%99s-talk%E2%80%9D-university-counseling-services-1",
+        "dtstart": "2021-05-06 11:00:00",
+        "dtend": "2021-05-06 12:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/ig.png?itok=U4-dJrL4"
+    },
+    {
+        "title": "DREAM Center: “Let’s Talk” with University Counseling Services",
+        "description": "You are invited to come find helpful resources, support and encouragement to aid you in your journey through this season of life at Let’s Talk, hosted virtually by the DREAM Center of the University Student Union in collaboration with University Counseling Services. Every Thursday, the DREAM Center is offering free 15-minute sessions for you to drop by and consult online with a professional counselor about anything from concerns for a friend, how the semester is going or the resources available through University Counseling Services. Whether you just want to chat for a few minutes or are seeking some problem-solving tools for more intimate concerns, this is a safe and welcoming space for whatever you need. No registration is required, and you simply have to sign on to Zoom to attend. If you are interested in receiving support, you can find more information about the event online [1]. Come take care of your head and your heart during Let’s Talk, hosted by the DREAM Center of the University Student Union … Where Matadors Belong! [1] https://www.csun.edu/counseling/lets-talk",
+        "eventLink": "https://www.csun.edu/dreamcenter/events/dream-center-%E2%80%9Clet%E2%80%99s-talk%E2%80%9D-university-counseling-services-2",
+        "dtstart": "2021-04-29 11:00:00",
+        "dtend": "2021-04-29 12:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/ig.png?itok=U4-dJrL4"
+    },
+    {
+        "title": "DREAM Center: “Let’s Talk” with University Counseling Services",
+        "description": "You are invited to come find helpful resources, support and encouragement to aid you in your journey through this season of life at Let’s Talk, hosted virtually by the DREAM Center of the University Student Union in collaboration with University Counseling Services. Every Thursday, the DREAM Center is offering free 15-minute sessions for you to drop by and consult online with a professional counselor about anything from concerns for a friend, how the semester is going or the resources available through University Counseling Services. Whether you just want to chat for a few minutes or are seeking some problem-solving tools for more intimate concerns, this is a safe and welcoming space for whatever you need. No registration is required, and you simply have to sign on to Zoom to attend. If you are interested in receiving support, you can find more information about the event online [1]. Come take care of your head and your heart during Let’s Talk, hosted by the DREAM Center of the University Student Union … Where Matadors Belong! [1] https://www.csun.edu/counseling/lets-talk",
+        "eventLink": "https://www.csun.edu/dreamcenter/events/dream-center-%E2%80%9Clet%E2%80%99s-talk%E2%80%9D-university-counseling-services-3",
+        "dtstart": "2021-04-22 11:00:00",
+        "dtend": "2021-04-22 12:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/ig.png?itok=U4-dJrL4"
+    },
+    {
+        "title": "DREAM Center: “Let’s Talk” with University Counseling Services",
+        "description": "You are invited to come find helpful resources, support and encouragement to aid you in your journey through this season of life at Let’s Talk, hosted virtually by the DREAM Center of the University Student Union in collaboration with University Counseling Services. Every Thursday, the DREAM Center is offering free 15-minute sessions for you to drop by and consult online with a professional counselor about anything from concerns for a friend, how the semester is going or the resources available through University Counseling Services. Whether you just want to chat for a few minutes or are seeking some problem-solving tools for more intimate concerns, this is a safe and welcoming space for whatever you need. No registration is required, and you simply have to sign on to Zoom to attend. If you are interested in receiving support, you can find more information about the event online [1]. Come take care of your head and your heart during Let’s Talk, hosted by the DREAM Center of the University Student Union … Where Matadors Belong! [1] https://www.csun.edu/counseling/lets-talk",
+        "eventLink": "https://www.csun.edu/dreamcenter/events/dream-center-%E2%80%9Clet%E2%80%99s-talk%E2%80%9D-university-counseling-services-4",
+        "dtstart": "2021-04-15 11:00:00",
+        "dtend": "2021-04-15 12:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/ig.png?itok=U4-dJrL4"
+    },
+    {
+        "title": "DREAM Center: “Let’s Talk” with University Counseling Services",
+        "description": "You are invited to come find helpful resources, support and encouragement to aid you in your journey through this season of life at Let’s Talk, hosted virtually by the DREAM Center of the University Student Union in collaboration with University Counseling Services. Every Thursday, the DREAM Center is offering free 15-minute sessions for you to drop by and consult online with a professional counselor about anything from concerns for a friend, how the semester is going or the resources available through University Counseling Services. Whether you just want to chat for a few minutes or are seeking some problem-solving tools for more intimate concerns, this is a safe and welcoming space for whatever you need. No registration is required, and you simply have to sign on to Zoom to attend. If you are interested in receiving support, you can find more information about the event online [1]. Come take care of your head and your heart during Let’s Talk, hosted by the DREAM Center of the University Student Union … Where Matadors Belong! [1] https://www.csun.edu/counseling/lets-talk",
+        "eventLink": "https://www.csun.edu/dreamcenter/events/dream-center-%E2%80%9Clet%E2%80%99s-talk%E2%80%9D-university-counseling-services-5",
+        "dtstart": "2021-04-08 11:00:00",
+        "dtend": "2021-04-08 12:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/ig.png?itok=U4-dJrL4"
+    },
+    {
+        "title": "DREAM Center: “Let’s Talk” with University Counseling Services",
+        "description": "You are invited to come find helpful resources, support and encouragement to aid you in your journey through this season of life at Let’s Talk, hosted virtually by the DREAM Center of the University Student Union in collaboration with University Counseling Services. Every Thursday, the DREAM Center is offering free 15-minute sessions for you to drop by and consult online with a professional counselor about anything from concerns for a friend, how the semester is going or the resources available through University Counseling Services. Whether you just want to chat for a few minutes or are seeking some problem-solving tools for more intimate concerns, this is a safe and welcoming space for whatever you need. No registration is required, and you simply have to sign on to Zoom to attend. If you are interested in receiving support, you can find more information about the event online [1]. Come take care of your head and your heart during Let’s Talk, hosted by the DREAM Center of the University Student Union … Where Matadors Belong! [1] https://www.csun.edu/counseling/lets-talk",
+        "eventLink": "https://www.csun.edu/dreamcenter/events/dream-center-%E2%80%9Clet%E2%80%99s-talk%E2%80%9D-university-counseling-services-6",
+        "dtstart": "2021-04-01 11:00:00",
+        "dtend": "2021-04-01 12:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/ig.png?itok=U4-dJrL4"
+    },
+    {
+        "title": "DREAM Center: “Let’s Talk” with University Counseling Services",
+        "description": "You are invited to come find helpful resources, support and encouragement to aid you in your journey through this season of life at Let’s Talk, hosted virtually by the DREAM Center of the University Student Union in collaboration with University Counseling Services. Every Thursday, the DREAM Center is offering free 15-minute sessions for you to drop by and consult online with a professional counselor about anything from concerns for a friend, how the semester is going or the resources available through University Counseling Services. Whether you just want to chat for a few minutes or are seeking some problem-solving tools for more intimate concerns, this is a safe and welcoming space for whatever you need. No registration is required, and you simply have to sign on to Zoom to attend. If you are interested in receiving support, you can find more information about the event online [1]. Come take care of your head and your heart during Let’s Talk, hosted by the DREAM Center of the University Student Union … Where Matadors Belong! [1] https://www.csun.edu/counseling/lets-talk",
+        "eventLink": "https://www.csun.edu/dreamcenter/events/dream-center-%E2%80%9Clet%E2%80%99s-talk%E2%80%9D-university-counseling-services-7",
+        "dtstart": "2021-03-25 11:00:00",
+        "dtend": "2021-03-25 12:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/ig.png?itok=U4-dJrL4"
+    },
+    {
+        "title": "DREAM Center: “Let’s Talk” with University Counseling Services",
+        "description": "You are invited to come find helpful resources, support and encouragement to aid you in your journey through this season of life at Let’s Talk, hosted virtually by the DREAM Center of the University Student Union in collaboration with University Counseling Services. Every Thursday, the DREAM Center is offering free 15-minute sessions for you to drop by and consult online with a professional counselor about anything from concerns for a friend, how the semester is going or the resources available through University Counseling Services. Whether you just want to chat for a few minutes or are seeking some problem-solving tools for more intimate concerns, this is a safe and welcoming space for whatever you need. No registration is required, and you simply have to sign on to Zoom to attend. If you are interested in receiving support, you can find more information about the event online [1]. Come take care of your head and your heart during Let’s Talk, hosted by the DREAM Center of the University Student Union … Where Matadors Belong! [1] https://www.csun.edu/counseling/lets-talk",
+        "eventLink": "https://www.csun.edu/dreamcenter/events/dream-center-%E2%80%9Clet%E2%80%99s-talk%E2%80%9D-university-counseling-services-8",
+        "dtstart": "2021-03-18 11:00:00",
+        "dtend": "2021-03-18 12:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/ig.png?itok=U4-dJrL4"
+    },
+    {
+        "title": "DREAM Center: “Let’s Talk” with University Counseling Services",
+        "description": "You are invited to come find helpful resources, support and encouragement to aid you in your journey through this season of life at Let’s Talk, hosted virtually by the DREAM Center of the University Student Union in collaboration with University Counseling Services. Every Thursday, the DREAM Center is offering free 15-minute sessions for you to drop by and consult online with a professional counselor about anything from concerns for a friend, how the semester is going or the resources available through University Counseling Services. Whether you just want to chat for a few minutes or are seeking some problem-solving tools for more intimate concerns, this is a safe and welcoming space for whatever you need. No registration is required, and you simply have to sign on to Zoom to attend. If you are interested in receiving support, you can find more information about the event online [1]. Come take care of your head and your heart during Let’s Talk, hosted by the DREAM Center of the University Student Union … Where Matadors Belong! [1] https://www.csun.edu/counseling/lets-talk",
+        "eventLink": "https://www.csun.edu/dreamcenter/events/dream-center-%E2%80%9Clet%E2%80%99s-talk%E2%80%9D-university-counseling-services-9",
+        "dtstart": "2021-03-11 11:00:00",
+        "dtend": "2021-03-11 12:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/ig.png?itok=U4-dJrL4"
+    },
+    {
+        "title": "DREAM Center: “Let’s Talk” with University Counseling Services",
+        "description": "You are invited to come find helpful resources, support and encouragement to aid you in your journey through this season of life at Let’s Talk, hosted virtually by the DREAM Center of the University Student Union in collaboration with University Counseling Services. Every Thursday, the DREAM Center is offering free 15-minute sessions for you to drop by and consult online with a professional counselor about anything from concerns for a friend, how the semester is going or the resources available through University Counseling Services. Whether you just want to chat for a few minutes or are seeking some problem-solving tools for more intimate concerns, this is a safe and welcoming space for whatever you need. No registration is required, and you simply have to sign on to Zoom to attend. If you are interested in receiving support, you can find more information about the event online [1]. Come take care of your head and your heart during Let’s Talk, hosted by the DREAM Center of the University Student Union … Where Matadors Belong! [1] https://www.csun.edu/counseling/lets-talk",
+        "eventLink": "https://www.csun.edu/dreamcenter/events/dream-center-%E2%80%9Clet%E2%80%99s-talk%E2%80%9D-university-counseling-services-16",
+        "dtstart": "2021-05-27 11:00:00",
+        "dtend": "2021-05-27 12:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/ig.png?itok=U4-dJrL4"
+    },
+    {
+        "title": "Pride Center: Virtual T-Time",
+        "description": " Experience support, guidance and a network of peers to help you navigate living as a trans or non-binary person at Virtual T-Time, hosted weekly on Zoom by the Pride Center of the University Student Union. Come sip some tea in this welcoming space and feel free to discuss living with intersecting identities at this inclusive weekly event. Whether you’re transgender, gender questioning, genderqueer or non-binary, you are invited to explore and embrace who you truly are. Be proud to by YOU! We’ll always be here for you at Virtual T-Time with the Pride Center … Where Matadors Belong. Fill out the information below and we’ll send you the Zoom Meeting ID to join the discussion. Fill out my online form [1]. [1] https://usu.wufoo.com/forms/q17u9mq412iw7k8",
+        "eventLink": "https://www.csun.edu/pride/events/pride-center-virtual-t-time-18",
+        "dtstart": "2021-03-10 19:00:00",
+        "dtend": "2021-03-10 20:30:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/Calendar_Pc_T-Time_SP20_0.png?itok=xzJKYyhi"
+    },
+    {
+        "title": "Pride Center: Virtual T-Time",
+        "description": " Experience support, guidance and a network of peers to help you navigate living as a trans or non-binary person at Virtual T-Time, hosted weekly on Zoom by the Pride Center of the University Student Union. Come sip some tea in this welcoming space and feel free to discuss living with intersecting identities at this inclusive weekly event. Whether you’re transgender, gender questioning, genderqueer or non-binary, you are invited to explore and embrace who you truly are. Be proud to by YOU! We’ll always be here for you at Virtual T-Time with the Pride Center … Where Matadors Belong. Fill out the information below and we’ll send you the Zoom Meeting ID to join the discussion. Fill out my online form [1]. [1] https://usu.wufoo.com/forms/q17u9mq412iw7k8",
+        "eventLink": "https://www.csun.edu/pride/events/pride-center-virtual-t-time-19",
+        "dtstart": "2021-03-17 19:00:00",
+        "dtend": "2021-03-17 20:30:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/Calendar_Pc_T-Time_SP20_0.png?itok=xzJKYyhi"
+    },
+    {
+        "title": "Pride Center: Virtual T-Time",
+        "description": " Experience support, guidance and a network of peers to help you navigate living as a trans or non-binary person at Virtual T-Time, hosted weekly on Zoom by the Pride Center of the University Student Union. Come sip some tea in this welcoming space and feel free to discuss living with intersecting identities at this inclusive weekly event. Whether you’re transgender, gender questioning, genderqueer or non-binary, you are invited to explore and embrace who you truly are. Be proud to by YOU! We’ll always be here for you at Virtual T-Time with the Pride Center … Where Matadors Belong. Fill out the information below and we’ll send you the Zoom Meeting ID to join the discussion. Fill out my online form [1]. [1] https://usu.wufoo.com/forms/q17u9mq412iw7k8",
+        "eventLink": "https://www.csun.edu/pride/events/pride-center-virtual-t-time-20",
+        "dtstart": "2021-03-24 19:00:00",
+        "dtend": "2021-03-24 20:30:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/Calendar_Pc_T-Time_SP20_0.png?itok=xzJKYyhi"
+    },
+    {
+        "title": "Pride Center: Virtual T-Time",
+        "description": " Experience support, guidance and a network of peers to help you navigate living as a trans or non-binary person at Virtual T-Time, hosted weekly on Zoom by the Pride Center of the University Student Union. Come sip some tea in this welcoming space and feel free to discuss living with intersecting identities at this inclusive weekly event. Whether you’re transgender, gender questioning, genderqueer or non-binary, you are invited to explore and embrace who you truly are. Be proud to by YOU! We’ll always be here for you at Virtual T-Time with the Pride Center … Where Matadors Belong. Fill out the information below and we’ll send you the Zoom Meeting ID to join the discussion. Fill out my online form [1]. [1] https://usu.wufoo.com/forms/q17u9mq412iw7k8",
+        "eventLink": "https://www.csun.edu/pride/events/pride-center-virtual-t-time-21",
+        "dtstart": "2021-04-07 19:00:00",
+        "dtend": "2021-04-07 20:30:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/Calendar_Pc_T-Time_SP20_0.png?itok=xzJKYyhi"
+    },
+    {
+        "title": "Pride Center: Virtual T-Time",
+        "description": " Experience support, guidance and a network of peers to help you navigate living as a trans or non-binary person at Virtual T-Time, hosted weekly on Zoom by the Pride Center of the University Student Union. Come sip some tea in this welcoming space and feel free to discuss living with intersecting identities at this inclusive weekly event. Whether you’re transgender, gender questioning, genderqueer or non-binary, you are invited to explore and embrace who you truly are. Be proud to by YOU! We’ll always be here for you at Virtual T-Time with the Pride Center … Where Matadors Belong. Fill out the information below and we’ll send you the Zoom Meeting ID to join the discussion. Fill out my online form [1]. [1] https://usu.wufoo.com/forms/q17u9mq412iw7k8",
+        "eventLink": "https://www.csun.edu/pride/events/pride-center-virtual-t-time-22",
+        "dtstart": "2021-04-14 19:00:00",
+        "dtend": "2021-04-14 20:30:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/Calendar_Pc_T-Time_SP20_0.png?itok=xzJKYyhi"
+    },
+    {
+        "title": "Pride Center: Virtual T-Time",
+        "description": " Experience support, guidance and a network of peers to help you navigate living as a trans or non-binary person at Virtual T-Time, hosted weekly on Zoom by the Pride Center of the University Student Union. Come sip some tea in this welcoming space and feel free to discuss living with intersecting identities at this inclusive weekly event. Whether you’re transgender, gender questioning, genderqueer or non-binary, you are invited to explore and embrace who you truly are. Be proud to by YOU! We’ll always be here for you at Virtual T-Time with the Pride Center … Where Matadors Belong. Fill out the information below and we’ll send you the Zoom Meeting ID to join the discussion. Fill out my online form [1]. [1] https://usu.wufoo.com/forms/q17u9mq412iw7k8",
+        "eventLink": "https://www.csun.edu/pride/events/pride-center-virtual-t-time-23",
+        "dtstart": "2021-04-21 19:00:00",
+        "dtend": "2021-04-21 20:30:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/Calendar_Pc_T-Time_SP20_0.png?itok=xzJKYyhi"
+    },
+    {
+        "title": "Pride Center: Virtual T-Time",
+        "description": " Experience support, guidance and a network of peers to help you navigate living as a trans or non-binary person at Virtual T-Time, hosted weekly on Zoom by the Pride Center of the University Student Union. Come sip some tea in this welcoming space and feel free to discuss living with intersecting identities at this inclusive weekly event. Whether you’re transgender, gender questioning, genderqueer or non-binary, you are invited to explore and embrace who you truly are. Be proud to by YOU! We’ll always be here for you at Virtual T-Time with the Pride Center … Where Matadors Belong. Fill out the information below and we’ll send you the Zoom Meeting ID to join the discussion. Fill out my online form [1]. [1] https://usu.wufoo.com/forms/q17u9mq412iw7k8",
+        "eventLink": "https://www.csun.edu/pride/events/pride-center-virtual-t-time-24",
+        "dtstart": "2021-04-28 19:00:00",
+        "dtend": "2021-04-28 20:30:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/Calendar_Pc_T-Time_SP20_0.png?itok=xzJKYyhi"
+    },
+    {
+        "title": "Pride Center: Virtual T-Time",
+        "description": " Experience support, guidance and a network of peers to help you navigate living as a trans or non-binary person at Virtual T-Time, hosted weekly on Zoom by the Pride Center of the University Student Union. Come sip some tea in this welcoming space and feel free to discuss living with intersecting identities at this inclusive weekly event. Whether you’re transgender, gender questioning, genderqueer or non-binary, you are invited to explore and embrace who you truly are. Be proud to by YOU! We’ll always be here for you at Virtual T-Time with the Pride Center … Where Matadors Belong. Fill out the information below and we’ll send you the Zoom Meeting ID to join the discussion. Fill out my online form [1]. [1] https://usu.wufoo.com/forms/q17u9mq412iw7k8",
+        "eventLink": "https://www.csun.edu/pride/events/pride-center-virtual-t-time-25",
+        "dtstart": "2021-05-12 19:00:00",
+        "dtend": "2021-05-12 20:30:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/Calendar_Pc_T-Time_SP20_0.png?itok=xzJKYyhi"
+    },
+    {
+        "title": "Pride Center: Virtual T-Time",
+        "description": " Experience support, guidance and a network of peers to help you navigate living as a trans or non-binary person at Virtual T-Time, hosted weekly on Zoom by the Pride Center of the University Student Union. Come sip some tea in this welcoming space and feel free to discuss living with intersecting identities at this inclusive weekly event. Whether you’re transgender, gender questioning, genderqueer or non-binary, you are invited to explore and embrace who you truly are. Be proud to by YOU! We’ll always be here for you at Virtual T-Time with the Pride Center … Where Matadors Belong. Fill out the information below and we’ll send you the Zoom Meeting ID to join the discussion. Fill out my online form [1]. [1] https://usu.wufoo.com/forms/q17u9mq412iw7k8",
+        "eventLink": "https://www.csun.edu/pride/events/pride-center-virtual-t-time-26",
+        "dtstart": "2021-03-31 19:00:00",
+        "dtend": "2021-03-31 20:30:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/Calendar_Pc_T-Time_SP20_0.png?itok=xzJKYyhi"
+    },
+    {
+        "title": "Pride Center: Virtual T-Time",
+        "description": " Experience support, guidance and a network of peers to help you navigate living as a trans or non-binary person at Virtual T-Time, hosted weekly on Zoom by the Pride Center of the University Student Union. Come sip some tea in this welcoming space and feel free to discuss living with intersecting identities at this inclusive weekly event. Whether you’re transgender, gender questioning, genderqueer or non-binary, you are invited to explore and embrace who you truly are. Be proud to by YOU! We’ll always be here for you at Virtual T-Time with the Pride Center … Where Matadors Belong. Fill out the information below and we’ll send you the Zoom Meeting ID to join the discussion. Fill out my online form [1]. [1] https://usu.wufoo.com/forms/q17u9mq412iw7k8",
+        "eventLink": "https://www.csun.edu/pride/events/pride-center-virtual-t-time-29",
+        "dtstart": "2021-05-05 19:00:00",
+        "dtend": "2021-05-05 20:30:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/Calendar_Pc_T-Time_SP20_0.png?itok=xzJKYyhi"
+    },
+    {
+        "title": "USU: Music Mondays — Connect with Fellow Matadors Through Music",
+        "description": "You can start each week with good vibes and great tunes during Music Mondays from the University Student Union! With a new playlist every Monday on Spotify, you can enjoy tunes curated for you and then add your own favorites to the mix. We want to see your unique taste in music shine through so add your favorite songs and share them with your friends! With so many individual tastes and personal preferences, we can’t wait to see your exciting impact on the USU playlist each week. Come connect with your fellow Matadors through the love of music during Music Mondays from the USU…Where Matadors Belong!",
+        "eventLink": "https://www.csun.edu/usu/events/usu-music-mondays-%E2%80%94-connect-fellow-matadors-through-music-6",
+        "dtstart": "2021-03-22 12:00:00",
+        "dtend": "2021-03-22 12:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/IG-MusicMondays-SP2110.png?itok=JNB6DIa-"
+    },
+    {
+        "title": "USU: Music Mondays — Connect with Fellow Matadors Through Music",
+        "description": "You can start each week with good vibes and great tunes during Music Mondays from the University Student Union! With a new playlist every Monday on Spotify, you can enjoy tunes curated for you and then add your own favorites to the mix. We want to see your unique taste in music shine through so add your favorite songs and share them with your friends! With so many individual tastes and personal preferences, we can’t wait to see your exciting impact on the USU playlist each week. Come connect with your fellow Matadors through the love of music during Music Mondays from the USU…Where Matadors Belong!",
+        "eventLink": "https://www.csun.edu/usu/events/usu-music-mondays-%E2%80%94-connect-fellow-matadors-through-music-7",
+        "dtstart": "2021-03-29 12:00:00",
+        "dtend": "2021-03-29 12:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/IG-MusicMondays-SP2111.png?itok=wZF5gAUZ"
+    },
+    {
+        "title": "USU: Music Mondays — Connect with Fellow Matadors Through Music",
+        "description": "You can start each week with good vibes and great tunes during Music Mondays from the University Student Union! With a new playlist every Monday on Spotify, you can enjoy tunes curated for you and then add your own favorites to the mix. We want to see your unique taste in music shine through so add your favorite songs and share them with your friends! With so many individual tastes and personal preferences, we can’t wait to see your exciting impact on the USU playlist each week. Come connect with your fellow Matadors through the love of music during Music Mondays from the USU…Where Matadors Belong!",
+        "eventLink": "https://www.csun.edu/usu/events/usu-music-mondays-%E2%80%94-connect-fellow-matadors-through-music-8",
+        "dtstart": "2021-04-05 12:00:00",
+        "dtend": "2021-04-05 12:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/IG-MusicMondays-SP2112.png?itok=Xbymy2PM"
+    },
+    {
+        "title": "USU: Music Mondays — Connect with Fellow Matadors Through Music",
+        "description": "You can start each week with good vibes and great tunes during Music Mondays from the University Student Union! With a new playlist every Monday on Spotify, you can enjoy tunes curated for you and then add your own favorites to the mix. We want to see your unique taste in music shine through so add your favorite songs and share them with your friends! With so many individual tastes and personal preferences, we can’t wait to see your exciting impact on the USU playlist each week. Come connect with your fellow Matadors through the love of music during Music Mondays from the USU…Where Matadors Belong!",
+        "eventLink": "https://www.csun.edu/usu/events/usu-music-mondays-%E2%80%94-connect-fellow-matadors-through-music-9",
+        "dtstart": "2021-04-12 12:00:00",
+        "dtend": "2021-04-12 12:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/IG-MusicMondays-SP2113.png?itok=irp6j614"
+    },
+    {
+        "title": "USU: Music Mondays — Connect with Fellow Matadors Through Music",
+        "description": "You can start each week with good vibes and great tunes during Music Mondays from the University Student Union! With a new playlist every Monday on Spotify, you can enjoy tunes curated for you and then add your own favorites to the mix. We want to see your unique taste in music shine through so add your favorite songs and share them with your friends! With so many individual tastes and personal preferences, we can’t wait to see your exciting impact on the USU playlist each week. Come connect with your fellow Matadors through the love of music during Music Mondays from the USU…Where Matadors Belong!",
+        "eventLink": "https://www.csun.edu/usu/events/usu-music-mondays-%E2%80%94-connect-fellow-matadors-through-music-10",
+        "dtstart": "2021-04-19 12:00:00",
+        "dtend": "2021-04-19 12:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/IG-MusicMondays-SP2114.png?itok=WaAvtvqs"
+    },
+    {
+        "title": "USU: Music Mondays — Connect with Fellow Matadors Through Music",
+        "description": "You can start each week with good vibes and great tunes during Music Mondays from the University Student Union! With a new playlist every Monday on Spotify, you can enjoy tunes curated for you and then add your own favorites to the mix. We want to see your unique taste in music shine through so add your favorite songs and share them with your friends! With so many individual tastes and personal preferences, we can’t wait to see your exciting impact on the USU playlist each week. Come connect with your fellow Matadors through the love of music during Music Mondays from the USU…Where Matadors Belong!",
+        "eventLink": "https://www.csun.edu/usu/events/usu-music-mondays-%E2%80%94-connect-fellow-matadors-through-music-11",
+        "dtstart": "2021-04-26 12:00:00",
+        "dtend": "2021-04-26 12:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/IG-MusicMondays-SP2115.png?itok=VJwRAnYE"
+    },
+    {
+        "title": "USU: Music Mondays — Connect with Fellow Matadors Through Music",
+        "description": "You can start each week with good vibes and great tunes during Music Mondays from the University Student Union! With a new playlist every Monday on Spotify, you can enjoy tunes curated for you and then add your own favorites to the mix. We want to see your unique taste in music shine through so add your favorite songs and share them with your friends! With so many individual tastes and personal preferences, we can’t wait to see your exciting impact on the USU playlist each week. Come connect with your fellow Matadors through the love of music during Music Mondays from the USU…Where Matadors Belong!",
+        "eventLink": "https://www.csun.edu/usu/events/usu-music-mondays-%E2%80%94-connect-fellow-matadors-through-music-12",
+        "dtstart": "2021-05-03 12:00:00",
+        "dtend": "2021-05-03 12:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/IG-MusicMondays-SP2116.png?itok=fPqQYs4s"
+    },
+    {
+        "title": "USU: Music Mondays — Connect with Fellow Matadors Through Music",
+        "description": "You can start each week with good vibes and great tunes during Music Mondays from the University Student Union! With a new playlist every Monday on Spotify, you can enjoy tunes curated for you and then add your own favorites to the mix. We want to see your unique taste in music shine through so add your favorite songs and share them with your friends! With so many individual tastes and personal preferences, we can’t wait to see your exciting impact on the USU playlist each week. Come connect with your fellow Matadors through the love of music during Music Mondays from the USU…Where Matadors Belong!",
+        "eventLink": "https://www.csun.edu/usu/events/usu-music-mondays-%E2%80%94-connect-fellow-matadors-through-music-13",
+        "dtstart": "2021-05-17 12:00:00",
+        "dtend": "2021-05-17 12:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/IG-MusicMondays-SP2118.png?itok=fmdC8n7S"
+    },
+    {
+        "title": "USU: Music Mondays — Connect with Fellow Matadors Through Music",
+        "description": "You can start each week with good vibes and great tunes during Music Mondays from the University Student Union! With a new playlist every Monday on Spotify, you can enjoy tunes curated for you and then add your own favorites to the mix. We want to see your unique taste in music shine through so add your favorite songs and share them with your friends! With so many individual tastes and personal preferences, we can’t wait to see your exciting impact on the USU playlist each week. Come connect with your fellow Matadors through the love of music during Music Mondays from the USU…Where Matadors Belong!",
+        "eventLink": "https://www.csun.edu/usu/events/usu-music-mondays-%E2%80%94-connect-fellow-matadors-through-music-15",
+        "dtstart": "2021-05-10 12:00:00",
+        "dtend": "2021-05-10 12:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/IG-MusicMondays-SP2117.png?itok=JK5jZJFr"
+    },
+    {
+        "title": "VRC: Elevate IGTV Series — Career Tips for Your Future",
+        "description": "You’re invited to join the Veterans Resource Center of the University Student Union to discover and practice valuable skills for your future job search and career success during the Elevate IGTV Series! On the first Friday of each month, all military-connected Matadors are encouraged to connect with working professionals from various industries to hear smart tips and guidance that will help you feel confident and prepared as you make your move into the workforce. Follow @csun_vrc on Instagram to tune in to every episode. Come and get better prepared for seeking your future professional career during the Elevate IGTV Series from the Veterans Resource Center of the USU… Where Matadors Belong!",
+        "eventLink": "https://www.csun.edu/vrc/events/vrc-elevate-igtv-series-%E2%80%94-career-tips-your-future-1",
+        "dtstart": "2021-04-02",
+        "dtend": "2021-04-03",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/VRC_Elevate_IGTV_Series_SP21-01.png?itok=GCaLSaH-"
+    },
+    {
+        "title": "USU: Sunset Jams — Live Virtual Concerts",
+        "description": "Discover new artists and vibe out to fresh new sounds at the University Student Union’s Sunset Jams on Instagram Live! On select Fridays, you’re invited to join us for our completely free live virtual concerts featuring talented musicians playing for you and your friends. Wind down from your busy week, kick back and enjoy some warm spring nights with the hottest Sunset Jams! ",
+        "eventLink": "https://www.csun.edu/usu/events/usu-sunset-jams-%E2%80%94-live-virtual-concerts-4",
+        "dtstart": "2021-03-12 18:00:00",
+        "dtend": "2021-03-12 18:30:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/USU_SunsetJams_SP21-KatPadden.png?itok=mEWMykyE"
+    },
+    {
+        "title": "USU: Sunset Jams — Live Virtual Concerts",
+        "description": "Discover new artists and vibe out to fresh new sounds at the University Student Union’s Sunset Jams on Instagram Live! On select Fridays, you’re invited to join us for our completely free live virtual concerts featuring talented musicians playing for you and your friends. Wind down from your busy week, kick back and enjoy some warm spring nights with the hottest Sunset Jams! ",
+        "eventLink": "https://www.csun.edu/usu/events/usu-sunset-jams-%E2%80%94-live-virtual-concerts-5",
+        "dtstart": "2021-04-16 18:00:00",
+        "dtend": "2021-04-16 18:30:00",
+        "imgSrc": "https://live.staticflickr.com/3948/buddyicons/149217749@N02_r.jpg?1491936417#149217749@N02"
+    },
+    {
+        "title": "USU: Influencer Series — Virtual",
+        "description": "The University Student Union invites you to explore the captivating experiences of self-made social media influencers during our exciting speaker events, Influencer Series — Virtual. Discover firsthand what it looks like to cultivate a career in social media and come hear the unique and entertaining perspectives of influencers from various areas of expertise. You’ll even get to ask some questions and participate in fun activities for giveaways. RSVP to snag your spot and then come join us to find out how to make your own mark in the digital world by tapping into your true personal potential during Influencer Series — Virtual from the USU … Where Matadors Belong!",
+        "eventLink": "https://www.csun.edu/usu/events/usu-influencer-series-%E2%80%94-virtual-0",
+        "dtstart": "2021-03-30 17:00:00",
+        "dtend": "2021-03-30 19:00:00",
+        "imgSrc": "https://live.staticflickr.com/3948/buddyicons/149217749@N02_r.jpg?1491936417#149217749@N02"
+    },
+    {
+        "title": "USU: Influencer Series — Virtual",
+        "description": "The University Student Union invites you to explore the captivating experiences of self-made social media influencers during our exciting speaker events, Influencer Series — Virtual. Discover firsthand what it looks like to cultivate a career in social media and come hear the unique and entertaining perspectives of influencers from various areas of expertise. You’ll even get to ask some questions and participate in fun activities for giveaways. RSVP to snag your spot and then come join us to find out how to make your own mark in the digital world by tapping into your true personal potential during Influencer Series — Virtual from the USU … Where Matadors Belong!",
+        "eventLink": "https://www.csun.edu/usu/events/usu-influencer-series-%E2%80%94-virtual-1",
+        "dtstart": "2021-04-22 17:00:00",
+        "dtend": "2021-04-22 19:00:00",
+        "imgSrc": "https://live.staticflickr.com/3948/buddyicons/149217749@N02_r.jpg?1491936417#149217749@N02"
+    },
+    {
+        "title": "SRC: Spring Steps Challenge — Stage 4 Registration Opens",
+        "description": "Stay fit with friends to win every month! Get your team to the starting line this semester for some fun competition during the virtual Spring Steps Challenge hosted by Intramural Sports at the Student Recreation Center of the University Student Union! You and four friends have the opportunity to team up, get moving and strut your stuff every month this Spring to become the Spring Steps Challenge champions! All participants on each month’s winning team will win their very own Intramural Sports Duffel Bag! All you have to do is register your team of five each month on IMleagues.com, and download the Pacer app on a mobile device to get your team ready to roll with the SRC … Where Matadors Belong!",
+        "eventLink": "https://www.csun.edu/src/events/src-spring-steps-challenge-%E2%80%94-stage-4-registration-opens",
+        "dtstart": "2021-04-12",
+        "dtend": "2021-04-13",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/StepsChallenge_2021-alt-04.png?itok=eSlXIcef"
+    },
+    {
+        "title": "USU Games Room: MataGames — Tekken 7 Tournament",
+        "description": "Grab your controllers and square up with other Matadors during MataGames by the Games Room of the USU! Get ready for some exciting video game events and highly competitive fun as we play our way through Trivia Nights, Among Us Party, Super Smash Bros. Ultimate, Tekken 7, Brawlhalla, Video Game Bracket and ongoing completion bounties. You can meet new friends and earn sweet prizes for individual events as well as points for larger prizes for participating all semester! First Place Prize: $25 Game Stop Gift Card All players will be entered in a raffle for two $10 Nintendo eShop gift cards. Join the Games Room Discord [1] to learn more and register for these events. Then get ready to game on during MataGames by the Games Room of the USU… Where Matadors Belong! [1] https://discord.com/invite/MEG8Abs",
+        "eventLink": "https://www.csun.edu/src/events/usu-games-room-matagames-%E2%80%94-tekken-7-tournament-0",
+        "dtstart": "2021-04-15 18:00:00",
+        "dtend": "2021-04-15 18:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/tekken-7-01calendar.png?itok=L0k62KSZ"
+    },
+    {
+        "title": "USU Games Room: MataGames — Among Us Party",
+        "description": "Grab your controllers and square up with other Matadors during MataGames by the Games Room of the USU! Get ready for some exciting video game events and highly competitive fun as we play our way through Trivia Nights, Among Us Party, Super Smash Bros. Ultimate, Tekken 7, Brawlhalla, Video Game Bracket and ongoing completion bounties. You can meet new friends and earn sweet prizes for individual events as well as points for larger prizes for participating all semester! All players will be entered in a raffle for prizes. Join the Games Room Discord [1] to learn more and register for these events. Then get ready to game on during MataGames by the Games Room of the USU… Where Matadors Belong! [1] https://discord.com/invite/MEG8Abs",
+        "eventLink": "https://www.csun.edu/src/events/usu-games-room-matagames-%E2%80%94-among-us-party-1",
+        "dtstart": "2021-03-30 20:00:00",
+        "dtend": "2021-03-30 20:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/GR_matagames_AmongUsParty_InitialDesign_SP2021.png?itok=8EmMpstM"
+    },
+    {
+        "title": "USU Games Room: MataGames — Among Us Party",
+        "description": "Grab your controllers and square up with other Matadors during MataGames by the Games Room of the USU! Get ready for some exciting video game events and highly competitive fun as we play our way through Trivia Nights, Among Us Party, Super Smash Bros. Ultimate, Tekken 7, Brawlhalla, Video Game Bracket and ongoing completion bounties. You can meet new friends and earn sweet prizes for individual events as well as points for larger prizes for participating all semester! All players will be entered in a raffle for prizes. Join the Games Room Discord [1] to learn more and register for these events. Then get ready to game on during MataGames by the Games Room of the USU… Where Matadors Belong! [1] https://discord.com/invite/MEG8Abs",
+        "eventLink": "https://www.csun.edu/src/events/usu-games-room-matagames-%E2%80%94-among-us-party-2",
+        "dtstart": "2021-04-13 20:00:00",
+        "dtend": "2021-04-13 20:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/GR_matagames_AmongUsParty_InitialDesign_SP2021.png?itok=8EmMpstM"
+    },
+    {
+        "title": "USU Games Room: MataGames — Video Game Bracket Challenge",
+        "description": "Grab your controllers and square up with other Matadors during MataGames by the Games Room of the USU! Get ready for some exciting video game events and highly competitive fun as we play our way through Trivia Nights, Among Us Party, Super Smash Bros. Ultimate, Tekken 7, Brawlhalla, Video Game Bracket and ongoing completion bounties. You can meet new friends and earn sweet prizes for individual events as well as points for larger prizes for participating all semester! First Place Prize: $25 Gift Card to Any Gaming Platform All players will be entered in a raffle for a free gaming accessory on Amazon. Join the Games Room Discord [1] to learn more and register for these events. Then get ready to game on during MataGames by the Games Room of the USU… Where Matadors Belong! [1] https://discord.com/invite/MEG8Abs",
+        "eventLink": "https://www.csun.edu/src/events/usu-games-room-matagames-%E2%80%94-video-game-bracket-challenge-1",
+        "dtstart": "2021-04-05",
+        "dtend": "2021-04-06",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/GR_bracketchallenge_FA20-01.png?itok=56Op-Eqq"
+    },
+    {
+        "title": "USU Games Room: MataGames — Brawlhalla Tournament",
+        "description": "Grab your controllers and square up with other Matadors during MataGames by the Games Room of the USU! Get ready for some exciting video game events and highly competitive fun as we play our way through Trivia Nights, Among Us Party, Super Smash Bros. Ultimate, Tekken 7, Brawlhalla, Video Game Bracket and ongoing completion bounties. You can meet new friends and earn sweet prizes for individual events as well as points for larger prizes for participating all semester! First Place Prize: $25 Best Buy Gift Card All players will be entered in a raffle for two $10 Nintendo eShop gift cards. Join the Games Room Discord [1] to learn more and register for these events. Then get ready to game on during MataGames by the Games Room of the USU… Where Matadors Belong! [1] https://discord.com/invite/MEG8Abs",
+        "eventLink": "https://www.csun.edu/src/events/usu-games-room-matagames-%E2%80%94-brawlhalla-tournament-0",
+        "dtstart": "2021-04-08 18:00:00",
+        "dtend": "2021-04-08 18:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/GR_matagames_brawlhalla_calendar.png?itok=rnhp0hMf"
+    },
+    {
+        "title": "USU Games Room: MataGames — Super Smash Bros. Ultimate Tournament",
+        "description": "Grab your controllers and square up with other Matadors during MataGames by the Games Room of the USU! Get ready for some exciting video game events and highly competitive fun as we play our way through Trivia Nights, Among Us Party, Super Smash Bros. Ultimate, Tekken 7, Brawlhalla, Video Game Bracket and ongoing completion bounties. You can meet new friends and earn sweet prizes for individual events as well as points for larger prizes for participating all semester! First Place Prize: $25 Amazon Gift Card All players will be entered in a raffle for two $10 Nintendo eShop gift cards. Join the Games Room Discord [1] to learn more and register for these events. Then get ready to game on during MataGames by the Games Room of the USU… Where Matadors Belong! [1] https://discord.com/invite/MEG8Abs",
+        "eventLink": "https://www.csun.edu/src/events/usu-games-room-matagames-%E2%80%94-super-smash-bros-ultimate-tournament-1",
+        "dtstart": "2021-04-01 18:00:00",
+        "dtend": "2021-04-01 18:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/GR_smashtournament_FA20-01.png?itok=Fg7hnk5v"
+    },
+    {
+        "title": "USU Games Room: MataGames — Super Smash Bros. Ultimate Tournament",
+        "description": "Grab your controllers and square up with other Matadors during MataGames by the Games Room of the USU! Get ready for some exciting video game events and highly competitive fun as we play our way through Trivia Nights, Among Us Party, Super Smash Bros. Ultimate, Tekken 7, Brawlhalla, Video Game Bracket and ongoing completion bounties. You can meet new friends and earn sweet prizes for individual events as well as points for larger prizes for participating all semester! First Place Prize: $25 Amazon Gift Card All players will be entered in a raffle for two $10 Nintendo eShop gift cards. Join the Games Room Discord [1] to learn more and register for these events. Then get ready to game on during MataGames by the Games Room of the USU… Where Matadors Belong! [1] https://discord.com/invite/MEG8Abs",
+        "eventLink": "https://www.csun.edu/src/events/usu-games-room-matagames-%E2%80%94-super-smash-bros-ultimate-tournament-2",
+        "dtstart": "2021-04-22 18:00:00",
+        "dtend": "2021-04-22 18:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/GR_smashtournament_FA20-01.png?itok=Fg7hnk5v"
+    },
+    {
+        "title": "USU Games Room: MataGames — Gaming Trivia",
+        "description": "Grab your controllers and square up with other Matadors during MataGames by the Games Room of the USU! Get ready for some exciting video game events and highly competitive fun as we play our way through Trivia Nights, Among Us Party, Super Smash Bros. Ultimate, Tekken 7, Brawlhalla, Video Game Bracket and ongoing completion bounties. You can meet new friends and earn sweet prizes for individual events as well as points for larger prizes for participating all semester! All players will be entered in a raffle for prizes. Join the Games Room Discord [1] to learn more and register for these events. Then get ready to game on during MataGames by the Games Room of the USU… Where Matadors Belong! [1] https://discord.com/invite/MEG8Abs",
+        "eventLink": "https://www.csun.edu/src/events/usu-games-room-matagames-%E2%80%94-gaming-trivia-0",
+        "dtstart": "2021-04-06 18:00:00",
+        "dtend": "2021-04-06 18:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/GR_GamingTriviacalendar_matagames_Sept.%2029.png?itok=k8aHPZx8"
+    },
+    {
+        "title": "USU Games Room: MataGames — Gaming Trivia",
+        "description": "Grab your controllers and square up with other Matadors during MataGames by the Games Room of the USU! Get ready for some exciting video game events and highly competitive fun as we play our way through Trivia Nights, Among Us Party, Super Smash Bros. Ultimate, Tekken 7, Brawlhalla, Video Game Bracket and ongoing completion bounties. You can meet new friends and earn sweet prizes for individual events as well as points for larger prizes for participating all semester! All players will be entered in a raffle for prizes. Join the Games Room Discord [1] to learn more and register for these events. Then get ready to game on during MataGames by the Games Room of the USU… Where Matadors Belong! [1] https://discord.com/invite/MEG8Abs",
+        "eventLink": "https://www.csun.edu/src/events/usu-games-room-matagames-%E2%80%94-gaming-trivia-1",
+        "dtstart": "2021-04-20 18:00:00",
+        "dtend": "2021-04-20 18:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/GR_GamingTriviacalendar_matagames_Sept.%2029.png?itok=k8aHPZx8"
+    },
+    {
+        "title": "USU Tech Tips: Word",
+        "description": "You can improve your computer skills this semester with the Computer Lab of the University Student Union by taking Virtual Tech Tips workshops — all FREE to CSUN students! Whether you’re a beginner or an expert, we’ve got a class just for you! It’s a convenient and effective way to optimize your tech knowledge from your own home with our quick and informative 1-hour workshops via Zoom. This is the perfect time to become a more proficient user of the most popular programs including Photoshop, PowerPoint, Illustrator, Prezi, and more! Take advantage of CSUN’s digital campus with a Virtual Tech Tips workshop from the Computer Lab of the USU … Where Matadors Belong! Visit our website to register for a Virtual Tech Tips workshop [1]. Once you choose your desired course, you will receive setup instructions for Zoom and links to FREE Microsoft Office Suite and Adobe Creative Cloud software. Space is limited, so sign up now! [1] https://www.csun.edu/usu/computer-lab/workshops%20",
+        "eventLink": "https://www.csun.edu/usu/events/usu-tech-tips-word",
+        "dtstart": "2021-03-10 14:00:00",
+        "dtend": "2021-03-10 15:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/preview-full-IG-TechTips-Virtual-01.png?itok=7t5xQAbT"
+    },
+    {
+        "title": "USU Tech Tips: Word",
+        "description": "You can improve your computer skills this semester with the Computer Lab of the University Student Union by taking Virtual Tech Tips workshops — all FREE to CSUN students! Whether you’re a beginner or an expert, we’ve got a class just for you! It’s a convenient and effective way to optimize your tech knowledge from your own home with our quick and informative 1-hour workshops via Zoom. This is the perfect time to become a more proficient user of the most popular programs including Photoshop, PowerPoint, Illustrator, Prezi, and more! Take advantage of CSUN’s digital campus with a Virtual Tech Tips workshop from the Computer Lab of the USU … Where Matadors Belong! Visit our website to register for a Virtual Tech Tips workshop [1]. Once you choose your desired course, you will receive setup instructions for Zoom and links to FREE Microsoft Office Suite and Adobe Creative Cloud software. Space is limited, so sign up now! [1] https://www.csun.edu/usu/computer-lab/workshops%20",
+        "eventLink": "https://www.csun.edu/usu/events/usu-tech-tips-word-0",
+        "dtstart": "2021-03-12 14:00:00",
+        "dtend": "2021-03-12 15:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/preview-full-IG-TechTips-Virtual-01.png?itok=7t5xQAbT"
+    },
+    {
+        "title": "USU Tech Tips: Excel II",
+        "description": "You can improve your computer skills this semester with the Computer Lab of the University Student Union by taking Virtual Tech Tips workshops — all FREE to CSUN students! Whether you’re a beginner or an expert, we’ve got a class just for you! It’s a convenient and effective way to optimize your tech knowledge from your own home with our quick and informative 1-hour workshops via Zoom. This is the perfect time to become a more proficient user of the most popular programs including Photoshop, PowerPoint, Illustrator, Prezi, and more! Take advantage of CSUN’s digital campus with a Virtual Tech Tips workshop from the Computer Lab of the USU … Where Matadors Belong! Visit our website to register for a Virtual Tech Tips workshop [1]. Once you choose your desired course, you will receive setup instructions for Zoom and links to FREE Microsoft Office Suite and Adobe Creative Cloud software. Space is limited, so sign up now! [1] https://www.csun.edu/usu/computer-lab/workshops%20",
+        "eventLink": "https://www.csun.edu/usu/events/usu-tech-tips-excel-ii-10",
+        "dtstart": "2021-03-24 14:00:00",
+        "dtend": "2021-03-24 15:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/preview-full-IG-TechTips-Virtual-01.png?itok=7t5xQAbT"
+    },
+    {
+        "title": "USU Tech Tips: Excel II",
+        "description": "You can improve your computer skills this semester with the Computer Lab of the University Student Union by taking Virtual Tech Tips workshops — all FREE to CSUN students! Whether you’re a beginner or an expert, we’ve got a class just for you! It’s a convenient and effective way to optimize your tech knowledge from your own home with our quick and informative 1-hour workshops via Zoom. This is the perfect time to become a more proficient user of the most popular programs including Photoshop, PowerPoint, Illustrator, Prezi, and more! Take advantage of CSUN’s digital campus with a Virtual Tech Tips workshop from the Computer Lab of the USU … Where Matadors Belong! Visit our website to register for a Virtual Tech Tips workshop [1]. Once you choose your desired course, you will receive setup instructions for Zoom and links to FREE Microsoft Office Suite and Adobe Creative Cloud software. Space is limited, so sign up now! [1] https://www.csun.edu/usu/computer-lab/workshops%20",
+        "eventLink": "https://www.csun.edu/usu/events/usu-tech-tips-excel-ii-11",
+        "dtstart": "2021-03-26 14:00:00",
+        "dtend": "2021-03-26 15:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/preview-full-IG-TechTips-Virtual-01.png?itok=7t5xQAbT"
+    },
+    {
+        "title": "USU Tech Tips: Illustrator",
+        "description": "You can improve your computer skills this semester with the Computer Lab of the University Student Union by taking Virtual Tech Tips workshops — all FREE to CSUN students! Whether you’re a beginner or an expert, we’ve got a class just for you! It’s a convenient and effective way to optimize your tech knowledge from your own home with our quick and informative 1-hour workshops via Zoom. This is the perfect time to become a more proficient user of the most popular programs including Photoshop, PowerPoint, Illustrator, Prezi, and more! Take advantage of CSUN’s digital campus with a Virtual Tech Tips workshop from the Computer Lab of the USU … Where Matadors Belong! Visit our website to register for a Virtual Tech Tips workshop [1]. Once you choose your desired course, you will receive setup instructions for Zoom and links to FREE Microsoft Office Suite and Adobe Creative Cloud software. Space is limited, so sign up now! [1] https://www.csun.edu/usu/computer-lab/workshops%20",
+        "eventLink": "https://www.csun.edu/usu/events/usu-tech-tips-illustrator",
+        "dtstart": "2021-04-07 14:00:00",
+        "dtend": "2021-04-07 15:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/preview-full-IG-TechTips-Virtual-01.png?itok=7t5xQAbT"
+    },
+    {
+        "title": "USU Tech Tips: Illustrator",
+        "description": "You can improve your computer skills this semester with the Computer Lab of the University Student Union by taking Virtual Tech Tips workshops — all FREE to CSUN students! Whether you’re a beginner or an expert, we’ve got a class just for you! It’s a convenient and effective way to optimize your tech knowledge from your own home with our quick and informative 1-hour workshops via Zoom. This is the perfect time to become a more proficient user of the most popular programs including Photoshop, PowerPoint, Illustrator, Prezi, and more! Take advantage of CSUN’s digital campus with a Virtual Tech Tips workshop from the Computer Lab of the USU … Where Matadors Belong! Visit our website to register for a Virtual Tech Tips workshop [1]. Once you choose your desired course, you will receive setup instructions for Zoom and links to FREE Microsoft Office Suite and Adobe Creative Cloud software. Space is limited, so sign up now! [1] https://www.csun.edu/usu/computer-lab/workshops%20",
+        "eventLink": "https://www.csun.edu/usu/events/usu-tech-tips-illustrator-0",
+        "dtstart": "2021-04-09 14:00:00",
+        "dtend": "2021-04-09 15:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/preview-full-IG-TechTips-Virtual-01.png?itok=7t5xQAbT"
+    },
+    {
+        "title": "USU Tech Tips: Photoshop I",
+        "description": "You can improve your computer skills this semester with the Computer Lab of the University Student Union by taking Virtual Tech Tips workshops — all FREE to CSUN students! Whether you’re a beginner or an expert, we’ve got a class just for you! It’s a convenient and effective way to optimize your tech knowledge from your own home with our quick and informative 1-hour workshops via Zoom. This is the perfect time to become a more proficient user of the most popular programs including Photoshop, PowerPoint, Illustrator, Prezi, and more! Take advantage of CSUN’s digital campus with a Virtual Tech Tips workshop from the Computer Lab of the USU … Where Matadors Belong! Visit our website to register for a Virtual Tech Tips workshop [1]. Once you choose your desired course, you will receive setup instructions for Zoom and links to FREE Microsoft Office Suite and Adobe Creative Cloud software. Space is limited, so sign up now! [1] https://www.csun.edu/usu/computer-lab/workshops%20",
+        "eventLink": "https://www.csun.edu/usu/events/usu-tech-tips-photoshop-i-7",
+        "dtstart": "2021-04-14 14:00:00",
+        "dtend": "2021-04-14 15:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/preview-full-IG-TechTips-Virtual-01.png?itok=7t5xQAbT"
+    },
+    {
+        "title": "USU Tech Tips: Photoshop I",
+        "description": "You can improve your computer skills this semester with the Computer Lab of the University Student Union by taking Virtual Tech Tips workshops — all FREE to CSUN students! Whether you’re a beginner or an expert, we’ve got a class just for you! It’s a convenient and effective way to optimize your tech knowledge from your own home with our quick and informative 1-hour workshops via Zoom. This is the perfect time to become a more proficient user of the most popular programs including Photoshop, PowerPoint, Illustrator, Prezi, and more! Take advantage of CSUN’s digital campus with a Virtual Tech Tips workshop from the Computer Lab of the USU … Where Matadors Belong! Visit our website to register for a Virtual Tech Tips workshop [1]. Once you choose your desired course, you will receive setup instructions for Zoom and links to FREE Microsoft Office Suite and Adobe Creative Cloud software. Space is limited, so sign up now! [1] https://www.csun.edu/usu/computer-lab/workshops%20",
+        "eventLink": "https://www.csun.edu/usu/events/usu-tech-tips-photoshop-i-8",
+        "dtstart": "2021-04-16 14:00:00",
+        "dtend": "2021-04-16 15:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/preview-full-IG-TechTips-Virtual-01.png?itok=7t5xQAbT"
+    },
+    {
+        "title": "USU Tech Tips: Photoshop II",
+        "description": "You can improve your computer skills this semester with the Computer Lab of the University Student Union by taking Virtual Tech Tips workshops — all FREE to CSUN students! Whether you’re a beginner or an expert, we’ve got a class just for you! It’s a convenient and effective way to optimize your tech knowledge from your own home with our quick and informative 1-hour workshops via Zoom. This is the perfect time to become a more proficient user of the most popular programs including Photoshop, PowerPoint, Illustrator, Prezi, and more! Take advantage of CSUN’s digital campus with a Virtual Tech Tips workshop from the Computer Lab of the USU … Where Matadors Belong! Visit our website to register for a Virtual Tech Tips workshop [1]. Once you choose your desired course, you will receive setup instructions for Zoom and links to FREE Microsoft Office Suite and Adobe Creative Cloud software. Space is limited, so sign up now! [1] https://www.csun.edu/usu/computer-lab/workshops%20",
+        "eventLink": "https://www.csun.edu/usu/events/usu-tech-tips-photoshop-ii-7",
+        "dtstart": "2021-04-21 14:00:00",
+        "dtend": "2021-04-21 15:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/preview-full-IG-TechTips-Virtual-01.png?itok=7t5xQAbT"
+    },
+    {
+        "title": "USU Tech Tips: Photoshop II",
+        "description": "You can improve your computer skills this semester with the Computer Lab of the University Student Union by taking Virtual Tech Tips workshops — all FREE to CSUN students! Whether you’re a beginner or an expert, we’ve got a class just for you! It’s a convenient and effective way to optimize your tech knowledge from your own home with our quick and informative 1-hour workshops via Zoom. This is the perfect time to become a more proficient user of the most popular programs including Photoshop, PowerPoint, Illustrator, Prezi, and more! Take advantage of CSUN’s digital campus with a Virtual Tech Tips workshop from the Computer Lab of the USU … Where Matadors Belong! Visit our website to register for a Virtual Tech Tips workshop [1]. Once you choose your desired course, you will receive setup instructions for Zoom and links to FREE Microsoft Office Suite and Adobe Creative Cloud software. Space is limited, so sign up now! [1] https://www.csun.edu/usu/computer-lab/workshops%20",
+        "eventLink": "https://www.csun.edu/usu/events/usu-tech-tips-photoshop-ii-8",
+        "dtstart": "2021-04-23 14:00:00",
+        "dtend": "2021-04-23 15:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/preview-full-IG-TechTips-Virtual-01.png?itok=7t5xQAbT"
+    },
+    {
+        "title": "SRC: NBA Trivia Night",
+        "description": "Beat the buzzer and make it rain with your knowledge of the pro game at the Student Recreation Center’s NBA Trivia Night with the University Student Union! You can register with your friends as a team or play as a free agent. Then, sign on to Discord and Kahoot when the event begins to give it your all and flex your pro hoops IQ! Every participant will receive an SRC Intramural Sports Workout Towel and T-shirt plus be entered in a raffle to win awesome sports accessories just for playing! The player with the highest score at the end of the competition will be crowned our NBA trivia champion and receive a $50 NBA Store gift card. Register on IMLeagues [1] to secure your spot and then get ready to go hard in the paint for some awesome prizes during NBA Trivia Night with the SRC of the University Student Union… Where Matadors Belong! [1] https://imleagues.com/csun",
+        "eventLink": "https://www.csun.edu/src/events/src-nba-trivia-night",
+        "dtstart": "2021-03-09 18:00:00",
+        "dtend": "2021-03-09 18:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/SRC_NBATriviaNight_SP21.jpg?itok=XAE2nhzu"
+    },
+    {
+        "title": "VRC: “Elevate” Workshop — Federal Resumes — Registration Opens",
+        "description": "Join the Veterans Resource Center for the second workshop in the Elevate: Series to learn about adapting federal resumes and how to properly screen for jobs! This two-hour workshop in the series will focus on equipping you with tools, tips and tricks to help you advance your career and secure the job you really want. Register for the March 26 workshop below starting on Friday, March 12 and then keep an eye out for information on the upcoming third and final event in the series. We want your job search to be effective, efficient and successful. Come and develop your personal skills during Workshop 2 in the Elevate: Series with the Veterans Resource Center of the USU… Where Matadors Belong!",
+        "eventLink": "https://www.csun.edu/vrc/events/vrc-%E2%80%9Celevate%E2%80%9D-workshop-%E2%80%94-federal-resumes-%E2%80%94-registration-opens",
+        "dtstart": "2021-03-12",
+        "dtend": "2021-03-13",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/VRC_Elevate_March26_Workshop_SP21-01.png?itok=1lJ0POfv"
+    },
+    {
+        "title": "VRC: “Elevate” Workshop — Federal Resumes",
+        "description": "Join the Veterans Resource Center for the second workshop in the Elevate: Series to learn about adapting federal resumes and how to properly screen for jobs! This two-hour workshop in the series will focus on equipping you with tools, tips and tricks to help you advance your career and secure the job you really want. Register for the March 26 workshop below starting on Friday, March 12 and then keep an eye out for information on the upcoming third and final event in the series. We want your job search to be effective, efficient and successful. Come and develop your personal skills during Workshop 2 in the Elevate: Series with the Veterans Resource Center of the USU… Where Matadors Belong!",
+        "eventLink": "https://www.csun.edu/vrc/events/vrc-%E2%80%9Celevate%E2%80%9D-workshop-%E2%80%94-federal-resumes",
+        "dtstart": "2021-03-26 11:00:00",
+        "dtend": "2021-03-26 13:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/VRC_Elevate_March26_Workshop_SP21-01.png?itok=1lJ0POfv"
+    },
+    {
+        "title": "VRC: “Women to Women” — Connection for Female Student Veterans",
+        "description": "The Veterans Resource Center of the University Student Union invites our outstanding female student veterans at CSUN to attend Women to Women – an empowering virtual event designed to help you build a community here on campus. Join us on Zoom to make new connections and learn about the various resources available to you through the VRC. Plus, we’ll be giving away free painting kits to the first 20 individuals who RSVP for this compelling and engaging event! Painting kits are limited and will be available on a first-come, first-served basis. To RSVP and receive your access code for this online event, please complete and submit the form below. Don’t miss this special opportunity for connection and community at Women to Women, presented by the Veterans Resource Center of the USU … Where Matadors Belong!",
+        "eventLink": "https://www.csun.edu/vrc/events/vrc-%E2%80%9Cwomen-women%E2%80%9D-%E2%80%94-connection-female-student-veterans",
+        "dtstart": "2021-03-12 11:00:00",
+        "dtend": "2021-03-12 12:30:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/VR_WomantoWoman_Redesign_SP2021-Recovered.png?itok=r3bfmmVN"
+    },
+    {
+        "title": "Oasis Wellness Center: Virtual Wellness Talk Series — Costanza Eliana  Chinea, “Embody Inclusivity” Founder",
+        "description": "Join the Oasis Wellness Center of the University Student Union for the second installment in the Virtual Wellness Talk Series featuring “Embody Inclusivity” founder, yoga teacher and activist Constanza Eliana Chinea. Over the course of this semester, you can come take advantage of participating in these valuable conversations with BIPOC (Black, Indigenous and People of Color) wellness leaders. This month, Constanza Eliana Chinea will focus on cultivating equity and inclusivity in the wellness industry. Register below before the event begins Thursday, March 25 at 7 p.m., and then get ready to dive into this dynamic and engaging conversation about your personal wellness with Constanza Eliana Chinea during the Virtual Wellness Talk Series from the Oasis Wellness Center of the USU … Where Matadors Belong!",
+        "eventLink": "https://www.csun.edu/oasis/events/oasis-wellness-center-virtual-wellness-talk-series-%E2%80%94-costanza-eliana-chinea-%E2%80%9Cembody",
+        "dtstart": "2021-03-25 19:00:00",
+        "dtend": "2021-03-25 20:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/Oasis_VirtualWellnessTalks_SP21-Constanza.png?itok=ZxBsfC6Y"
+    },
+    {
+        "title": "VRC: “Elevate” Workshop — Military Skill Translator — Registration  Opens",
+        "description": "More information is coming soon about this exciting virtual opportunity for CSUN Students this spring semester at the University Student Union … Where Matadors Belong!",
+        "eventLink": "https://www.csun.edu/vrc/events/vrc-%E2%80%9Celevate%E2%80%9D-workshop-%E2%80%94-military-skill-translator-%E2%80%94-registration-opens",
+        "dtstart": "2021-04-16 11:00:00",
+        "dtend": "2021-04-16 11:00:00",
+        "imgSrc": "https://live.staticflickr.com/3948/buddyicons/149217749@N02_r.jpg?1491936417#149217749@N02"
+    },
+    {
+        "title": "VRC: Veteran Commencement — Classes of 2019–2020 and 2020–2021!",
+        "description": "The Veterans Resource Center is celebrating you and all other CSUN student veteran graduates in the classes of 2019–2020 and 2020–2021 at our virtual Veteran Commencement! You can RSVP below by Thursday, May 13 to reserve your spot in this special evening of recognition featuring an honorary student veteran speaker and our keynote speaker, USU Executive Director Debra L. Hammond. Each veteran who registers will receive a free souvenir “Grad Pack” containing a commemorative sash, certificate of recognition, program card, challenge coin and even some exciting CSUN swag — but you must RSVP by Friday, April 23 to receive yours before the event. Otherwise, it will be mailed to you after May 14. Be sure to join us Thursday, May 13 via Zoom to acknowledge the academic success of all graduating student veterans at Veteran Commencement, presented by the VRC of the University Student Union … Where Matadors Belong.",
+        "eventLink": "https://www.csun.edu/vrc/events/vrc-veteran-commencement-%E2%80%94-classes-2019%E2%80%932020-and-2020%E2%80%932021",
+        "dtstart": "2021-05-13 18:00:00",
+        "dtend": "2021-05-13 20:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/VRC_IG_Graduation_SP21.png?itok=ZnAb2dR6"
+    },
+    {
+        "title": "VRC: Veteran Commencement Registration Opens",
+        "description": "The Veterans Resource Center is celebrating you and all other CSUN student veteran graduates in the classes of 2019–2020 and 2020–2021 at our virtual Veteran Commencement! You can RSVP below by Thursday, May 13 to reserve your spot in this special evening of recognition featuring an honorary student veteran speaker and our keynote speaker, USU Executive Director Debra L. Hammond. Each veteran who registers will receive a free souvenir “Grad Pack” containing a commemorative sash, certificate of recognition, program card, challenge coin and even some exciting CSUN swag — but you must RSVP by Friday, April 23 to receive yours before the event. Otherwise, it will be mailed to you after May 14. Be sure to join us Thursday, May 13 via Zoom to acknowledge the academic success of all graduating student veterans at Veteran Commencement, presented by the VRC of the University Student Union … Where Matadors Belong.",
+        "eventLink": "https://www.csun.edu/vrc/events/vrc-veteran-commencement-registration-opens",
+        "dtstart": "2021-03-12",
+        "dtend": "2021-03-13",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/VRC_IG_Graduation_SP21.png?itok=ZnAb2dR6"
+    },
+    {
+        "title": "Pride Center: What, Like It’s Hard?: Queer and Trans Business Owners",
+        "description": "Get tips on carving your career path at What, Like It’s Hard?: Queer and Trans Business Owners presented by the Pride Center of the University Student Union! This all-new inspiring virtual panel celebrating Women’s History Month will focus on queer and trans woman business owners as they share their stories of how their identity has impacted and relates to the work that they do. Plus, everyone who attends will have a chance to win some amazing free prizes from LGBTQIA+ women-owned businesses! Celebrate all the wonderful things about loving women this March with the Pride Center… Where Matadors Belong. ",
+        "eventLink": "https://www.csun.edu/pride/events/pride-center-what-it%E2%80%99s-hard-queer-and-trans-business-owners",
+        "dtstart": "2021-03-10 17:00:00",
+        "dtend": "2021-03-10 18:30:00",
+        "imgSrc": "https://live.staticflickr.com/3948/buddyicons/149217749@N02_r.jpg?1491936417#149217749@N02"
+    },
+    {
+        "title": "USU: Lecture — Transforming Hispanic Serving Institutions with Dr. Gina  Garcia",
+        "description": "The University Student Union and NASPA Region VI invite all Matadors to explore pathways to positive change at Transforming Hispanic Serving Institutions with Dr. Gina Garcia. During this dynamic lecture and Q&A, Dr. Garcia – a CSUN alumna, leading scholar on Hispanic Serving Institutions (HSIs) and currently associate professor at the University of Pittsburgh — will discuss the importance of using critical theory, decolonial theory and anti-racist practices as a framework for serving Latinx students with the goal of equity and justice as outcomes. Register now to be part of this important discussion [1], then join us on Wednesday, March 10 via Zoom for Transforming Hispanic Serving Institutions with Dr. Gina Garcia, brought to you by NASPA Region VI and your University Student Union … Where Matadors Belong. [1] https://csun.zoom.us/webinar/register/WN_8BtCLOVST4eebAGiRIIvAg",
+        "eventLink": "https://www.csun.edu/usu/events/usu-lecture-%E2%80%94-transforming-hispanic-serving-institutions-dr-gina-garcia",
+        "dtstart": "2021-03-10 11:00:00",
+        "dtend": "2021-03-10 12:30:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/DI-GinaGarcia-HSI-IG.png?itok=BYAr2b0D"
+    },
+    {
+        "title": "CSUN Students — Vote in the USU Board of Directors & Associated Students  Elections",
+        "description": "All CSUN students are encouraged to vote in the USU Board of Directors and Associated Students Elections. This is your opportunity to elect the dedicated student leaders who will help shape the future of our university. The University Student Union (USU) Board of Directors is a student-led, action-oriented team dedicated to making a difference for every Matador. They are committed to making many important decisions that improve your campus life. Over the last few years, the Board has been responsible for bringing popular student destinations to the USU including the Student Recreation Center, Oasis Wellness Center, DREAM Center, Veterans Resource Center, Pride Center and the future “New Heart of Campus” — a construction and renovation project created by students and for students that will be transformative for the CSUN campus. Each year, Board members bring you popular USU events like Matador Nights, Carnaval, Crunch Time, and have organized a number of virtual programs and events throughout the pandemic to keep you connected to your CSUN community. That’s why it’s so important for you to vote in the USU Board of Directors and Associated Students Elections this spring — because the student leaders you elect will get things done for you. It’s a lasting legacy of leadership that benefits all of us. Cast your vote and make your voice heard!",
+        "eventLink": "https://www.csun.edu/usu/events/csun-students-%E2%80%94-vote-usu-board-directors-associated-students-elections",
+        "dtstart": "2021-04-06 08:00:00",
+        "dtend": "2021-04-07 19:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/VOTE-IGBOD-ELECTIONS-SP21.png?itok=6O8kbkhD"
+    },
+    {
+        "title": "SRC: Rocket League Tournament",
+        "description": "Start those engines and get ready to ram your way to victory during the Rocket League Tournament hosted by Intramural Sports at the Student Recreation Center of the University Student Union. Kick it into gear for a test of speed, strategy and fun where the ultimate winner will walk away with both bragging rights and a $50 Amazon gift card. Plus, all participants will score an SRC Workout Towel and T-shirt and be entered in a raffle for CSUN Campus Store and Starbucks gift cards! Register on IMLeagues by March 25 [1] and then sign on to our Intramural Sports Discord server [2] for access to all matchups and standings. Come put the pedal to the metal and show us what you’ve got at the Rocket League Tournament from the SRC of the University Student Union … Where Matadors Belong! [1] https://imleagues.com/csun [2] https://discord.com/invite/XhWzkhy",
+        "eventLink": "https://www.csun.edu/src/events/src-rocket-league-tournament-1",
+        "dtstart": "2021-03-26 17:00:00",
+        "dtend": "2021-03-26 19:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/SRC_RocketLeague_Tournement_Update_SP2021-01.png?itok=FYPH50XY"
+    },
+    {
+        "title": "DREAM Center: “The Undocumented Lawyer” Film Screening",
+        "description": "Come enjoy a special screening of the compelling documentary “The Undocumented Lawyer”, followed by a Q&A with the featured lawyer, activist and CSUN Alumna Lizbeth Mateo, presented by the DREAM Center of the University Student Union! The film tells the powerful story of Lizbeth Mateo’s commitment and dedication to supporting, representing and serving the undocumented community. After the screening, you’ll have the chance to ask her questions about being the subject of this documentary, the important strides currently being made by leaders in the community and the ways in which you too can make a difference! Register from March 1 to March 30 and then sign on to Zoom when the event begins on Tuesday, March 30 at 1 p.m. to celebrate the great work being done in the undocumented community and view “The Undocumented Lawyer” Film Screening from the DREAM Center of the USU… Where Matadors Belong!",
+        "eventLink": "https://www.csun.edu/dreamcenter/events/dream-center-%E2%80%9C-undocumented-lawyer%E2%80%9D-film-screening",
+        "dtstart": "2021-03-30 13:00:00",
+        "dtend": "2021-03-30 14:15:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/DREAM_The-Undocu-Lawyer_SP21.png?itok=IJBWlmiD"
+    },
+    {
+        "title": "USU: Essential Talks — Black Chat",
+        "description": "Dive into dynamic conversations surrounding Black culture during Essential Talks: Black Chat with the University Student Union. Come connect with your fellow Matadors in the Black community during the very first Black Chat at 3 p.m. on Tuesday, March 9 via Zoom. This is special opportunity to discuss and process everything from politics and racial battle fatigue to goal setting and popular culture. Register starting Feb. 26 through March 9 to attend the first Black Chat [1]. Then sign on to Zoom when the event begins at 3 p.m. to celebrate your culture and shared experiences while connecting with your community during Essential Talks: Black Chat with the USU … Where Matadors Belong! [1] https://csun.zoom.us/meeting/register/tZMtfuyqrzojGdJZITzS4xcZGfuVg8hrPe6z",
+        "eventLink": "https://www.csun.edu/usu/events/usu-essential-talks-%E2%80%94-black-chat",
+        "dtstart": "2021-03-09 15:00:00",
+        "dtend": "2021-03-09 15:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/Black-Chat-SP21_0.png?itok=_-jwsaD4"
+    },
+    {
+        "title": "Pride Center: Adventures in the USUniverse — Roll for Initiative",
+        "description": "Come experience the fun and challenge of roleplaying tabletop gaming with your fellow CSUN GAYmers during Adventures in the USUniverse: Roll for Initiative from the Pride Center of the University Student Union. You’ll get to create your own personal narrative with other CSUN LGBTQIA+ community members while getting dynamic feedback from your game master! Get ready to pass your skill checks as you explore an unknown land with fellow players! Once you’ve registered, just show up via Zoom on select Thursdays at 5 p.m. to join in the intriguing game play and good times. We can’t wait to have a gay ol’ time with you at Adventures in the USUniverse: Roll for Initiative from the Pride Center of the USU…Where Matadors Belong -------- RSVP FOR ADVENTURES OF THE USUNIVERSE: ROLL FOR INITIATIVE -------- Provide the following information and submit your RSVP to join us on Zoom and Roll20 Thursday nights from 5 to 6:30 p.m. for the Pride Center’s Adventures in the USUniverse: Roll for Initiative Fill out my online form [1]. [1] https://usu.wufoo.com/forms/s17dujwp199i6o7",
+        "eventLink": "https://www.csun.edu/pride/events/pride-center-adventures-usuniverse-%E2%80%94-roll-initiative-3",
+        "dtstart": "2021-03-11 17:00:00",
+        "dtend": "2021-03-11 18:30:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/IG-AdventuresoftheUSUniverse.png?itok=_0QrKqFO"
+    },
+    {
+        "title": "Pride Center: Adventures in the USUniverse — Roll for Initiative",
+        "description": "Come experience the fun and challenge of roleplaying tabletop gaming with your fellow CSUN GAYmers during Adventures in the USUniverse: Roll for Initiative from the Pride Center of the University Student Union. You’ll get to create your own personal narrative with other CSUN LGBTQIA+ community members while getting dynamic feedback from your game master! Get ready to pass your skill checks as you explore an unknown land with fellow players! Once you’ve registered, just show up via Zoom on select Thursdays at 5 p.m. to join in the intriguing game play and good times. We can’t wait to have a gay ol’ time with you at Adventures in the USUniverse: Roll for Initiative from the Pride Center of the USU…Where Matadors Belong -------- RSVP FOR ADVENTURES OF THE USUNIVERSE: ROLL FOR INITIATIVE -------- Provide the following information and submit your RSVP to join us on Zoom and Roll20 Thursday nights from 5 to 6:30 p.m. for the Pride Center’s Adventures in the USUniverse: Roll for Initiative Fill out my online form [1]. [1] https://usu.wufoo.com/forms/s17dujwp199i6o7",
+        "eventLink": "https://www.csun.edu/pride/events/pride-center-adventures-usuniverse-%E2%80%94-roll-initiative-1",
+        "dtstart": "2021-04-01 17:00:00",
+        "dtend": "2021-04-01 18:30:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/IG-AdventuresoftheUSUniverse.png?itok=_0QrKqFO"
+    },
+    {
+        "title": "Pride Center: Adventures in the USUniverse — Roll for Initiative",
+        "description": "Come experience the fun and challenge of roleplaying tabletop gaming with your fellow CSUN GAYmers during Adventures in the USUniverse: Roll for Initiative from the Pride Center of the University Student Union. You’ll get to create your own personal narrative with other CSUN LGBTQIA+ community members while getting dynamic feedback from your game master! Get ready to pass your skill checks as you explore an unknown land with fellow players! Once you’ve registered, just show up via Zoom on select Thursdays at 5 p.m. to join in the intriguing game play and good times. We can’t wait to have a gay ol’ time with you at Adventures in the USUniverse: Roll for Initiative from the Pride Center of the USU…Where Matadors Belong -------- RSVP FOR ADVENTURES OF THE USUNIVERSE: ROLL FOR INITIATIVE -------- Provide the following information and submit your RSVP to join us on Zoom and Roll20 Thursday nights from 5 to 6:30 p.m. for the Pride Center’s Adventures in the USUniverse: Roll for Initiative Fill out my online form [1]. [1] https://usu.wufoo.com/forms/s17dujwp199i6o7",
+        "eventLink": "https://www.csun.edu/pride/events/pride-center-adventures-usuniverse-%E2%80%94-roll-initiative-0",
+        "dtstart": "2021-04-08 17:00:00",
+        "dtend": "2021-04-08 18:30:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/IG-AdventuresoftheUSUniverse.png?itok=_0QrKqFO"
+    },
+    {
+        "title": "Pride Center: Adventures in the USUniverse — Roll for Initiative",
+        "description": "Come experience the fun and challenge of roleplaying tabletop gaming with your fellow CSUN GAYmers during Adventures in the USUniverse: Roll for Initiative from the Pride Center of the University Student Union. You’ll get to create your own personal narrative with other CSUN LGBTQIA+ community members while getting dynamic feedback from your game master! Get ready to pass your skill checks as you explore an unknown land with fellow players! Once you’ve registered, just show up via Zoom on select Thursdays at 5 p.m. to join in the intriguing game play and good times. We can’t wait to have a gay ol’ time with you at Adventures in the USUniverse: Roll for Initiative from the Pride Center of the USU…Where Matadors Belong -------- RSVP FOR ADVENTURES OF THE USUNIVERSE: ROLL FOR INITIATIVE -------- Provide the following information and submit your RSVP to join us on Zoom and Roll20 Thursday nights from 5 to 6:30 p.m. for the Pride Center’s Adventures in the USUniverse: Roll for Initiative Fill out my online form [1]. [1] https://usu.wufoo.com/forms/s17dujwp199i6o7",
+        "eventLink": "https://www.csun.edu/pride/events/pride-center-adventures-usuniverse-%E2%80%94-roll-initiative",
+        "dtstart": "2021-04-15 17:00:00",
+        "dtend": "2021-04-15 18:30:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/IG-AdventuresoftheUSUniverse.png?itok=_0QrKqFO"
+    },
+    {
+        "title": "Pride Center: Adventures in the USUniverse — Roll for Initiative",
+        "description": "Come experience the fun and challenge of roleplaying tabletop gaming with your fellow CSUN GAYmers during Adventures in the USUniverse: Roll for Initiative from the Pride Center of the University Student Union. You’ll get to create your own personal narrative with other CSUN LGBTQIA+ community members while getting dynamic feedback from your game master! Get ready to pass your skill checks as you explore an unknown land with fellow players! Once you’ve registered, just show up via Zoom on select Thursdays at 5 p.m. to join in the intriguing game play and good times. We can’t wait to have a gay ol’ time with you at Adventures in the USUniverse: Roll for Initiative from the Pride Center of the USU…Where Matadors Belong -------- RSVP FOR ADVENTURES OF THE USUNIVERSE: ROLL FOR INITIATIVE -------- Provide the following information and submit your RSVP to join us on Zoom and Roll20 Thursday nights from 5 to 6:30 p.m. for the Pride Center’s Adventures in the USUniverse: Roll for Initiative Fill out my online form [1]. [1] https://usu.wufoo.com/forms/s17dujwp199i6o7",
+        "eventLink": "https://www.csun.edu/pride/events/pride-center-adventures-usuniverse-%E2%80%94-roll-initiative-2",
+        "dtstart": "2021-03-25 17:00:00",
+        "dtend": "2021-03-25 18:30:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/IG-AdventuresoftheUSUniverse.png?itok=_0QrKqFO"
+    },
+    {
+        "title": "SRC: Lace Up & Go Running Challenge Begins",
+        "description": "Grab your sneakers and take on our virtual Lace Up & Go Challenge with the Student Recreation Center of the University Student Union! Get moving this semester by walking, jogging or running to increase your endurance and help reach your spring fitness goals. Visit the SRC’s Fitness Challenge webpage [1] to learn all you need to get started, register and get on your journey to win some amazing prizes. Then using the Nike Run Club app on iOS [2] or Android [3], you’ll be able to press start to track your progress daily to reach the following Milestones for some great raffle entries. 50 Miles — $25 eGift Card 100 Miles — $50 eGift Card 150 Miles — TRX® GO Suspension Trainer System Get moving toward a healthier version of yourself by finding your stride during the virtual Lace Up & Go Challenge with the SRC … Where Matadors Play! [1] https://www.csun.edu/src/fitness-challenges [2] https://apps.apple.com/us/app/nike-run-club/id387771637 [3] https://play.google.com/store/apps/details?id=com.nike.plusgps&amp;hl=en_US",
+        "eventLink": "https://www.csun.edu/src/events/src-lace-go-running-challenge-begins",
+        "dtstart": "2021-03-29",
+        "dtend": "2021-03-30",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/SRC_LaceUp_SP21-01.png?itok=97LJAU1m"
+    },
+    {
+        "title": "SRC: Lace Up & Go Running Challenge Registration Opens",
+        "description": " Grab your sneakers and take on our virtual Lace Up & Go Challenge with the Student Recreation Center of the University Student Union! Get moving this semester by walking, jogging or running to increase your endurance and help reach your spring fitness goals. Visit the SRC’s Fitness Challenge webpage [1] to learn all you need to get started, register and get on your journey to win some amazing prizes. Then using the Nike Run Club app on iOS [2] or Android [3], you’ll be able to press start to track your progress daily to reach the following Milestones for some great raffle entries. 50 Miles — $25 eGift Card 100 Miles — $50 eGift Card 150 Miles — TRX® GO Suspension Trainer System Get moving toward a healthier version of yourself by finding your stride during the virtual Lace Up & Go Challenge with the SRC … Where Matadors Play! [1] https://www.csun.edu/src/fitness-challenges [2] https://apps.apple.com/us/app/nike-run-club/id387771637 [3] https://play.google.com/store/apps/details?id=com.nike.plusgps&amp;hl=en_US",
+        "eventLink": "https://www.csun.edu/src/events/src-lace-go-running-challenge-registration-opens",
+        "dtstart": "2021-03-14",
+        "dtend": "2021-03-15",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/SRC_LaceUp_SP21-01.png?itok=97LJAU1m"
+    },
+    {
+        "title": "Pride Center: Fat Queer Power",
+        "description": "The Pride Center of the University Student Union invites you to come recognize and celebrate the empowering work being done by influential LGBTQIA+ individuals and the beauty of fat bodies at Fat Queer Power! Featuring a diverse panel discussion with fat LGBTQIA+ activists and organizers, you will hear about their personal experiences and the actual violence and discrimination they have faced due to fatphobia. This is a unique opportunity to recognize and uplift fat LGBTQIA+ individuals while discovering important ways that you can actively challenge societal fatphobia in your own life. Sign on to Zoom at 5 p.m. and then get ready to meet some amazing and powerful LGBTQIA+ activists and organizers during Fat Queer Power from the Pride Center of the USU … Where Matadors Belong! ",
+        "eventLink": "https://www.csun.edu/pride/events/pride-center-fat-queer-power",
+        "dtstart": "2021-04-21 17:00:00",
+        "dtend": "2021-04-21 18:30:00",
+        "imgSrc": "https://live.staticflickr.com/3948/buddyicons/149217749@N02_r.jpg?1491936417#149217749@N02"
+    },
+    {
+        "title": "USU: Matador Page Turners — Virtual Book Club",
+        "description": "You are invited to join the University Student Union for the first meeting of Matador Page Turners, a new virtual book club where all Matadors can connect via Zoom to reflect on a variety of interesting books by authors of color. With this dynamic group, the focus will be on highlighting a diverse voice and creating a space to engage with the powerful ideas that emerge from an inspiring book chosen by YOU. At our first virtual gathering Tuesday, March 23, we’ll discuss “Between the World and Me” by Ta-Nehisi Coates and come together as a community to share our personal interpretations of this unflinching look at Black life in America. Take advantage of this special opportunity to connect via Zoom with other Matador readers and experience the impact of these unique stories with Matador Page Turners of the University Student Union … Where Matadors Belong.",
+        "eventLink": "https://www.csun.edu/usu/events/usu-matador-page-turners-%E2%80%94-virtual-book-club",
+        "dtstart": "2021-03-23 16:00:00",
+        "dtend": "2021-03-23 16:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/matador-page-turners-sp21-firstinstallment-calendar.png?itok=5SItx1KF"
+    },
+    {
+        "title": "SRC: Mega Mash Up — Boxing & Strength",
+        "description": "Get those endorphins flowing again during Mega Mash Up: Boxing & Strength with the Student Recreation Center of the University Student Union. Your favorite SRC fitness instructors who bring you our Boxing and Strength classes have now teamed up to bring you this great workout mash-up — and they’re even better together! Everyone who participates will be entered in a raffle to win a $25 Visa gift card. Starting Wednesday, March 17, head over to the SRC MINDBODY Portal [1] to snag your spot for this special opportunity! Once registered, you’ll receive an email with the details on how to join via Zoom or Twitch! Then, be on the lookout for info on our upcoming final Mega Mash-Up of this semester, Afro-Caribbean Dance & Barre! All from the SRC of the USU…Where Matadors Belong. [1] https://clients.mindbodyonline.com/classic/mainclass?studioid=39370",
+        "eventLink": "https://www.csun.edu/src/events/src-mega-mash-%E2%80%94-boxing-strength",
+        "dtstart": "2021-03-24 18:00:00",
+        "dtend": "2021-03-24 19:15:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/SRC_MegaMashUp_SP212.png?itok=T6OqU2tJ"
+    },
+    {
+        "title": "USU: Moving Forward Together — Steps towards Unlearning Colonial Ideologies  of Power",
+        "description": "The University Student Union invites all Matadors to unite for Moving Forward Together: Steps towards Unlearning Colonial Ideologies of Power — an opportunity to discuss the widespread effects of colonization, the importance of decolonization, and the experience of diaspora community. We’ll use this space to honor and uplift indigenous sovereignty while unlearning harmful colonial ideologies and moving towards an anti-racism framework. This proactive virtual gathering is the perfect place to collectively acknowledge our power and environment while building a deeper sense of community. Join us Wednesday, March 24 on Zoom to discover this safe, healing space on Zoom at Moving Forward Together: Steps towards Unlearning Colonial Ideologies of Power from your University Student Union … Where Matadors Belong.",
+        "eventLink": "https://www.csun.edu/usu/events/usu-moving-forward-together-%E2%80%94-steps-towards-unlearning-colonial-ideologies-power",
+        "dtstart": "2021-03-24 15:00:00",
+        "dtend": "2021-03-24 16:30:00",
+        "imgSrc": "https://live.staticflickr.com/3948/buddyicons/149217749@N02_r.jpg?1491936417#149217749@N02"
+    },
+    {
+        "title": "USU: Workshop — Transforming Hispanic Serving Institutions with Dr. Gina  Garcia",
+        "description": "The University Student Union and NASPA Region VI invite all Matadors to pursue equity and justice on campus at Transforming Hispanic Serving Institutions with Dr. Gina Garcia. During this virtual workshop, Dr. Garcia — a CSUN alumna, leading scholar on Hispanic Serving Institutions (HSIs) and currently associate professor at the University of Pittsburgh — will explore ways to create concrete, lasting changes in the pursuit of equity and justice for our Latinx community at CSUN. This engaging workshop will include hands-on activities aimed at fostering ideas for what transformation looks like on campus, guided by Dr. Garcia’s framework for transforming Hispanic Serving Institutions. Register now to be participate in this engaging workshop [1], then join us on Wednesday, March 10 via Zoom for Transforming Hispanic Serving Institutions with Dr. Gina Garcia, brought to you by NASPA Region VI and your University Student Union … Where Matadors Belong. [1] https://csun.zoom.us/meeting/register/tZcpdeGprjIsGdIsXVZGfeOl-VaJoYyqF0vS%20",
+        "eventLink": "https://www.csun.edu/usu/events/usu-workshop-%E2%80%94-transforming-hispanic-serving-institutions-dr-gina-garcia",
+        "dtstart": "2021-03-10 14:30:00",
+        "dtend": "2021-03-10 16:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/LECTUREWORKSHOP-DI-GinaGarcia-HSI-IG.png?itok=bVAujoE5"
+    },
+    {
+        "title": "USU: Night Market",
+        "description": "You are invited to join the University Student Union for Night Market, a weeklong virtual food tour and vendor showcase featuring tasty treats from food trucks all over California! From Monday, April 26 to Friday, April 30, we’re partnering with CSUN alumni entrepreneurs to offer Matadors fantastic FREE food from vendors located near wherever you are in the San Fernando Valley, Downtown L.A., South Central, Lancaster Palmdale, Inland Empire, the Bay Area and more! As the semester approaches its final weeks, Night Market is your perfect chance to unwind and fuel up for the busy time ahead. Plus, you can kick off your weekend with the week’s fabulous final event — our virtual vendor showcase on Friday, April 30! More details will be announced soon, so get ready to take advantage of this special opportunity to explore California’s culinary landscape and experience some delicious foodie fun with virtual Night Market, brought to you by the University Student Union … Where Matadors Belong.",
+        "eventLink": "https://www.csun.edu/usu/events/usu-night-market-0",
+        "dtstart": "2021-04-26 13:00:00",
+        "dtend": "2021-04-30 18:00:00",
+        "imgSrc": "https://live.staticflickr.com/3948/buddyicons/149217749@N02_r.jpg?1491936417#149217749@N02"
+    },
+    {
+        "title": "DREAM Center: Poetically Proud Workshop",
+        "description": "Join the DREAM Center of the University Student Union to explore spoken word and expression through poetry during Poetically Proud! This workshop will be a fun opportunity to stretch your creative muscles while celebrating some phenomenal poets in the undocumented and immigrant community. In addition to reading poems from famous undocumented and immigrant writers, you’ll also have a chance to try your hand at writing poetry! Register from March 25 to April 8 [1] and then sign on to Zoom at 3 p.m. on Thursday, April 8 with a pencil and paper when the workshop begins! Whether rhymed or unrhymed, end-stopped or enjambed, we can’t wait to explore expression with you through written and spoken word during Poetically Proud from the DREAM Center of the USU… Where Matadors Belong! [1] https://csun.zoom.us/meeting/register/tZMpdeuvqzMjG9LDiYI8yg5CID_oq6ygpkZr",
+        "eventLink": "https://www.csun.edu/dreamcenter/events/dream-center-poetically-proud-workshop",
+        "dtstart": "2021-04-08 15:00:00",
+        "dtend": "2021-04-08 16:30:00",
+        "imgSrc": "https://live.staticflickr.com/3948/buddyicons/149217749@N02_r.jpg?1491936417#149217749@N02"
+    },
+    {
+        "title": "SRC: MLB Trivia Night",
+        "description": "Get ready to bring the heat during MLB Trivia Night with the Student Recreation Center of the University Student Union! Register on IMLeagues as a team [1] to play with your friends or join the fun as a free agent. Then, sign on to the Intramural Sports Discord [2] and play on Kahoot when the event begins to give it your all and show off your professional baseball knowledge! Every participant will receive an SRC Intramural Sports Workout Towel and T-shirt plus be entered in a raffle to win awesome sports accessories just for playing! The player with highest score at the end of the competition will be crowned our MLB trivia champion and receive a $50 MLB Store gift card. Register on IMLeagues to secure your spot [3] and then join us on Discord [4] to step up to the plate and knock it out of the park during MLB Trivia Night with the Student Recreation Center of the USU … Where Matadors Belong! [1] https://imleagues.com/csun [2] https://discord.com/invite/XhWzkhy [3] https://imleagues.com/csun [4] https://discord.com/invite/XhWzkhy",
+        "eventLink": "https://www.csun.edu/src/events/src-mlb-trivia-night",
+        "dtstart": "2021-04-06 18:00:00",
+        "dtend": "2021-04-06 18:00:00",
+        "imgSrc": "https://www.csun.edu/sites/default/files/styles/deck_image/public/field_lede_image/event/SRC_MLB_Trivia_Night_SP21.jpg?itok=yJnJ9pr9"
+    },
+    {
+        "title": "USU: Carnaval — Virtual",
+        "description": "You’re invited to our annual celebration of global diversity to experience a fun, entertaining event and show your support of the numerous dynamic communities alive right here at CSUN during Carnaval — Virtual, presented by the University Student Union! Join us on the USU Instagram [1] to take an online trip around the world from Monday, April 5 to Monday, April 12 to discover music, dancing, food, art and even more from some very special and vibrant cultures. With live performances, dance tutorials, recommendations for tasty international food spots in LA and many engaging activities to participate in, you don’t want to miss this unique opportunity to celebrate the beauty and richness that each culture brings to our campus community and the city of Los Angeles. Follow @csun_usu on Instagram [2] and join in this exciting celebration of art, food, friends and our world at Carnaval — Virtual hosted by the University Student Union … Where Matadors Belong! [1] https://www.instagram.com/csun_usu/ [2] https://www.instagram.com/csun_usu/",
+        "eventLink": "https://www.csun.edu/usu/events/usu-carnaval-%E2%80%94-virtual",
+        "dtstart": "2021-04-05",
+        "dtend": "2021-04-13",
+        "imgSrc": "https://live.staticflickr.com/3948/buddyicons/149217749@N02_r.jpg?1491936417#149217749@N02"
     }
 ]
 

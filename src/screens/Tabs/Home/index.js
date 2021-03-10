@@ -1,26 +1,31 @@
 import React, { useState, useEffect } from 'react'
-import { FlatList, StatusBar, StyleSheet, ImageBackground, Text} from 'react-native';
-import { Container, ListHeader, EmptyHeader, Box, JobImg, Cover, EventImg } from './styles';
-import { widthPercentageToDP as wp } from 'react-native-responsive-screen';
+import { FlatList, StatusBar, StyleSheet, ImageBackground, Text, Platform } from 'react-native';
+import { Container, ListHeader, NoEventsHeader, Box, JobImg, Cover, EventImg } from './styles';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { CalendarEvents, Jobs } from '../../../utils';
 
-export default function Index({ navigation }) {
-    const [calEvents, setCalEvents] = useState();
-    const [tempdate, setTemp] = useState();
+var days = ['Sun', 'Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat'];
+var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-    const ListItem = ({ imgSrc, title, tempdate, onPress }) => {
+export default function Index({ navigation }) {
+    const [eventsToday, setEventsToday] = useState([]);
+    const [upcomingEvents, setUpcomingEvents] = useState([]);
+
+    const ListItem = ({ imgSrc, title, dtstart, onPress }) => {
         return (
-            <Cover onPress={onPress}>
-                <EventImg source={{ uri: imgSrc }} />
-                <Text style={styles.eventTitle}>{title.split(': ')[1]}</Text>
-                <Text style={styles.eventDate}>{tempdate}</Text>
-            </Cover>
+            <Box>
+                <Cover onPress={onPress}>
+                    <EventImg source={{ uri: imgSrc }} />
+                </Cover>
+                <Text style={styles.eventTitle}>{title.split(':')[0]}</Text>
+                <Text style={styles.eventDate}>{formatDate(dtstart)}</Text>
+            </Box>
         )
     }
 
     const renderItem = ({ item }) => {
         return (
-            <ListItem imgSrc={item.imgSrc} title={item.title} tempdate={tempdate} onPress={() => navigation.navigate('Details', item)} />
+            <ListItem imgSrc={item.imgSrc} title={item.title} dtstart={item.dtstart} onPress={() => navigation.navigate('Details', item)} />
         )
     };
 
@@ -30,31 +35,43 @@ export default function Index({ navigation }) {
         )
     }
 
-    const getEventByDate = (dateString) => {
-        let tempEvents = [];
-        CalendarEvents.forEach(event => { if (event.dtstart.split(' ')[0] == dateString) tempEvents.push(event) });
-        const data = Object.keys(tempEvents).map((i) => ({
-            key: i,
-            title: tempEvents[i].title,
-            date: tempEvents[i].dtstart,
-            imgSrc: tempEvents[i].imgSrc,
-            description: tempEvents[i].description
-        }));
-        setCalEvents(data);
+    const getEventsToday = (dateString) => {
+        let tempEvents = CalendarEvents.filter(event => event.dtstart.split(' ')[0].includes(dateString));
+        tempEvents.sort(function (a, b) { return a.dtstart.localeCompare(b.dtstart) });
+        setEventsToday(tempEvents);
+    }
+
+    const getUpcomingEvents = (dateString) => {
+        let parts = dateString.split("-");
+        let day = parseInt(parts[2]) + 1;
+        let dayOfWeek = new Date(dateString).getDay();
+        let eventsThisWeek = []
+
+        for (let i = dayOfWeek; i < 7; i++) {
+            let nextDay = `${parts[0]}-${parts[1]}-${day.toString().length == 1 ? `0${day}` : `${day}`}`;
+            let temp = CalendarEvents.filter(x => x.dtstart.includes(nextDay));
+            if (temp.length != 0)
+                temp.forEach(x => eventsThisWeek.push(x));
+            day++;
+        }
+        eventsThisWeek.sort(function (a, b) { return a.dtstart.localeCompare(b.dtstart) });
+        setUpcomingEvents(eventsThisWeek);
+    }
+
+    const formatDate = (dtstart) => {
+        let parts = dtstart.split(" ")[0].split("-");
+        let today = new Date(parts[0], parseInt(parts[1]) - 1, parts[2])
+        var day = days[today.getDay()];
+        var month = months[today.getMonth()];
+        var formattedDate = day + '.' + ' ' + month + ' ' + today.getDate();
+        return formattedDate;
     }
 
     useEffect(() => {
         var today = new Date();
         var date = today.getFullYear() + '-0' + (today.getMonth() + 1) + '-' + (today.getDate().toString().length == 1 ? '0' + today.getDate() : today.getDate());
-      
-        var days = ['Sun','Mon','Tues','Wed','Thurs','Fri','Sat'];
-        var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];      
-        var day = days[ today.getDay() ];
-        var month = months[ today.getMonth() ];
-        var tempdate =  day + '.' + ' ' + month + ' '  + today.getDate();
-        // console.log(tempdate);
-        getEventByDate(date);
-        setTemp(tempdate);
+        getEventsToday(date);
+        getUpcomingEvents(date);
     }, [])
 
     return (
@@ -63,24 +80,33 @@ export default function Index({ navigation }) {
             <ImageBackground source={require('../../../assets/background.png')} style={{ flex: 1 }}>
                 <Box>
                     <ListHeader>Events happening today</ListHeader>
-                     <FlatList
-                        style={styles.list}
-                        data={calEvents}
-                        renderItem={renderItem}
-                        keyExtractor={(item) => item.key}
-                        horizontal={true}
-                        showsHorizontalScrollIndicator={false}/> 
+                    {(eventsToday.length != 0) ?
+                        <FlatList
+                            style={styles.list}
+                            data={eventsToday}
+                            renderItem={renderItem}
+                            keyExtractor={(item, index) => index.toString()}
+                            horizontal={true}
+                            showsHorizontalScrollIndicator={false} /> :
+                        <Box style={{ alignSelf: "center" }}>
+                            <NoEventsHeader>No Events</NoEventsHeader>
+                        </Box>
+                    }
                 </Box>
                 <Box>
                     <ListHeader>Upcoming Events</ListHeader>
-                    <FlatList
-                        style={styles.list}
-                        data={calEvents}
-                        renderItem={renderItem}
-                        keyExtractor={(item) => item.key}
-                        horizontal={true}
-                        showsHorizontalScrollIndicator={false}
-                    />
+                    {(upcomingEvents.length != 0) ?
+                        <FlatList
+                            style={styles.list}
+                            data={upcomingEvents}
+                            renderItem={renderItem}
+                            keyExtractor={(item, index) => index.toString()}
+                            horizontal={true}
+                            showsHorizontalScrollIndicator={false} /> :
+                        <Box style={{ alignSelf: "center" }}>
+                            <NoEventsHeader>No Events</NoEventsHeader>
+                        </Box>
+                    }
                 </Box>
                 <Box>
                     <ListHeader>Apply for Jobs</ListHeader>
@@ -90,8 +116,7 @@ export default function Index({ navigation }) {
                         renderItem={renderJob}
                         keyExtractor={(item) => item.key}
                         horizontal={true}
-                        showsHorizontalScrollIndicator={false}
-                    />
+                        showsHorizontalScrollIndicator={false} />
                 </Box>
             </ImageBackground>
         </Container>
@@ -99,17 +124,17 @@ export default function Index({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-    eventTitle:{
-        fontSize: 17,
-        fontWeight: 'bold', 
-        paddingLeft: 11, 
+    eventTitle: {
+        fontSize: Platform.OS == "ios" ? hp("2%") : hp("2.3%"),
+        fontWeight: 'bold',
+        paddingLeft: wp('2%'),
         color: '#2E3862',
         paddingTop: 5.5,
     },
-    eventDate:{
-        fontSize: 14, 
-        fontWeight: '500', 
-        paddingLeft: 11, 
+    eventDate: {
+        fontSize: 14,
+        fontWeight: '500',
+        paddingLeft: wp('2%'),
         color: '#2E3862',
     },
     list: {
