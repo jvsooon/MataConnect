@@ -14,8 +14,10 @@ export const ListHeader = styled.Text`
     color: #2E3862;
 `;
 
-export const EmptyHeader = styled.Text`
-    font-size: ${hp('2.4%')}px;
+export const NoEventsHeader = styled.Text`
+    font-size: ${hp('2.6%')}px;
+    font-weight: bold;
+    margin-vertical: ${hp("8%")}px;
 `;
 
 export const Box = styled.View``;
@@ -28,9 +30,10 @@ export const JobImg = styled.Image`
 `;
 
 export const Cover = styled.TouchableOpacity`
-    margin-vertical: ${hp('3%')}px;
-    width: ${hp('14%')}px;
-    height: ${hp('14.5%')}px;
+    margin-top: ${hp('3%')}px;
+    margin-left: ${wp('2%')}px;
+    width: ${hp('12.5%')}px;
+    height: ${hp('12.5%')}px;
     border-radius: 20px;
     align-self: center;
     elevation: 6;
@@ -45,8 +48,6 @@ export const EventImg = styled.Image`
     width: ${hp('12.5%')}px;
     height: ${hp('12.5%')}px;
     border-radius: 20px;
-    margin-left: ${wp('2%')}px;
-    
 `;
 
 
