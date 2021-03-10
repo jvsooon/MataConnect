@@ -1,75 +1,20 @@
-import React, { useState } from 'react';
-import { SafeAreaView, StatusBar, FlatList, View, StyleSheet, Imagebackground, Image, Text, UIManager, Platform, LayoutAnimation, TouchableOpacity, Linking, ImageBackground } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
+import React, { useContext, useState, useEffect } from 'react';
+import { SafeAreaView, StatusBar, FlatList, View, Text, UIManager, Platform, TouchableOpacity, ImageBackground, StyleSheet } from 'react-native';
 import { CalendarEvents } from '../../utils'
 import * as Calendar from 'expo-calendar';
 import MenuIcon from '../../assets/menu.svg'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { useNavigation } from '@react-navigation/core';
-import { FontAwesome } from '@expo/vector-icons'
+import Tab from '../../components/EventTab'
+import EventCard from '../../components/EventCard'
+import { UserContext } from '../../contexts/UserContext';
+import firebase from '../../../firebase';
 
-const options = { month: "long", day: "numeric", year: "numeric", hour: 'numeric', minute: 'numeric' };
-const inactive = { color: '#000', name: 'star-o' }, active = { color: '#63C2D1', name: 'star' };
-
-const CustomButton = ({ title, onPress }) => {
-    return (
-        <LinearGradient
-            colors={['#A5FAEA', '#6EC8F5']}
-            style={styles.buttonBG}>
-            <TouchableOpacity style={styles.button} onPress={onPress}>
-                <Text>{title}</Text>
-            </TouchableOpacity>
-        </LinearGradient>
-    )
-}
-
-const handleSaveClick = (iconState, setIconState) => {
-    iconState.color == inactive.color ? setIconState(active) : setIconState(inactive);
-}
-
-const StarButton = () => {
-    const [iconState, setIconState] = useState(inactive);
-
-    return (
-        <TouchableOpacity style={{ justifyContent: 'center', marginRight: 10 }} onPress={() => handleSaveClick(iconState, setIconState)}>
-            <FontAwesome name={iconState.name} size={24} color={iconState.color} />
-        </TouchableOpacity>
-    );
-}
-
-const Card = ({ title, subTitle, image, description, event, eventLink }) => {
-    const [collapsed, setCollapsed] = useState(false)
-    return (
-        <TouchableOpacity
-            style={styles.card}
-            onPress={() => {
-                LayoutAnimation.configureNext(LayoutAnimation.create(
-                    250,
-                    LayoutAnimation.Types.easeInEaseOut,
-                    LayoutAnimation.Properties.scaleXY
-                ));
-                setCollapsed(!collapsed)
-            }}>
-            <View style={{ flexDirection: 'row' }}>
-                <Image source={{ uri: image }} style={{ width: 80, height: 80, borderRadius: 10, margin: 10 }} />
-                <View style={{ justifyContent: 'center', flex: 1 }}>
-                    <Text style={{ fontSize: 16 }}>{title.split(':')[0]}</Text>
-                    <Text style={{ fontSize: 16 }}>{subTitle}</Text>
-                </View>
-                <StarButton />
-            </View>
-            {collapsed && <View >
-                <Text style={{ margin: 10 }}>{description.split('.')[0]}</Text>
-                <View style={styles.cardFooter}>
-                    <CustomButton title="Save" onPress={() => event(title, description)} />
-                    <CustomButton title="RSVP" />
-                    <CustomButton title="Website" onPress={() => Linking.openURL(eventLink)} />
-                </View>
-            </View>
-            }
-        </TouchableOpacity>
-    )
-}
+const listTab = [{ status: "Today" }, { status: "Tomorrow" }, { status: "This Week" }, { status: "This Month" }]
+const optionsFull = { month: "long", day: "numeric", year: "numeric", hour: 'numeric', minute: 'numeric' };
+const optionsDate = { month: "long", day: "numeric", year: "numeric" };
+var db = firebase.firestore();
+const arrayUnion = firebase.firestore.FieldValue.arrayUnion;
 
 const Header = () => {
     const navigation = useNavigation()
@@ -88,22 +33,20 @@ async function getDefaultCalendarSourceID() {
     return defaultCalendar.id;
 }
 
-export default class events extends React.Component {
-    constructor() {
-        super()
-        if (Platform.OS === 'android')
-            UIManager.setLayoutAnimationEnabledExperimental(true)
-        this.state = {
-            calEvents: null,
-            calID: null,
-            calendarToken: false
-        }
-    }
+export default function events() {
+    const { state } = useContext(UserContext);
+    var docRef = db.collection("users").doc(state.uid);
+    const [status, setStatus] = useState("Today");
+    const [calID, setCalID] = useState(null);
+    const [calendarToken, setCalendarToken] = useState(false);
+    const [date, setDate] = useState();
+    const [calendarEvents, setCalendarEvents] = useState(); // All events for current month
+    const [filteredEvents, setFilteredEvents] = useState(); // Filtered events depending on which tab is clicked
 
-    createCalendar = async () => {
+    const createCalendar = async () => {
         if (Platform.OS == 'ios') {
             const defaultCalendarID = await getDefaultCalendarSourceID();
-            this.setState({ calID: defaultCalendarID })
+            setCalID(defaultCalendarID)
         } else {
             const defaultCalendarSource = { isLocalAccount: true, name: 'Expo Calendar' };
             const newCalendarID = await Calendar.createCalendarAsync({
@@ -116,115 +59,145 @@ export default class events extends React.Component {
                 ownerAccount: 'personal',
                 accessLevel: Calendar.CalendarAccessLevel.OWNER,
             });
-            this.setState({ calID: newCalendarID })
+            setCalID(newCalendarID)
         }
     }
 
-    createEvent = async (title, description) => {
+    const createEvent = async (title, description) => {
         const details = {
             title: title,
             startDate: new Date(),
             endDate: new Date(),
             notes: description,
         };
-
-        const eventStatus = await Calendar.createEventAsync(this.state.calID, details);
+        const eventStatus = await Calendar.createEventAsync(calID, details);
         alert('Event added to calendar')
     }
 
-    formatDate = (dtstart) => {
+    const formatDate = (dtstart) => {
         const fullDate = dtstart.split(' ')
         const dateParts = fullDate[0].split('-')
-        const hourParts = fullDate[1].split(':')
-        const date = new Date(dateParts[0], dateParts[1] - 1, dateParts[2], hourParts[0], hourParts[1]);
-        const formatedDate = new Intl.DateTimeFormat("en-US", options).format(date);
-        return formatedDate;
+        if (fullDate.length > 1) {
+            const hourParts = fullDate[1].split(':')
+            const date = new Date(dateParts[0], dateParts[1] - 1, dateParts[2], hourParts[0], hourParts[1]);
+            return new Intl.DateTimeFormat("en-US", optionsFull).format(date);
+        } else {
+            const date = new Date(dateParts[0], dateParts[1] - 1, dateParts[2]);
+            return new Intl.DateTimeFormat("en-US", optionsDate).format(date);
+        }
     }
 
-    getEventByDate = (dateString) => {
-        let tempEvents = [];
-        CalendarEvents.forEach(event => { if (event.dtstart.split(' ')[0] == dateString) tempEvents.push(event) });
-        const data = Object.keys(tempEvents).map((i) => ({
-            key: i,
-            title: tempEvents[i].title,
-            date: this.formatDate(tempEvents[i].dtstart),
-            imgSrc: tempEvents[i].imgSrc,
-            description: tempEvents[i].description,
-            eventLink: tempEvents[i].eventLink
+    const pushEvent = (event) => {
+        docRef.get().then((doc) => {
+            if (doc.exists) {
+                docRef.update({
+                    savedEvents: arrayUnion(event)
+                });
+            } else {
+                console.log("No such document!");
+            }
+        }).catch((error) => {
+            console.log("Error getting document:", error);
+        });
+    };
+
+    const setStatusFilter = (status) => {
+        var dataList = [];
+        if (status == "Today") {
+            dataList = calendarEvents.filter(x => x.dtstart.includes(date));
+        } else if (status == "Tomorrow") {
+            let parts = date.split("-");
+            let tDay = (parseInt(parts[2]) + 1).toString();
+            let tomorrow = `${parts[0]}-${parts[1]}-${tDay.length == 1 ? `0${tDay}` : `${tDay}`}`;
+            dataList = calendarEvents.filter(x => x.dtstart.includes(tomorrow));
+        } else if (status == "This Week") {
+            let parts = date.split("-");
+            let day = parseInt(parts[2]) - new Date(date).getDay();
+            for (let i = 0; i < 7; i++) {
+                let nextDay = `${parts[0]}-${parts[1]}-${day.toString().length == 1 ? `0${day}` : `${day}`}`;
+                let temp = calendarEvents.filter(x => x.dtstart.includes(nextDay));
+                if (temp.length != 0)
+                    temp.forEach(x => dataList.push(x));
+                day++;
+            }
+        } else if (status == "This Month") {
+            dataList = calendarEvents;
+        }
+        setStatus(status);
+        dataList.sort(function (a, b) { return a.dtstart.localeCompare(b.dtstart) });
+        setFilteredEvents(dataList);
+    }
+
+    const getEvents = (value) => {
+        let eventsThisMonth = CalendarEvents.filter(event => event.dtstart.split(' ')[0].includes(value.substring(0, 7)));
+        const data = Object.keys(eventsThisMonth).map(i => ({
+            // key: i,
+            title: eventsThisMonth[i].title,
+            date: formatDate(eventsThisMonth[i].dtstart),
+            imgSrc: eventsThisMonth[i].imgSrc,
+            description: eventsThisMonth[i].description,
+            eventLink: eventsThisMonth[i].eventLink,
+            dtstart: eventsThisMonth[i].dtstart
         }));
-        this.setState({ calEvents: data });
+        setCalendarEvents(data);
+        setFilteredEvents(data.filter(x => x.dtstart.includes(date)))
     }
 
-    async componentDidMount() {
+    const renderItem = ({ item }) => {
+        return (
+            <EventCard event={item} saveHandler={createEvent} saveToEventsHandler={pushEvent} disabled={false} buttonTitle="Save" />
+        )
+    }
+
+    useEffect(() => {
         var today = new Date();
-        var date = today.getFullYear() + '-0' + (today.getMonth() + 1) + '-' + (today.getDate().toString().length == 1 ? '0' + today.getDate() : today.getDate());
-        this.getEventByDate(date)
+        var tempDate = today.getFullYear() + '-0' + (today.getMonth() + 1) + '-' + (today.getDate().toString().length == 1 ? '0' + today.getDate() : today.getDate());
+        setDate(tempDate);
+        getEvents(tempDate);
 
         if (Platform.OS == 'ios') {
             const reminderStatus = Calendar.requestRemindersPermissionsAsync();
             const getReminder = Calendar.getRemindersPermissionsAsync()
         }
-
-        const { status } = await Calendar.requestCalendarPermissionsAsync();
-
-        if (this.state.calendarToken == false) {
-            this.createCalendar();
-            this.setState({ calendarToken: true })
+        const getPermission = async () => {
+            const { status } = await Calendar.requestCalendarPermissionsAsync();
         }
-    }
+        getPermission();
+        if (calendarToken == false) {
+            createCalendar();
+            setCalendarToken(true)
+        }
+        if (Platform.OS === 'android')
+            UIManager.setLayoutAnimationEnabledExperimental(true)
+    }, [date])
 
-    renderItem = ({ item }) => {
-        return (
-            <Card title={item.title} subTitle={item.date} image={item.imgSrc} description={item.description} event={this.createEvent} eventLink={item.eventLink} />
-        )
-    }
-
-    render() {
-        return (
-            <SafeAreaView style={styles.container}>
-                {Platform.OS == 'ios' ? <StatusBar barStyle='dark-content' /> : <StatusBar />}
-                <ImageBackground source={require('../../assets/background.png')} style={{ flex: 1 }}>
-                    <Header />
-                    <View style={styles.topTabs}>
-                        <CustomButton title="Today" />
-                        <CustomButton title="Tomorrow" />
-                        <CustomButton title="This week" />
-                        <CustomButton title="This month" />
-                    </View>
-
+    return (
+        <SafeAreaView style={{ flex: 1 }}>
+            {Platform.OS == 'ios' ? <StatusBar barStyle='dark-content' /> : <StatusBar />}
+            <ImageBackground source={require('../../assets/background.png')} style={{ flex: 1 }}>
+                <Header />
+                <View style={styles.topTabs}>
+                    {
+                        listTab.map((t, index) => (
+                            <Tab key={index} tabName={t.status} status={status === t.status} onPress={() => setStatusFilter(t.status)} />
+                        ))
+                    }
+                </View  >
+                {filteredEvents != 0 ?
                     <FlatList
-                        data={this.state.calEvents}
-                        renderItem={this.renderItem}
-                        keyExtractor={(item) => item.key} />
-                </ImageBackground>
-            </SafeAreaView>
-        )
-    }
+                        data={filteredEvents}
+                        renderItem={renderItem}
+                        keyExtractor={(item, index) => index.toString()} /> :
+                    <View style={styles.emptyBox} >
+                        <Text style={styles.empty}>No Events</Text>
+                    </View>
+                }
+            </ImageBackground>
+        </SafeAreaView>
+    )
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-    },
-    buttonBG: {
-        height: 30,
-        width: 90,
-        borderRadius: 10,
-        elevation: 4,
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowOpacity: 0.3,
-        shadowRadius: 2.62,
-    },
-    button: {
-        alignItems: 'center',
-        borderRadius: 10,
-        padding: 5,
-        width: 90
-    },
     topTabs: {
         marginRight: 8,
         flexDirection: "row",
@@ -232,26 +205,13 @@ const styles = StyleSheet.create({
         width: '100%',
         marginVertical: 20
     },
-    cardFooter: {
-        flexDirection: 'row',
-        alignSelf: 'center',
-        justifyContent: 'space-around',
-        width: '100%',
-        marginBottom: 10
+    emptyBox: {
+        flex: 1,
+        justifyContent: "center"
     },
-    card: {
-        marginVertical: 10,
-        marginHorizontal: 25,
-        backgroundColor: '#fff',
-        flexDirection: 'column',
-        borderRadius: 10,
-        elevation: 4,
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowOpacity: 0.23,
-        shadowRadius: 2.62
+    empty: {
+        alignSelf: "center",
+        fontWeight: "bold",
+        fontSize: 26
     }
 })
