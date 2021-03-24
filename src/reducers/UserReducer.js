@@ -1,18 +1,22 @@
-export const initialState = {
+export const initialLoginState = {
+    isLoading: true,
+    userToken: null,
     isHidden: 'false',
-    name: '',
-    uid: ''
+    name: null,
+    uid: null
 };
 
-export const UserReducer = (state, action) => {
+export const userReducer = (prevState, action) => {
     switch (action.type) {
-        case 'setVisibility':
-            return { ...state, isHidden: action.payload.isHidden };
-        case 'setName':
-            return { ...state, name: action.payload.name };
-        case 'setUID':
-            return { ...state, uid: action.payload.uid };
-        default:
-            return state;
+        case 'RETRIEVE_TOKEN':
+            return { ...prevState, userToken: action.token, uid: action.userID, name: action.userName, isLoading: false };
+        case 'LOGIN':
+            return { ...prevState, userToken: action.token, name: action.userName, uid: action.userID, isLoading: false };
+        case 'LOGOUT':
+            return { ...prevState, userToken: null, name: null, uid: null, isLoading: false };
+        case 'REGISTER':
+            return { ...prevState, userToken: action.token, name: action.userName, uid: action.userID, isLoading: false };
+        case 'SET_VISIBILITY':
+            return { ...prevState, isHidden: action.isHidden };
     }
 };

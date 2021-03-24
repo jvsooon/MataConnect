@@ -10,7 +10,6 @@ import Interests from '../screens/Tabs/Profile/Interests';
 import EnrolledEvents from '../screens/Tabs/Profile/EnrolledEvents';
 import CurrentPastEvents from '../screens/Tabs/Profile/CurrentPastEvents';
 
-
 const Stack = createStackNavigator();
 export default function ProfileStack() {
     return (
@@ -21,7 +20,7 @@ export default function ProfileStack() {
                     elevation: 0
             }
         }}>
-            <Stack.Screen name='Profile' component={Index} options={{headerShown: false}}/>
+            <Stack.Screen name='Profile' component={Index} options={{headerShown: false, animationEnabled: false}}/>
             <Stack.Screen name='Bookmarks' component={Bookmarks} />
             <Stack.Screen name='Saved Events' component={SavedEvents} />
             <Stack.Screen name='Saved Jobs' component={SavedJobs} />

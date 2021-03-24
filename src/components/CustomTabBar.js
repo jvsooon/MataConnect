@@ -1,9 +1,8 @@
-import React, { useEffect, useLayoutEffect, useState, useContext } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import { View } from 'react-native';
 import styled from 'styled-components/native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import useVisibilityToggler from '../hooks/useVisibilityToggler'
-import { UserContext } from '../contexts/UserContext';
 
 import HomeIcon from '../assets/home.svg';
 import MapIcon from '../assets/compass.svg';
@@ -38,11 +37,8 @@ const AvatarIcon = styled.Image`
 `;
 
 export default function CustomTabBar({ state, navigation }) {
-    // const { state: toggle } = useContext(UserContext);
     const [marginSize, setMarginSize] = useState('-1%');
-    const goTo = (screenName) => {
-        navigation.navigate(screenName);
-    }
+    const goTo = (screenName) => navigation.navigate(screenName);
 
     const [BottomTabComponent, toggleBottomTab] = useVisibilityToggler(
         <TabArea >
@@ -61,13 +57,6 @@ export default function CustomTabBar({ state, navigation }) {
             <TabItem onPress={() => goTo('Profile')}>
                 <AccountIcon width={`${hp('5%')}`} height={`${hp('5%')}`} />
             </TabItem>
-            {/* <TabItem onPress={() => goTo('Profile')}>
-{user.avatar != '' ?
-<AccountIcon source={{ url: user.avatar }} style={{ opacity: state.index === 4 ? 1 : 0.5 }} width='24' height='24' fill='#21537D'/>
-:
-<AccountIcon style={{ opacity: state.index === 4 ? 1 : 0.5 }} width='24' height='24' fill='#21537D' />
-}
-</TabItem> */}
         </TabArea>
         , true);
 
@@ -83,14 +72,3 @@ export default function CustomTabBar({ state, navigation }) {
         <View style={{ bottom: marginSize }}>{BottomTabComponent}</View>
     );
 }
-
-// const handleSignOutClick = () => {
-//     firebase.auth()
-//         .signOut()
-//         .then(() => {
-//             console.log('User signed out!')
-//             navigation.reset({
-//                 routes: [{ name: 'Preload' }]
-//             });
-//         });
-// }

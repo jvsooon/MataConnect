@@ -10,8 +10,8 @@ import AboutMe from '../screens/Drawer/AboutMe'
 import ContactSupport from '../screens/Drawer/ContactSupport'
 import Feedback from '../screens/Drawer/Feedback'
 import { AntDesign } from '@expo/vector-icons';
-const Drawer = createDrawerNavigator();
 
+const Drawer = createDrawerNavigator();
 export default function DrawerStack() {
     return (
         <Drawer.Navigator
@@ -21,7 +21,6 @@ export default function DrawerStack() {
             }}
 
             initialRouteName={BottomTab}>
-            {/* try to implement this later: options={({ route }) => ({ headerShown: shouldHeaderBeShown(route) })}  */}
             <Drawer.Screen name='Home' component={BottomTab}
                 options={{
                     drawerIcon: ({ focused, color, size }) => (

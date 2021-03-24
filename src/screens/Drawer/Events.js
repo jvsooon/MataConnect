@@ -4,11 +4,11 @@ import { CalendarEvents } from '../../utils'
 import * as Calendar from 'expo-calendar';
 import MenuIcon from '../../assets/menu.svg'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
-import { useNavigation } from '@react-navigation/core';
 import Tab from '../../components/EventTab'
 import EventCard from '../../components/EventCard'
-import { UserContext } from '../../contexts/UserContext';
 import firebase from '../../../firebase';
+import { UserContext } from '../../contexts/UserContext';
+
 
 const listTab = [{ status: "Today" }, { status: "Tomorrow" }, { status: "This Week" }, { status: "This Month" }]
 const optionsFull = { month: "long", day: "numeric", year: "numeric", hour: 'numeric', minute: 'numeric' };
@@ -16,24 +16,12 @@ const optionsDate = { month: "long", day: "numeric", year: "numeric" };
 var db = firebase.firestore();
 const arrayUnion = firebase.firestore.FieldValue.arrayUnion;
 
-const Header = () => {
-    const navigation = useNavigation()
-    return (
-        <View style={{ height: 50, flexDirection: 'row', alignItems: 'center', width: '100%' }}>
-            <TouchableOpacity style={{ flex: 1 }} onPress={() => navigation.toggleDrawer()} >
-                <MenuIcon style={{ marginLeft: wp('6%') }} width='30' height='30' />
-            </TouchableOpacity>
-            <Text style={{ flex: 1, marginLeft: -40, fontWeight: 'bold', fontSize: hp('2%') }}>Events</Text>
-        </View>
-    )
-}
-
 async function getDefaultCalendarSourceID() {
     const defaultCalendar = await Calendar.getDefaultCalendarAsync(); //ios only
     return defaultCalendar.id;
 }
 
-export default function events() {
+export default function events({navigation}) {
     const { state } = useContext(UserContext);
     var docRef = db.collection("users").doc(state.uid);
     const [status, setStatus] = useState("Today");
@@ -42,6 +30,17 @@ export default function events() {
     const [date, setDate] = useState();
     const [calendarEvents, setCalendarEvents] = useState(); // All events for current month
     const [filteredEvents, setFilteredEvents] = useState(); // Filtered events depending on which tab is clicked
+
+    const Header = () => {
+        return (
+            <View style={{ height: 50, flexDirection: 'row', alignItems: 'center', width: '100%' }}>
+                <TouchableOpacity style={{ flex: 1 }} onPress={() => navigation.toggleDrawer()} >
+                    <MenuIcon style={{ marginLeft: wp('6%') }} width='30' height='30' />
+                </TouchableOpacity>
+                <Text style={{ flex: 1, marginLeft: -40, fontWeight: 'bold', fontSize: hp('2%') }}>Events</Text>
+            </View>
+        )
+    }
 
     const createCalendar = async () => {
         if (Platform.OS == 'ios') {
@@ -131,7 +130,6 @@ export default function events() {
     const getEvents = (value) => {
         let eventsThisMonth = CalendarEvents.filter(event => event.dtstart.split(' ')[0].includes(value.substring(0, 7)));
         const data = Object.keys(eventsThisMonth).map(i => ({
-            // key: i,
             title: eventsThisMonth[i].title,
             date: formatDate(eventsThisMonth[i].dtstart),
             imgSrc: eventsThisMonth[i].imgSrc,
