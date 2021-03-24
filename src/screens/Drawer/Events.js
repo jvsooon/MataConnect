@@ -9,7 +9,6 @@ import EventCard from '../../components/EventCard'
 import firebase from '../../../firebase';
 import { UserContext } from '../../contexts/UserContext';
 
-
 const listTab = [{ status: "Today" }, { status: "Tomorrow" }, { status: "This Week" }, { status: "This Month" }]
 const optionsFull = { month: "long", day: "numeric", year: "numeric", hour: 'numeric', minute: 'numeric' };
 const optionsDate = { month: "long", day: "numeric", year: "numeric" };
@@ -159,12 +158,12 @@ export default function events({navigation}) {
         }
         const getPermission = async () => {
             const { status } = await Calendar.requestCalendarPermissionsAsync();
+            if(status == 'granted' && calendarToken == false) {
+                    createCalendar();
+                    setCalendarToken(true)
+            }
         }
         getPermission();
-        if (calendarToken == false) {
-            createCalendar();
-            setCalendarToken(true)
-        }
         if (Platform.OS === 'android')
             UIManager.setLayoutAnimationEnabledExperimental(true)
     }, [date])
