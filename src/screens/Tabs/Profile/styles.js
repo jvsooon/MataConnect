@@ -8,16 +8,13 @@ export const Container = styled.View`
 export const Header = styled.View`
     flex: 2;
     align-self: center;
-    width: ${wp('40%')}px;
 `;
 
-export const ProfilePicture = styled.View`
-    background-color: #fff;
+export const ProfilePictureWrapper = styled.View`
+    margin-top: ${Platform.OS == 'ios' ? '20px' : '40px'};
     height: ${hp('18%')}px;
     width: ${hp('18%')}px;
-    border-radius: ${hp('100%')}px;
-    align-self: center;
-    margin-top: ${Platform.OS == 'ios' ? '20px' : '40px'};
+    border-radius: ${wp('100%')}px;
     shadow-color: #000;
     shadow-offset: 2px;
     shadow-radius: 4.65px;
@@ -25,11 +22,33 @@ export const ProfilePicture = styled.View`
     elevation: 6;
 `;
 
+export const ProfilePicture = styled.Image`
+    height: ${hp('18%')}px;
+    width: ${hp('18%')}px;
+    border-radius: ${wp('100%')}px;
+`;
+
+export const BlankImage = styled.View`
+    height: ${hp('18%')}px;
+    width: ${hp('18%')}px;
+    border-radius: ${wp('100%')}px;
+    background: #ffffff;
+`;
+
 export const ProfileName = styled.Text`
     font-weight: 700;
     font-size: ${hp('3%')}px;
     color: #2E3862;
     align-self: center;
+`;
+
+export const PencilWrapper = styled.TouchableOpacity`
+    position: absolute;
+    alignSelf: flex-end
+    right: ${Platform.OS == 'ios' ? wp('2%') : wp('2%')}px;
+    top: ${Platform.OS == 'ios' ? hp('3%') : hp('6%')}px;
+    elevation: ${Platform.OS === 'android' ? 50 : 0};
+    zIndex: 1;
 `;
 
 export const IconsBox = styled.View`
