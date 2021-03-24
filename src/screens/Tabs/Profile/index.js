@@ -1,13 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { StyleSheet, ImageBackground, StatusBar, Platform } from 'react-native'
 import firebase from '../../../../firebase'
 import { FontAwesome5, Entypo, AntDesign, MaterialCommunityIcons, MaterialIcons, Foundation } from '@expo/vector-icons';
 import {
-    Container, Header, ProfilePicture, ProfileName,
-    IconsBox, IconContainer, IconBG, IconText,
+    Container, Header, ProfilePicture, ProfileName, IconsBox, IconContainer, IconBG, IconText,
     InfoContainer, InfoTitle, InfoContent, InfoDisplay, InfoText, Footer, InfoBox, EditButton, LogoutButton, ButtonText
 } from './styles'
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import { UserContext } from '../../../contexts/UserContext';
 
 const InfoComponent = ({ title, leftLabel, leftNum, rightLabel, rightNum }) => {
     return (
@@ -36,6 +36,8 @@ const FooterButton = ({ ButtonType, title, onPress }) => {
 }
 
 export default function Profile({ navigation }) {
+    const { authContext } = useContext(UserContext);
+
     const IconButton = ({ IconType, iconName, color, iconLabel, screenName }) => {
         return (
             <IconContainer onPress={() => navigation.navigate(screenName)}>
@@ -48,13 +50,8 @@ export default function Profile({ navigation }) {
     }
 
     const handleSignOutClick = () => {
-        firebase.auth()
-            .signOut()
-            .then(() => {
-                navigation.reset({
-                    routes: [{ name: 'Preload' }]
-                });
-            });
+        firebase.auth().signOut();
+        authContext.logout();
     }
 
     return (
@@ -87,7 +84,7 @@ export default function Profile({ navigation }) {
 
                 <Footer>
                     <FooterButton ButtonType={EditButton} title={'Edit Profile'} />
-                    <FooterButton ButtonType={LogoutButton} title={'Logout'} onPress={() => handleSignOutClick()} />
+                    <FooterButton ButtonType={LogoutButton} title={'Logout'} onPress={handleSignOutClick} />
                 </Footer>
             </ImageBackground>
         </Container >

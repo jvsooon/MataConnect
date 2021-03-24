@@ -58,7 +58,7 @@ export default function EventCard({ event, saveHandler, saveToEventsHandler, dis
                 <View style={styles.cardFooter}>
                     <EventsButton title={buttonTitle} onPress={() => disabled == false ? saveHandler(event.title, event.description) : saveHandler(event)} />
                     <EventsButton title="RSVP" />
-                    <EventsButton title="Website" onPress={() => Linking.openURL(eventLink)} />
+                    <EventsButton title="Website" onPress={() => Linking.openURL(event.eventLink)} />
                 </View>
             </View>
             }

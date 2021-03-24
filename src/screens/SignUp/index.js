@@ -1,12 +1,8 @@
 import React, { useContext } from 'react'
-import { useNavigation } from '@react-navigation/native'
 import { StyleSheet, StatusBar } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-
-import {
-    Container, FormContainer, InputArea, Logo, FooterContainer, FooterMessageButton,
-    FooterMessageButtonText, SocialContainer, SocialHeader, Header, FooterText
-} from './styles';
+import { Container, FormContainer, InputArea, Logo, FooterContainer, FooterMessageButton,
+        FooterMessageButtonText, SocialContainer, SocialHeader, Header, FooterText } from './styles';
 import FormInput from '../../components/FormInput';
 import FormButton from '../../components/FormButton';
 import { Formik } from 'formik';
@@ -26,49 +22,33 @@ const registerSchema = yup.object({
     password: yup.string().required().min(8)
 });
 
-export default function Index() {
-    const navigation = useNavigation();
+export default function Index({ navigation }) {
+    const { authContext } = useContext(UserContext);
     var db = firebase.firestore();
-    const { dispatch: userDispatch } = useContext(UserContext);
 
-    const handleRegisterClick = async ({fullName, email, password}) => {
+    const handleRegisterClick = ({ fullName, email, password }) => {
         firebase.auth()
             .createUserWithEmailAndPassword(email, password)
-            .then((user) => {
-                console.log('User successfully created an account.')
+            .then(async (user) => {
+                let uid = user.user.uid;
+                let token = await user.user.getIdToken();
                 db.collection("users").doc(`${user.user.uid}`).set({
                     name: fullName
-                })
-                    .catch(function (error) {
+                }).catch(function (error) {
                         console.error("Error adding document: ", error);
-                    });
-
-                userDispatch({
-                    type: 'setName',
-                    payload: {
-                        name: fullName
-                    }
                 });
-
-                navigation.reset({
-                    routes: [{ name: 'Drawer' }]
-                });
-            })
-            .catch(error => {
+                authContext.signUp(token, fullName, uid)
+            }).catch(error => {
                 if (error.code === 'auth/email-already-in-use') {
                     console.log('That email address is already in use!');
                     alert('That email address is already in use!');
-                }
-
+                } 
                 if (error.code === 'auth/invalid-email') {
                     console.log('That email address is invalid!');
                     alert('That email address is invalid!');
                 }
-                // console.error(error);
+                console.error(error);
             });
-        // } else {
-        //     alert("All fields must be filled!")
-        // }
     }
 
     const handleMessageButtonClick = () => {

@@ -1,23 +1,21 @@
 import React, { useContext } from 'react';
-import { useNavigation } from '@react-navigation/native';
-import { StyleSheet, StatusBar, LogBox, ImageBackground } from 'react-native';
+import { StyleSheet, StatusBar, LogBox } from 'react-native';
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen'
 import {
     Container, Logo, FormContainer, InputArea, FooterContainer, FooterMessageButton, FooterMessageButtonText, SocialContainer, SocialHeader,
     ForgotMsgBtn, ForgotMsgBtnText, HeaderContainer, HeaderText, HeaderSubText, FooterText
 } from './styles';
-import { UserContext } from '../../contexts/UserContext';
 import FormInput from '../../components/FormInput';
 import FormButton from '../../components/FormButton';
 import { Formik } from 'formik';
 import * as yup from 'yup';
-
-import firebase from '../../../firebase'
-
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import EmailIcon from '../../assets/email.svg';
 import InvisibleIcon from '../../assets/invisible.svg';
 import MCLogo from '../../assets/Logo.png'
+
+import firebase from '../../../firebase'
+import { UserContext } from '../../contexts/UserContext';
 
 LogBox.ignoreLogs(['Setting a timer']);
 
@@ -26,63 +24,40 @@ const loginSchema = yup.object({
     password: yup.string().required().min(8)
 });
 
-export default function Index() {
-    const navigation = useNavigation();
-    const { state, dispatch: userDispatch } = useContext(UserContext);
+export default function Index({ navigation }) {
+    const { authContext } = useContext(UserContext);
     var db = firebase.firestore();
 
-    const handleLoginClick = async ({ email, password }) => {
+    const handleLoginClick = ({ email, password }) => {
         firebase.auth()
-            // .signInWithEmailAndPassword('test@yahoo.com', 'passpass')
             .signInWithEmailAndPassword(email, password)
-            .then((user) => {
-                userDispatch({
-                    type: 'setUID',
-                    payload: {
-                        uid: user.user.uid
-                    }
-                });
+            .then(async (user) => {
+                let uid = user.user.uid;
+                let token = await user.user.getIdToken();
                 db.collection("users").doc(`${user.user.uid}`).get().then((user) => {
-                    console.log('User signed in!')
-                    userDispatch({
-                        type: 'setName',
-                        payload: {
-                            name: `${user.data().name}`
-                        }
-                    });
-                    navigation.reset({
-                        routes: [{ name: 'Drawer' }]
-                    });
-
+                    authContext.logIn(token, user.data().name, uid );
                 }).catch(function (error) {
                     console.log("Error getting document:", error);
                 });
-            })
-            .catch(error => {
+            }).catch(error => {
                 if (error.code === 'auth/email-already-in-use') {
                     console.log('That email address is already in use!');
                     alert('That email address is already in use!');
                 }
-
                 if (error.code === 'auth/invalid-email') {
                     console.log('That email address is invalid!');
                     alert('That email address is invalid!');
                 }
-
                 if (error.code === 'auth/wrong-password') {
                     console.log('The password is invalid!');
                     alert('The password is invalid!');
                 }
-
                 if (error.code === 'auth/user-not-found') {
                     console.log('User account not found!');
                     alert('User account not found!');
                 }
-                // console.error(error.code);
+                console.error(error.code);
             });
-        // } else {
-        //     alert("All fields must be filled!");
-        // }
     }
 
     const handleMessageButtonClick = () => {

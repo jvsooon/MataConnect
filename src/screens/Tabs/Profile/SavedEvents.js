@@ -1,9 +1,10 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { View, Text, SafeAreaView, StatusBar, FlatList, Platform, ImageBackground, UIManager, StyleSheet, Alert } from 'react-native';
-import { UserContext } from '../../../contexts/UserContext';
 import Tab from '../../../components/EventTab'
 import EventCard from '../../../components/EventCard'
 import firebase from '../../../../firebase';
+import { UserContext } from '../../../contexts/UserContext';
+
 
 var db = firebase.firestore();
 const listTab = [{ status: "Today" }, { status: "Tomorrow" }, { status: "This Week" }, { status: "This Month" }]
@@ -52,7 +53,6 @@ export default function SavedEvents() {
                 console.log("No saved events");
             else {
                 const data = hasEvents.map((i, index) => ({
-                    // key: index.toString(),
                     title: hasEvents[index].title,
                     date: hasEvents[index].date,
                     imgSrc: hasEvents[index].imgSrc,
