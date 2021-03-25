@@ -181,7 +181,7 @@ export default function Profile({ navigation }) {
                                 <ProfilePicture source={{ uri: imageUrl }} />)
                         }
                     </ProfilePictureWrapper>
-                    <ProfileName>Jason Sabal</ProfileName>
+                    <ProfileName>{state.name}</ProfileName>
                 </Header>
 
                 <IconsBox>
