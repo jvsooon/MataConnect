@@ -8,7 +8,7 @@ export default function EventsButton({title, onPress}) {
             colors={['#A5FAEA', '#6EC8F5']}
             style={styles.buttonBG}>
             <TouchableOpacity style={styles.button} onPress={onPress}>
-                <Text>{title}</Text>
+                <Text style={{fontWeight: 'bold'}}>{title}</Text>
             </TouchableOpacity>
         </LinearGradient>
     )

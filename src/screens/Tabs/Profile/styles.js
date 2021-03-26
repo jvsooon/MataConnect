@@ -91,7 +91,7 @@ export const InfoContainer = styled.View`
     align-items: center
 `;
 
-export const InfoBox = styled.View`
+export const InfoBox = styled.TouchableOpacity`
     background-color: #fff;
     width: ${wp('40%')}px;
     height: ${hp('12%')}px;

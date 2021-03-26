@@ -5,7 +5,6 @@ import EventCard from '../../../components/EventCard'
 import firebase from '../../../../firebase';
 import { UserContext } from '../../../contexts/UserContext';
 
-
 var db = firebase.firestore();
 const listTab = [{ status: "Today" }, { status: "Tomorrow" }, { status: "This Week" }, { status: "This Month" }]
 
@@ -64,7 +63,7 @@ export default function SavedEvents() {
                 setFilteredEvents(data.filter(x => x.dtstart.includes(date)))
             }
         })
-    };
+    }
 
     const deleteEvent = (event) => {
         var index = events.findIndex(function (item) {
@@ -104,7 +103,7 @@ export default function SavedEvents() {
         getEvents();
         var today = new Date();
         var tempDate = today.getFullYear() + '-0' + (today.getMonth() + 1) + '-' + (today.getDate().toString().length == 1 ? '0' + today.getDate() : today.getDate());
-        setDate(tempDate); 
+        setDate(tempDate);
         if (Platform.OS === 'android')
             UIManager.setLayoutAnimationEnabledExperimental(true);
     }, [date]);
@@ -119,7 +118,7 @@ export default function SavedEvents() {
                             <Tab key={index} tabName={t.status} status={status === t.status} onPress={() => setStatusFilter(t.status)} />
                         ))
                     }
-                </View  >
+                </View>
                 {filteredEvents.length != 0 ?
                     <FlatList
                         data={filteredEvents}
@@ -135,7 +134,6 @@ export default function SavedEvents() {
 
 const styles = StyleSheet.create({
     topTabs: {
-        marginRight: 8,
         flexDirection: "row",
         justifyContent: 'space-around',
         width: '100%',
