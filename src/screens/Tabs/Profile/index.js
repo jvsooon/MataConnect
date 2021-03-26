@@ -13,24 +13,6 @@ import { UserContext } from '../../../contexts/UserContext'
 const db = firebase.firestore();
 const storageRef = firebase.storage().ref();
 
-const InfoComponent = ({ title, leftLabel, leftNum, rightLabel, rightNum }) => {
-    return (
-        <InfoBox>
-            <InfoTitle>{title}</InfoTitle>
-            <InfoContent>
-                <InfoDisplay>
-                    <InfoText>{leftNum}</InfoText>
-                    <InfoText>{leftLabel}</InfoText>
-                </InfoDisplay>
-                <InfoDisplay>
-                    <InfoText>{rightNum}</InfoText>
-                    <InfoText>{rightLabel}</InfoText>
-                </InfoDisplay>
-            </InfoContent>
-        </InfoBox>
-    )
-}
-
 const FooterButton = ({ ButtonType, title, onPress }) => {
     return (
         <ButtonType onPress={onPress}>
@@ -44,6 +26,11 @@ export default function Profile({ navigation }) {
     const [imageUrl, setImageUrl] = useState(null);
     const [imageFilename, setImageFilename] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
+    const [today, setToday] = useState();
+    const [past, setPast] = useState();
+    const [rsvp, setRsvp] = useState(null);
+    const [tickets, setTickets] = useState(null);
+    const [events, setEvents] = useState(null);
     const docRef = db.collection("users").doc(state.uid);
 
     const IconButton = ({ IconType, iconName, color, iconLabel, screenName }) => {
@@ -54,6 +41,32 @@ export default function Profile({ navigation }) {
                     <IconText>{iconLabel}</IconText>
                 </IconBG>
             </IconContainer>
+        )
+    }
+
+    const InfoComponent = ({ title, leftLabel, leftNum, rightLabel, rightNum, screenName, data }) => {
+        return (
+            <InfoBox onPress={() => navigation.navigate(screenName, { data })}>
+                <InfoTitle>{title}</InfoTitle>
+                <InfoContent>
+                    <InfoDisplay>
+                        {today >= 0 || rsvp ? (
+                            <InfoText>{leftNum}</InfoText>
+                        ) :
+                            <ActivityIndicator />
+                        }
+                        <InfoText>{leftLabel}</InfoText>
+                    </InfoDisplay>
+                    <InfoDisplay>
+                        {tickets || past >= 0 ? (
+                            <InfoText>{rightNum}</InfoText>
+                        ) :
+                            <ActivityIndicator />
+                        }
+                        <InfoText>{rightLabel}</InfoText>
+                    </InfoDisplay>
+                </InfoContent>
+            </InfoBox>
         )
     }
 
@@ -153,6 +166,30 @@ export default function Profile({ navigation }) {
         setIsLoading(false);
     }
 
+    const getCurrentAndPastEvents = () => {
+        let date = new Date;
+        var currentDate = date.getFullYear() + '-0' + (date.getMonth() + 1) + '-' + (date.getDate().toString().length == 1 ? '0' + date.getDate() : date.getDate());
+        docRef.get().then((doc) => {
+            let hasEvents = doc.data().savedEvents;
+            if (hasEvents != undefined) {
+                var dataList = [];
+                const data = hasEvents.map((i, index) => ({
+                    title: hasEvents[index].title,
+                    date: hasEvents[index].date,
+                    imgSrc: hasEvents[index].imgSrc,
+                    description: hasEvents[index].description,
+                    eventLink: hasEvents[index].eventLink,
+                    dtstart: hasEvents[index].dtstart
+                }));
+                setEvents(data);
+                dataList = data.filter(x => x.dtstart.includes(currentDate));
+                setToday(dataList.length)
+                dataList = data.filter(event => event.dtstart.split(' ')[0] < currentDate);
+                setPast(dataList.length)
+            }
+        })
+    }
+
     useEffect(() => {
         checkForImageUrl();
         (async () => {
@@ -160,6 +197,14 @@ export default function Profile({ navigation }) {
             if (cameraRes.status !== 'granted')
                 alert('Sorry, we need camera permissions to make this work!');
         })();
+        docRef
+            .onSnapshot((doc) => {
+                if (events == null)
+                    getCurrentAndPastEvents();
+                else if (doc.data().savedEvents.length != events.length) {
+                    getCurrentAndPastEvents();
+                }
+            });
     }, [])
 
     return (
@@ -174,9 +219,9 @@ export default function Profile({ navigation }) {
                     </PencilWrapper>
                     <ProfilePictureWrapper>
                         {isLoading == true ? (
-                            <ActivityIndicator style={{marginTop: 80}} size="large" />
+                            <ActivityIndicator style={{ marginTop: 80 }} size="large" />
                         ) :
-                            ( imageUrl == null ? (<BlankImage></BlankImage>)
+                            (imageUrl == null ? (<BlankImage></BlankImage>)
                                 :
                                 <ProfilePicture source={{ uri: imageUrl }} />)
                         }
@@ -194,8 +239,8 @@ export default function Profile({ navigation }) {
                 </IconsBox>
 
                 <InfoContainer>
-                    <InfoComponent title={'Enrolled Events'} leftLabel={'RSVP'} leftNum={10} rightLabel={'Tickets'} rightNum={5} />
-                    <InfoComponent title={'Current & Past Events'} leftLabel={'Today'} leftNum={2} rightLabel={'Past'} rightNum={18} />
+                    <InfoComponent title={'Enrolled Events'} leftLabel={'RSVP'} leftNum={10} rightLabel={'Tickets'} rightNum={5} screenName={"Enrolled Events"} />
+                    <InfoComponent title={'Current & Past Events'} leftLabel={'Today'} leftNum={today} rightLabel={'Past'} rightNum={past} screenName={'Current and Past Events'} data={events} />
                 </InfoContainer>
 
                 <Footer>

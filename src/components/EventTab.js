@@ -7,7 +7,7 @@ export default function EventTab({ tabName, status, onPress }) {
         <View style={styles.shadow}>
             <LinearGradient
                 colors={['#A5FAEA', '#6EC8F5']}
-                style={styles.buttonBG}>
+                style={[styles.buttonBG, styles.shadow]}>
                 <TouchableOpacity style={[styles.button, status == true && styles.buttonTabActive]} onPress={onPress}>
                     <Text style={[styles.label, status == true && styles.labelActive]}>{tabName}</Text>
                 </TouchableOpacity>
@@ -17,18 +17,10 @@ export default function EventTab({ tabName, status, onPress }) {
 }
 
 const styles = StyleSheet.create({
-    topTabs: {
-        marginRight: 8,
-        flexDirection: "row",
-        justifyContent: 'space-around',
-        width: '100%',
-        marginVertical: 20
-    },
     buttonBG: {
         height: 30,
         width: 90,
-        borderRadius: 10,
-        elevation: 6
+        borderRadius: 10
     },
     button: {
         alignItems: 'center',
@@ -53,6 +45,7 @@ const styles = StyleSheet.create({
             height: 2,
         },
         shadowOpacity: 0.3,
-        shadowRadius: 2.62
+        shadowRadius: 2.62,
+        elevation: 6
     }
 })

@@ -18,7 +18,8 @@ export default function ProfileStack() {
                 cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
                 headerStyle: {
                     elevation: 0
-            }
+                },
+                headerTitleAlign: 'center'    
         }}>
             <Stack.Screen name='Profile' component={Index} options={{headerShown: false, animationEnabled: false}}/>
             <Stack.Screen name='Bookmarks' component={Bookmarks} />
@@ -28,7 +29,7 @@ export default function ProfileStack() {
             <Stack.Screen name='Settings' component={Settings} />
             <Stack.Screen name='Interests' component={Interests} />
             <Stack.Screen name='Enrolled Events' component={EnrolledEvents} />
-            <Stack.Screen name='Current Past Events' component={CurrentPastEvents} />
+            <Stack.Screen name='Current and Past Events' component={CurrentPastEvents} />
         </Stack.Navigator>
     )
 }

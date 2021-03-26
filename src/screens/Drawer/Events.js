@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState, useEffect, useRef } from 'react';
 import { SafeAreaView, StatusBar, FlatList, View, Text, UIManager, Platform, TouchableOpacity, ImageBackground, StyleSheet } from 'react-native';
 import { CalendarEvents } from '../../utils'
 import * as Calendar from 'expo-calendar';
@@ -20,15 +20,16 @@ async function getDefaultCalendarSourceID() {
     return defaultCalendar.id;
 }
 
-export default function events({navigation}) {
+export default function events({ navigation }) {
     const { state } = useContext(UserContext);
     var docRef = db.collection("users").doc(state.uid);
     const [status, setStatus] = useState("Today");
     const [calID, setCalID] = useState(null);
     const [calendarToken, setCalendarToken] = useState(false);
-    const [date, setDate] = useState();
-    const [calendarEvents, setCalendarEvents] = useState(); // All events for current month
-    const [filteredEvents, setFilteredEvents] = useState(); // Filtered events depending on which tab is clicked
+    const [date, setDate] = useState(null);
+    const [calendarEvents, setCalendarEvents] = useState([]); // All events for current month
+    const [filteredEvents, setFilteredEvents] = useState([]); // Filtered events depending on which tab is clicked
+    const flatlistRef = useRef();
 
     const Header = () => {
         return (
@@ -137,6 +138,7 @@ export default function events({navigation}) {
             dtstart: eventsThisMonth[i].dtstart
         }));
         setCalendarEvents(data);
+        data.sort(function (a, b) { return a.dtstart.localeCompare(b.dtstart) });
         setFilteredEvents(data.filter(x => x.dtstart.includes(date)))
     }
 
@@ -144,6 +146,10 @@ export default function events({navigation}) {
         return (
             <EventCard event={item} saveHandler={createEvent} saveToEventsHandler={pushEvent} disabled={false} buttonTitle="Save" />
         )
+    }
+
+    const getItemLayout = (data, index) => {
+        return { length: 120, offset: 120 * index + 10, index }
     }
 
     useEffect(() => {
@@ -158,9 +164,9 @@ export default function events({navigation}) {
         }
         const getPermission = async () => {
             const { status } = await Calendar.requestCalendarPermissionsAsync();
-            if(status == 'granted' && calendarToken == false) {
-                    createCalendar();
-                    setCalendarToken(true)
+            if (status == 'granted' && calendarToken == false) {
+                createCalendar();
+                setCalendarToken(true)
             }
         }
         getPermission();
@@ -176,15 +182,17 @@ export default function events({navigation}) {
                 <View style={styles.topTabs}>
                     {
                         listTab.map((t, index) => (
-                            <Tab key={index} tabName={t.status} status={status === t.status} onPress={() => setStatusFilter(t.status)} />
+                            <Tab key={index} tabName={t.status} status={status === t.status} onPress={() => setStatusFilter(t.status)} widthSize={(wp('100%') / 4) - 50} />
                         ))
                     }
                 </View  >
                 {filteredEvents != 0 ?
                     <FlatList
+                        ref={flatlistRef}
                         data={filteredEvents}
                         renderItem={renderItem}
-                        keyExtractor={(item, index) => index.toString()} /> :
+                        keyExtractor={(item, index) => index.toString()}
+                        getItemLayout={getItemLayout} /> :
                     <View style={styles.emptyBox} >
                         <Text style={styles.empty}>No Events</Text>
                     </View>
