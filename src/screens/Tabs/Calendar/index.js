@@ -1,24 +1,32 @@
-import React, { useState, useEffect } from 'react'
-import { StatusBar, SafeAreaView, Image, RefreshControl } from 'react-native';
+import React, { useState, useEffect, useContext } from 'react'
+import { StatusBar, SafeAreaView, RefreshControl, UIManager } from 'react-native';
 import { Calendar } from 'react-native-calendars';
-import {
-    Card, CardCover, CardContent, CardTitle,
-    CardSubTitle, CardScrollView, CardOptions, CardClickable
-} from './styles'
+import { CardScrollView } from './styles'
+import EventCard from '../../../components/EventCard'
 import { CalendarEvents } from '../../../utils'
-import { heightPercentageToDP as hp } from 'react-native-responsive-screen';
-import { FontAwesome, MaterialCommunityIcons } from '@expo/vector-icons'
 import 'intl';
 import 'intl/locale-data/jsonp/en';
+import firebase from '../../../../firebase'
+import * as ExpoCalendar from 'expo-calendar';
+import { UserContext } from '../../../contexts/UserContext'
 
-const inactive = { color: '#000', name: 'star-o' }, active = { color: '#63C2D1', name: 'star' };
-const usuImage = 'https://live.staticflickr.com/3948/buddyicons/149217749@N02_r.jpg?1491936417#149217749@N02';
 const options = { month: "long", day: "numeric", year: "numeric", hour: 'numeric', minute: 'numeric' };
+var db = firebase.firestore();
+const arrayUnion = firebase.firestore.FieldValue.arrayUnion;
 
-export default function Index({navigation}) {
+async function getDefaultCalendarSourceID() {
+    const defaultCalendar = await ExpoCalendar.getDefaultCalendarAsync(); //ios only
+    return defaultCalendar.id;
+}
+
+export default function Index() {
+    const { state } = useContext(UserContext);
+    var docRef = db.collection("users").doc(state.uid);
     const [events, setEvents] = useState(null);
     const [refreshing, setRefreshing] = useState(false);
     const [markedCollection, setMarkedCollection] = useState();
+    const [calID, setCalID] = useState(null);
+    const [calendarToken, setCalendarToken] = useState(false);
 
     const onRefresh = () => {
         setRefreshing(true);
@@ -26,10 +34,10 @@ export default function Index({navigation}) {
         setRefreshing(false);
     }
 
-    const formatDate = (dtstart) => { 
+    const formatDate = (dtstart) => {
         const fullDate = dtstart.split(' ')
         const dateParts = fullDate[0].split('-')
-        if(fullDate.length > 1) {
+        if (fullDate.length > 1) {
             const hourParts = fullDate[1].split(':')
             const date = new Date(dateParts[0], dateParts[1] - 1, dateParts[2], hourParts[0], hourParts[1]);
             const formatedDate = new Intl.DateTimeFormat("en-US", options).format(date);
@@ -42,13 +50,14 @@ export default function Index({navigation}) {
     }
 
     const getEventByDate = (dateString) => {
-        let tempEvents = [];
-        CalendarEvents.forEach(event => { if (event.dtstart.split(' ')[0] == dateString) tempEvents.push(event) });
+        let tempEvents = CalendarEvents.filter(event => event.dtstart.split(' ')[0].includes(dateString));
         const data = Object.keys(tempEvents).map((i) => ({
-            key: i,
             title: tempEvents[i].title,
             date: formatDate(tempEvents[i].dtstart),
             imgSrc: tempEvents[i].imgSrc,
+            description: tempEvents[i].description,
+            eventLink: tempEvents[i].eventLink,
+            dtstart: tempEvents[i].dtstart
         }));
         setEvents(data);
     }
@@ -62,18 +71,49 @@ export default function Index({navigation}) {
         setMarkedCollection(marked)
     }
 
-    const handleSaveClick = (iconState, setIconState) => {
-        iconState.color == inactive.color ? setIconState(active) : setIconState(inactive);
+    const createCalendar = async () => {
+        if (Platform.OS == 'ios') {
+            const defaultCalendarID = await getDefaultCalendarSourceID();
+            setCalID(defaultCalendarID)
+        } else {
+            const defaultCalendarSource = { isLocalAccount: true, name: 'Expo Calendar' };
+            const newCalendarID = await ExpoCalendar.createCalendarAsync({
+                title: 'Expo Calendar',
+                color: 'blue',
+                entityType: ExpoCalendar.EntityTypes.EVENT,
+                sourceId: defaultCalendarSource.id,
+                source: defaultCalendarSource,
+                name: 'internalCalendarName',
+                ownerAccount: 'personal',
+                accessLevel: ExpoCalendar.CalendarAccessLevel.OWNER,
+            });
+            setCalID(newCalendarID)
+        }
     }
 
-    const StarButton = () => {
-        const [iconState, setIconState] = useState(inactive);
+    const createEvent = async (title, description) => {
+        const details = {
+            title: title,
+            startDate: new Date(),
+            endDate: new Date(),
+            notes: description,
+        };
+        const eventStatus = await ExpoCalendar.createEventAsync(calID, details);
+        alert('Event added to calendar')
+    }
 
-        return (
-            <CardClickable onPress={() => handleSaveClick(iconState, setIconState)}>
-                <FontAwesome name={iconState.name} size={24} color={iconState.color} />
-            </CardClickable>
-        );
+    const pushEvent = (event) => {
+        docRef.get().then((doc) => {
+            if (doc.exists) {
+                docRef.update({
+                    savedEvents: arrayUnion(event)
+                });
+            } else {
+                console.log("No such document!");
+            }
+        }).catch((error) => {
+            console.log("Error getting document:", error);
+        });
     }
 
     const CardComponent = () => {
@@ -82,24 +122,8 @@ export default function Index({navigation}) {
                 refreshControl={
                     <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
                 }>
-                { events.map(({ title, date, imgSrc, key }) => (
-                    <Card key={key}>
-                        <CardCover >
-                            <Image source={{ uri: imgSrc == '' ? usuImage : imgSrc }}
-                                style={{ width: hp('12%'), height: hp('12%'), borderRadius: 20 }}
-                                resizeMode='contain' />
-                        </CardCover>
-                        <CardContent>
-                            <CardTitle>{title.split(':')[0]}</CardTitle>
-                            <CardSubTitle>{date}</CardSubTitle>
-                        </CardContent>
-                        <CardOptions>
-                            <StarButton />
-                            <CardClickable onPress={() => navigation.navigate('Events')}>
-                                <MaterialCommunityIcons name={'arrow-right'} size={24} color='black' />
-                            </CardClickable>
-                        </CardOptions>
-                    </Card>
+                { events.map((event, key) => (
+                    <EventCard key={key} event={event} saveHandler={createEvent} saveToEventsHandler={pushEvent} disabled={false} buttonTitle="Save" />
                 ))}
             </CardScrollView>
         );
@@ -108,6 +132,20 @@ export default function Index({navigation}) {
     useEffect(() => {
         CalendarEvents.sort(function (a, b) { return a.dtstart.localeCompare(b.dtstart) });
         setMarkedDates();
+        if (Platform.OS == 'ios') {
+            const reminderStatus = ExpoCalendar.requestRemindersPermissionsAsync();
+            const getReminder = ExpoCalendar.getRemindersPermissionsAsync()
+        }
+        const getPermission = async () => {
+            const { status } = await ExpoCalendar.requestCalendarPermissionsAsync();
+            if (status == 'granted' && calendarToken == false) {
+                createCalendar();
+                setCalendarToken(true)
+            }
+        }
+        getPermission();
+        if (Platform.OS === 'android')
+            UIManager.setLayoutAnimationEnabledExperimental(true)
     }, [])
 
     return (
@@ -118,7 +156,7 @@ export default function Index({navigation}) {
                 // Collection of dates that have to be marked. Default = {} 
                 markedDates={markedCollection}
                 // Initially visible month. Default = Date()
-                // current={'2021-02-12'}
+                // current={'2021-03-24'}
                 // Minimum date that can be selected, dates before minDate will be grayed out. Default = undefined
                 minDate={'2021-01-25'}
                 // Maximum date that can be selected, dates after maxDate will be grayed out. Default = undefined
