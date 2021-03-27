@@ -98,7 +98,7 @@ export default function events({ navigation }) {
         }).catch((error) => {
             console.log("Error getting document:", error);
         });
-    };
+    }
 
     const setStatusFilter = (status) => {
         var dataList = [];
