@@ -50,7 +50,7 @@ export default function Profile({ navigation }) {
                 <InfoTitle>{title}</InfoTitle>
                 <InfoContent>
                     <InfoDisplay>
-                        {today >= 0 || rsvp ? (
+                        {today >= 0 || rsvp >= 0 ? (
                             <InfoText>{leftNum}</InfoText>
                         ) :
                             <ActivityIndicator />
@@ -58,7 +58,7 @@ export default function Profile({ navigation }) {
                         <InfoText>{leftLabel}</InfoText>
                     </InfoDisplay>
                     <InfoDisplay>
-                        {tickets || past >= 0 ? (
+                        {tickets >= 0 || past >= 0 ? (
                             <InfoText>{rightNum}</InfoText>
                         ) :
                             <ActivityIndicator />
@@ -166,6 +166,16 @@ export default function Profile({ navigation }) {
         setIsLoading(false);
     }
 
+    const getEnrolledEventsData = () => {
+        docRef.get().then((doc) => {
+            let hasEnrolledEvents = doc.data().enrolledEvents;
+            if (hasEnrolledEvents != undefined) {
+                setRsvp(hasEnrolledEvents.length)
+                setTickets(0)
+            }
+        }).catch((error) => console.log("Error getting document: ", error))
+    }
+
     const getCurrentAndPastEvents = () => {
         let date = new Date;
         var currentDate = date.getFullYear() + '-0' + (date.getMonth() + 1) + '-' + (date.getDate().toString().length == 1 ? '0' + date.getDate() : date.getDate());
@@ -192,6 +202,7 @@ export default function Profile({ navigation }) {
 
     useEffect(() => {
         checkForImageUrl();
+        getEnrolledEventsData();
         (async () => {
             let cameraRes = await ImagePicker.requestCameraPermissionsAsync();
             if (cameraRes.status !== 'granted')
@@ -199,10 +210,12 @@ export default function Profile({ navigation }) {
         })();
         docRef
             .onSnapshot((doc) => {
-                if (events == null)
+                if (events == null) {
                     getCurrentAndPastEvents();
-                else if (doc.data().savedEvents.length != events.length) {
+                    getEnrolledEventsData();
+                } else if (doc.data().savedEvents.length != events.length) {
                     getCurrentAndPastEvents();
+                    getEnrolledEventsData();
                 }
             });
     }, [])
@@ -239,7 +252,7 @@ export default function Profile({ navigation }) {
                 </IconsBox>
 
                 <InfoContainer>
-                    <InfoComponent title={'Enrolled Events'} leftLabel={'RSVP'} leftNum={10} rightLabel={'Tickets'} rightNum={5} screenName={"Enrolled Events"} />
+                    <InfoComponent title={'Enrolled Events'} leftLabel={'RSVP'} leftNum={rsvp} rightLabel={'Tickets'} rightNum={tickets} screenName={"Enrolled Events"} />
                     <InfoComponent title={'Current & Past Events'} leftLabel={'Today'} leftNum={today} rightLabel={'Past'} rightNum={past} screenName={'Current and Past Events'} data={events} />
                 </InfoContainer>
 
