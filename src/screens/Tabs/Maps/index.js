@@ -20,15 +20,21 @@ const LATITUDE_DELTA = 0.02;
 const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
 const key = 'AIzaSyAcorPhu3_-YuPRpogeg0lgm63AXlOi8u0';
 const inactiveColor = '#000', activeColor = '#63C2D1';
-const options = { month: "long", day: "numeric", year: "numeric", hour: 'numeric', minute: 'numeric' };
+const optionsFull = { month: "long", day: "numeric", year: "numeric", hour: 'numeric', minute: 'numeric' };
+const optionsDate = { month: "long", day: "numeric", year: "numeric" };
 
 const formatDate = (dtstart) => {
     const fullDate = dtstart.split(' ')
     const dateParts = fullDate[0].split('-')
-    const hourParts = fullDate[1].split(':')
-    const date = new Date(dateParts[0], dateParts[1] - 1, dateParts[2], hourParts[0], hourParts[1]);
-    const formatedDate = new Intl.DateTimeFormat("en-US", options).format(date);
-    return formatedDate;
+
+    if(fullDate.length > 1) {
+        const hourParts = fullDate[1].split(':')
+        const date = new Date(dateParts[0], dateParts[1] - 1, dateParts[2], hourParts[0], hourParts[1]);
+        return new Intl.DateTimeFormat("en-US", optionsFull).format(date);
+    } else {
+        const date = new Date(dateParts[0], dateParts[1] - 1, dateParts[2]);
+        return new Intl.DateTimeFormat("en-US", optionsDate).format(date);
+    }
 }
 
 export default function Index({ navigation }) {
