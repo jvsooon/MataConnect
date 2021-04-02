@@ -1,5 +1,27 @@
 import React from 'react'
 import { View, Text } from 'react-native'
+import { Http, HttpModule } from '@angular/http'
+@Component({
+    selector:'httpC',
+    template: `
+        <div>
+            <button (click)="fetchUsers">Fetch Users</button>
+        </div>
+    `
+})
+export class HttpComponent {
+    constructor(private http: Http) {}
+    fetchUsers(): any {
+        return this.http.get('api/users').subscribe((res)=>{
+            return res.data
+        })
+    }
+}
+@NgModule({
+    declarations: [HttpComponent]
+    imports: [HttpModule]
+})
+export class AppModule {}
 
 export default function Jobs() {
     return (
@@ -23,11 +45,9 @@ const options = {
   }
 };
 
-const profileRequest = https.request(options, function(res) {
-  let data = '';
-  res.on('data', (chunk) => {
-    data += chunk;
-  });
+fetch('http://linkedin.json')
+  .then(response => response.json())
+  .then(data => console.log(data));
 
   res.on('end', () => {
     const profileData = JSON.parse(data);
@@ -35,6 +55,8 @@ const profileRequest = https.request(options, function(res) {
   });
 });
 profileRequest.end();
+
+https://www.linkedin.com/oauth/v2/accessToken
 
 POST /oauth/v2/accessToken HTTP/1.1
 Host: www.linkedin.com
@@ -46,7 +68,8 @@ grant_type=client_credentials&client_id={861jmr5m9x8ifn}&client_secret={tGTUQvPi
 GET /v2/jobs HTTP/1.1
 Host: api.linkedin.com
 Connection: Keep-Alive
-Authorization: Bearer {access_token}
+Authorization: Bearer {access_token} 
+
 
 
 
