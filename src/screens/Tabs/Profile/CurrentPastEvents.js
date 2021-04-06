@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react'
-import { SafeAreaView, StatusBar, ImageBackground, Text, TouchableOpacity, View, LayoutAnimation, Image, StyleSheet, FlatList, Linking } from 'react-native'
+import { SafeAreaView, StatusBar, ImageBackground, Text, TouchableOpacity, View, LayoutAnimation, Image, StyleSheet, FlatList, Linking, UIManager } from 'react-native'
 import CardButton from '../../../components/EventsButton'
 import firebase from '../../../../firebase'
 import { UserContext } from '../../../contexts/UserContext';
@@ -101,6 +101,8 @@ export default function CurrentPastEvents({ route }) {
         var tempDate = date.getFullYear() + '-0' + (date.getMonth() + 1) + '-' + (date.getDate().toString().length == 1 ? '0' + date.getDate() : date.getDate());
         setCurrentDate(tempDate);
         setStatusFilter('Today');
+        if (Platform.OS === 'android')
+            UIManager.setLayoutAnimationEnabledExperimental(true)
     }, [currentDate])
 
     return (
