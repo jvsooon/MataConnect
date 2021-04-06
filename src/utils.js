@@ -1214,7 +1214,7 @@ export const BuildingDescriptions = [
         "description": "The Art Gallery includes: \n\nAn exhibition program that reflects the extraordinary diversity of the art world and of many audiences.\nThe gallery utilizes regional resources to give new perspectives on international art."
     },
     {
-        "name": "Bookstein Hall (formerly known as Juniper Hall)",
+        "name": "Bookstein Hall",
         "description": "Bookstein Hall includes: \n\nThe David Nazarian College of Business and Economics \n\nAccounting and Information Systems \nBusiness and Economics Development and Alumni Relations \nBusiness and Economics Graduate Programs in Business \nBusiness and Economics Information Technology\nBusiness and Economics Student Services Center and EOP Satellite \nBusiness Law \nCollege of Business and Economics \nEconomics \nFinance \nReal Estate \nInsurance \nManagement \nMarketing \nSystems and Operations Management\n\n\n\nMost CSUN classes average about 30 students, but occasionally, there is a need for a larger space. Next door is the Charles H. and Lisa J. Noski Auditorium, which can seat 150 students for larger lectures."
     },
     {
@@ -1270,7 +1270,7 @@ export const BuildingDescriptions = [
         "description": "The USU East Conference Center includes:\n \nOn the First Floor:\n\nThe Altadena Room\nThe East Conference Lounge\nThe La Crescenta Room\nThe Panorama City Room\nThe Shadow Hills Room\nThe Sun Valley Room\nThe Tujunga Room                                       \nThe Van Nuys Room\nA Prayer/Meditation/Reflection Room \n\nSecond Floor:\n\nThe Arcadia Room\nThe Burbank Room\nThe Flintridge Room\nThe Glendale Room\nThe Lake View Terrace Room\nThe Pasadena Room\nThe Sunny Days Camp"
     },
     {
-        "name": "USU Northridge Center\\xa0Complex",
+        "name": "USU Northridge Center Complex",
         "description": "The USU Northridge Center Complex includes meeting and event rooms:\n \nFirst Floor:\n\nThe Granada Hills Room\nThe Lake Balboa Room\nThe North Valley Room\nThe Northridge Center Room\nThe Reseda Room\nThe South Valley Room\nThe West Valley Room\n\nSecond Floor:\n\nThe Plaza del Sol Performance Hall \nThe USU Theatre (Entrance is on First Floor)"
     },
     {
@@ -1337,10 +1337,10 @@ export const BuildingDescriptions = [
         "name": "Plaza del Sol Performance Hall",
         "description": "The Plaza del Sol is a performance venue within the University Student Union and also home to the A.S, Ticket Office. The A.S. Ticket Office includes discounted offers for: \n\nUniversal Studios\nThe San Diego Zoo\nSix Flags\nand more\n\nMetro-U passes can also be purchased here."
     },
-    {
-        "name": "East Field",
-        "description": ""
-    },
+    // {
+    //     "name": "East Field",
+    //     "description": ""
+    // },
     {
         "name": "Eucalyptus Hall",
         "description": "Eucalyptus Hall is one of the four science and math building clusters (Chaparral Hall, Eucalyptus Hall, Live Oak Hall & Magnolia Hall). and includes:\n\nCollege of Science and Mathematics\nChemistry and Biochemistry\nScience and Mathematics Shop\nScience and Mathematics Student Services Center/EOP\nScience and Mathematics Technology Office\nUpward Bound"
@@ -1429,10 +1429,10 @@ export const BuildingDescriptions = [
         "name": "Live Oak Hall",
         "description": "Live Oak Hall is one of four buildings in the cluster of science and math buildings (Chaparral Hall, Eucalyptus Hall, Live Oak Hall & Magnolia Hall) and includes:\n\nGeological Sciences\nPhysics\nAstronomy"
     },
-    {
-        "name": "Jogging Path",
-        "description": "The Jogging Path is located north of campus next to the Fitness Center and Ropes Course."
-    },
+    // {
+    //     "name": "Jogging Path",
+    //     "description": "The Jogging Path is located north of campus next to the Fitness Center and Ropes Course."
+    // },
     {
         "name": "Oviatt Library",
         "description": "The Oviatt Library includes:\n\nThe Faculty Senate Office\nThe Faculty Technology Center\nThe Learning Commons\nThe Learning Resource Center (LRC)\nLibrary Services\nStudent Legal Support Clinic (SLSC)\nThe Universal Design Center\nThe Freudian Sip"

@@ -53,7 +53,7 @@ export default function Profile({ navigation }) {
                         {today >= 0 || rsvp >= 0 ? (
                             <InfoText>{leftNum}</InfoText>
                         ) :
-                            <ActivityIndicator />
+                            <ActivityIndicator color='grey'/>
                         }
                         <InfoText>{leftLabel}</InfoText>
                     </InfoDisplay>
@@ -61,7 +61,7 @@ export default function Profile({ navigation }) {
                         {tickets >= 0 || past >= 0 ? (
                             <InfoText>{rightNum}</InfoText>
                         ) :
-                            <ActivityIndicator />
+                            <ActivityIndicator color='grey'/>
                         }
                         <InfoText>{rightLabel}</InfoText>
                     </InfoDisplay>
@@ -232,7 +232,7 @@ export default function Profile({ navigation }) {
                     </PencilWrapper>
                     <ProfilePictureWrapper>
                         {isLoading == true ? (
-                            <ActivityIndicator style={{ marginTop: 80 }} size="large" />
+                            <ActivityIndicator style={{ marginTop: 80 }} size="large" color='grey' />
                         ) :
                             (imageUrl == null ? (<BlankImage></BlankImage>)
                                 :
