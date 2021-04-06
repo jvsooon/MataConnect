@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect, useRef } from 'react';
-import { SafeAreaView, StatusBar, FlatList, View, Text, UIManager, Platform, TouchableOpacity, ImageBackground, StyleSheet } from 'react-native';
+import { SafeAreaView, StatusBar, FlatList, View, Text, UIManager, Platform, TouchableOpacity, ImageBackground, StyleSheet, ActivityIndicator } from 'react-native';
 import { CalendarEvents } from '../../utils'
 import * as Calendar from 'expo-calendar';
 import MenuIcon from '../../assets/menu.svg'
@@ -29,7 +29,7 @@ export default function events({ navigation }) {
     const [date, setDate] = useState(null);
     const [calendarEvents, setCalendarEvents] = useState([]); // All events for current month
     const [filteredEvents, setFilteredEvents] = useState([]); // Filtered events depending on which tab is clicked
-    const flatlistRef = useRef();
+    const [isLoading, setIsLoading] = useState(true);
 
     const Header = () => {
         return (
@@ -127,19 +127,16 @@ export default function events({ navigation }) {
         setFilteredEvents(dataList);
     }
 
-    const getEvents = (value) => {
-        let eventsThisMonth = CalendarEvents.filter(event => event.dtstart.split(' ')[0].includes(value.substring(0, 7)));
-        const data = Object.keys(eventsThisMonth).map(i => ({
-            title: eventsThisMonth[i].title,
-            date: formatDate(eventsThisMonth[i].dtstart),
-            imgSrc: eventsThisMonth[i].imgSrc,
-            description: eventsThisMonth[i].description,
-            eventLink: eventsThisMonth[i].eventLink,
-            dtstart: eventsThisMonth[i].dtstart
-        }));
-        setCalendarEvents(data);
-        data.sort(function (a, b) { return a.dtstart.localeCompare(b.dtstart) });
-        setFilteredEvents(data.filter(x => x.dtstart.includes(date)))
+    const checkForRsvp = (eventUrl) => {
+        let hasRSVP = fetch(eventUrl)
+            .then(res => res.text())
+            .then(data => {
+                if (data.includes('Register') == true || data.includes('RSVP') == true)
+                    return true;
+                else
+                    return false;
+            });
+        return hasRSVP;
     }
 
     const renderItem = ({ item }) => {
@@ -148,14 +145,28 @@ export default function events({ navigation }) {
         )
     }
 
-    const getItemLayout = (data, index) => {
-        return { length: 120, offset: 120 * index + 10, index }
-    }
-
     useEffect(() => {
         var today = new Date();
         var tempDate = today.getFullYear() + '-0' + (today.getMonth() + 1) + '-' + (today.getDate().toString().length == 1 ? '0' + today.getDate() : today.getDate());
         setDate(tempDate);
+        const getEvents = async (value) => {
+            let eventsThisMonth = CalendarEvents.filter(event => event.dtstart.split(' ')[0].includes(value.substring(0, 7)));
+            let data = Object.keys(eventsThisMonth).map(i => ({
+                title: eventsThisMonth[i].title,
+                date: formatDate(eventsThisMonth[i].dtstart),
+                imgSrc: eventsThisMonth[i].imgSrc,
+                description: eventsThisMonth[i].description,
+                eventLink: eventsThisMonth[i].eventLink,
+                dtstart: eventsThisMonth[i].dtstart
+            }));
+            let temp = await Promise.all(data.map(async (x) => {
+                x["hasRSVP"] = await checkForRsvp(x.eventLink)
+            }));
+            data.sort(function (a, b) { return a.dtstart.localeCompare(b.dtstart) });
+            setCalendarEvents(data);
+            setFilteredEvents(data.filter(x => x.dtstart.includes(date)))
+            setIsLoading(false);
+        }
         getEvents(tempDate);
 
         if (Platform.OS == 'ios') {
@@ -186,16 +197,21 @@ export default function events({ navigation }) {
                         ))
                     }
                 </View  >
-                {filteredEvents != 0 ?
-                    <FlatList
-                        ref={flatlistRef}
-                        data={filteredEvents}
-                        renderItem={renderItem}
-                        keyExtractor={(item, index) => index.toString()}
-                        getItemLayout={getItemLayout} /> :
-                    <View style={styles.emptyBox} >
-                        <Text style={styles.empty}>No Events</Text>
+                {isLoading == true ?
+                    <View style={{ display: 'flex', flex: 1, justifyContent: 'center' }}>
+                        <ActivityIndicator size='large' color='grey' />
+                        <Text style={{ fontWeight: 'bold', fontSize: hp('3%'), alignSelf: 'center' }}>Loading</Text>
                     </View>
+                    :
+                    (filteredEvents.length != 0 ?
+                        <FlatList
+                            data={filteredEvents}
+                            renderItem={renderItem}
+                            keyExtractor={(item, index) => index.toString()} /> :
+                        <View style={styles.emptyBox} >
+                            <Text style={styles.empty}>No Events</Text>
+                        </View>
+                    )
                 }
             </ImageBackground>
         </SafeAreaView>

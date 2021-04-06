@@ -57,7 +57,8 @@ export default function SavedEvents() {
                     imgSrc: hasEvents[index].imgSrc,
                     description: hasEvents[index].description,
                     eventLink: hasEvents[index].eventLink,
-                    dtstart: hasEvents[index].dtstart
+                    dtstart: hasEvents[index].dtstart,
+                    hasRSVP: hasEvents[index].hasRSVP
                 }));
                 setEvents(data);
                 setFilteredEvents(data.filter(x => x.dtstart.includes(date)))
