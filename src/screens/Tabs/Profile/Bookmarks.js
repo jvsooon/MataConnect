@@ -16,7 +16,7 @@ const Tab = ({ tabName, status, onPress, widthSize }) => {
     return (
         <View style={styles.shadow}>
             <LinearGradient
-                colors={['#A5FAEA', '#6EC8F5']}
+                colors={['#A5FAEA', '#9087f5']}
                 style={[styles.buttonBG, styles.shadow, { width: widthSize, borderRadius: 10 }]}>
                 <TouchableOpacity style={[styles.button, status == true && styles.buttonTabActive]} onPress={onPress}>
                     <Text style={[styles.label, status == true && styles.labelActive]}>{tabName}</Text>
@@ -58,6 +58,14 @@ export default function Bookmarks() {
             dataList.sort(function (a, b) { return a.name.localeCompare(b.name) });
             setFilteredResources(dataList);
         }
+    }
+
+    const getPlaceDetails = async (placeID) => {
+        let details = fetch(`${baseAPIUrl}details/json?place_id=${placeID}&fields=name,formatted_phone_number,opening_hours/open_now,opening_hours/weekday_text,formatted_address,geometry/location&key=${apiKey}`)
+            .then(res => res.json())
+            .then(data => data.result)
+            .catch(err => console.log(err));
+        return Promise.resolve(details);
     }
 
     const Card = ({ loc }) => {
@@ -138,24 +146,6 @@ export default function Bookmarks() {
         )
     }
 
-    // Move to CampusResources page when MC-133 is completed
-    const getPlaceID = async (placeName) => {
-        let id = fetch(`${baseAPIUrl}findplacefromtext/json?input=csun ${placeName}&inputtype=textquery&fields=place_id&key=${apiKey}`)
-            .then(res => res.json())
-            .then(data => data.candidates[0]?.place_id)
-            .catch(err => console.log(err));
-        return Promise.resolve(id);
-    };
-
-    // Move to CampusResources page 
-    const getPlaceDetails = async (placeID) => {
-        let details = fetch(`${baseAPIUrl}details/json?place_id=${placeID}&fields=name,formatted_phone_number,opening_hours/open_now,opening_hours/weekday_text,formatted_address,geometry/location&key=${apiKey}`)
-            .then(res => res.json())
-            .then(data => data.result)
-            .catch(err => console.log(err));
-        return Promise.resolve(details);
-    }
-
     const getEvents = () => {
         docRef.get().then((doc) => {
             let hasBookmarks = doc.data().savedBookmarks;
@@ -184,20 +174,6 @@ export default function Bookmarks() {
             UIManager.setLayoutAnimationEnabledExperimental(true);
 
         getEvents()
-        // Move code block to CampusResources page when MC-133 is completed
-        // let data = [];
-        // BuildingDescriptions.forEach(async (x) => {
-        //     let id = await getPlaceID(x.name);
-        //     let details = await getPlaceDetails(id);
-        //     if (details?.name != undefined)
-        //         data.push(details);
-        // })
-        // setTimeout(() => {
-        //     data.sort(function (a, b) { return a.name.localeCompare(b.name) })
-        //     setResources(data);
-        //     setFilteredResources(data)
-        //     setIsLoading(false);
-        // }, 1000);
     }, [])
 
     return (
