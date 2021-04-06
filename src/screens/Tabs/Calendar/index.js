@@ -49,15 +49,30 @@ export default function Index() {
         }
     }
 
-    const getEventByDate = (dateString) => {
+    const checkForRsvp = (eventUrl) => {
+        let hasRSVP = fetch(eventUrl)
+            .then(res => res.text())
+            .then(data => {
+                if (data.includes('Register') == true || data.includes('RSVP') == true)
+                    return true;
+                else
+                    return false;
+            });
+        return hasRSVP;
+    }
+
+    const getEventByDate = async (dateString) => {
         let tempEvents = CalendarEvents.filter(event => event.dtstart.split(' ')[0].includes(dateString));
-        const data = Object.keys(tempEvents).map((i) => ({
+        let data = Object.keys(tempEvents).map((i) => ({
             title: tempEvents[i].title,
             date: formatDate(tempEvents[i].dtstart),
             imgSrc: tempEvents[i].imgSrc,
             description: tempEvents[i].description,
             eventLink: tempEvents[i].eventLink,
             dtstart: tempEvents[i].dtstart
+        }));
+        let temp = await Promise.all(data.map(async (x) => {
+            x["hasRSVP"] = await checkForRsvp(x.eventLink)
         }));
         setEvents(data);
     }

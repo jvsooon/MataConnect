@@ -1,12 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, Image, LayoutAnimation, Linking } from 'react-native'
 import { FontAwesome } from '@expo/vector-icons'
 import EventsButton from './EventsButton';
-
+import {UserContext} from '../contexts/UserContext'
+import firebase from '../../firebase'
 const inactive = { color: '#000', name: 'star-o' }, active = { color: '#63C2D1', name: 'star' };
+var db = firebase.firestore();
+const arrayUnion = firebase.firestore.FieldValue.arrayUnion;
 
 export default function EventCard({ event, saveHandler, saveToEventsHandler, disabled, buttonTitle }) {
-    const [collapsed, setCollapsed] = useState(false)
+    const { state } = useContext(UserContext);
+    var docRef = db.collection("users").doc(state.uid);
+    const [collapsed, setCollapsed] = useState(false);
+
     const handleSaveClick = (iconState, setIconState) => {
         if (disabled == false) {
             iconState.color == inactive.color ? setIconState(active) : setIconState(inactive);
@@ -16,12 +22,28 @@ export default function EventCard({ event, saveHandler, saveToEventsHandler, dis
                 imgSrc: event.imgSrc,
                 description: event.description,
                 eventLink: event.eventLink,
-                dtstart: event.dtstart
+                dtstart: event.dtstart,
+                hasRSVP: event.hasRSVP
             }
             saveToEventsHandler(data)
             disabled = true
             alert("Event successfully saved to profile")
         } 
+    }
+
+    const handleRSVPClick = (event) => {
+        docRef.get().then((doc) => {
+            if (doc.exists) {
+                docRef.update({
+                    enrolledEvents: arrayUnion(event)
+                });
+                alert("Event successfully saved to profile")
+            } else {
+                console.log("No such document!");
+            }
+        }).catch((error) => {
+            console.log("Error getting document:", error);
+        });
     }
 
     const StarButton = () => {
@@ -57,7 +79,7 @@ export default function EventCard({ event, saveHandler, saveToEventsHandler, dis
                 <Text style={{ margin: 10 }}>{event.description.split('.')[0]}</Text>
                 <View style={styles.cardFooter}>
                     <EventsButton title={buttonTitle} onPress={() => disabled == false ? saveHandler(event.title, event.description) : saveHandler(event)} />
-                    <EventsButton title="RSVP" />
+                    {event.hasRSVP == true && <EventsButton title="RSVP" onPress={() => handleRSVPClick(event)} />}
                     <EventsButton title="Website" onPress={() => Linking.openURL(event.eventLink)} />
                 </View>
             </View>
