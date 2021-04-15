@@ -23,11 +23,11 @@ const options = {
     'X-Restli-Protocol-Version': '2.0.0'
   }
 };
-fetch('https://linkedin.com/jobs')
+fetch('https://linkedin.com/v2/jobs?keyword=computer science&location=los angeles california')
   .then(response => response.json())
   .then(data => console.log(data));
 
-fetch ('https://linkedin.com/jobs', {
+fetch ('https://linkedin.com/v2/jobs?keyword=computer science&location=los angeles california', {
   method: 'GET',
   headers: { 
     Accept: 'application/json',
@@ -36,11 +36,12 @@ fetch ('https://linkedin.com/jobs', {
   body: JSON.stringify ({
     firstParam: 'jobs'
   })
+  GET https://api.linkedin.com/v2/jobs?keyword= computer science&location= los angeles california
 });
 
 const getJobsFromLinkedin = async () => {
   let response = await fetch(
-    'https://linkedin.com/jobs/data.json'
+    'https://linkedin.com/v2/jobs?keyword=computer science&location= los angeles california/data.json'
   );
   let json = await response.json();
   return json.jobs;
@@ -49,7 +50,7 @@ const getJobsFromLinkedin = async () => {
 const getJobsFromLinkedin = async () => {
   try{
     let response = await fetch ( 
-      'https://linkedin.com/jobs/data.json'
+      'https://linkedin.com/v2/jobs?keyword=computer science&location= los angeles california/data.json'
     );
     let json = await response.json();
     returns json.jobs;
