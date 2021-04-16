@@ -24,13 +24,13 @@ export default function Jobs() {
 const https = require('https');
 
 // Replace with access token for the r_liteprofile permission
-const accessToken = 'AQWGadBhDTSJekvkrcRy5ckLV_8ilTlVxmf531mXlkxQn-3NK0Nx00-k2jk8_1en_MGbFvICaAo2rWq1NhRXc6-sYgyYzKgFfvsm_HjWtHIu2kDkBHkgYeTsu5To4MCaOi9r3gYEF970fJ8-152IxItaDIhlpoLU6ujuVdkyrAWVXfzfm619FzhQBJegiBYo3w2JPUR2-HxIdblcOwDgywj_zPuQ8mvmXdhn5qKvZdghWHEtT8h2fTJG48KxHe5wOGCSbVJ4sfr_4mf0ZaT2LRqSxzieM89GAbukN12yu-WL97egKz_mR6OZyRHEdZYN7LR8AIkNBWe4Duv3_mT25CtqyIFGVQ';
+const accessToken = 'AQUWvMHCt9WGYzCyCgPC_iGXuF6ZT52Sr05Fk2v6RqGbJ9T9geSsNszkT6xT_H3NArA3twgygpqb0vBf7Rir174dnmzxAvzYXU9t6p8hMg6AqTxnYia96uti7E09kCFmKhUylWS-2txG-4YJDQ3OXUJSzoEtNYxNtY2QmBqC3H3gvKYaYMv3MsmcIsTAtBB1CxMhANzR07iSsnE6WuzrffERc0GRlnkmEzMn00iLVvCY_psORNh_0PEjEari6tSd5cWNGqIjqIvW_F4Ih1zaVCAYCFNhonvKo2pbqxceq4_TXlybsJUGei8c_mp1O1gkYpSCLU-l4lYJnG52Ds_T9ZQqjOWugA';
 const options = {
   host: 'api.linkedin.com',
   path: '/v2/me',
   method: 'fetch',
   headers: {
-    'Authorization': `Bearer ${accessToken}`,
+    'Authorization': `Bearer ${AQUWvMHCt9WGYzCyCgPC_iGXuF6ZT52Sr05Fk2v6RqGbJ9T9geSsNszkT6xT_H3NArA3twgygpqb0vBf7Rir174dnmzxAvzYXU9t6p8hMg6AqTxnYia96uti7E09kCFmKhUylWS-2txG-4YJDQ3OXUJSzoEtNYxNtY2QmBqC3H3gvKYaYMv3MsmcIsTAtBB1CxMhANzR07iSsnE6WuzrffERc0GRlnkmEzMn00iLVvCY_psORNh_0PEjEari6tSd5cWNGqIjqIvW_F4Ih1zaVCAYCFNhonvKo2pbqxceq4_TXlybsJUGei8c_mp1O1gkYpSCLU-l4lYJnG52Ds_T9ZQqjOWugA}`,
     'cache-control': 'no-cache',
     'X-Restli-Protocol-Version': '2.0.0'
   }
@@ -82,3 +82,4 @@ const profileRequest = https.request(options, function(res) {
   });
 });
 profileRequest.end();
+}
