@@ -1,7 +1,19 @@
 import React from 'react'
 import { View, Text } from 'react-native'
+import React, {useEffect, useState} from 'react'
 
 export default function Jobs() {
+  const [isLoading, setLoading] = useState(true);
+  const[data, setData] = useState([]);
+  console.log(data);
+
+  useEffect( () => { 
+    fetch('https://linkedin.com/v2/jobs?keyword=computer science&location= los angeles california.json')
+    .then((response) =>  response.json())
+    .then((json) => setData(json))
+    .catch((error) => console.error(error))
+    .finally(() => setLoading(false));
+  })
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Text>Jobs Screen</Text>
@@ -36,7 +48,6 @@ fetch ('https://linkedin.com/v2/jobs?keyword=computer science&location=los angel
   body: JSON.stringify ({
     firstParam: 'jobs'
   })
-  GET https://api.linkedin.com/v2/jobs?keyword= computer science&location= los angeles california
 });
 
 const getJobsFromLinkedin = async () => {
@@ -53,7 +64,7 @@ const getJobsFromLinkedin = async () => {
       'https://linkedin.com/v2/jobs?keyword=computer science&location= los angeles california/data.json'
     );
     let json = await response.json();
-    returns json.jobs;
+    returns response.json(jobs);
   } catch (error) {
     console.error(error);
   }
