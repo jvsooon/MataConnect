@@ -3,6 +3,7 @@ import { createStackNavigator, CardStyleInterpolators } from '@react-navigation/
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import Index from '../screens/Tabs/Home/index';
 import Details from '../screens/Tabs/Home/details';
+import JobDetails from '../screens/Tabs/Home/JobDetails';
 import Notifications from '../screens/Tabs/Home/Notifications';
 import MenuIcon from '../assets/menu.svg'
 import NotificationIcon from '../assets/bell.svg'
@@ -42,6 +43,12 @@ export default function HomeStack() {
                     headerTitleAlign: 'center'
                 }}
                 name='Details' component={Details} />
+            <Stack.Screen
+                options={{
+                    headerTitle: 'Job Details',
+                    headerTitleAlign: 'center'
+                }}
+                name='Job Details' component={JobDetails} />
             <Stack.Screen
                 options={{
                     headerTitle: 'Notification'
