@@ -1,14 +1,24 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react';
 import { SafeAreaView, StatusBar, FlatList, View, StyleSheet, ActivityIndicator, TextInput, Text, Platform, LayoutAnimation, TouchableOpacity, ImageBackground, Linking, ScrollView } from 'react-native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Feather, MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
-import MenuIcon from '../../assets/menu.svg'
+import MenuIcon from '../../assets/menu.svg';
+import cheerio from 'cheerio'
+import ModalDropdown from 'react-native-custom-modal-dropdown';
+import { UserContext } from '../../contexts/UserContext'
+import firebase from '../../../firebase'
 
+var db = firebase.firestore();
+const arrayUnion = firebase.firestore.FieldValue.arrayUnion;
+const dropdownItems = [{ label: 'Students', value: 'Students', icon: () => (<MaterialIcons name="keyboard-arrow-right" size={18} color="#000" />), },
+{ label: 'Staff & Management', value: 'Staff & Management', icon: () => (<MaterialIcons name="keyboard-arrow-right" size={18} color="#000" />), }];
+const usuCareersUrl = 'https://phe.tbe.taleo.net/phe02/ats/careers/v2/searchResults?org=UNISTUDENTUNION&cws=38';
+const staffManagementUrl = 'https://careers.pageuppeople.com/873/nr/en-us/listing/';
+const baseManagementUrl = 'https://careers.pageuppeople.com';
 const listTab = [{ status: "All" }, { status: "Last 7 days" }, { status: "Today" }], inactive = { color: '#000', name: 'briefcase-outline' }, active = { color: '#000', name: 'briefcase' };
-const fieldsToRemove = ['latitude', 'category', 'longitude', 'id', '__CLASS__', 'salary_is_predicted', 'adref', 'contract_time', 'contract_type'];
-const APP_ID = '9d8915a0';
-const APP_KEY = 'a8c6b4137b485018a144b2df92b2c105';
+const fieldsToRemove = ['latitude', 'category', 'longitude', 'id', '__CLASS__', 'salary_is_predicted', 'adref', 'contract_time', 'contract_type', 'redirect_url', 'description'];
+const APP_ID = '9d8915a0', APP_KEY = 'a8c6b4137b485018a144b2df92b2c105';
 const BASE_API_URL = 'https://api.adzuna.com/v1/api/jobs/us/search/';
 const maxDays = 60, options = { headers: { Accept: 'application/json' } };
 
@@ -39,13 +49,17 @@ const CardButton = ({ title, onPress }) => {
 }
 
 export default function Jobs({ navigation }) {
-    const [status, setStatus] = useState("All");
+    const { state } = useContext(UserContext);
+    var docRef = db.collection("users").doc(state.uid);
+    const [filterStatus, setFilterStatus] = useState("All");
+    const [tabStatus, setTabStatus] = useState('On-Campus');
+    const [dropdownLabel, setDropdownLabel] = useState('On-Campus');
     const [pageNumber, setPageNumber] = useState(1);
     const [jobResults, setJobResults] = useState([]);
     const [filteredJobResults, setFilteredJobResults] = useState();
     const [endOfList, setEndOfList] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
-    const [moreIsLoading, setmoreIsLoading] = useState(false);
+    const [isMoreLoading, setIsMoreLoading] = useState(false);
     const [savedKeyword, setSavedKeyword] = useState();
     const [savedlocation, setSavedLocation] = useState();
 
@@ -60,6 +74,75 @@ export default function Jobs({ navigation }) {
         );
     }
 
+    const scrapeUSUCareers = async () => {
+        let data = [];
+        const response = await fetch(usuCareersUrl).then(res => res.text());
+        const $ = cheerio.load(response);
+
+        const results = $('.oracletaleocwsv2-accordion-head-info').each(function (i, elem) {
+            let job = {
+                company: $(elem).find('div:nth-child(3)').text(),    // department
+                jobType: 'student',
+                location: $(elem).find('div:nth-child(2)').text(),
+                title: $(elem).find('h4').text(),                    // position
+                url: $(elem).find('a').attr('href')
+            }
+            data.push(job);
+        });
+        return data;
+    }
+
+    const scrapeManagementCareers = async () => {
+        let data = [], temp = {};
+        const response = await fetch(staffManagementUrl).then(res => res.text());
+        const $ = cheerio.load(response);
+
+        const results = $('#recent-jobs-content > tr').each(function (i, elem) {
+            if (((i + 1) % 2) != 0) {
+                temp = {
+                    company: $(elem).find('td:nth-child(2)').text().trim(),    // division
+                    jobType: 'staff',
+                    location: 'Northridge',
+                    title: $(elem).find('a').text(), // position
+                    url: `${baseManagementUrl}${$(elem).find('a').attr('href')}`
+                }
+                data.push(temp);
+            }
+        });
+        return data;
+    }
+
+    const handleDropdownClick = async (itemLabel) => {
+        let results;
+        setIsLoading(true);
+        setDropdownLabel(itemLabel);
+        tabStatus != 'On-Campus' ? setTabStatus('On-Campus'): null;
+        itemLabel == 'Students' ? results = await scrapeUSUCareers() : results = await scrapeManagementCareers();
+        setFilteredJobResults(results);
+        setIsLoading(false);
+    }
+
+    const DropDown = () => {
+        return (
+            <View style={[styles.shadow]}>
+                <LinearGradient
+                    colors={['#A5FAEA', '#9087f5']}
+                    style={[styles.buttonBG, styles.shadow, { width: wp('100%') / 2 - 30, alignItems: 'center', justifyContent: 'center' }]}>
+                    <ModalDropdown
+                        defaultValue={dropdownLabel}
+                        options={['Students', 'Staff & Management']}
+                        onSelect={(index, value) => handleDropdownClick(value)}
+                        style={[{ width: wp('100%') / 2 - 30, height: 30, justifyContent: 'center', borderRadius: 10, alignItems: 'center' }, tabStatus == 'On-Campus' && styles.buttonTabActive]}
+                        textStyle={[{ fontSize: 14, fontWeight: 'bold', color: 'black', borderRadius: 10 }]}
+                        dropdownStyle={[{ width: wp('100%') / 2 - 30, borderRadius: 10, marginTop: 3 }, styles.shadow]}
+                        dropdownTextStyle={{ fontWeight: 'bold' }}
+                    />
+                </LinearGradient>
+            </View>
+
+        );
+    }
+
     const handleJobIconClick = (iconState, setIconState, data) => {
         if (iconState.name == inactive.name) {
             iconState.color == inactive.color ? setIconState(active) : setIconState(inactive);
@@ -69,17 +152,17 @@ export default function Jobs({ navigation }) {
     }
 
     const pushJob = (job) => {
-        // docRef.get().then((doc) => {
-        //     if (doc.exists) {
-        //         docRef.update({
-        //             savedJobs: arrayUnion(job)
-        //         });
-        //     } else {
-        //         console.log("No such document!");
-        //     }
-        // }).catch((error) => {
-        //     console.log("Error getting document:", error);
-        // });
+        docRef.get().then((doc) => {
+            if (doc.exists) {
+                docRef.update({
+                    savedJobs: arrayUnion(job)
+                });
+            } else {
+                console.log("No such document!");
+            }
+        }).catch((error) => {
+            console.log("Error getting document:", error);
+        });
     }
 
     const JobIcon = ({ data }) => {
@@ -106,13 +189,13 @@ export default function Jobs({ navigation }) {
                     setCollapsed(!collapsed);
                 }}>
                 <View style={{ flexDirection: 'column', margin: 20 }}>
-                    <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center' }}>
                         <View>
-                            <Text style={styles.cardCompany}>{jobInfo.company.display_name}</Text>
-                            <Text style={styles.cardTitle}>{jobInfo.title.replace(/<[^>]+>/g, '')}</Text>
+                            <Text style={styles.cardCompany}>{jobInfo.company}</Text>
+                            <Text style={styles.cardTitle}>{jobInfo.title}</Text>
                             <View style={{ flexDirection: 'row', flexWrap: "wrap" }}>
                                 <MaterialIcons style={{ marginTop: 2, marginRight: 3 }} name="room" size={hp('1.8%')} />
-                                <Text style={[styles.cardLocation, { width: '90%' }]}  >{jobInfo.location.display_name}</Text>
+                                <Text style={[styles.cardLocation, { width: '90%' }]}  >{jobInfo.location}</Text>
                             </View>
                         </View>
                         <JobIcon data={jobInfo} />
@@ -120,13 +203,19 @@ export default function Jobs({ navigation }) {
                     {collapsed &&
                         <View >
                             <View style={styles.cardFooter}>
-                                <CardButton title="View Posting" onPress={() => Linking.openURL(jobInfo.redirect_url)} />
+                                <CardButton title="View Posting" onPress={() => Linking.openURL(jobInfo.url)} />
                             </View>
                         </View>
                     }
                 </View>
             </TouchableOpacity>
         );
+    }
+
+    const setTab = (status) => {
+        setTabStatus(status);
+        setDropdownLabel(status);
+        setFilteredJobResults();
     }
 
     const setStatusFilter = (status) => {
@@ -146,7 +235,7 @@ export default function Jobs({ navigation }) {
                 dateToday = dateToday.getDate().toString();
                 dataList = jobResults.filter(x => { return x.created.includes(`-${dateToday.length == 2 ? dateToday : '0' + dateToday}T`); });
             }
-            setStatus(status);
+            setFilterStatus(status);
             setFilteredJobResults(dataList);
             setIsLoading(false);
         }
@@ -156,7 +245,7 @@ export default function Jobs({ navigation }) {
         return fetch(`${BASE_API_URL}${page}?app_id=${APP_ID}&app_key=${APP_KEY}&results_per_page=10&what=${keyword}&where=${location}&max_days_old=${maxDays}`, options)
             .then((res) => res.json())
             .then(data => data.results)
-            .catch((err) => {console.log(err); setIsLoading(false); setmoreIsLoading(false);});
+            .catch((err) => { console.log(err); setIsLoading(false); setIsMoreLoading(false); });
     }
 
     const getPage = (keyword, location) => {
@@ -173,6 +262,11 @@ export default function Jobs({ navigation }) {
 
         if (results.length > 0) {
             results.forEach((job) => {
+                job['company'] = job['company']['display_name'];
+                job['jobType'] = 'off-campus';
+                job['location'] = job['location']['display_name'];
+                job['title'] = job['title'].replace(/<[^>]+>/g, '');
+                job['url'] = job['redirect_url']
                 fieldsToRemove.forEach((x) => delete job[x]);
                 delete job['location']['area'];
                 delete job['location']['__CLASS__'];
@@ -182,7 +276,7 @@ export default function Jobs({ navigation }) {
                 let temp = jobResults, tempJob = [...temp, ...results];
                 setJobResults(tempJob);
                 setFilteredJobResults(tempJob);
-                setmoreIsLoading(false);
+                setIsMoreLoading(false);
             } else {
                 setJobResults(results);
                 setFilteredJobResults(results);
@@ -193,14 +287,14 @@ export default function Jobs({ navigation }) {
             }
             setPageNumber(page + 1);
         } else {
-            setmoreIsLoading(false);
+            setIsMoreLoading(false);
             setEndOfList(true);
         }
     }
 
     const getMoreJobs = () => {
-        if (status == 'All' && !endOfList) {
-            setmoreIsLoading(true);
+        if (tabStatus == 'Off-Campus' && filterStatus == 'All' && !endOfList) {
+            setIsMoreLoading(true);
             getJobs(savedKeyword, savedlocation);
             setPageNumber(pageNumber + 1);
         }
@@ -212,11 +306,11 @@ export default function Jobs({ navigation }) {
 
         const onFormSubmit = () => {
             if (keyword.length != 0 && location.length != 0) {
-                getJobs(keyword, location); 
-                setSavedKeyword(keyword); 
-                setSavedLocation(location); 
+                getJobs(keyword, location);
+                setSavedKeyword(keyword);
+                setSavedLocation(location);
             } else alert('One or both input fields were left empty. Please fill in both fields to perform a job search.')
-            setKeyword(''); 
+            setKeyword('');
             setLocation('');
         }
 
@@ -262,7 +356,7 @@ export default function Jobs({ navigation }) {
     const renderFooter = () => {
         return (
             <View style={{ flex: 1, justifyContent: 'center', marginBottom: hp('1%') }}>
-                {moreIsLoading ? (
+                {isMoreLoading ? (
                     <ActivityIndicator size='large' color='grey' />
                 ) : null}
             </View>
@@ -272,10 +366,16 @@ export default function Jobs({ navigation }) {
     useEffect(() => {
         const reset = navigation.addListener('blur', () => {
             setIsLoading(false);
-            setStatus('All');
+            setFilterStatus('All');
             setPageNumber(1);
             setJobResults([]);
             setFilteredJobResults();
+            setDropdownLabel('On-Campus');
+            setEndOfList(false);
+            setSavedKeyword();
+            setSavedLocation();
+            setFilterStatus('All');
+            setTabStatus('On-Campus');
         })
         return reset;
     }, [])
@@ -285,44 +385,59 @@ export default function Jobs({ navigation }) {
             {Platform.OS == 'ios' ? <StatusBar barStyle='dark-content' /> : <StatusBar />}
             <ImageBackground source={require('../../assets/background.png')} style={{ flex: 1 }}>
                 <Header />
-                <Form />
-                <View>
-                    <ScrollView
-                        horizontal
-                        showsHorizontalScrollIndicator={false}
-                        contentContainerStyle={styles.topTabs}>
-                        {
-                            listTab.map((t, index) => (
-                                <Tab key={index} tabName={t.status} status={status === t.status} onPress={() => setStatusFilter(t.status)} widthSize={(wp('100%') / 2) - 50} />
-                            ))
-                        }
-                    </ScrollView >
+
+                <View style={styles.tabSection}>
+                    <DropDown />
+                    <Tab tabName='Off-Campus' status={tabStatus === 'Off-Campus'} onPress={() => setTab('Off-Campus')} widthSize={(wp('100%') / 2) - 30} />
                 </View>
-                {isLoading == true ?
-                    <View style={{ flex: 1, justifyContent: 'center' }}>
-                        <ActivityIndicator size='large' color='grey' />
-                        <Text style={{ fontWeight: 'bold', fontSize: hp('3%'), alignSelf: 'center' }}>Loading</Text>
-                    </View>
-                    :
-                    (filteredJobResults &&
-                        <FlatList
-                            data={filteredJobResults}
-                            renderItem={renderItem}
-                            keyExtractor={(item, index) => index.toString()}
-                            ListEmptyComponent={listEmptyComponent}
-                            ListFooterComponent={renderFooter}
-                            onEndReached={getMoreJobs}
-                            onEndReachedThreshold={0.5} />
-                    )
-                }
+                <View style={{ flex: 1 }}>
+                    {tabStatus == 'Off-Campus' &&
+                        <View>
+                            <Form />
+                            <View>
+                                <ScrollView
+                                    horizontal
+                                    showsHorizontalScrollIndicator={false}
+                                    contentContainerStyle={styles.topTabs}>
+                                    {
+                                        listTab.map((t, index) => (
+                                            <Tab key={index} tabName={t.status} status={filterStatus === t.status} onPress={() => setStatusFilter(t.status)} widthSize={(wp('100%') / 2) - 50} />
+                                        ))
+                                    }
+                                </ScrollView >
+                            </View>
+                        </View>
+                    }
+                    {isLoading == true ?
+                        <View style={{ flex: 1, justifyContent: 'center' }}>
+                            <ActivityIndicator size='large' color='grey' />
+                            <Text style={{ fontWeight: 'bold', fontSize: hp('3%'), alignSelf: 'center' }}>Loading</Text>
+                        </View>
+                        :
+                        (filteredJobResults &&
+                            <FlatList
+                                data={filteredJobResults}
+                                renderItem={renderItem}
+                                keyExtractor={(item, index) => index.toString()}
+                                ListEmptyComponent={listEmptyComponent}
+                                ListFooterComponent={renderFooter}
+                                onEndReached={getMoreJobs}
+                                onEndReachedThreshold={0.5} />)
+                    }
+                </View>
             </ImageBackground>
-        </SafeAreaView>
+        </SafeAreaView >
     );
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+    },
+    tabSection: {
+        flexDirection: 'row',
+        marginVertical: 10,
+        alignSelf: 'center',
     },
     searchIcon: {
         margin: hp('1%')
@@ -349,12 +464,13 @@ const styles = StyleSheet.create({
     },
     topTabs: {
         marginVertical: 10,
-        marginHorizontal: 25,
+        marginHorizontal: 12,
+        marginLeft: 18
     },
     buttonBG: {
         height: 30,
         borderRadius: 10,
-        marginRight: 25,
+        marginHorizontal: 7,
         marginBottom: 10
     },
     button: {
