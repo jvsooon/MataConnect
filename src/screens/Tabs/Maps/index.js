@@ -18,7 +18,7 @@ const { width, height } = Dimensions.get("window");
 const ASPECT_RATIO = wp('100%') / hp('100%');
 const LATITUDE_DELTA = 0.02;
 const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
-const key = 'AIzaSyAcorPhu3_-YuPRpogeg0lgm63AXlOi8u0';
+const key = 'AIzaSyDI6NlJM4mwW2dqGPIxB9ewNNNryVxGxAE';
 const inactiveColor = '#000', activeColor = '#63C2D1';
 const optionsFull = { month: "long", day: "numeric", year: "numeric", hour: 'numeric', minute: 'numeric' };
 const optionsDate = { month: "long", day: "numeric", year: "numeric" };
