@@ -16,9 +16,9 @@ export const Logo = styled.Image`
 export const ButtonContainer = styled.View`
     flex-direction: row;
     width: 100%;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-`;
+    `;
 
 export const CustomButton = styled.TouchableOpacity`
     height: ${hp('6%')}px;
@@ -44,6 +44,7 @@ export const CustomButtonText = styled.Text`
 export const WelcomeText = styled.Text`
     font-size: ${hp('3.2%')}px;
     font-weight: bold;
-    color: #fff;
+    color: #2E3862;
+    margin-top: ${hp('6%')}px;
 `;
 
