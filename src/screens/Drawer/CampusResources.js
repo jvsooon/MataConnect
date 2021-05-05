@@ -11,7 +11,7 @@ import { BuildingDescriptions } from '../../utils'
 var db = firebase.firestore();
 const arrayUnion = firebase.firestore.FieldValue.arrayUnion;
 const listTab = [{ status: "A-Z" }, { status: "Open Now" }], inactive = { color: '#000', name: 'bookmark-o' }, active = { color: '#efd358', name: 'bookmark' };
-const apiKey = 'AIzaSyAcorPhu3_-YuPRpogeg0lgm63AXlOi8u0';
+const apiKey = 'AIzaSyDI6NlJM4mwW2dqGPIxB9ewNNNryVxGxAE';
 const baseAPIUrl = 'https://maps.googleapis.com/maps/api/place/';
 
 const Tab = ({ tabName, status, onPress, widthSize }) => {
