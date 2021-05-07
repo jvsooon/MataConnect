@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { FlatList, StatusBar, StyleSheet, ImageBackground, Text, Platform } from 'react-native';
 import { Container, ListHeader, NoEventsHeader, Box, JobImg, Cover, EventImg } from './styles';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
-import { CalendarEvents, Jobs } from '../../../utils';
+import { Jobs } from '../../../utils';
+import { UserContext } from '../../../contexts/UserContext';
 
 var days = ['Sun', 'Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat'];
 var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
 export default function Index({ navigation }) {
+    const { state } = useContext(UserContext);
     const [eventsToday, setEventsToday] = useState([]);
     const [upcomingEvents, setUpcomingEvents] = useState([]);
 
@@ -36,7 +38,7 @@ export default function Index({ navigation }) {
     }
 
     const getEventsToday = (dateString) => {
-        let tempEvents = CalendarEvents.filter(event => event.dtstart.split(' ')[0].includes(dateString));
+        let tempEvents = state.events.filter(event => event.dtstart.split(' ')[0].includes(dateString));
         tempEvents.sort(function (a, b) { return a.dtstart.localeCompare(b.dtstart) });
         setEventsToday(tempEvents);
     }
@@ -49,7 +51,7 @@ export default function Index({ navigation }) {
 
         for (let i = dayOfWeek; i < 7; i++) {
             let nextDay = `${parts[0]}-${parts[1]}-${day.toString().length == 1 ? `0${day}` : `${day}`}`;
-            let temp = CalendarEvents.filter(x => x.dtstart.includes(nextDay));
+            let temp = state.events.filter(x => x.dtstart.includes(nextDay));
             if (temp.length != 0)
                 temp.forEach(x => eventsThisWeek.push(x));
             day++;

@@ -27,6 +27,7 @@ export default function App() {
                 await AsyncStorage.removeItem('userToken');
                 await AsyncStorage.removeItem('userID');
                 await AsyncStorage.removeItem('userName');
+                await AsyncStorage.removeItem('events');
             } catch (e) {
                 console.log(e);
             }
@@ -41,20 +42,30 @@ export default function App() {
                 console.log(e);
             }
             dispatch({ type: 'REGISTER', token: userToken, userName: fullName, userID: uid });
+        },
+        saveEvents: async (data) => {
+            try {
+                await AsyncStorage.setItem('events', JSON.stringify(data));
+            } catch (e) {
+                console.log(e);
+            }
+            dispatch({ type: 'SAVE_EVENTS', events: data });
         }
     }), []);
 
     useEffect(() => {
         const checkForToken = async () => {
-            let userToken = null, uid = null, userName = null;
+            let userToken = null, uid = null, userName = null, data = null;
             try {
                 userToken = await AsyncStorage.getItem('userToken');
                 uid = await AsyncStorage.getItem('userID');
                 userName = await AsyncStorage.getItem('userName');
+                data = await AsyncStorage.getItem('events');
+                data = JSON.parse(data);
             } catch (e) {
                 console.log(e);
             }
-            dispatch({ type: 'RETRIEVE_TOKEN', token: userToken, userID: uid, userName: userName });
+            dispatch({ type: 'RETRIEVE_TOKEN', token: userToken, userID: uid, userName: userName, events: data });
         }
         checkForToken();
     }, [])

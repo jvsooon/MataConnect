@@ -1,6 +1,5 @@
-import React, { useContext, useState, useEffect, useRef } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { SafeAreaView, StatusBar, FlatList, View, Text, UIManager, Platform, TouchableOpacity, ImageBackground, StyleSheet, ActivityIndicator } from 'react-native';
-import { CalendarEvents } from '../../utils'
 import * as Calendar from 'expo-calendar';
 import MenuIcon from '../../assets/menu.svg'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
@@ -150,7 +149,7 @@ export default function events({ navigation }) {
         var tempDate = today.getFullYear() + '-0' + (today.getMonth() + 1) + '-' + (today.getDate().toString().length == 1 ? '0' + today.getDate() : today.getDate());
         setDate(tempDate);
         const getEvents = async (value) => {
-            let eventsThisMonth = CalendarEvents.filter(event => event.dtstart.split(' ')[0].includes(value.substring(0, 7)));
+            let eventsThisMonth = state.events.filter(event => event.dtstart.split(' ')[0].includes(value.substring(0, 7)));
             let data = Object.keys(eventsThisMonth).map(i => ({
                 title: eventsThisMonth[i].title,
                 date: formatDate(eventsThisMonth[i].dtstart),

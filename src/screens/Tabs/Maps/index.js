@@ -1,14 +1,12 @@
-import React, { useState, useEffect, createRef } from 'react'
-import {
-    View, Dimensions, StatusBar, Platform, ScrollView, Linking, Text
-} from 'react-native';
+import React, { useState, useEffect, createRef, useContext } from 'react'
+import { View, Dimensions, StatusBar, Platform, ScrollView, Linking } from 'react-native';
 import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import BottomSheet from 'reanimated-bottom-sheet';
 import Animate from 'react-native-reanimated';
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete'
 import { Header, PanelHandle, Card, CardHeader, CardCover, CardOptions, CardFooter, EventInfo, CardTitle, CardSubTitle, IconBox, IconText } from './styles'
-import { CalendarEvents } from '../../../utils'
+import { UserContext } from '../../../contexts/UserContext'
 import { FontAwesome } from '@expo/vector-icons'
 import useVisibilityToggler from '../../../hooks/useVisibilityToggler'
 import 'intl'
@@ -27,7 +25,7 @@ const formatDate = (dtstart) => {
     const fullDate = dtstart.split(' ')
     const dateParts = fullDate[0].split('-')
 
-    if(fullDate.length > 1) {
+    if (fullDate.length > 1) {
         const hourParts = fullDate[1].split(':')
         const date = new Date(dateParts[0], dateParts[1] - 1, dateParts[2], hourParts[0], hourParts[1]);
         return new Intl.DateTimeFormat("en-US", optionsFull).format(date);
@@ -38,6 +36,7 @@ const formatDate = (dtstart) => {
 }
 
 export default function Index({ navigation }) {
+    const { state } = useContext(UserContext);
     const [mapRef, setMapRef] = useState('');
     const [poi, setPoi] = useState(null);
     const [searchPoi, setSearchPoi] = useState(null);
@@ -54,7 +53,7 @@ export default function Index({ navigation }) {
     const getEventByDate = () => {
         let today = new Date();
         let currentDate = today.getFullYear() + '-0' + (today.getMonth() + 1) + '-' + (today.getDate().toString().length == 1 ? '0' + today.getDate() : today.getDate());
-        let tempEvents = CalendarEvents.filter(event => event.dtstart.split(' ')[0] == currentDate);
+        let tempEvents = state.events.filter(event => event.dtstart.split(' ')[0] == currentDate);
         const data = Object.keys(tempEvents).map((i) => ({
             eventKey: i,
             title: tempEvents[i].title.split(':')[0],
@@ -66,7 +65,7 @@ export default function Index({ navigation }) {
     }
 
     useEffect(() => {
-        CalendarEvents.sort(function (a, b) { return a.dtstart.localeCompare(b.dtstart) });
+        state.events.sort(function (a, b) { return a.dtstart.localeCompare(b.dtstart) });
         getEventByDate()
     }, [])
 
