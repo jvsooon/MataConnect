@@ -3,7 +3,6 @@ import { StatusBar, SafeAreaView, RefreshControl, UIManager } from 'react-native
 import { Calendar } from 'react-native-calendars';
 import { CardScrollView } from './styles'
 import EventCard from '../../../components/EventCard'
-import { CalendarEvents } from '../../../utils'
 import 'intl';
 import 'intl/locale-data/jsonp/en';
 import firebase from '../../../../firebase'
@@ -62,7 +61,7 @@ export default function Index() {
     }
 
     const getEventByDate = async (dateString) => {
-        let tempEvents = CalendarEvents.filter(event => event.dtstart.split(' ')[0].includes(dateString));
+        let tempEvents = state.events.filter(event => event.dtstart.split(' ')[0].includes(dateString));
         let data = Object.keys(tempEvents).map((i) => ({
             title: tempEvents[i].title,
             date: formatDate(tempEvents[i].dtstart),
@@ -79,7 +78,7 @@ export default function Index() {
 
     const setMarkedDates = () => {
         const marked = {}
-        CalendarEvents.map(event => {
+        state.events.map(event => {
             let tempDate = event.dtstart.split(' ')[0];
             marked[tempDate] = { marked: true }
         })
@@ -145,7 +144,7 @@ export default function Index() {
     }
 
     useEffect(() => {
-        CalendarEvents.sort(function (a, b) { return a.dtstart.localeCompare(b.dtstart) });
+        state.events.sort(function (a, b) { return a.dtstart.localeCompare(b.dtstart) });
         setMarkedDates();
         if (Platform.OS == 'ios') {
             const reminderStatus = ExpoCalendar.requestRemindersPermissionsAsync();
