@@ -88,6 +88,7 @@ export default function Index() {
                         // Delete unused fields
                         unusedFields.forEach((field) => delete x[field]);
                     }
+                    console.log(data.length)
                     authContext.saveEvents(data);
                 }
             } else {

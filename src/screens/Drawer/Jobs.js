@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, useLayoutEffect } from 'react';
 import { SafeAreaView, StatusBar, FlatList, View, StyleSheet, ActivityIndicator, TextInput, Text, Platform, LayoutAnimation, TouchableOpacity, ImageBackground, Linking, ScrollView } from 'react-native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -48,7 +48,7 @@ const CardButton = ({ title, onPress }) => {
     );
 }
 
-export default function Jobs({ navigation }) {
+export default function Jobs({ navigation, route }) {
     const { state } = useContext(UserContext);
     var docRef = db.collection("users").doc(state.uid);
     const [filterStatus, setFilterStatus] = useState("All");
@@ -378,7 +378,13 @@ export default function Jobs({ navigation }) {
             setTabStatus('On-Campus');
         })
         return reset;
-    }, [])
+    }, []);
+
+    useLayoutEffect(() => {
+        if(route.params != undefined){
+            handleDropdownClick(route.params.section)
+        }
+    }, [route.params]);
 
     return (
         <SafeAreaView style={styles.container}>

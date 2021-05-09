@@ -19,7 +19,7 @@ async function getDefaultCalendarSourceID() {
     return defaultCalendar.id;
 }
 
-export default function events({ navigation }) {
+export default function events({ navigation, route }) {
     const { state } = useContext(UserContext);
     var docRef = db.collection("users").doc(state.uid);
     const [status, setStatus] = useState("Today");
@@ -150,38 +150,47 @@ export default function events({ navigation }) {
         setDate(tempDate);
         const getEvents = async (value) => {
             let eventsThisMonth = state.events.filter(event => event.dtstart.split(' ')[0].includes(value.substring(0, 7)));
-            let data = Object.keys(eventsThisMonth).map(i => ({
-                title: eventsThisMonth[i].title,
-                date: formatDate(eventsThisMonth[i].dtstart),
-                imgSrc: eventsThisMonth[i].imgSrc,
-                description: eventsThisMonth[i].description,
-                eventLink: eventsThisMonth[i].eventLink,
-                dtstart: eventsThisMonth[i].dtstart
-            }));
-            let temp = await Promise.all(data.map(async (x) => {
-                x["hasRSVP"] = await checkForRsvp(x.eventLink)
-            }));
-            data.sort(function (a, b) { return a.dtstart.localeCompare(b.dtstart) });
-            setCalendarEvents(data);
-            setFilteredEvents(data.filter(x => x.dtstart.includes(date)))
+
+
+            for(const i of eventsThisMonth){
+                i.date = formatDate(i.dtstart);
+                i.hasRSVP = await checkForRsvp(i.eventLink);
+            }
+            eventsThisMonth.sort(function (a, b) { return a.dtstart.localeCompare(b.dtstart) });
+            setCalendarEvents(eventsThisMonth);
+            setFilteredEvents(eventsThisMonth.filter(x => x.dtstart.includes(date)));
             setIsLoading(false);
+            // let data = Object.keys(eventsThisMonth).map(i => ({
+            //     title: eventsThisMonth[i].title,
+            //     date: formatDate(eventsThisMonth[i].dtstart),
+            //     imgSrc: eventsThisMonth[i].imgSrc,
+            //     description: eventsThisMonth[i].description,
+            //     eventLink: eventsThisMonth[i].eventLink,
+            //     dtstart: eventsThisMonth[i].dtstart
+            // }));
+            // let temp = await Promise.all(data.map(async (x) => {
+            //     x["hasRSVP"] = await checkForRsvp(x.eventLink)
+            // }));
+            // data.sort(function (a, b) { return a.dtstart.localeCompare(b.dtstart) });
+            // setCalendarEvents(data);
+            // setFilteredEvents(data.filter(x => x.dtstart.includes(date)))
         }
         getEvents(tempDate);
 
         if (Platform.OS == 'ios') {
             const reminderStatus = Calendar.requestRemindersPermissionsAsync();
-            const getReminder = Calendar.getRemindersPermissionsAsync()
+            const getReminder = Calendar.getRemindersPermissionsAsync();
         }
         const getPermission = async () => {
             const { status } = await Calendar.requestCalendarPermissionsAsync();
             if (status == 'granted' && calendarToken == false) {
                 createCalendar();
-                setCalendarToken(true)
+                setCalendarToken(true);
             }
         }
         getPermission();
         if (Platform.OS === 'android')
-            UIManager.setLayoutAnimationEnabledExperimental(true)
+            UIManager.setLayoutAnimationEnabledExperimental(true);
     }, [date])
 
     return (
