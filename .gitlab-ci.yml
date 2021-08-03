@@ -1,0 +1,52 @@
+---
+image: bycedric/expo-cli
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - ~/.npm
+    - jest
+stages:
+  - test
+  - deploy
+before_script:
+  #- apk update
+  #- apk add python3
+  - npm config set python python3.8
+  - export PYTHON=python3.8
+  - python3 --version
+  - npm --version
+  - npm config set unsafe-perm true
+  - npm ci #load npm into pipeline image
+# Commenting jest-tests out for now until we get that sorted
+# @TODO Right now this setup assumes one set of tests for all branches. Since tests are stored in __tests__ on the branch itself, this setup should be sufficient, but additional research into pros and cons of this arch should be pursued.
+#jest-tests:
+  #stage: test
+  #script:
+    #- npx jest --ci
+
+# Expo Deployments for non-prod (develop)
+expo-deployments_develop:
+  stage: deploy
+  only:
+    - develop
+  script:
+    - npx expo login -u $EXPO_USERNAME -p $EXPO_PASSWORD
+    - npx expo publish --release-channel develop --non-interactive
+
+# Expo Deployments for non-prod (demo)
+expo-deployments_demo:
+  stage: deploy
+  only:
+    - demo
+  script:
+    - npx expo login -u $EXPO_USERNAME -p $EXPO_PASSWORD
+    - npx expo publish --release-channel demo --non-interactive
+
+# Expo Deployments for prod (master)
+expo-deployments_master:
+  stage: deploy
+  only:
+    - master
+  script:
+    - npx expo login -u $EXPO_USERNAME -p $EXPO_PASSWORD
+    - npx expo publish --release-channel master --non-interactive
